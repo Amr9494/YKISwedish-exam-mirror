@@ -1,7 +1,7 @@
 # YKI Swedish – Exam Mirror
 
 A free practice site for the **speaking part of the YKI Swedish test (intermediate level / mellannivå)**.
-It mirrors the exam situation for **dialogues**:
+It mirrors the four speaking tasks of the exam – **Dialoger, Reagera, Berätta, Din åsikt**. Each task has a *Words & toolkit* page (instruction words + ready answers to memorise) and exercises. For dialogues:
 
 1. Read the situation.
 2. Listen to the other person (browser text-to-speech, Swedish voice).
@@ -9,7 +9,7 @@ It mirrors the exam situation for **dialogues**:
 4. Answer aloud – you are **recorded** with a countdown, like in the exam.
 5. At the end, listen to your own answers and **reveal the model answers** to compare.
 
-34 dialogues in 7 everyday themes (home, everyday life, nature, health, work, free time, society).
+34 dialogues (179 lines), 37 Reagera situations, 14 Berätta topics and 14 opinion topics in 7 everyday themes. Every model answer is built from the toolkit patterns, so you memorise a small set of sentences and reuse them.
 Model answers are deliberately **simple and correct (B1 level)**, with an alternative (*eller*) where useful.
 
 ## Run locally
@@ -35,6 +35,7 @@ The dialogues and answers are original practice material written for this site, 
 
 ## Roadmap
 - [x] Dialoger
-- [ ] Reagera
-- [ ] Berätta
-- [ ] Din åsikt
+- [x] Reagera
+- [x] Berätta
+- [x] Din åsikt
+- [x] Words & toolkit page for each task

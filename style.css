@@ -75,3 +75,18 @@ dialog::backdrop{background:rgba(0,0,0,.35)}
 .settings select{padding:8px; border-radius:8px; border:1px solid var(--line); background:var(--panel)}
 .notice{border-left:4px solid var(--acc2); background:var(--panel); padding:10px 12px; border-radius:8px; margin:12px 0; font-size:14px}
 footer{max-width:760px; margin:0 auto; padding:0 16px 30px; color:var(--mut); font-size:13px}
+/* toolkit */
+.chip{margin-top:8px; padding:6px 10px; border-radius:8px; border:1px dashed var(--acc); font-size:14px}
+.chip b{color:var(--acc)} .chip i{color:var(--mut)}
+.slot{background:var(--acc2); color:#18222d; border-radius:4px; padding:0 4px; font-weight:600}
+.tk{padding-bottom:8px}
+.tkrow{border-top:1px solid var(--line); padding:8px 0}
+.tkrow:first-child{border-top:0}
+.tkrow .cue{font-weight:700; font-size:14px}
+.tkrow .sv, .frame .sv{font-weight:600}
+.frame{padding-left:22px; margin:6px 0} .frame li{margin:6px 0}
+.tight{margin:0; padding-left:18px} .tight li{margin:3px 0}
+.qs{margin:8px 0; padding-left:20px} .qs li{margin:3px 0}
+.sents{padding-left:22px; margin:6px 0} .sents li{margin:4px 0}
+.frameBox{margin-top:8px} .frameBox summary{cursor:pointer; font-weight:600}
+.btn.small{min-height:32px; padding:4px 10px; font-size:14px}

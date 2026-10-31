@@ -19,14 +19,15 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Hej! Ingen fara. Kom in!",
-       "answer_en": "Hi! No problem. Come in!",
+       "answer_sv": "Hej! Ingen fara. Välkommen, kom in!",
+       "answer_en": "Hi! No problem. Welcome, come in!",
        "alts": [
         {
          "sv": "Hej! Välkommen! Ja, vilket väder!",
          "en": "Hi! Welcome! Yes, what weather!"
         }
-       ]
+       ],
+       "pattern": "answer"
       },
       {
        "other_sv": "Tack för att jag fick komma.",
@@ -35,8 +36,9 @@ window.YKI_DATA = {
        "task_en": "(Answer and offer something to drink.)",
        "seconds": null,
        "answer_sv": "Vad roligt att du kom! Vill du ha kaffe eller te?",
-       "answer_en": "So nice you came! Would you like coffee or tea?",
-       "alts": []
+       "answer_en": "So nice that you came! Would you like coffee or tea?",
+       "alts": [],
+       "pattern": "drink"
       },
       {
        "other_sv": "Gärna kaffe, om det inte är besvärligt.",
@@ -44,9 +46,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg ja.)",
        "task_en": "(Say yes.)",
        "seconds": null,
-       "answer_sv": "Ja, självklart. Sätt dig, jag gör kaffe.",
-       "answer_en": "Yes, of course. Sit down, I'll make coffee.",
-       "alts": []
+       "answer_sv": "Ja, gärna! Sätt dig, jag gör kaffe.",
+       "answer_en": "Yes, of course! Sit down, I'll make coffee.",
+       "alts": [],
+       "pattern": "yes"
       },
       {
        "other_sv": "Vilken mysig lägenhet! Hur stor är den?",
@@ -54,9 +57,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och berätta hur ditt hem ser ut.)",
        "task_en": "(Answer; say what your home looks like.)",
        "seconds": null,
-       "answer_sv": "Tack! Det är 60 kvadratmeter. Det finns ett vardagsrum, ett sovrum, ett kök och en balkong.",
-       "answer_en": "Thanks! It's 60 m². There's a living room, a bedroom, a kitchen and a balcony.",
-       "alts": []
+       "answer_sv": "Tack! Den är 60 kvadratmeter. Det finns ett vardagsrum, ett sovrum, ett kök och en balkong.",
+       "answer_en": "Thanks! It's 60 square metres. There is a living room, a bedroom, a kitchen and a balcony.",
+       "alts": [],
+       "pattern": "describe"
       },
       {
        "other_sv": "När flyttade du in här egentligen?",
@@ -64,9 +68,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Jag flyttade hit för två år sedan.",
-       "answer_en": "I moved here two years ago.",
-       "alts": []
+       "answer_sv": "Jag flyttade hit för två år sedan, i maj.",
+       "answer_en": "I moved here two years ago, in May.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Och hur trivs du här?",
@@ -74,9 +79,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och säg vad som är bra och vad som kunde vara bättre.)",
        "task_en": "(Answer; say what is good and what could be better.)",
        "seconds": null,
-       "answer_sv": "Ja. Lägenheten är ljus och ligger nära bussen. Men köket är lite litet.",
-       "answer_en": "Yes. The flat is bright and close to the bus. But the kitchen is a bit small.",
-       "alts": []
+       "answer_sv": "Jag trivs bra, för lägenheten är ljus och ligger nära bussen. Men köket är lite litet.",
+       "answer_en": "I like it, because the flat is bright and close to the bus. But the kitchen is a bit small.",
+       "alts": [],
+       "pattern": "opinion"
       }
      ]
     },
@@ -94,9 +100,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och fråga om vännens planer de närmaste dagarna.)",
        "task_en": "(Answer and ask about your friend's plans for the next days.)",
        "seconds": null,
-       "answer_sv": "Vad synd! Vad ska du göra de närmaste dagarna?",
-       "answer_en": "What a pity! What are you doing in the next few days?",
-       "alts": []
+       "answer_sv": "Vad synd! Vad ska du göra i helgen?",
+       "answer_en": "What a pity! What are you doing at the weekend?",
+       "alts": [],
+       "pattern": "plans"
       },
       {
        "other_sv": "Jag jobbar mycket. Men du kan komma till mig på lördag?",
@@ -104,14 +111,15 @@ window.YKI_DATA = {
        "task_sv": "(Säg nej och förklara varför tiden inte passar.)",
        "task_en": "(Say no and explain why the time is not suitable.)",
        "seconds": null,
-       "answer_sv": "Tyvärr kan jag inte på lördag, för jag jobbar. Passar söndag?",
-       "answer_en": "Unfortunately I can't on Saturday, because I'm working. Does Sunday suit you?",
+       "answer_sv": "Tyvärr passar det inte, för jag jobbar på lördag. Passar det på söndag i stället?",
+       "answer_en": "Unfortunately that doesn't suit me, because I'm working on Saturday. Does Sunday suit you instead?",
        "alts": [
         {
          "sv": "Lördag passar inte, för jag ska resa. Kanske nästa vecka?",
          "en": "Saturday doesn't suit me, because I'm travelling. Maybe next week?"
         }
-       ]
+       ],
+       "pattern": "no_time"
       },
       {
        "other_sv": "Okej. Hur kommer jag till stationen härifrån?",
@@ -119,9 +127,10 @@ window.YKI_DATA = {
        "task_sv": "(Erbjud skjuts.)",
        "task_en": "(Offer a lift.)",
        "seconds": null,
-       "answer_sv": "Jag kan köra dig hem.",
-       "answer_en": "I can drive you home.",
-       "alts": []
+       "answer_sv": "Jag kan köra dig till stationen.",
+       "answer_en": "I can drive you to the station.",
+       "alts": [],
+       "pattern": "lift"
       },
       {
        "other_sv": "Är du säker? Det är ju långt för dig.",
@@ -129,9 +138,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Nej, det är inget besvär alls.",
-       "answer_en": "No, it's no trouble at all.",
-       "alts": []
+       "answer_sv": "Nej, det är inget problem. Det gör jag gärna.",
+       "answer_en": "No, it's no problem. I'm happy to do it.",
+       "alts": [],
+       "pattern": "answer"
       }
      ]
     },
@@ -151,7 +161,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Hej Sanna, det är Alex. Jag ringer för att gratulera dig till det nya jobbet!",
        "answer_en": "Hi Sanna, it's Alex. I'm calling to congratulate you on the new job!",
-       "alts": []
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Hej! Vad snällt att du ringer. Ja, äntligen fick jag jobbet!",
@@ -159,9 +170,10 @@ window.YKI_DATA = {
        "task_sv": "(Fråga något om det nya jobbet.)",
        "task_en": "(Ask something about the new job.)",
        "seconds": null,
-       "answer_sv": "Var ska du jobba? När börjar du?",
-       "answer_en": "Where will you work? When do you start?",
-       "alts": []
+       "answer_sv": "Grattis! Vad roligt! Var ska du jobba? När börjar du?",
+       "answer_en": "Congratulations! How nice! Where will you work? When do you start?",
+       "alts": [],
+       "pattern": "good"
       },
       {
        "other_sv": "Jag har tyvärr bråttom just nu. Kan jag ringa dig senare?",
@@ -169,9 +181,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och säg när man kan ringa dig.)",
        "task_en": "(Answer; say what time you can be called.)",
        "seconds": null,
-       "answer_sv": "Ja, ring efter klockan sju.",
-       "answer_en": "Yes, call after seven.",
-       "alts": []
+       "answer_sv": "Ja, efter klockan sju. Då är jag hemma.",
+       "answer_en": "Yes, after seven. Then I'm at home.",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Perfekt. Tack igen för att du ringde!",
@@ -179,9 +192,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och avsluta samtalet.)",
        "task_en": "(Answer and end the call.)",
        "seconds": null,
-       "answer_sv": "Vi hörs i kväll. Grattis igen! Hej då!",
-       "answer_en": "Talk tonight. Congratulations again! Bye!",
-       "alts": []
+       "answer_sv": "Vi hörs i kväll. Ha en bra dag. Hej då!",
+       "answer_en": "Talk tonight. Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -199,14 +213,15 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Jag ska ha en mörk kostym.",
-       "answer_en": "I'm going to wear a dark suit.",
+       "answer_sv": "Jag ska ha en mörk kostym, för det är en fin fest.",
+       "answer_en": "I'm going to wear a dark suit, because it's a smart party.",
        "alts": [
         {
          "sv": "Jag ska ha en lång svart klänning.",
          "en": "I'm going to wear a long black dress."
         }
-       ]
+       ],
+       "pattern": "answer"
       },
       {
        "other_sv": "Jag har bara en kort klänning. Går det bra?",
@@ -214,9 +229,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg din åsikt.)",
        "task_en": "(Give your opinion.)",
        "seconds": null,
-       "answer_sv": "Nej, jag tycker att du ska ha en lång klänning. Festen är fin.",
-       "answer_en": "No, I think you should wear a long dress. It's a smart party.",
-       "alts": []
+       "answer_sv": "Jag tycker att du ska ha en lång klänning, för festen är fin.",
+       "answer_en": "I think you should wear a long dress, because the party is smart.",
+       "alts": [],
+       "pattern": "opinion"
       },
       {
        "other_sv": "Var hittar jag en lång klänning här i stan?",
@@ -225,8 +241,9 @@ window.YKI_DATA = {
        "task_en": "(Answer.)",
        "seconds": null,
        "answer_sv": "I köpcentret i centrum. Där finns många klädbutiker.",
-       "answer_en": "At the shopping centre in town. There are many clothes shops there.",
-       "alts": []
+       "answer_en": "In the shopping centre in town. There are many clothes shops there.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Bra idé! Vill du följa med och hjälpa mig att välja?",
@@ -234,14 +251,15 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Ja, gärna! Vi kan åka på lördag.",
-       "answer_en": "Yes, gladly! We can go on Saturday.",
+       "answer_sv": "Ja, gärna! Det låter bra. Vi kan åka på lördag.",
+       "answer_en": "Yes, gladly! That sounds good. We can go on Saturday.",
        "alts": [
         {
          "sv": "Tyvärr har jag inte tid, men du kan fråga i butiken.",
          "en": "Unfortunately I don't have time, but you can ask in the shop."
         }
-       ]
+       ],
+       "pattern": "yes"
       }
      ]
     },
@@ -261,7 +279,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "God morgon! Du ser trött ut. Är allt bra?",
        "answer_en": "Good morning! You look tired. Is everything OK?",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Jag sover så dåligt nu för tiden. Vad kan jag göra?",
@@ -269,14 +288,15 @@ window.YKI_DATA = {
        "task_sv": "(Ge råd om hur man sover bättre.)",
        "task_en": "(Give advice on how to sleep better.)",
        "seconds": null,
-       "answer_sv": "Du borde lägga dig tidigt och inte dricka kaffe på kvällen.",
-       "answer_en": "You should go to bed early and not drink coffee in the evening.",
+       "answer_sv": "Du borde lägga dig tidigt och inte dricka kaffe på kvällen. Det hjälper.",
+       "answer_en": "You should go to bed early and not drink coffee in the evening. It helps.",
        "alts": [
         {
          "sv": "Du borde inte titta på telefonen i sängen.",
          "en": "You shouldn't look at your phone in bed."
         }
-       ]
+       ],
+       "pattern": "advice"
       },
       {
        "other_sv": "Sover du alltid bra, då?",
@@ -286,7 +306,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Nej, inte alltid. Men jag promenerar varje dag, och det hjälper.",
        "answer_en": "No, not always. But I walk every day, and that helps.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Ja, jag måste ta hand om mig själv bättre.",
@@ -294,14 +315,15 @@ window.YKI_DATA = {
        "task_sv": "(Erbjud hjälp och ta reda på vad du kan göra.)",
        "task_en": "(Offer help; find out what you can do.)",
        "seconds": null,
-       "answer_sv": "Kan jag hjälpa dig med något?",
-       "answer_en": "Can I help you with anything?",
+       "answer_sv": "Kan jag hjälpa dig med något? Jag kan laga mat åt dig.",
+       "answer_en": "Can I help you with anything? I can cook for you.",
        "alts": [
         {
          "sv": "Jag kan laga mat åt dig i kväll.",
          "en": "I can cook for you tonight."
         }
-       ]
+       ],
+       "pattern": "offer"
       }
      ]
     },
@@ -319,9 +341,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och kommentera träffen.)",
        "task_en": "(Thank and comment on the meeting.)",
        "seconds": null,
-       "answer_sv": "Tack, det var trevligt att träffas.",
-       "answer_en": "Thanks, it was nice to meet.",
-       "alts": []
+       "answer_sv": "Tack, det är snällt av dig. Det var trevligt att träffas.",
+       "answer_en": "Thanks, that's kind of you. It was nice to meet.",
+       "alts": [],
+       "pattern": "thank"
       },
       {
        "other_sv": "Jag vill gärna bjuda dig på middag på lördag.",
@@ -329,14 +352,15 @@ window.YKI_DATA = {
        "task_sv": "(Tacka nej artigt.)",
        "task_en": "(Politely say no.)",
        "seconds": null,
-       "answer_sv": "Tack, men nej tack.",
-       "answer_en": "Thank you, but no thank you.",
+       "answer_sv": "Tack, det är snällt, men nej tack.",
+       "answer_en": "Thanks, that's kind, but no thank you.",
        "alts": [
         {
          "sv": "Tack, men jag vill inte. Förlåt.",
          "en": "Thanks, but I don't want to. Sorry."
         }
-       ]
+       ],
+       "pattern": "decline"
       },
       {
        "other_sv": "Jaså? Varför inte?",
@@ -344,9 +368,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och säg varför du inte vill träffas mer.)",
        "task_en": "(Answer; say why you don't want to meet any more.)",
        "seconds": null,
-       "answer_sv": "Nej, det är inget fel på dig. Men jag tror inte att vi passar ihop.",
-       "answer_en": "No, nothing is wrong with you. But I don't think we are a good match.",
-       "alts": []
+       "answer_sv": "Det är inget fel på dig. Men tyvärr vill jag inte, för jag tror inte att vi passar ihop.",
+       "answer_en": "Nothing is wrong with you. But unfortunately I don't want to, because I don't think we are a good match.",
+       "alts": [],
+       "pattern": "no_why"
       },
       {
        "other_sv": "Okej … det är synd.",
@@ -356,7 +381,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Var inte ledsen. Du är en snäll person.",
        "answer_en": "Don't be sad. You are a kind person.",
-       "alts": []
+       "alts": [],
+       "pattern": "comfort"
       }
      ]
     },
@@ -374,9 +400,10 @@ window.YKI_DATA = {
        "task_sv": "(Reagera på lämpligt sätt.)",
        "task_en": "(React suitably.)",
        "seconds": null,
-       "answer_sv": "Åh nej, vad tråkigt! Jag är så ledsen.",
-       "answer_en": "Oh no, how sad! I'm so sorry.",
-       "alts": []
+       "answer_sv": "Åh nej, vad tråkigt! Jag är ledsen att höra det.",
+       "answer_en": "Oh no, how sad! I'm sorry to hear that.",
+       "alts": [],
+       "pattern": "bad"
       },
       {
        "other_sv": "Det kom så plötsligt.",
@@ -386,7 +413,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Hur mår du nu?",
        "answer_en": "How are you now?",
-       "alts": []
+       "alts": [],
+       "pattern": "how"
       },
       {
        "other_sv": "Inte så bra. Jag gråter mycket.",
@@ -394,14 +422,15 @@ window.YKI_DATA = {
        "task_sv": "(Erbjud dig att hjälpa.)",
        "task_en": "(Offer to help.)",
        "seconds": null,
-       "answer_sv": "Jag kan komma till dig i kväll. Vi kan prata.",
-       "answer_en": "I can come to you tonight. We can talk.",
+       "answer_sv": "Kan jag hjälpa dig med något? Jag kan komma till dig i kväll.",
+       "answer_en": "Can I help you with anything? I can come to you tonight.",
        "alts": [
         {
          "sv": "Ring mig när du vill prata.",
          "en": "Call me when you want to talk."
         }
-       ]
+       ],
+       "pattern": "offer"
       },
       {
        "other_sv": "Jag måste vara stark för barnen.",
@@ -411,7 +440,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Hur mår barnen? Var ska de bo?",
        "answer_en": "How are the children? Where will they live?",
-       "alts": []
+       "alts": [],
+       "pattern": "ask"
       },
       {
        "other_sv": "De ska bo varannan vecka hos oss båda.",
@@ -419,9 +449,10 @@ window.YKI_DATA = {
        "task_sv": "(Du har bråttom. Avsluta artigt.)",
        "task_en": "(You are in a hurry; end politely.)",
        "seconds": null,
-       "answer_sv": "Det låter bra. Förlåt, jag måste gå nu. Jag ringer i morgon. Ta hand om dig!",
-       "answer_en": "That sounds good. Sorry, I have to go now. I'll call tomorrow. Take care!",
-       "alts": []
+       "answer_sv": "Det låter bra. Förlåt, jag måste gå nu. Jag ringer dig i morgon. Hej då!",
+       "answer_en": "That sounds good. Sorry, I have to go now. I'll call you tomorrow. Bye!",
+       "alts": [],
+       "pattern": "hurry"
       }
      ]
     },
@@ -441,7 +472,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Bra, tack! Jag ringer för att bjuda in dig till min födelsedagsfest.",
        "answer_en": "Fine, thanks! I'm calling to invite you to my birthday party.",
-       "alts": []
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Gärna! När och var är det?",
@@ -449,9 +481,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "På lördag klockan sex hemma hos mig.",
-       "answer_en": "On Saturday at six at my place.",
-       "alts": []
+       "answer_sv": "På lördag klockan sex, hemma hos mig.",
+       "answer_en": "On Saturday at six, at my place.",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Jag tror att jag kan komma. När vill du veta säkert?",
@@ -461,7 +494,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Senast på onsdag, tack.",
        "answer_en": "By Wednesday at the latest, please.",
-       "alts": []
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Vad vill du ha i present?",
@@ -471,7 +505,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Du behöver inte köpa något. Kom bara!",
        "answer_en": "You don't need to buy anything. Just come!",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Ska jag ta med något eller hjälpa till?",
@@ -479,9 +514,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka nej artigt och avsluta samtalet.)",
        "task_en": "(Politely decline and end the call.)",
        "seconds": null,
-       "answer_sv": "Tack, men jag har allt klart. Vi ses på lördag! Hej då!",
-       "answer_en": "Thanks, but I have everything ready. See you on Saturday! Bye!",
-       "alts": []
+       "answer_sv": "Tack, det är snällt, men nej tack. Jag har allt klart. Vi ses på lördag! Hej då!",
+       "answer_en": "Thanks, that's kind, but no thank you. I have everything ready. See you on Saturday! Bye!",
+       "alts": [],
+       "pattern": "decline"
       }
      ]
     },
@@ -499,9 +535,10 @@ window.YKI_DATA = {
        "task_sv": "(Hälsa och säg varför du ringer.)",
        "task_en": "(Greet; say why you call.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. Jag vill renovera mitt kök och vill ha en offert.",
-       "answer_en": "Hi, my name is Alex Andersson. I want to renovate my kitchen and would like a quote.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att jag vill renovera mitt kök.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because I want to renovate my kitchen.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Vad vill du ändra i köket?",
@@ -511,7 +548,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Jag vill ha nya skåp och ett nytt golv.",
        "answer_en": "I want new cupboards and a new floor.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "När vill du att det är färdigt?",
@@ -521,7 +559,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Före jul, om det går.",
        "answer_en": "Before Christmas, if possible.",
-       "alts": []
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Vi kan komma och titta på torsdag morgon. Passar det?",
@@ -529,9 +568,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg nej, förklara varför och föreslå en ny tid.)",
        "task_en": "(Say no, explain why, suggest a new time.)",
        "seconds": null,
-       "answer_sv": "Tyvärr kan jag inte, för jag jobbar. Kan ni komma efter klockan fyra?",
-       "answer_en": "Unfortunately I can't, because I'm working. Can you come after four?",
-       "alts": []
+       "answer_sv": "Tyvärr passar det inte, för jag jobbar. Passar det efter klockan fyra i stället?",
+       "answer_en": "Unfortunately that doesn't suit me, because I'm working. Does after four suit you instead?",
+       "alts": [],
+       "pattern": "no_time"
       },
       {
        "other_sv": "Okej, då kommer vi på eftermiddagen. Vilken är adressen?",
@@ -539,9 +579,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och fråga om priset.)",
        "task_en": "(Answer; ask for a price.)",
        "seconds": null,
-       "answer_sv": "Björkvägen 5 B 12 i Vanda. Hur mycket kostar det ungefär?",
-       "answer_en": "Björkvägen 5 B 12 in Vantaa. Roughly how much does it cost?",
-       "alts": []
+       "answer_sv": "Björkvägen 5 B 12 i Vanda. Hur mycket kostar det?",
+       "answer_en": "Björkvägen 5 B 12 in Vantaa. How much does it cost?",
+       "alts": [],
+       "pattern": "price"
       },
       {
        "other_sv": "Det beror på. Hur mycket vill du lägga?",
@@ -551,7 +592,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ungefär 8 000 euro.",
        "answer_en": "About 8,000 euros.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Bra. Vi pratar mer när vi ses.",
@@ -559,9 +601,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och avsluta samtalet.)",
        "task_en": "(Thank and end the call.)",
        "seconds": null,
-       "answer_sv": "Tack för hjälpen. Hej då!",
-       "answer_en": "Thanks for the help. Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra dag. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -579,9 +622,10 @@ window.YKI_DATA = {
        "task_sv": "(Presentera dig och berätta om din situation.)",
        "task_en": "(Introduce yourself and tell your situation.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. Jag har ett paket som inte fick plats i brevlådan.",
-       "answer_en": "Hi, my name is Alex Andersson. I have a parcel that didn't fit in the letter box.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att mitt paket inte fick plats i brevlådan.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because my parcel didn't fit in the letter box.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Vad heter du och var bor du?",
@@ -589,9 +633,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara på frågan.)",
        "task_en": "(Answer the question.)",
        "seconds": null,
-       "answer_sv": "Alex Andersson, Björkvägen 5 B 12, Vanda.",
-       "answer_en": "Alex Andersson, Björkvägen 5 B 12, Vantaa.",
-       "alts": []
+       "answer_sv": "Jag heter Alex Andersson. Jag bor på Björkvägen 5 B 12 i Vanda.",
+       "answer_en": "My name is Alex Andersson. I live at Björkvägen 5 B 12 in Vantaa.",
+       "alts": [],
+       "pattern": "contact"
       },
       {
        "other_sv": "Paketet är här. Någon måste vara hemma. När passar det?",
@@ -600,8 +645,9 @@ window.YKI_DATA = {
        "task_en": "(Answer.)",
        "seconds": null,
        "answer_sv": "I morgon efter klockan fem. Då är jag hemma.",
-       "answer_en": "Tomorrow after five. I'm at home then.",
-       "alts": []
+       "answer_en": "Tomorrow after five. Then I'm at home.",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Kan budet ringa dig innan?",
@@ -609,9 +655,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Ja, det går bra.",
-       "answer_en": "Yes, that's fine.",
-       "alts": []
+       "answer_sv": "Ja, gärna! Mitt nummer är 040 123 4567.",
+       "answer_en": "Yes, please! My number is 040 123 4567.",
+       "alts": [],
+       "pattern": "yes"
       },
       {
        "other_sv": "Bra, då skickar vi det.",
@@ -619,9 +666,10 @@ window.YKI_DATA = {
        "task_sv": "(Avsluta samtalet artigt.)",
        "task_en": "(End the call politely.)",
        "seconds": null,
-       "answer_sv": "Tack för hjälpen! Hej då!",
-       "answer_en": "Thanks for the help! Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra dag. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -641,7 +689,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Hej, det är Alex.",
        "answer_en": "Hello, it's Alex.",
-       "alts": []
+       "alts": [],
+       "pattern": "phone"
       },
       {
        "other_sv": "Hej, det här är disponenten. Grannarna säger att det var mycket ljud hos dig i lördags.",
@@ -651,7 +700,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, jag hade en födelsedagsfest.",
        "answer_en": "Yes, I had a birthday party.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Hur länge höll festen på?",
@@ -659,9 +709,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Klockan tolv.",
-       "answer_en": "At twelve.",
-       "alts": []
+       "answer_sv": "Till klockan tolv.",
+       "answer_en": "Until twelve.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Grannen säger att musiken spelade hela natten.",
@@ -669,9 +720,10 @@ window.YKI_DATA = {
        "task_sv": "(Du håller inte med.)",
        "task_en": "(You disagree.)",
        "seconds": null,
-       "answer_sv": "Det stämmer inte. Det var tyst efter klockan tolv.",
-       "answer_en": "That's not true. It was quiet after twelve.",
-       "alts": []
+       "answer_sv": "Jag håller inte med. Det stämmer inte, för det var tyst efter klockan tolv.",
+       "answer_en": "I don't agree. That's not right, because it was quiet after twelve.",
+       "alts": [],
+       "pattern": "disagree"
       },
       {
        "other_sv": "Har det hänt förut?",
@@ -681,7 +733,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Nej, aldrig.",
        "answer_en": "No, never.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Är lägenheten din eller hyr du den?",
@@ -689,9 +742,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Jag hyr.",
-       "answer_en": "I rent.",
-       "alts": []
+       "answer_sv": "Jag hyr lägenheten.",
+       "answer_en": "I rent the flat.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Okej. Nästa gång, berätta för grannarna innan.",
@@ -699,14 +753,15 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Okej, det ska jag göra. Förlåt för oväsendet.",
-       "answer_en": "OK, I'll do that. Sorry for the noise.",
+       "answer_sv": "Okej. Förlåt för oväsendet. Det händer inte igen.",
+       "answer_en": "OK. Sorry for the noise. It won't happen again.",
        "alts": [
         {
          "sv": "Tack. Det händer inte igen.",
          "en": "Thanks. It won't happen again."
         }
-       ]
+       ],
+       "pattern": "sorry"
       }
      ]
     }
@@ -731,9 +786,10 @@ window.YKI_DATA = {
        "task_sv": "(Presentera dig och förklara varför du ringer.)",
        "task_en": "(Introduce yourself and explain why you call.)",
        "seconds": 20,
-       "answer_sv": "Hej, jag heter Alex Andersson. Jag var på gymmet i går och glömde min jacka.",
-       "answer_en": "Hi, my name is Alex Andersson. I was at the gym yesterday and forgot my jacket.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att jag glömde min jacka hos er i går.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because I forgot my jacket at your place yesterday.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Hur ser den ut?",
@@ -741,9 +797,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och ge minst två kännetecken.)",
        "task_en": "(Answer; give at least two features.)",
        "seconds": 20,
-       "answer_sv": "Den är svart och ganska lång. Den har en röd mössa i fickan.",
-       "answer_en": "It's black and quite long. It has a red hat in the pocket.",
-       "alts": []
+       "answer_sv": "Den är svart och ganska lång.",
+       "answer_en": "It is black and quite long.",
+       "alts": [],
+       "pattern": "describe"
       },
       {
        "other_sv": "När var du här?",
@@ -751,9 +808,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": 10,
-       "answer_sv": "Jag glömde den i går kväll, ungefär klockan åtta.",
-       "answer_en": "I forgot it yesterday evening, at about eight.",
-       "alts": []
+       "answer_sv": "I går kväll, ungefär klockan åtta.",
+       "answer_en": "Yesterday evening, at about eight.",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Vi har inte hittat den än. Kan vi kontakta dig?",
@@ -761,9 +819,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg ja och ge dina kontaktuppgifter.)",
        "task_en": "(Say yes and give contact details.)",
        "seconds": 15,
-       "answer_sv": "Ja, gärna. Mitt nummer är 040 123 4567.",
-       "answer_en": "Yes, please. My number is 040 123 4567.",
-       "alts": []
+       "answer_sv": "Ja, gärna! Mitt nummer är 040 123 4567.",
+       "answer_en": "Yes, please! My number is 040 123 4567.",
+       "alts": [],
+       "pattern": "contact"
       },
       {
        "other_sv": "Okej, vi hör av oss.",
@@ -771,9 +830,10 @@ window.YKI_DATA = {
        "task_sv": "(Avsluta samtalet artigt.)",
        "task_en": "(End the call politely.)",
        "seconds": 10,
-       "answer_sv": "Tack så mycket för hjälpen. Hej då!",
-       "answer_en": "Thank you very much for the help. Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra dag. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -793,7 +853,8 @@ window.YKI_DATA = {
        "seconds": 10,
        "answer_sv": "Hej! Ja, det är första gången.",
        "answer_en": "Hi! Yes, it's the first time.",
-       "alts": []
+       "alts": [],
+       "pattern": "greet"
       },
       {
        "other_sv": "Vad vill du göra med håret i dag?",
@@ -803,7 +864,8 @@ window.YKI_DATA = {
        "seconds": 25,
        "answer_sv": "Jag vill klippa håret kort och färga det brunt.",
        "answer_en": "I want to cut my hair short and colour it brown.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Titta, så här? Det är populärt nu.",
@@ -811,9 +873,10 @@ window.YKI_DATA = {
        "task_sv": "(Du håller inte med. Förklara varför frisyren på bilden inte passar dig.)",
        "task_en": "(You disagree; explain why the hairstyle in the picture doesn't suit you.)",
        "seconds": 20,
-       "answer_sv": "Nej, jag tycker inte att den passar mig. Den är för kort för mig.",
-       "answer_en": "No, I don't think it suits me. It's too short for me.",
-       "alts": []
+       "answer_sv": "Jag håller inte med. Den passar inte mig, för den är för kort.",
+       "answer_en": "I don't agree. It doesn't suit me, because it's too short.",
+       "alts": [],
+       "pattern": "disagree"
       },
       {
        "other_sv": "Jag förstår. Vill du ha något att dricka?",
@@ -821,14 +884,15 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": 10,
-       "answer_sv": "Ja tack, en kopp kaffe.",
-       "answer_en": "Yes please, a cup of coffee.",
+       "answer_sv": "Ja, gärna! En kopp kaffe, tack.",
+       "answer_en": "Yes, please! A cup of coffee, thanks.",
        "alts": [
         {
          "sv": "Nej tack, jag behöver inget.",
          "en": "No thanks, I don't need anything."
         }
-       ]
+       ],
+       "pattern": "yes"
       },
       {
        "other_sv": "Du kan läsa eller använda wifi medan du väntar.",
@@ -838,7 +902,8 @@ window.YKI_DATA = {
        "seconds": 10,
        "answer_sv": "Jag vill läsa en tidning.",
        "answer_en": "I want to read a magazine.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Då börjar vi!",
@@ -846,9 +911,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": 10,
-       "answer_sv": "Okej, det låter bra.",
-       "answer_en": "OK, that sounds good.",
-       "alts": []
+       "answer_sv": "Det låter bra. Tack så mycket!",
+       "answer_en": "That sounds good. Thank you very much!",
+       "alts": [],
+       "pattern": "happy"
       }
      ]
     },
@@ -868,7 +934,8 @@ window.YKI_DATA = {
        "seconds": 15,
        "answer_sv": "Nej, tyvärr. Kaffet är kallt.",
        "answer_en": "No, unfortunately. The coffee is cold.",
-       "alts": []
+       "alts": [],
+       "pattern": "complain"
       },
       {
        "other_sv": "Förlåt! Ska jag göra ett nytt kaffe?",
@@ -876,9 +943,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg nej och förklara varför du inte vill ha en ny kopp.)",
        "task_en": "(Say no; explain why you don't want another cup.)",
        "seconds": 20,
-       "answer_sv": "Nej tack, jag vill inte ha mer kaffe i dag.",
-       "answer_en": "No thanks, I don't want more coffee today.",
-       "alts": []
+       "answer_sv": "Nej tack. Tyvärr kan jag inte dricka mer kaffe, för jag har redan druckit tre koppar i dag.",
+       "answer_en": "No thanks. Unfortunately I can't drink more coffee, because I've already had three cups today.",
+       "alts": [],
+       "pattern": "no_why"
       },
       {
        "other_sv": "Vill du ha något annat att dricka då?",
@@ -886,9 +954,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och be om en annan dryck från listan.)",
        "task_en": "(Answer; ask for another drink from the list.)",
        "seconds": 15,
-       "answer_sv": "Ja. Kan jag få en kopp te i stället?",
-       "answer_en": "Yes. Can I have a cup of tea instead?",
-       "alts": []
+       "answer_sv": "Ja, gärna! Kan jag få en kopp te i stället?",
+       "answer_en": "Yes, please! Can I have a cup of tea instead?",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Varsågod. Och här är en kanelbulle, den bjuder vi på.",
@@ -896,9 +965,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg vad du tycker om bullen.)",
        "task_en": "(Say what you think about the bun.)",
        "seconds": 10,
-       "answer_sv": "Tack, bullen är jättegod!",
-       "answer_en": "Thanks, the bun is really good!",
-       "alts": []
+       "answer_sv": "Tack så mycket! Bullen är jättegod.",
+       "answer_en": "Thank you very much! The bun is really good.",
+       "alts": [],
+       "pattern": "thank"
       },
       {
        "other_sv": "Förlåt igen för kaffet.",
@@ -906,9 +976,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och beröm servicen.)",
        "task_en": "(Thank and praise the service.)",
        "seconds": 15,
-       "answer_sv": "Tack så mycket! Det var bra service.",
-       "answer_en": "Thank you very much! That was good service.",
-       "alts": []
+       "answer_sv": "Tack! Det var mycket bra service.",
+       "answer_en": "Thanks! That was very good service.",
+       "alts": [],
+       "pattern": "praise"
       },
       {
        "other_sv": "Tack för att du sa till.",
@@ -916,9 +987,10 @@ window.YKI_DATA = {
        "task_sv": "(Avsluta artigt.)",
        "task_en": "(End politely.)",
        "seconds": 10,
-       "answer_sv": "Tack själv. Ha en bra dag!",
-       "answer_en": "Thank you too. Have a nice day!",
-       "alts": []
+       "answer_sv": "Tack själv! Ha en bra dag. Hej då!",
+       "answer_en": "Thank you too! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -938,7 +1010,8 @@ window.YKI_DATA = {
        "seconds": 10,
        "answer_sv": "Ursäkta, kan du hjälpa mig? Jag har gått vilse.",
        "answer_en": "Excuse me, can you help me? I'm lost.",
-       "alts": []
+       "alts": [],
+       "pattern": "help"
       },
       {
        "other_sv": "Ja, visst. Vart ska du?",
@@ -948,7 +1021,8 @@ window.YKI_DATA = {
        "seconds": 10,
        "answer_sv": "Jag ska till järnvägsstationen.",
        "answer_en": "I'm going to the railway station.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Ser du det stora huset där?",
@@ -958,7 +1032,8 @@ window.YKI_DATA = {
        "seconds": 10,
        "answer_sv": "Ja, den är gul.",
        "answer_en": "Yes, it's yellow.",
-       "alts": []
+       "alts": [],
+       "pattern": "describe"
       },
       {
        "other_sv": "Gå dit, sväng till vänster och gå två kvarter till.",
@@ -966,9 +1041,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och upprepa instruktionen.)",
        "task_en": "(Answer and repeat the instruction.)",
        "seconds": 15,
-       "answer_sv": "Okej, alltså rakt fram, sedan till vänster och två kvarter.",
-       "answer_en": "OK, so straight on, then left and two blocks.",
-       "alts": []
+       "answer_sv": "Okej, alltså rakt fram, sedan till vänster och två kvarter. Tack!",
+       "answer_en": "OK, so straight on, then left and two blocks. Thanks!",
+       "alts": [],
+       "pattern": "repeat"
       },
       {
        "other_sv": "Det är inte långt. Lycka till!",
@@ -976,9 +1052,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och tacka.)",
        "task_en": "(Answer and thank.)",
        "seconds": 10,
-       "answer_sv": "Tack så mycket för hjälpen!",
-       "answer_en": "Thank you very much for the help!",
-       "alts": []
+       "answer_sv": "Tack så mycket! Det är snällt av dig.",
+       "answer_en": "Thank you very much! That's kind of you.",
+       "alts": [],
+       "pattern": "thank"
       }
      ]
     },
@@ -996,9 +1073,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och berätta om din situation.)",
        "task_en": "(Answer and tell your situation.)",
        "seconds": null,
-       "answer_sv": "Ja. Jag köpte en kaffebryggare här i förra veckan, men den fungerar inte.",
-       "answer_en": "Yes. I bought a coffee maker here last week, but it doesn't work.",
-       "alts": []
+       "answer_sv": "Jag har ett problem. Min kaffebryggare fungerar inte. Jag köpte den här i förra veckan.",
+       "answer_en": "I have a problem. My coffee maker doesn't work. I bought it here last week.",
+       "alts": [],
+       "pattern": "situation"
       },
       {
        "other_sv": "Okej. Har du kvitto?",
@@ -1008,7 +1086,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, här är kvittot.",
        "answer_en": "Yes, here is the receipt.",
-       "alts": []
+       "alts": [],
+       "pattern": "return"
       },
       {
        "other_sv": "Du kan få en ny likadan.",
@@ -1016,9 +1095,10 @@ window.YKI_DATA = {
        "task_sv": "(Du vill inte ha samma produkt. Säg varför.)",
        "task_en": "(You don't want the same product; say why.)",
        "seconds": null,
-       "answer_sv": "Nej tack, jag vill inte ha samma. Den gick sönder efter två dagar.",
-       "answer_en": "No thanks, I don't want the same one. It broke after two days.",
-       "alts": []
+       "answer_sv": "Nej tack, jag vill inte ha samma, för den gick sönder efter två dagar.",
+       "answer_en": "No thanks, I don't want the same one, because it broke after two days.",
+       "alts": [],
+       "pattern": "no_why"
       },
       {
        "other_sv": "Pengarna kan vi inte ge tillbaka. Vill du ha något annat från samma märke?",
@@ -1028,7 +1108,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, jag tar en vattenkokare i stället.",
        "answer_en": "Yes, I'll take a kettle instead.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Det går bra. Kom med här.",
@@ -1036,9 +1117,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och tacka.)",
        "task_en": "(Answer and thank.)",
        "seconds": null,
-       "answer_sv": "Okej, tack så mycket för hjälpen!",
-       "answer_en": "OK, thank you very much for the help!",
-       "alts": []
+       "answer_sv": "Tack så mycket! Det är snällt av dig.",
+       "answer_en": "Thank you very much! That's kind of you.",
+       "alts": [],
+       "pattern": "thank"
       }
      ]
     }
@@ -1065,7 +1147,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Hej! Jag har ett problem. Jag har gått vilse i skogen.",
        "answer_en": "Hi! I have a problem. I'm lost in the forest.",
-       "alts": []
+       "alts": [],
+       "pattern": "situation"
       },
       {
        "other_sv": "Vilken skog? Vad ser du runt dig?",
@@ -1075,7 +1158,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Jag vet inte. Jag ser en sjö och höga träd.",
        "answer_en": "I don't know. I can see a lake and tall trees.",
-       "alts": []
+       "alts": [],
+       "pattern": "describe"
       },
       {
        "other_sv": "Varför gick du dit?",
@@ -1085,7 +1169,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Jag var ute och plockade svamp.",
        "answer_en": "I was out picking mushrooms.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Jag ringer 112 nu. Har du varma kläder?",
@@ -1095,7 +1180,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Nej, tyvärr. Jag har bara en tunn jacka och jeans.",
        "answer_en": "No, unfortunately. I only have a thin jacket and jeans.",
-       "alts": []
+       "alts": [],
+       "pattern": "no"
       },
       {
        "other_sv": "Stanna där du är. Hjälpen kommer!",
@@ -1103,9 +1189,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och lägg på.)",
        "task_en": "(Thank and hang up.)",
        "seconds": null,
-       "answer_sv": "Tack så mycket! Hej då!",
-       "answer_en": "Thank you very much! Bye!",
-       "alts": []
+       "answer_sv": "Tack så mycket. Hej då!",
+       "answer_en": "Thank you very much. Bye!",
+       "alts": [],
+       "pattern": "hangup"
       }
      ]
     },
@@ -1123,9 +1210,10 @@ window.YKI_DATA = {
        "task_sv": "(Hälsa och berätta vad du vill.)",
        "task_en": "(Say hello and tell what you want.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. Jag vill fiska och behöver ett fisketillstånd.",
-       "answer_en": "Hi, my name is Alex Andersson. I want to fish and need a fishing permit.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att jag behöver ett fisketillstånd.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because I need a fishing permit.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Var ska du fiska?",
@@ -1135,7 +1223,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "I en sjö nära Vanda.",
        "answer_en": "In a lake near Vantaa.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Det finns olika tillstånd.",
@@ -1145,7 +1234,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Hur mycket kostar det?",
        "answer_en": "How much does it cost?",
-       "alts": []
+       "alts": [],
+       "pattern": "price"
       },
       {
        "other_sv": "Ett år kostar ungefär sextio euro. Du köper det på nätet.",
@@ -1153,9 +1243,10 @@ window.YKI_DATA = {
        "task_sv": "(Fråga efter webbadressen.)",
        "task_en": "(Ask for the address of the website.)",
        "seconds": null,
-       "answer_sv": "Vad är webbadressen?",
-       "answer_en": "What is the web address?",
-       "alts": []
+       "answer_sv": "Vad är webbadressen, tack?",
+       "answer_en": "What is the web address, please?",
+       "alts": [],
+       "pattern": "info"
       },
       {
        "other_sv": "Du hittar allt på vår webbplats.",
@@ -1163,9 +1254,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och avsluta samtalet.)",
        "task_en": "(Thank and end the call.)",
        "seconds": null,
-       "answer_sv": "Tack för hjälpen. Hej då!",
-       "answer_en": "Thanks for the help. Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra dag. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     }
@@ -1190,9 +1282,10 @@ window.YKI_DATA = {
        "task_sv": "(Presentera dig och säg varför du ringer.)",
        "task_en": "(Introduce yourself and say why you call.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. En ung kvinna ligger på gatan och hon svarar inte. Vi behöver en ambulans.",
-       "answer_en": "Hello, my name is Alex Andersson. A young woman is lying in the street and she doesn't answer. We need an ambulance.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att en kvinna ligger på gatan och inte svarar. Vi behöver en ambulans.",
+       "answer_en": "Hello, my name is Alex Andersson. I'm calling because a woman is lying in the street and doesn't answer. We need an ambulance.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Andas hon?",
@@ -1202,7 +1295,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, hon andas.",
        "answer_en": "Yes, she is breathing.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Ser du blod eller skador?",
@@ -1212,7 +1306,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, hon blöder lite från huvudet.",
        "answer_en": "Yes, she is bleeding a little from the head.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Vet du varför hon ligger där?",
@@ -1220,9 +1315,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Nej, jag vet inte. Jag såg henne bara när jag gick förbi.",
-       "answer_en": "No, I don't know. I just saw her when I walked past.",
-       "alts": []
+       "answer_sv": "Nej, tyvärr. Jag såg henne när jag gick förbi.",
+       "answer_en": "No, unfortunately. I saw her when I walked past.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Ambulansen kommer. Var är du exakt?",
@@ -1230,9 +1326,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Adressen är Ringvägen 5 i Vanda.",
-       "answer_en": "The address is Ringvägen 5 in Vantaa.",
-       "alts": []
+       "answer_sv": "Ringvägen 5 i Vanda.",
+       "answer_en": "Ringvägen 5 in Vantaa.",
+       "alts": [],
+       "pattern": "answer"
       }
      ]
     },
@@ -1250,9 +1347,10 @@ window.YKI_DATA = {
        "task_sv": "(Presentera dig och säg varför du ringer.)",
        "task_en": "(Introduce yourself; say why you call.)",
        "seconds": null,
-       "answer_sv": "Hej Lisa, det är Alex. Jag hörde att du har varit med om en olycka. Hur mår du?",
-       "answer_en": "Hi Lisa, it's Alex. I heard you have had an accident. How are you?",
-       "alts": []
+       "answer_sv": "Hej Lisa, det är Alex. Jag ringer för att jag hörde om olyckan.",
+       "answer_en": "Hi Lisa, it's Alex. I'm calling because I heard about the accident.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Ja … en bil körde på mig när jag cyklade.",
@@ -1260,9 +1358,10 @@ window.YKI_DATA = {
        "task_sv": "(Reagera och fråga något mer.)",
        "task_en": "(React and ask something more.)",
        "seconds": null,
-       "answer_sv": "Åh nej, vad hemskt! Gör det ont?",
-       "answer_en": "Oh no, how awful! Does it hurt?",
-       "alts": []
+       "answer_sv": "Åh nej! Hur mår du? Gör det ont?",
+       "answer_en": "Oh no! How are you? Does it hurt?",
+       "alts": [],
+       "pattern": "ill"
       },
       {
        "other_sv": "Benet är brutet. Jag måste vara här några dagar.",
@@ -1270,9 +1369,10 @@ window.YKI_DATA = {
        "task_sv": "(Erbjud din vän hjälp.)",
        "task_en": "(Offer your friend help.)",
        "seconds": null,
-       "answer_sv": "Kan jag hjälpa dig? Jag kan handla mat åt dig.",
-       "answer_en": "Can I help you? I can buy food for you.",
-       "alts": []
+       "answer_sv": "Kan jag hjälpa dig med något? Jag kan handla mat åt dig.",
+       "answer_en": "Can I help you with anything? I can buy food for you.",
+       "alts": [],
+       "pattern": "offer"
       },
       {
        "other_sv": "Tack, vad snällt! När kan du komma?",
@@ -1280,9 +1380,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och fråga var hon ligger.)",
        "task_en": "(Answer and ask for the place.)",
        "seconds": null,
-       "answer_sv": "Jag kan komma i morgon efter jobbet. Var ligger du?",
-       "answer_en": "I can come tomorrow after work. Where are you (in hospital)?",
-       "alts": []
+       "answer_sv": "I morgon efter jobbet. Var ligger du?",
+       "answer_en": "Tomorrow after work. Where are you?",
+       "alts": [],
+       "pattern": "when"
       }
      ]
     }
@@ -1307,9 +1408,10 @@ window.YKI_DATA = {
        "task_sv": "(Presentera dig och säg vad du har på hjärtat.)",
        "task_en": "(Introduce yourself and say what you have to say.)",
        "seconds": null,
-       "answer_sv": "Hej, det är Alex. Jag är sjuk i dag och kan inte komma till jobbet.",
-       "answer_en": "Hi, it's Alex. I'm ill today and can't come to work.",
-       "alts": []
+       "answer_sv": "Hej, det är Alex. Jag ringer för att jag är sjuk i dag och inte kan komma till jobbet.",
+       "answer_en": "Hi, it's Alex. I'm calling because I'm ill today and can't come to work.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Tråkigt. Ska du till läkaren?",
@@ -1319,7 +1421,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, jag har en tid i eftermiddag.",
        "answer_en": "Yes, I have an appointment this afternoon.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Behöver vi någon som gör ditt jobb?",
@@ -1327,9 +1430,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Nej, det behövs inte. Min kollega kan göra mina uppgifter.",
-       "answer_en": "No, that's not needed. My colleague can do my tasks.",
-       "alts": []
+       "answer_sv": "Nej, min kollega kan göra mina uppgifter.",
+       "answer_en": "No, my colleague can do my tasks.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Okej. Krya på dig och hör av dig.",
@@ -1337,9 +1441,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Tack. Jag ringer i eftermiddag.",
-       "answer_en": "Thanks. I'll call this afternoon.",
-       "alts": []
+       "answer_sv": "Tack så mycket! Jag ringer i eftermiddag.",
+       "answer_en": "Thank you very much! I'll call this afternoon.",
+       "alts": [],
+       "pattern": "thank"
       }
      ]
     },
@@ -1357,9 +1462,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och säg vad du tyckte om presentationen.)",
        "task_en": "(Answer; say what you thought of the presentation.)",
        "seconds": null,
-       "answer_sv": "Ja, det var mycket intressant. Jag lärde mig mycket.",
-       "answer_en": "Yes, it was very interesting. I learned a lot.",
-       "alts": []
+       "answer_sv": "Jag tycker att den var mycket intressant, för jag lärde mig mycket.",
+       "answer_en": "I think it was very interesting, because I learned a lot.",
+       "alts": [],
+       "pattern": "opinion"
       },
       {
        "other_sv": "När var den andra föreläsningen?",
@@ -1367,9 +1473,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Den var klockan tio.",
-       "answer_en": "It was at ten.",
-       "alts": []
+       "answer_sv": "Klockan tio.",
+       "answer_en": "At ten.",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Jag tyckte att hon var jättebra. Och du?",
@@ -1379,7 +1486,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Jag också. Hon pratade mycket bra.",
        "answer_en": "Me too. She spoke very well.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Den sista var lite tråkig, tycker jag.",
@@ -1387,9 +1495,10 @@ window.YKI_DATA = {
        "task_sv": "(Kommentera och fråga om tid och plats för nästa föredrag.)",
        "task_en": "(Comment and ask for time and place of the next presentation.)",
        "seconds": null,
-       "answer_sv": "Jag håller med. När och var är nästa föredrag?",
-       "answer_en": "I agree. When and where is the next talk?",
-       "alts": []
+       "answer_sv": "Jag håller med. När och var är nästa föreläsning?",
+       "answer_en": "I agree. When and where is the next lecture?",
+       "alts": [],
+       "pattern": "ask"
       },
       {
        "other_sv": "Nästa börjar snart. Ska vi ta en kaffe först?",
@@ -1397,9 +1506,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Ja, gärna!",
-       "answer_en": "Yes, gladly!",
-       "alts": []
+       "answer_sv": "Ja, gärna! Det låter bra.",
+       "answer_en": "Yes, gladly! That sounds good.",
+       "alts": [],
+       "pattern": "yes"
       }
      ]
     },
@@ -1417,9 +1527,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och föreslå en tid nästa vecka.)",
        "task_en": "(Answer and suggest a time next week.)",
        "seconds": null,
-       "answer_sv": "Jag har tid på tisdag klockan tio.",
-       "answer_en": "I have time on Tuesday at ten.",
-       "alts": []
+       "answer_sv": "Passar det på tisdag klockan tio?",
+       "answer_en": "Does Tuesday at ten suit you?",
+       "alts": [],
+       "pattern": "suggest"
       },
       {
        "other_sv": "Det går inte för mig. Fredag då?",
@@ -1427,9 +1538,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg nej och förklara varför.)",
        "task_en": "(Say no and explain why.)",
        "seconds": null,
-       "answer_sv": "Tyvärr kan jag inte på fredag, för jag har ett annat möte.",
-       "answer_en": "Unfortunately I can't on Friday, because I have another meeting.",
-       "alts": []
+       "answer_sv": "Tyvärr kan jag inte, för jag har ett annat möte på fredag.",
+       "answer_en": "Unfortunately I can't, because I have another meeting on Friday.",
+       "alts": [],
+       "pattern": "no_why"
       },
       {
        "other_sv": "Då får vi vänta. Tisdag om två veckor?",
@@ -1437,9 +1549,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg ja och föreslå en tid.)",
        "task_en": "(Say yes and suggest a time.)",
        "seconds": null,
-       "answer_sv": "Ja, det passar. Klockan nio?",
-       "answer_en": "Yes, that suits me. At nine?",
-       "alts": []
+       "answer_sv": "Ja, det passar bra. Kan vi ses klockan nio?",
+       "answer_en": "Yes, that suits me. Can we meet at nine?",
+       "alts": [],
+       "pattern": "yes_time"
       },
       {
        "other_sv": "Alla har så mycket att göra just nu.",
@@ -1449,7 +1562,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, jag har många kunder nu före jul.",
        "answer_en": "Yes, I have many customers now before Christmas.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Jag skickar en inbjudan i kalendern.",
@@ -1457,9 +1571,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Okej, det låter bra. Tack!",
-       "answer_en": "OK, that sounds good. Thanks!",
-       "alts": []
+       "answer_sv": "Det låter bra. Tack så mycket!",
+       "answer_en": "That sounds good. Thank you very much!",
+       "alts": [],
+       "pattern": "happy"
       }
      ]
     },
@@ -1477,9 +1592,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och säg var du var på resa.)",
        "task_en": "(Answer; say where you were on the trip.)",
        "seconds": null,
-       "answer_sv": "Jag var på tjänsteresa i Stockholm.",
-       "answer_en": "I was on a business trip in Stockholm.",
-       "alts": []
+       "answer_sv": "Jag var på jobbresa i Stockholm.",
+       "answer_en": "I was on a work trip in Stockholm.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Vad gjorde du där?",
@@ -1487,9 +1603,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och berätta vad du gjorde.)",
        "task_en": "(Answer; say what you did.)",
        "seconds": null,
-       "answer_sv": "Den var bra. Jag var på möten och träffade nya kunder.",
-       "answer_en": "It was good. I was in meetings and met new customers.",
-       "alts": []
+       "answer_sv": "Jag var på möten och träffade nya kunder.",
+       "answer_en": "I was in meetings and met new customers.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Hur var hotellet?",
@@ -1497,9 +1614,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Ja, hotellet var fint och låg i centrum.",
-       "answer_en": "Yes, the hotel was nice and in the centre.",
-       "alts": []
+       "answer_sv": "Hotellet var fint och låg i centrum.",
+       "answer_en": "The hotel was nice and in the centre.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Och maten?",
@@ -1507,9 +1625,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Frukosten var god. Det fanns mycket frukt.",
-       "answer_en": "The breakfast was good. There was lots of fruit.",
-       "alts": []
+       "answer_sv": "Maten var god.",
+       "answer_en": "The food was good.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Är du trött efter resan?",
@@ -1517,9 +1636,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Jag är lite trött, men jag mår bra.",
-       "answer_en": "I'm a bit tired, but I'm fine.",
-       "alts": []
+       "answer_sv": "Ja, lite. Men jag mår bra.",
+       "answer_en": "Yes, a little. But I'm fine.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Jag måste jobba vidare. Vi ses!",
@@ -1527,9 +1647,10 @@ window.YKI_DATA = {
        "task_sv": "(Avsluta samtalet.)",
        "task_en": "(closing)",
        "seconds": null,
-       "answer_sv": "Detsamma! Vi ses!",
-       "answer_en": "Same here! See you!",
-       "alts": []
+       "answer_sv": "Vi ses! Ha en bra dag!",
+       "answer_en": "See you! Have a nice day!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     }
@@ -1554,9 +1675,10 @@ window.YKI_DATA = {
        "task_sv": "(Presentera dig och förklara ditt ärende.)",
        "task_en": "(Introduce yourself and explain your business.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. Jag har fått en påminnelse om en bok, men jag har inte lånat den.",
-       "answer_en": "Hi, my name is Alex Andersson. I got a reminder about a book, but I haven't borrowed it.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att jag har fått en påminnelse om en bok som jag inte har lånat.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because I got a reminder about a book I haven't borrowed.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Hmm. Vad var namnet?",
@@ -1566,7 +1688,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Andersson. A-n-d-e-r-s-s-o-n.",
        "answer_en": "Andersson. A-n-d-e-r-s-s-o-n.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Här står det att du lånade en kokbok för två veckor sedan.",
@@ -1574,9 +1697,10 @@ window.YKI_DATA = {
        "task_sv": "(Du har inte varit på biblioteket på länge. Berätta var du var för två veckor sedan.)",
        "task_en": "(You haven't been to the library for a long time; tell where you were two weeks ago.)",
        "seconds": null,
-       "answer_sv": "Det är konstigt. För två veckor sedan var jag i Spanien på semester.",
-       "answer_en": "That's strange. Two weeks ago I was in Spain on holiday.",
-       "alts": []
+       "answer_sv": "Det stämmer inte, för för två veckor sedan var jag i Spanien.",
+       "answer_en": "That's not right, because two weeks ago I was in Spain.",
+       "alts": [],
+       "pattern": "disagree"
       },
       {
        "other_sv": "Har någon annan ditt kort?",
@@ -1584,9 +1708,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg nej och förklara varför.)",
        "task_en": "(Say no and explain why.)",
        "seconds": null,
-       "answer_sv": "Nej, jag har mitt lånekort i plånboken hela tiden.",
-       "answer_en": "No, I have my library card in my wallet all the time.",
-       "alts": []
+       "answer_sv": "Nej, tyvärr inte, för jag har kortet i plånboken hela tiden.",
+       "answer_en": "No, I don't think so, because I have the card in my wallet all the time.",
+       "alts": [],
+       "pattern": "no_why"
       },
       {
        "other_sv": "Jag ska undersöka saken och ringa dig.",
@@ -1594,9 +1719,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och avsluta artigt.)",
        "task_en": "(Answer and end politely.)",
        "seconds": null,
-       "answer_sv": "Ja, det går bra. Tack för hjälpen. Hej då!",
-       "answer_en": "Yes, that's fine. Thanks for the help. Bye!",
-       "alts": []
+       "answer_sv": "Ja, det går bra. Tack för hjälpen! Hej då!",
+       "answer_en": "Yes, that's fine. Thanks for the help! Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -1614,9 +1740,10 @@ window.YKI_DATA = {
        "task_sv": "(Hälsa på dörrvakten och förklara situationen.)",
        "task_en": "(Greet the doorman and explain the situation.)",
        "seconds": null,
-       "answer_sv": "Hej! Jag hittar inte min garderobslapp. Kan du hjälpa mig?",
-       "answer_en": "Hi! I can't find my cloakroom tag. Can you help me?",
-       "alts": []
+       "answer_sv": "Hej! Jag har ett problem. Jag hittar inte min garderobslapp. Kan du hjälpa mig?",
+       "answer_en": "Hi! I have a problem. I can't find my cloakroom tag. Can you help me?",
+       "alts": [],
+       "pattern": "situation"
       },
       {
        "other_sv": "Har du tittat i alla fickor?",
@@ -1624,9 +1751,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Ja, jag har kollat alla fickor.",
-       "answer_en": "Yes, I have checked all my pockets.",
-       "alts": []
+       "answer_sv": "Ja, jag har tittat i alla fickor.",
+       "answer_en": "Yes, I've looked in all my pockets.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "När kom du och med vem?",
@@ -1634,9 +1762,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara på frågan.)",
        "task_en": "(Answer the question.)",
        "seconds": null,
-       "answer_sv": "Jag kom med två vänner klockan nio.",
-       "answer_en": "I came with two friends at nine.",
-       "alts": []
+       "answer_sv": "Klockan nio, med två vänner.",
+       "answer_en": "At nine, with two friends.",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Hur ser jackan ut?",
@@ -1644,9 +1773,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg vad för slags jacka du har i garderoben.)",
        "task_en": "(Say what kind of jacket you have in the cloakroom.)",
        "seconds": null,
-       "answer_sv": "Det är en svart vinterjacka med en grå halsduk.",
-       "answer_en": "It's a black winter jacket with a grey scarf.",
-       "alts": []
+       "answer_sv": "Den är svart och ganska lång.",
+       "answer_en": "It is black and quite long.",
+       "alts": [],
+       "pattern": "describe"
       },
       {
        "other_sv": "Är det den här?",
@@ -1656,7 +1786,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, det är den!",
        "answer_en": "Yes, that's it!",
-       "alts": []
+       "alts": [],
+       "pattern": "yes"
       },
       {
        "other_sv": "Var försiktig med lappen nästa gång.",
@@ -1664,9 +1795,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och avsluta samtalet.)",
        "task_en": "(Thank and end the conversation.)",
        "seconds": null,
-       "answer_sv": "Tack så mycket! Jag ska vara mer försiktig. Hej då!",
-       "answer_en": "Thank you very much! I'll be more careful. Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra kväll. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice evening. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -1686,7 +1818,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Hej Ella! Bra, tack. Och du?",
        "answer_en": "Hi Ella! Fine, thanks. And you?",
-       "alts": []
+       "alts": [],
+       "pattern": "greet"
       },
       {
        "other_sv": "Jag vill gå ner i vikt, men jag vet inte hur.",
@@ -1694,9 +1827,10 @@ window.YKI_DATA = {
        "task_sv": "(Ge råd.)",
        "task_en": "(Give advice.)",
        "seconds": null,
-       "answer_sv": "Du borde äta mindre socker och promenera varje dag.",
-       "answer_en": "You should eat less sugar and walk every day.",
-       "alts": []
+       "answer_sv": "Du borde äta mindre socker och promenera varje dag. Det hjälper.",
+       "answer_en": "You should eat less sugar and walk every day. It helps.",
+       "alts": [],
+       "pattern": "advice"
       },
       {
        "other_sv": "Det är svårt att göra det ensam. Vill du hjälpa mig?",
@@ -1704,9 +1838,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg ja och föreslå hur du kan hjälpa.)",
        "task_en": "(Say yes and suggest how you can help.)",
        "seconds": null,
-       "answer_sv": "Ja, gärna! Vi kan gå på promenad tillsammans.",
-       "answer_en": "Yes, gladly! We can go for walks together.",
-       "alts": []
+       "answer_sv": "Ja, gärna! Jag kan promenera med dig.",
+       "answer_en": "Yes, gladly! I can walk with you.",
+       "alts": [],
+       "pattern": "offer"
       },
       {
        "other_sv": "Tack! När ska vi börja?",
@@ -1714,9 +1849,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och föreslå tid och plats.)",
        "task_en": "(Answer; suggest time and place.)",
        "seconds": null,
-       "answer_sv": "Vi kan ses på lördag klockan tio i parken.",
-       "answer_en": "We can meet on Saturday at ten in the park.",
-       "alts": []
+       "answer_sv": "Passar det på lördag klockan tio i parken?",
+       "answer_en": "Does Saturday at ten in the park suit you?",
+       "alts": [],
+       "pattern": "suggest"
       },
       {
        "other_sv": "Toppen, vi ses!",
@@ -1726,7 +1862,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Vi ses på lördag! Hej då!",
        "answer_en": "See you on Saturday! Bye!",
-       "alts": []
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -1744,9 +1881,10 @@ window.YKI_DATA = {
        "task_sv": "(Hälsa och säg vad du har på hjärtat.)",
        "task_en": "(Greet and say what you have to say.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. Det är något fel på mitt rum. Duschen fungerar inte.",
-       "answer_en": "Hi, my name is Alex Andersson. Something is wrong with my room. The shower doesn't work.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att duschen i mitt rum inte fungerar.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because the shower in my room doesn't work.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Vilket rum har du?",
@@ -1756,7 +1894,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Rum 214.",
        "answer_en": "Room 214.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Vi skickar någon som lagar det.",
@@ -1764,9 +1903,10 @@ window.YKI_DATA = {
        "task_sv": "(Du är inte nöjd och vill byta rum.)",
        "task_en": "(You are not satisfied and want to change rooms.)",
        "seconds": null,
-       "answer_sv": "Nej, jag är inte nöjd. Jag vill byta rum.",
-       "answer_en": "No, I'm not happy. I want to change rooms.",
-       "alts": []
+       "answer_sv": "Nej, det är jag inte nöjd med. Jag vill byta rum.",
+       "answer_en": "No, I'm not happy with that. I want to change rooms.",
+       "alts": [],
+       "pattern": "not_happy"
       },
       {
        "other_sv": "Tyvärr är alla rum fulla. Vi kan bjuda på frukost.",
@@ -1776,7 +1916,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Tack, men jag vill också ha lite pengar tillbaka.",
        "answer_en": "Thanks, but I also want some money back.",
-       "alts": []
+       "alts": [],
+       "pattern": "money"
       },
       {
        "other_sv": "Kan du komma ner och prata med chefen?",
@@ -1784,9 +1925,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg ja och lägg på.)",
        "task_en": "(Say yes and hang up.)",
        "seconds": null,
-       "answer_sv": "Ja, det går bra. Jag kommer nu. Hej då!",
-       "answer_en": "Yes, that's fine. I'm coming now. Bye!",
-       "alts": []
+       "answer_sv": "Ja, det går bra. Tack så mycket. Hej då!",
+       "answer_en": "Yes, that's fine. Thank you very much. Bye!",
+       "alts": [],
+       "pattern": "hangup"
       }
      ]
     },
@@ -1804,9 +1946,10 @@ window.YKI_DATA = {
        "task_sv": "(Be om råd. Säg vart du ska och när.)",
        "task_en": "(Ask for advice; say where you're going and when.)",
        "seconds": null,
-       "answer_sv": "Hej, kan du hjälpa mig? Jag ska till Åbo klockan tio, men jag ser inte tåget på tavlan.",
-       "answer_en": "Hi, can you help me? I'm going to Turku at ten, but I can't see the train on the board.",
-       "alts": []
+       "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till Åbo klockan tio, men jag hittar inte tåget.",
+       "answer_en": "Excuse me, can you help me? I'm going to Turku at ten, but I can't find the train.",
+       "alts": [],
+       "pattern": "help"
       },
       {
        "other_sv": "Det tåget går inte i dag. Nästa går i eftermiddag.",
@@ -1814,9 +1957,10 @@ window.YKI_DATA = {
        "task_sv": "(Du funderar. Fråga varför.)",
        "task_en": "(You think about it; ask why.)",
        "seconds": null,
-       "answer_sv": "Hmm … varför är det inställt?",
-       "answer_en": "Hmm … why is it cancelled?",
-       "alts": []
+       "answer_sv": "Hmm … varför det?",
+       "answer_en": "Hmm … why is that?",
+       "alts": [],
+       "pattern": "why"
       },
       {
        "other_sv": "Det är ett tekniskt fel. Förlåt.",
@@ -1824,9 +1968,10 @@ window.YKI_DATA = {
        "task_sv": "(Du är inte nöjd, du har ett viktigt möte. Klaga.)",
        "task_en": "(Not satisfied; you have an important meeting; complain.)",
        "seconds": null,
-       "answer_sv": "Det är inte bra. Jag har ett viktigt möte i Åbo.",
-       "answer_en": "That's not good. I have an important meeting in Turku.",
-       "alts": []
+       "answer_sv": "Det är jag inte nöjd med, för jag har ett viktigt möte i Åbo.",
+       "answer_en": "I'm not happy with that, because I have an important meeting in Turku.",
+       "alts": [],
+       "pattern": "not_happy"
       },
       {
        "other_sv": "Du kan ta bussen i stället.",
@@ -1834,9 +1979,10 @@ window.YKI_DATA = {
        "task_sv": "(Kräv ersättning.)",
        "task_en": "(Demand compensation.)",
        "seconds": null,
-       "answer_sv": "Jag vill ha ersättning för biljetten.",
-       "answer_en": "I want compensation for the ticket.",
-       "alts": []
+       "answer_sv": "Jag vill ha pengarna tillbaka för biljetten.",
+       "answer_en": "I want the money back for the ticket.",
+       "alts": [],
+       "pattern": "money"
       },
       {
        "other_sv": "Du kan skriva till kundtjänsten.",
@@ -1844,9 +1990,10 @@ window.YKI_DATA = {
        "task_sv": "(Fråga efter en e-postadress.)",
        "task_en": "(Ask for an e-mail address.)",
        "seconds": null,
-       "answer_sv": "Vad är e-postadressen?",
-       "answer_en": "What's the e-mail address?",
-       "alts": []
+       "answer_sv": "Vad är e-postadressen, tack?",
+       "answer_en": "What is the e-mail address, please?",
+       "alts": [],
+       "pattern": "info"
       },
       {
        "other_sv": "",
@@ -1854,9 +2001,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och avsluta samtalet.)",
        "task_en": "(Thank and end the conversation.)",
        "seconds": null,
-       "answer_sv": "Tack. Hej då!",
-       "answer_en": "Thanks. Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra dag. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -1876,7 +2024,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Ja, det går bra.",
        "answer_en": "Yes, that's fine.",
-       "alts": []
+       "alts": [],
+       "pattern": "yes"
       },
       {
        "other_sv": "Hur många timmar per dag använder du internet?",
@@ -1884,9 +2033,10 @@ window.YKI_DATA = {
        "task_sv": "(Du funderar. Fråga varför.)",
        "task_en": "(You think about it; ask why.)",
        "seconds": null,
-       "answer_sv": "Hmm … varför vill ni veta det?",
-       "answer_en": "Hmm … why do you want to know?",
-       "alts": []
+       "answer_sv": "Hmm … varför det?",
+       "answer_en": "Hmm … why is that?",
+       "alts": [],
+       "pattern": "why"
       },
       {
        "other_sv": "Använder du internet i mobilen?",
@@ -1894,9 +2044,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Ja, jag har internet i telefonen.",
+       "answer_sv": "Ja, jag har internet i mobilen.",
        "answer_en": "Yes, I have internet on my phone.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Vad använder du internet till?",
@@ -1906,7 +2057,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Jag läser nyheter och ringer min familj.",
        "answer_en": "I read news and call my family.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Använder du det mer än förut?",
@@ -1914,9 +2066,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Mer nu, för min familj bor långt borta.",
-       "answer_en": "More now, because my family lives far away.",
-       "alts": []
+       "answer_sv": "Ja, mer nu, för min familj bor långt borta.",
+       "answer_en": "Yes, more now, because my family lives far away.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "",
@@ -1924,9 +2077,10 @@ window.YKI_DATA = {
        "task_sv": "(Du ser att bussen kommer. Avsluta samtalet artigt.)",
        "task_en": "(You see the bus coming. End the call politely.)",
        "seconds": null,
-       "answer_sv": "Förlåt, min buss kommer. Jag måste gå. Hej då!",
-       "answer_en": "Sorry, my bus is coming. I have to go. Bye!",
-       "alts": []
+       "answer_sv": "Förlåt, min buss kommer. Jag måste gå nu. Hej då!",
+       "answer_en": "Sorry, my bus is coming. I have to go now. Bye!",
+       "alts": [],
+       "pattern": "hurry"
       }
      ]
     },
@@ -1944,9 +2098,10 @@ window.YKI_DATA = {
        "task_sv": "(Presentera dig och förklara ditt ärende.)",
        "task_en": "(Introduce yourself and explain your business.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. Jag har köpt teaterbiljetter, men jag kan inte komma. Kan jag byta datum?",
-       "answer_en": "Hi, my name is Alex Andersson. I have bought theatre tickets, but I can't come. Can I change the date?",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att jag vill byta dag på mina teaterbiljetter.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because I want to change the day of my theatre tickets.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Vilket namn och vilken dag?",
@@ -1956,7 +2111,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Alex Andersson, den 12 november.",
        "answer_en": "Alex Andersson, 12 November.",
-       "alts": []
+       "alts": [],
+       "pattern": "contact"
       },
       {
        "other_sv": "Vilken dag vill du komma i stället?",
@@ -1964,9 +2120,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Till den 19 november.",
-       "answer_en": "To 19 November.",
-       "alts": []
+       "answer_sv": "Den 19 november.",
+       "answer_en": "19 November.",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Vi har en föreställning klockan två och en klockan sju.",
@@ -1974,9 +2131,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Klockan 19, tack.",
-       "answer_en": "At 7 pm, please.",
-       "alts": []
+       "answer_sv": "Klockan sju, tack.",
+       "answer_en": "At seven, please.",
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "De nya platserna är längre bak. De är lite billigare.",
@@ -1984,9 +2142,10 @@ window.YKI_DATA = {
        "task_sv": "(Du håller inte med. Be om ersättning för de dyrare biljetterna.)",
        "task_en": "(You disagree; ask for compensation for the dearer tickets.)",
        "seconds": null,
-       "answer_sv": "Det är inte bra. Jag betalade för de dyra platserna. Kan jag få lite pengar tillbaka?",
-       "answer_en": "That's not good. I paid for the expensive seats. Can I get some money back?",
-       "alts": []
+       "answer_sv": "Jag håller inte med. Jag betalade mer. Jag vill ha lite pengar tillbaka.",
+       "answer_en": "I don't agree. I paid more. I want some money back.",
+       "alts": [],
+       "pattern": "money"
       },
       {
        "other_sv": "Vi kan inte ge pengar, men du får kaffe och kaka i pausen.",
@@ -1996,7 +2155,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Det låter bra. Tack så mycket! Hej då!",
        "answer_en": "That sounds good. Thank you very much! Bye!",
-       "alts": []
+       "alts": [],
+       "pattern": "happy"
       }
      ]
     },
@@ -2014,9 +2174,10 @@ window.YKI_DATA = {
        "task_sv": "(Presentera dig och säg vilken kurs du vill gå.)",
        "task_en": "(Introduce yourself and say which course you want.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. Jag vill gå kursen i matlagning.",
-       "answer_en": "Hi, my name is Alex Andersson. I want to take the cooking course.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att jag vill gå kursen i matlagning.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because I want to take the cooking course.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Det finns platser. Ditt namn?",
@@ -2024,9 +2185,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och fråga om priset.)",
        "task_en": "(Answer and ask the price.)",
        "seconds": null,
-       "answer_sv": "Alex Andersson. Hur mycket kostar kursen?",
-       "answer_en": "Alex Andersson. How much does the course cost?",
-       "alts": []
+       "answer_sv": "Alex Andersson. Hur mycket kostar det?",
+       "answer_en": "Alex Andersson. How much does it cost?",
+       "alts": [],
+       "pattern": "price"
       },
       {
        "other_sv": "Trettio euro för hösten.",
@@ -2034,9 +2196,10 @@ window.YKI_DATA = {
        "task_sv": "(Fråga hur man betalar.)",
        "task_en": "(Ask how to pay.)",
        "seconds": null,
-       "answer_sv": "Hur kan jag betala?",
-       "answer_en": "How can I pay?",
-       "alts": []
+       "answer_sv": "Hur kan jag betala? Kan jag betala med kort?",
+       "answer_en": "How can I pay? Can I pay by card?",
+       "alts": [],
+       "pattern": "pay"
       },
       {
        "other_sv": "Du kan betala på nätet. Har du gått kurs hos oss förut?",
@@ -2046,7 +2209,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Nej, det är första gången.",
        "answer_en": "No, it's the first time.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Kursen börjar på måndag klockan sex.",
@@ -2054,9 +2218,10 @@ window.YKI_DATA = {
        "task_sv": "(Avsluta samtalet.)",
        "task_en": "(End the conversation.)",
        "seconds": null,
-       "answer_sv": "Tack för informationen. Hej då!",
-       "answer_en": "Thanks for the information. Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra dag. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     }
@@ -2081,9 +2246,10 @@ window.YKI_DATA = {
        "task_sv": "(Hälsa och berätta om ditt ärende.)",
        "task_en": "(Greet and tell your business.)",
        "seconds": null,
-       "answer_sv": "Hej! Jag och min sambo vill gifta oss. Jag vill veta hur vi registrerar äktenskapet.",
-       "answer_en": "Hi! My partner and I want to get married. I want to know how we register the marriage.",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag är här för att jag vill gifta mig. Hur gör man?",
+       "answer_en": "Hi, my name is Alex Andersson. I'm here because I want to get married. How does it work?",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Är ni båda över arton år?",
@@ -2091,9 +2257,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg ja.)",
        "task_en": "(Say yes.)",
        "seconds": null,
-       "answer_sv": "Ja, vi är båda myndiga.",
-       "answer_en": "Yes, we are both of age.",
-       "alts": []
+       "answer_sv": "Ja, vi är båda över arton.",
+       "answer_en": "Yes, we are both over eighteen.",
+       "alts": [],
+       "pattern": "yes"
       },
       {
        "other_sv": "Är någon av er redan gift?",
@@ -2101,9 +2268,10 @@ window.YKI_DATA = {
        "task_sv": "(Säg nej.)",
        "task_en": "(Say no.)",
        "seconds": null,
-       "answer_sv": "Nej, ingen av oss är gift eller släkt.",
-       "answer_en": "No, neither of us is married or related.",
-       "alts": []
+       "answer_sv": "Nej, ingen av oss är gift.",
+       "answer_en": "No, neither of us is married.",
+       "alts": [],
+       "pattern": "no"
       },
       {
        "other_sv": "Ni måste fylla i en blankett. Ska jag ge dig den?",
@@ -2111,9 +2279,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Ja tack, det vore bra.",
-       "answer_en": "Yes please, that would be good.",
-       "alts": []
+       "answer_sv": "Ja, gärna! Tack.",
+       "answer_en": "Yes, please! Thanks.",
+       "alts": [],
+       "pattern": "yes"
       },
       {
        "other_sv": "Vad är din personbeteckning?",
@@ -2123,7 +2292,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Min personbeteckning är 010190-123A.",
        "answer_en": "My personal ID number is 010190-123A.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Ta med blanketten när den är klar.",
@@ -2133,7 +2303,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Hur mycket kostar det?",
        "answer_en": "How much does it cost?",
-       "alts": []
+       "alts": [],
+       "pattern": "price"
       },
       {
        "other_sv": "Här är det gratis.",
@@ -2141,9 +2312,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och avsluta samtalet.)",
        "task_en": "(Thank and end the call.)",
        "seconds": null,
-       "answer_sv": "Tack för hjälpen. Hej då!",
-       "answer_en": "Thanks for the help. Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra dag. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     },
@@ -2161,9 +2333,10 @@ window.YKI_DATA = {
        "task_sv": "(Hälsa och berätta om ditt ärende.)",
        "task_en": "(Greet and tell your business.)",
        "seconds": null,
-       "answer_sv": "Hej, jag heter Alex Andersson. Det har blivit en vattenskada i min lägenhet. Ersätter hemförsäkringen det?",
-       "answer_en": "Hi, my name is Alex Andersson. There has been water damage in my flat. Does the home insurance cover it?",
-       "alts": []
+       "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att det har blivit en vattenskada i min lägenhet.",
+       "answer_en": "Hi, my name is Alex Andersson. I'm calling because there has been water damage in my flat.",
+       "alts": [],
+       "pattern": "intro"
       },
       {
        "other_sv": "Oj. När hände det?",
@@ -2171,9 +2344,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Jag såg det i går kväll. Det var vatten på golvet i badrummet.",
-       "answer_en": "I saw it yesterday evening. There was water on the bathroom floor.",
-       "alts": []
+       "answer_sv": "I går kväll. Det var vatten på golvet i badrummet.",
+       "answer_en": "Yesterday evening. There was water on the bathroom floor.",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Vad heter du och var bor du?",
@@ -2181,9 +2355,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara.)",
        "task_en": "(Answer.)",
        "seconds": null,
-       "answer_sv": "Alex Andersson, Björkvägen 5 B 12, Vanda.",
-       "answer_en": "Alex Andersson, Björkvägen 5 B 12, Vantaa.",
-       "alts": []
+       "answer_sv": "Alex Andersson, Björkvägen 5 B 12 i Vanda.",
+       "answer_en": "Alex Andersson, Björkvägen 5 B 12 in Vantaa.",
+       "alts": [],
+       "pattern": "contact"
       },
       {
        "other_sv": "Jag ser att du inte har betalat den senaste räkningen.",
@@ -2193,7 +2368,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Det förstår jag inte. Jag har inte fått någon räkning.",
        "answer_en": "I don't understand that. I haven't received any bill.",
-       "alts": []
+       "alts": [],
+       "pattern": "disagree"
       },
       {
        "other_sv": "Vi skickade den för två månader sedan.",
@@ -2203,7 +2379,8 @@ window.YKI_DATA = {
        "seconds": null,
        "answer_sv": "Jag har haft problem med posten. Jag har inte fått några brev.",
        "answer_en": "I've had problems with the post. I haven't received any letters.",
-       "alts": []
+       "alts": [],
+       "pattern": "answer"
       },
       {
        "other_sv": "Okej, det kan hända. Kan du komma hit så löser vi det?",
@@ -2211,9 +2388,10 @@ window.YKI_DATA = {
        "task_sv": "(Svara och säg när du kan komma.)",
        "task_en": "(Answer; say when you can come.)",
        "seconds": null,
-       "answer_sv": "Ja, jag kan komma på måndag klockan tio.",
-       "answer_en": "Yes, I can come on Monday at ten.",
-       "alts": []
+       "answer_sv": "På måndag klockan tio. Passar det?",
+       "answer_en": "On Monday at ten. Does that suit you?",
+       "alts": [],
+       "pattern": "when"
       },
       {
        "other_sv": "Bra, vi ses då.",
@@ -2221,9 +2399,10 @@ window.YKI_DATA = {
        "task_sv": "(Tacka och avsluta samtalet.)",
        "task_en": "(Thank and end the call.)",
        "seconds": null,
-       "answer_sv": "Tack så mycket. Hej då!",
-       "answer_en": "Thank you very much. Bye!",
-       "alts": []
+       "answer_sv": "Tack för hjälpen! Ha en bra dag. Hej då!",
+       "answer_en": "Thanks for the help! Have a nice day. Bye!",
+       "alts": [],
+       "pattern": "end"
       }
      ]
     }
