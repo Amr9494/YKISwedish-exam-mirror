@@ -1,0 +1,77 @@
+:root{
+  --bg:#f3f5f8; --panel:#fff; --ink:#18222d; --mut:#5d6b7a; --line:#d9dfe6;
+  --acc:#005293; --acc2:#fecc02; --ok:#0a7d45; --rec:#c62828; --soft:#e8f0f8;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#10151b; --panel:#19212a; --ink:#e8edf2; --mut:#9aa8b6; --line:#2b3642;
+        --acc:#6fb6ee; --soft:#1d2a38; --ok:#4cc38a; --rec:#ef5350; color-scheme:dark}
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg); color:var(--ink); font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  padding-bottom:env(safe-area-inset-bottom)}
+button,select,input{font:inherit; color:inherit}
+.top{position:sticky; top:0; z-index:5; display:flex; justify-content:space-between; align-items:center;
+  padding:10px 16px; padding-top:calc(10px + env(safe-area-inset-top)); background:var(--panel); border-bottom:1px solid var(--line)}
+.linkish{background:none; border:0; font-weight:800; font-size:18px; color:var(--acc); cursor:pointer; padding:4px 0}
+.linkish span{color:var(--ink); font-weight:600}
+.icon{background:none; border:1px solid var(--line); border-radius:10px; width:40px; height:40px; font-size:20px; cursor:pointer}
+main{max-width:760px; margin:0 auto; padding:18px 16px 60px; outline:none}
+h1{font-size:26px; margin:6px 0 4px}
+h2{font-size:20px; margin:22px 0 8px}
+.muted{color:var(--mut)} .small{font-size:14px}
+.card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px; margin:12px 0}
+.grid{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.task{display:block; width:100%; text-align:left; cursor:pointer}
+.task:disabled{opacity:.5; cursor:default}
+.task b{display:block; font-size:18px}
+.badge{display:inline-block; font-size:12px; padding:2px 8px; border-radius:99px; background:var(--soft); color:var(--acc); font-weight:600}
+.btn{border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:10px 16px; cursor:pointer; min-height:44px}
+.primary{background:var(--acc); border-color:var(--acc); color:#fff; font-weight:600}
+@media (prefers-color-scheme:dark){.primary{color:#0b1520}}
+.danger{background:var(--rec); border-color:var(--rec); color:#fff; font-weight:600}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.end{justify-content:flex-end}
+.list a, .dlg-link{display:flex; justify-content:space-between; gap:10px; padding:12px 4px; border-bottom:1px solid var(--line); color:inherit; text-decoration:none; cursor:pointer; background:none; border-left:0; border-right:0; border-top:0; width:100%; text-align:left}
+.dlg-link:hover{background:var(--soft)}
+.dlg-link .done{color:var(--ok); font-weight:700}
+details.theme{background:var(--panel); border:1px solid var(--line); border-radius:14px; margin:10px 0; padding:4px 14px}
+details.theme summary{cursor:pointer; padding:10px 0; font-weight:700}
+.exam{background:var(--panel); border:2px solid var(--ink); border-radius:12px; overflow:hidden}
+.exam .head{background:var(--ink); color:var(--panel); padding:8px 14px; font-weight:700; display:flex; justify-content:space-between}
+.exam .body{padding:16px}
+.sit{font-weight:700; font-size:18px}
+.en{color:var(--mut); font-style:italic; font-size:14px}
+.stage{min-height:160px; display:flex; flex-direction:column; gap:12px; justify-content:center}
+.who{font-weight:800; color:var(--acc)}
+.instr{font-size:20px; font-weight:700}
+.bar{height:10px; background:var(--soft); border-radius:99px; overflow:hidden}
+.bar i{display:block; height:100%; width:0; background:var(--acc); transition:width .2s linear}
+.bar.rec i{background:var(--rec)}
+.status{display:flex; align-items:center; gap:10px; font-weight:600}
+.dot{width:12px; height:12px; border-radius:50%; background:var(--rec); animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.wave{display:flex; gap:4px; align-items:flex-end; height:22px}
+.wave i{width:5px; background:var(--acc); border-radius:3px; animation:wave 1s infinite ease-in-out}
+.wave i:nth-child(2){animation-delay:.15s}.wave i:nth-child(3){animation-delay:.3s}.wave i:nth-child(4){animation-delay:.45s}
+@keyframes wave{0%,100%{height:6px}50%{height:22px}}
+.steps{display:flex; gap:6px; margin:10px 0}
+.steps i{flex:1; height:6px; border-radius:3px; background:var(--line)}
+.steps i.on{background:var(--acc)} .steps i.cur{background:var(--acc2)}
+.review .turn{border-top:1px solid var(--line); padding:14px 0}
+.review .turn:first-child{border-top:0}
+.line{margin:4px 0}
+.model{background:var(--soft); border-radius:10px; padding:10px 12px; margin-top:8px}
+.model .sv{font-weight:700; color:var(--acc)}
+audio{width:100%; max-width:420px; height:40px; margin-top:6px}
+.hidden{display:none !important}
+dialog{border:1px solid var(--line); border-radius:16px; background:var(--panel); color:var(--ink); max-width:440px; width:calc(100% - 32px); padding:0}
+dialog::backdrop{background:rgba(0,0,0,.35)}
+.settings{padding:18px; display:flex; flex-direction:column; gap:14px}
+.settings h2{margin:0}
+.settings label{display:flex; flex-direction:column; gap:6px; font-weight:600}
+.settings label.check{flex-direction:row; gap:10px; font-weight:500; align-items:flex-start}
+.settings select{padding:8px; border-radius:8px; border:1px solid var(--line); background:var(--panel)}
+.notice{border-left:4px solid var(--acc2); background:var(--panel); padding:10px 12px; border-radius:8px; margin:12px 0; font-size:14px}
+footer{max-width:760px; margin:0 auto; padding:0 16px 30px; color:var(--mut); font-size:13px}

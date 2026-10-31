@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YKI Swedish – Exam Mirror</title>
+<meta name="description" content="Practise the YKI Swedish (intermediate level) speaking dialogues like in the real exam: listen, answer, record, compare.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23005293'/%3E%3Crect x='30' y='0' width='14' height='100' fill='%23fecc02'/%3E%3Crect x='0' y='43' width='100' height='14' fill='%23fecc02'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <button class="linkish" id="homeBtn" aria-label="Home">YKI <span>Exam Mirror</span></button>
+  <button class="icon" id="settingsBtn" aria-label="Settings" title="Settings">⚙</button>
+</header>
+
+<main id="view" tabindex="-1"></main>
+
+<dialog id="settings">
+  <form method="dialog" class="settings">
+    <h2>Settings</h2>
+    <label>Voice
+      <select id="setVoice"></select>
+    </label>
+    <label>Speech speed
+      <select id="setRate">
+        <option value="0.7">Slow</option>
+        <option value="0.85">Calm</option>
+        <option value="1">Normal (exam)</option>
+      </select>
+    </label>
+    <label>Answer time when the task gives none
+      <select id="setSeconds">
+        <option value="15">15 seconds</option>
+        <option value="20">20 seconds</option>
+        <option value="25">25 seconds</option>
+        <option value="30">30 seconds</option>
+      </select>
+    </label>
+    <label class="check"><input type="checkbox" id="setShowLine"> Show the other person's words while listening (easier)</label>
+    <label class="check"><input type="checkbox" id="setEnglish"> Show English help</label>
+    <p class="muted small" id="voiceNote"></p>
+    <div class="row end"><button value="close" class="primary">Done</button></div>
+  </form>
+</dialog>
+
+<footer>Practice material for the YKI Swedish speaking test. Not affiliated with the YKI test organisers. Recordings stay in your browser.</footer>
+<script src="data/dialogs.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
