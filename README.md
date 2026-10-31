@@ -9,7 +9,7 @@ It mirrors the four speaking tasks of the exam – **Dialoger, Reagera, Berätta
 4. Answer aloud – you are **recorded** with a countdown, like in the exam.
 5. At the end, listen to your own answers and **reveal the model answers** to compare.
 
-34 dialogues (179 lines), 99 Reagera situations, 14 Berätta topics and 14 opinion topics in 7 everyday themes. Every model answer is built from the toolkit patterns, so you memorise a small set of sentences and reuse them.
+34 dialogues (179 lines), 99 Reagera situations, 33 Berätta topics and 38 opinion topics in 7 everyday themes. Every model answer is built from the toolkit patterns, so you memorise a small set of sentences and reuse them.
 Model answers are deliberately **simple and correct (B1 level)**, with an alternative (*eller*) where useful.
 
 ## Run locally
