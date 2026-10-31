@@ -1,337 +1,994 @@
 window.YKI_TASKS = {
  "reagera": [
   {
-   "id": "r1",
+   "id": "r1-1",
+   "n": 1,
    "theme": 1,
-   "type": "congrat",
-   "sv": "Din granne berättar att hon har fått ett barnbarn.",
-   "en": "Your neighbour tells you she has got a grandchild.",
-   "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. Hur mår barnet?",
-   "answer_en": "Congratulations! How nice! I'm so happy for you. How is the baby?"
+   "type": "tell",
+   "sv": "Din kusin från ett annat land kommer till din stad för första gången. Berätta för din granne vad ni ska se och göra.",
+   "en": "Your cousin from another country is coming to your town for the first time. Tell your neighbour what you will see and do.",
+   "answer_sv": "Min kusin kommer på lördag. Det är första gången hon är här. Först ska vi gå till centrum och torget. Sedan ska vi titta på kyrkan och gå i parken. Jag hoppas att det blir fint väder!",
+   "answer_en": "My cousin is coming on Saturday. It's the first time she is here. First we'll go to the centre and the square. Then we'll look at the church and walk in the park. I hope the weather will be nice!"
   },
   {
-   "id": "r2",
+   "id": "r1-2",
+   "n": 2,
+   "theme": 1,
+   "type": "describe",
+   "sv": "Någon ringde på din grannes dörr när grannen var borta. Grannen frågar vem det var. Beskriv personen.",
+   "en": "Someone rang your neighbour's doorbell when the neighbour was away. The neighbour asks who it was. Describe the person.",
+   "answer_sv": "Det var en man. Han var lång och ganska ung, kanske trettio år. Han hade kort, mörkt hår och glasögon. Han hade en blå jacka och en stor väska.",
+   "answer_en": "It was a man. He was tall and quite young, maybe thirty. He had short dark hair and glasses. He had a blue jacket and a big bag."
+  },
+  {
+   "id": "r1-3",
+   "n": 3,
+   "theme": 1,
+   "type": "stop",
+   "sv": "I skolan är två pojkar elaka mot en annan elev. Säg till pojkarna att sluta och förklara varför.",
+   "en": "At school two boys are being mean to another pupil. Tell the boys to stop and explain why.",
+   "answer_sv": "Hallå, sluta! Det är inte okej att vara elak. Han blir ledsen. Ingen vill bli mobbad. Var snälla mot varandra.",
+   "answer_en": "Hey, stop! It's not OK to be mean. He gets sad. Nobody wants to be bullied. Be kind to each other."
+  },
+  {
+   "id": "r1-4",
+   "n": 4,
    "theme": 1,
    "type": "sympathy",
-   "sv": "Din kollegas mamma har dött.",
-   "en": "Your colleague's mother has died.",
-   "answer_sv": "Åh nej, vad tråkigt. Jag beklagar sorgen. Säg till om du behöver hjälp.",
-   "answer_en": "Oh no, how sad. My condolences. Tell me if you need help."
+   "sv": "Du träffar en vän. Hens pappa dog förra veckan.",
+   "en": "You meet a friend. His/her father died last week.",
+   "answer_sv": "Åh nej, vad tråkigt. Jag beklagar sorgen. Säg till om du behöver hjälp. Jag finns här om du vill prata.",
+   "answer_en": "Oh no, how sad. My condolences. Tell me if you need help. I'm here if you want to talk."
   },
   {
-   "id": "r3",
-   "theme": 1,
-   "type": "complain",
-   "sv": "Grannen spelar hög musik klockan ett på natten.",
-   "en": "The neighbour plays loud music at one o'clock at night.",
-   "answer_sv": "Ursäkta! Musiken är för hög, och klockan är ett. Kan du sänka den, tack? Jag måste sova.",
-   "answer_en": "Excuse me! The music is too loud, and it's one o'clock. Can you turn it down, please? I have to sleep."
-  },
-  {
-   "id": "r4",
+   "id": "r1-5",
+   "n": 5,
    "theme": 1,
    "type": "decline",
-   "sv": "En vän bjuder dig på middag, men du har redan andra planer.",
-   "en": "A friend invites you to dinner, but you already have other plans.",
-   "answer_sv": "Tack för inbjudan, men tyvärr kan jag inte, för jag har andra planer. Kanske en annan gång?",
-   "answer_en": "Thanks for the invitation, but unfortunately I can't, because I have other plans. Maybe another time?"
+   "sv": "Middag hos Lisa. Hon lägger fläsk på din tallrik, men du äter aldrig fläsk. Vad säger du?",
+   "en": "Dinner at Lisa's. She puts pork on your plate, but you never eat pork. What do you say?",
+   "answer_sv": "Tack, det är snällt, men nej tack. Tyvärr kan jag inte äta fläsk. Men salladen ser god ut. Kan jag få lite sallad?",
+   "answer_en": "Thanks, that's kind, but no thank you. Unfortunately I can't eat pork. But the salad looks good. Can I have some salad?"
   },
   {
-   "id": "r5",
+   "id": "r1-6",
+   "n": 6,
+   "theme": 1,
+   "type": "thank",
+   "sv": "Sara kommer till dig på kaffe. Hon har köpt en ny tv till dig som present!",
+   "en": "Sara comes to you for coffee. She has bought you a new TV as a present!",
+   "answer_sv": "Oj, tack så mycket! Det är snällt av dig. Men det var inte nödvändigt, den är så dyr! Jag blir jätteglad.",
+   "answer_en": "Oh, thank you so much! That's kind of you. But it wasn't necessary, it's so expensive! I'm really happy."
+  },
+  {
+   "id": "r1-7",
+   "n": 7,
    "theme": 1,
    "type": "apologise",
-   "sv": "Du glömde din väns födelsedag.",
-   "en": "You forgot your friend's birthday.",
-   "answer_sv": "Förlåt, jag glömde din födelsedag. Det var mitt fel. Får jag bjuda dig på kaffe i helgen?",
-   "answer_en": "Sorry, I forgot your birthday. It was my fault. May I buy you a coffee at the weekend?"
+   "sv": "I går blev du och Sara osams om en dum sak. Nu ringer du henne, men hon svarar inte. Lämna ett meddelande.",
+   "en": "Yesterday you and Sara fell out over a silly thing. Now you call her, but she doesn't answer. Leave a message.",
+   "answer_sv": "Hej, det är Alex. Förlåt för i går. Det var mitt fel. Det var dumt att bråka om en så liten sak. Kan du ringa mig när du har tid? Hej då!",
+   "answer_en": "Hi, it's Alex. Sorry about yesterday. It was my fault. It was silly to argue about such a small thing. Can you call me when you have time? Bye!"
   },
   {
-   "id": "r6",
+   "id": "r1-8",
+   "n": 8,
    "theme": 1,
    "type": "help",
-   "sv": "Kranen i köket droppar. Ring fastighetsskötaren.",
-   "en": "The kitchen tap drips. Call the caretaker.",
-   "answer_sv": "Hej, jag heter Alex. Jag har ett problem. Kranen i köket droppar. Kan ni komma och reparera den?",
-   "answer_en": "Hi, my name is Alex. I have a problem. The kitchen tap drips. Can you come and repair it?"
+   "sv": "Din bil är trasig. Be en vän att köra dig. Säg vart och när.",
+   "en": "Your car is broken. Ask a friend to drive you. Say where and when.",
+   "answer_sv": "Hej, jag har ett problem. Min bil är trasig. Kan du köra mig till jobbet i morgon klockan åtta? Tack så mycket, det är snällt av dig.",
+   "answer_en": "Hi, I have a problem. My car is broken. Can you drive me to work tomorrow at eight? Thank you very much, that's kind of you."
   },
   {
-   "id": "r7",
+   "id": "r1-9",
+   "n": 9,
+   "theme": 1,
+   "type": "suggest",
+   "sv": "På stan ser du en vän. Ni har inte träffats på flera år.",
+   "en": "In town you see a friend. You haven't met for several years.",
+   "answer_sv": "Hej! Det var länge sedan! Hur mår du? Vad gör du nu för tiden? Ska vi ta en kaffe och prata lite?",
+   "answer_en": "Hi! Long time no see! How are you? What are you doing these days? Shall we have a coffee and talk a bit?"
+  },
+  {
+   "id": "r1-10",
+   "n": 10,
+   "theme": 1,
+   "type": "decline",
+   "sv": "Kollegan Mikael vill att du kommer på middag hos honom på lördag. Du har inte lust. Svara honom vänligt.",
+   "en": "Your colleague Mikael wants you to come to dinner at his place on Saturday. You don't feel like it. Answer him kindly.",
+   "answer_sv": "Tack för inbjudan, men tyvärr kan jag inte, för jag har andra planer på lördag. Kanske en annan gång?",
+   "answer_en": "Thanks for the invitation, but unfortunately I can't, because I have other plans on Saturday. Maybe another time?"
+  },
+  {
+   "id": "r1-11",
+   "n": 11,
+   "theme": 1,
+   "type": "help",
+   "sv": "Vid en affär ser du ett litet barn som gråter. Barnet är ensamt. Du ser inte mamma eller pappa.",
+   "en": "Outside a shop you see a small child crying. The child is alone. You don't see mum or dad.",
+   "answer_sv": "Hej, varför gråter du? Var är din mamma eller pappa? Var inte rädd, jag hjälper dig. Kom, vi går in i affären och frågar personalen.",
+   "answer_en": "Hi, why are you crying? Where is your mum or dad? Don't be afraid, I'll help you. Come, let's go into the shop and ask the staff."
+  },
+  {
+   "id": "r1-12",
+   "n": 12,
+   "theme": 1,
+   "type": "compliment",
+   "sv": "Din vän har fina kläder i dag och ser jättebra ut. Säg något snällt.",
+   "en": "Your friend has nice clothes today and looks great. Say something kind.",
+   "answer_sv": "Vad fin du är i dag! Färgen passar dig. Är tröjan ny? Den är jättesnygg.",
+   "answer_en": "You look lovely today! The colour suits you. Is the jumper new? It's really nice."
+  },
+  {
+   "id": "r1-13",
+   "n": 13,
+   "theme": 1,
+   "type": "tell",
+   "sv": "Det finns en person som har hjälpt dig mycket. Säg till hen vad hen betyder för dig, och tacka.",
+   "en": "There is a person who has helped you a lot. Tell him/her what he/she means to you, and say thanks.",
+   "answer_sv": "Du är viktig för mig. När jag kom till Finland kände jag ingen. Du hjälpte mig med språket och papperen. Du lyssnar alltid. Tack för att du finns!",
+   "answer_en": "You are important to me. When I came to Finland I knew nobody. You helped me with the language and the papers. You always listen. Thank you for being there!"
+  },
+  {
+   "id": "r1-14",
+   "n": 14,
+   "theme": 1,
+   "type": "tell",
+   "sv": "En annan vän säger att Ella har sagt elaka saker om dig. Nu träffar du Ella.",
+   "en": "Another friend says Ella has said nasty things about you. Now you meet Ella.",
+   "answer_sv": "Jag hörde att du har sagt dåliga saker om mig. Det gjorde mig ledsen. Om du är arg på mig, säg det till mig. Kan vi prata om det?",
+   "answer_en": "I heard that you have said bad things about me. It made me sad. If you are angry with me, tell me. Can we talk about it?"
+  },
+  {
+   "id": "r1-15",
+   "n": 15,
+   "theme": 1,
+   "type": "congrat",
+   "sv": "Din vän har goda nyheter: hon ska bli mamma.",
+   "en": "Your friend has good news: she is going to be a mother.",
+   "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. När ska barnet komma?",
+   "answer_en": "Congratulations! How nice! I'm so happy for you. When is the baby coming?"
+  },
+  {
+   "id": "r1-16",
+   "n": 16,
+   "theme": 1,
+   "type": "sympathy",
+   "sv": "Du hör att din vän ligger på sjukhuset.",
+   "en": "You hear that your friend is in hospital.",
+   "answer_sv": "Åh nej, vad tråkigt. Hur mår du? Säg till om du behöver hjälp. Jag kan handla mat åt dig. Krya på dig!",
+   "answer_en": "Oh no, how sad. How are you? Tell me if you need help. I can buy food for you. Get well soon!"
+  },
+  {
+   "id": "r1-17",
+   "n": 17,
+   "theme": 1,
+   "type": "apologise",
+   "sv": "Lördag: Kalle och Anna gifter sig. På festen ser du att alla har paket med sig – men inte du.",
+   "en": "Saturday: Kalle and Anna get married. At the party you see that everyone has a gift – but not you.",
+   "answer_sv": "Grattis! Vilket fint bröllop! Förlåt, jag glömde presenten. Det var mitt fel. Jag ger er den nästa vecka.",
+   "answer_en": "Congratulations! What a lovely wedding! Sorry, I forgot the present. It was my fault. I'll give it to you next week."
+  },
+  {
+   "id": "r1-18",
+   "n": 18,
+   "theme": 1,
+   "type": "help",
+   "sv": "Du ska fira midsommar i en väns stuga. Du vet inte vad du ska ta med. Fråga en kollega.",
+   "en": "You will celebrate midsummer at a friend's cottage. You don't know what to take. Ask a colleague.",
+   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till en stuga på midsommar. Vad ska jag packa? Behöver jag varma kläder eller badkläder?",
+   "answer_en": "Excuse me, can you help me? I'm going to a cottage at midsummer. What should I pack? Do I need warm clothes or swimwear?"
+  },
+  {
+   "id": "r2-1",
+   "n": 1,
    "theme": 2,
    "type": "complain",
-   "sv": "Du får fel mat på restaurangen.",
-   "en": "You get the wrong food at the restaurant.",
-   "answer_sv": "Ursäkta! Jag beställde fisk, men jag fick kyckling. Kan jag få fisk i stället?",
-   "answer_en": "Excuse me! I ordered fish, but I got chicken. Can I have fish instead?"
+   "sv": "Du kommer in på ett kafé, men det finns inget rent bord. Säg det till personalen.",
+   "en": "You come into a café, but there is no clean table. Tell the staff.",
+   "answer_sv": "Ursäkta, alla bord är smutsiga. Kan du torka ett bord, tack? Vi vill sitta och dricka kaffe.",
+   "answer_en": "Excuse me, all the tables are dirty. Can you wipe a table, please? We want to sit and drink coffee."
   },
   {
-   "id": "r8",
-   "theme": 2,
-   "type": "help",
-   "sv": "Du hittar inte mjölken i affären. Fråga personalen.",
-   "en": "You can't find the milk in the shop. Ask the staff.",
-   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag hittar inte mjölken. Var finns den?",
-   "answer_en": "Excuse me, can you help me? I can't find the milk. Where is it?"
-  },
-  {
-   "id": "r9",
+   "id": "r2-2",
+   "n": 2,
    "theme": 2,
    "type": "complain",
-   "sv": "Du köpte en tröja, men den har ett hål.",
-   "en": "You bought a jumper, but it has a hole.",
-   "answer_sv": "Hej! Jag köpte den här tröjan i går, men den har ett hål. Jag vill byta den. Här är kvittot.",
-   "answer_en": "Hi! I bought this jumper yesterday, but it has a hole. I want to exchange it. Here is the receipt."
+   "sv": "Du lånade ut din bil till en vän. Nu är tanken tom, för vännen tankade inte. Säg vad du tycker.",
+   "en": "You lent your car to a friend. Now the tank is empty, because your friend didn't fill it. Say what you think.",
+   "answer_sv": "Hej, jag är lite arg. Du lånade min bil, men du tankade inte. Nu är tanken tom. Nästa gång måste du tanka. Det är viktigt för mig.",
+   "answer_en": "Hi, I'm a bit angry. You borrowed my car, but you didn't fill it up. Now the tank is empty. Next time you must fill it. It's important to me."
   },
   {
-   "id": "r10",
+   "id": "r2-3",
+   "n": 3,
+   "theme": 2,
+   "type": "tell",
+   "sv": "Du vill betala någon för att städa ditt hem. Berätta för din vän varför.",
+   "en": "You want to pay someone to clean your home. Tell your friend why.",
+   "answer_sv": "Jag vill inte städa själv längre. Jag jobbar mycket och är trött på kvällen. Därför vill jag ha en städare. Då har jag mer tid för familjen.",
+   "answer_en": "I don't want to clean myself any more. I work a lot and I'm tired in the evening. That's why I want a cleaner. Then I have more time for the family."
+  },
+  {
+   "id": "r2-4",
+   "n": 4,
+   "theme": 2,
+   "type": "complain",
+   "sv": "Förra veckan satte du upp en ny taklampa. I natt ramlade den ner på golvet. Gå tillbaka till affären.",
+   "en": "Last week you put up a new ceiling lamp. Last night it fell down onto the floor. Go back to the shop.",
+   "answer_sv": "Hej, jag har ett problem. Jag köpte den här lampan hos er. I går föll den ner från taket. Det är farligt! Jag vill ha pengarna tillbaka. Här är kvittot.",
+   "answer_en": "Hi, I have a problem. I bought this lamp from you. Yesterday it fell down from the ceiling. That's dangerous! I want my money back. Here is the receipt."
+  },
+  {
+   "id": "r2-5",
+   "n": 5,
+   "theme": 2,
+   "type": "complain",
+   "sv": "Du köpte ett skåp. När du bygger det ser du att några delar saknas.",
+   "en": "You bought a cupboard. When you build it you see that some parts are missing.",
+   "answer_sv": "Hej, jag köpte ett skåp hos er i förra veckan. Men några delar saknas i paketet. Kan jag få delarna, eller kan jag byta skåpet? Här är kvittot.",
+   "answer_en": "Hi, I bought a cupboard from you last week. But some parts are missing from the package. Can I get the parts, or can I exchange the cupboard? Here is the receipt."
+  },
+  {
+   "id": "r2-6",
+   "n": 6,
+   "theme": 2,
+   "type": "help",
+   "sv": "I en möbelaffär vill du testa en säng. En person ligger och sover i den. Du hittar inte heller priset.",
+   "en": "In a furniture shop you want to try a bed. A person is lying asleep in it. You can't find the price either.",
+   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag vill prova sängen, men någon sover i den. Och jag ser inte priset. Hur mycket kostar den?",
+   "answer_en": "Excuse me, can you help me? I want to try the bed, but someone is sleeping in it. And I can't see the price. How much does it cost?"
+  },
+  {
+   "id": "r2-7",
+   "n": 7,
+   "theme": 2,
+   "type": "help",
+   "sv": "Du har hittat fina blå stolar. Du behöver två, men det finns bara två kvar – och en kvinna håller i den ena.",
+   "en": "You have found nice blue chairs. You need two, but there are only two left – and a woman is holding one of them.",
+   "answer_sv": "Ursäkta, jag har en fråga. Jag behöver två likadana stolar, och det finns bara två kvar. Kan jag få köpa den stolen? Du kan kanske välja en annan färg?",
+   "answer_en": "Excuse me, I have a question. I need two identical chairs, and there are only two left. Could I buy that chair? Maybe you could choose another colour?"
+  },
+  {
+   "id": "r2-8",
+   "n": 8,
+   "theme": 2,
+   "type": "help",
+   "sv": "Du vill köpa något dyrt, till exempel en tv. Du vill ha ett lägre pris. Vad säger du och varför?",
+   "en": "You want to buy something expensive, for example a TV. You want a lower price. What do you say and why?",
+   "answer_sv": "Hej, jag vill köpa den här tv:n. Men den är dyr. Kan jag få ett bättre pris? Den har en liten skada, och jag betalar direkt. Kan jag få tio procent rabatt?",
+   "answer_en": "Hi, I want to buy this TV. But it's expensive. Can I get a better price? It has a small mark, and I'll pay right away. Can I get a ten percent discount?"
+  },
+  {
+   "id": "r2-9",
+   "n": 9,
+   "theme": 2,
+   "type": "tell",
+   "sv": "Din mamma fyller sextio. Du står i en blomaffär. Säljaren frågar: ”Vad kan jag hjälpa till med?”",
+   "en": "Your mother turns sixty. You are in a flower shop. The seller asks: “How can I help?”",
+   "answer_sv": "Hej! Jag vill köpa blommor. De är till min mamma, för hon fyller sextio år. Hon tycker om rosor. Kan jag få tio röda rosor?",
+   "answer_en": "Hi! I want to buy flowers. They are for my mother, because she turns sixty. She likes roses. Can I have ten red roses?"
+  },
+  {
+   "id": "r2-10",
+   "n": 10,
    "theme": 2,
    "type": "stop",
-   "sv": "En person går före dig i kön.",
-   "en": "A person walks in front of you in the queue.",
-   "answer_sv": "Ursäkta, men det var min tur. Jag har väntat länge. Kan du ställa dig i kön, tack?",
-   "answer_en": "Excuse me, but it was my turn. I have waited a long time. Can you join the queue, please?"
+   "sv": "På en restaurang skriker och springer barnen vid bordet bredvid. Säg något till föräldrarna.",
+   "en": "At a restaurant the children at the next table are shouting and running. Say something to the parents.",
+   "answer_sv": "Ursäkta, men era barn skriker och springer. Vi vill äta i lugn och ro. Kan ni säga till dem, tack?",
+   "answer_en": "Excuse me, but your children are shouting and running. We want to eat in peace. Can you talk to them, please?"
   },
   {
-   "id": "r11",
+   "id": "r2-11",
+   "n": 11,
    "theme": 2,
-   "type": "help",
-   "sv": "Bussen kommer inte. Fråga en person vid hållplatsen.",
-   "en": "The bus doesn't come. Ask a person at the stop.",
-   "answer_sv": "Ursäkta, vet du när bussen kommer? Jag väntar på buss 52 och den är sen.",
-   "answer_en": "Excuse me, do you know when the bus is coming? I'm waiting for bus 52 and it's late."
+   "type": "complain",
+   "sv": "Ni beställde mat på en restaurang för länge sedan, men maten kommer inte. Prata med servitören.",
+   "en": "You ordered food at a restaurant a long time ago, but the food doesn't come. Talk to the waiter.",
+   "answer_sv": "Ursäkta, vi har väntat i fyrtio minuter. Servicen är långsam. När kommer maten? Vi har inte så mycket tid.",
+   "answer_en": "Excuse me, we have waited forty minutes. The service is slow. When is the food coming? We don't have much time."
   },
   {
-   "id": "r12",
+   "id": "r2-12",
+   "n": 12,
    "theme": 2,
-   "type": "decline",
-   "sv": "Försäljaren vill sälja ett dyrt telefonabonnemang till dig.",
-   "en": "The salesperson wants to sell you an expensive phone subscription.",
-   "answer_sv": "Tack, det är snällt, men nej tack. Det är för dyrt för mig.",
-   "answer_en": "Thanks, that's kind, but no thank you. It's too expensive for me."
-  },
-  {
-   "id": "r13",
-   "theme": 3,
    "type": "stop",
-   "sv": "Du ser en person som slänger skräp i parken.",
-   "en": "You see a person throwing rubbish in the park.",
-   "answer_sv": "Ursäkta, men man får inte slänga skräp här. Det är dåligt för naturen. Kan du ta det, tack?",
-   "answer_en": "Excuse me, but you mustn't throw rubbish here. It's bad for nature. Can you take it, please?"
+   "sv": "Det är 28 grader varmt. Utanför affären står en bil med stängda fönster, och inne i bilen sitter en hund. Nu kommer ägaren.",
+   "en": "It's 28 degrees. Outside the shop there is a car with closed windows, and a dog inside. Now the owner comes.",
+   "answer_sv": "Ursäkta, är det din hund? Det är för varmt i bilen. Det är farligt för hunden. Du får inte lämna den där. Kan du öppna bilen, tack?",
+   "answer_en": "Excuse me, is that your dog? It's too hot in the car. It's dangerous for the dog. You mustn't leave it there. Can you open the car, please?"
   },
   {
-   "id": "r14",
-   "theme": 3,
+   "id": "r2-13",
+   "n": 13,
+   "theme": 2,
+   "type": "office",
+   "sv": "Datorn som du köpte för ett år sedan har slutat fungera. Den har fortfarande garanti. Ring affären där du köpte den.",
+   "en": "The computer you bought a year ago has stopped working. It still has a guarantee. Call the shop where you bought it.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min dator. Jag köpte den hos er för ett år sedan, och nu fungerar den inte. Den har garanti. Kan ni reparera den?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my computer. I bought it from you a year ago, and now it doesn't work. It has a guarantee. Can you repair it?"
+  },
+  {
+   "id": "r2-14",
+   "n": 14,
+   "theme": 2,
+   "type": "office",
+   "sv": "På nätet säljer en person en tvättmaskin för 100 euro. Den är tre år gammal. Ring personen.",
+   "en": "Online a person is selling a washing machine for 100 euros. It is three years old. Call the person.",
+   "answer_sv": "Hej, jag heter Alex. Jag ringer om tvättmaskinen. Fungerar den bra? Varför säljer du den? Kan jag komma och titta på den i kväll?",
+   "answer_en": "Hi, my name is Alex. I'm calling about the washing machine. Does it work well? Why are you selling it? Can I come and look at it tonight?"
+  },
+  {
+   "id": "r2-15",
+   "n": 15,
+   "theme": 2,
+   "type": "tell",
+   "sv": "En vän ska besöka dig för första gången och kommer med buss. Säg vilken buss och var hen ska gå av.",
+   "en": "A friend is visiting you for the first time and comes by bus. Say which bus and where to get off.",
+   "answer_sv": "Du tar buss 52 från centrum. Du åker i ungefär tjugo minuter och går av vid skolan. Sedan går du rakt fram. Mitt hus är det gula huset till vänster.",
+   "answer_en": "You take bus 52 from the centre. You ride for about twenty minutes and get off at the school. Then you walk straight on. My house is the yellow house on the left."
+  },
+  {
+   "id": "r2-16",
+   "n": 16,
+   "theme": 2,
    "type": "help",
-   "sv": "Du vet inte var du ska slänga batterier. Fråga en granne.",
-   "en": "You don't know where to throw batteries. Ask a neighbour.",
-   "answer_sv": "Hej! Jag har en fråga. Var ska man slänga gamla batterier?",
-   "answer_en": "Hi! I have a question. Where should you throw old batteries?"
+   "sv": "Du ska till sjukhuset med buss nummer 7. Du har aldrig åkt den här bussen förut.",
+   "en": "You are going to the hospital on bus number 7. You have never taken this bus before.",
+   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till sjukhuset, men jag vet inte var jag ska gå av. Kan du säga till när vi är där? Tack!",
+   "answer_en": "Excuse me, can you help me? I'm going to the hospital, but I don't know where to get off. Can you tell me when we are there? Thanks!"
   },
   {
-   "id": "r15",
-   "theme": 3,
-   "type": "decline",
-   "sv": "En vän vill att ni åker bil till stan, men du vill cykla.",
-   "en": "A friend wants to go to town by car, but you want to cycle.",
-   "answer_sv": "Tack, men jag cyklar hellre. Det är bra för miljön och för hälsan.",
-   "answer_en": "Thanks, but I'd rather cycle. It's good for the environment and for health."
-  },
-  {
-   "id": "r16",
-   "theme": 3,
-   "type": "help",
-   "sv": "Du har gått vilse på en promenad. Ring en vän.",
-   "en": "You got lost on a walk. Call a friend.",
-   "answer_sv": "Hej, det är Alex. Jag har ett problem. Jag har gått vilse i skogen. Kan du hjälpa mig?",
-   "answer_en": "Hi, it's Alex. I have a problem. I'm lost in the forest. Can you help me?"
-  },
-  {
-   "id": "r17",
+   "id": "r3-1",
+   "n": 1,
    "theme": 3,
    "type": "office",
-   "sv": "Du vill veta när papperet hämtas i ditt hus. Ring kommunen.",
-   "en": "You want to know when paper is collected at your building. Call the municipality.",
-   "answer_sv": "Hej, jag heter Alex. Jag ringer om sopor. Jag har en fråga: När hämtar ni papperet på Björkvägen?",
-   "answer_en": "Hello, my name is Alex. I'm calling about rubbish. I have a question: When do you collect paper on Björkvägen?"
+   "sv": "På en promenad hittar du massor av skräp bakom träden: möbler, en kyl och soppåsar. Ring kommunen.",
+   "en": "On a walk you find lots of rubbish behind the trees: furniture, a fridge and rubbish bags. Call the municipality.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om skräp i skogen. Det finns en soffa, ett kylskåp och många soppåsar där. Det är vid Björkvägen. Kan ni hämta det?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about rubbish in the forest. There is a sofa, a fridge and many rubbish bags there. It's by Björkvägen. Can you collect it?"
   },
   {
-   "id": "r18",
+   "id": "r3-2",
+   "n": 2,
+   "theme": 3,
+   "type": "stop",
+   "sv": "Vid sjön ger din mormor choklad till ankorna. Vad säger du?",
+   "en": "By the lake your grandmother is giving chocolate to the ducks. What do you say?",
+   "answer_sv": "Mormor, vänta! Man får inte ge choklad till ankor. Det är dåligt för dem. Vi kan köpa riktig ankmat i stället.",
+   "answer_en": "Grandma, wait! You mustn't give chocolate to ducks. It's bad for them. We can buy real duck food instead."
+  },
+  {
+   "id": "r3-3",
+   "n": 3,
+   "theme": 3,
+   "type": "help",
+   "sv": "Du och din familj vill börja vandra i naturen. Du har bara gamla gympaskor. Prata med personalen i sportaffären.",
+   "en": "You and your family want to start hiking. You only have old trainers. Talk to the staff in the sports shop.",
+   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag behöver bra skor för att gå i skogen. De ska vara varma och inte bli blöta. Har ni storlek fyrtiotvå?",
+   "answer_en": "Excuse me, can you help me? I need good shoes for walking in the forest. They should be warm and not get wet. Do you have size forty-two?"
+  },
+  {
+   "id": "r3-4",
+   "n": 4,
+   "theme": 3,
+   "type": "stop",
+   "sv": "På en promenad ser du en person som lämnar ett gammalt kylskåp i skogen.",
+   "en": "On a walk you see a person leaving an old fridge in the forest.",
+   "answer_sv": "Ursäkta, men man får inte lämna kylskåpet här. Det är dåligt för naturen. Du kan ta det till återvinningen. Kan du ta det tillbaka, tack?",
+   "answer_en": "Excuse me, but you mustn't leave the fridge here. It's bad for nature. You can take it to the recycling centre. Can you take it back, please?"
+  },
+  {
+   "id": "r3-5",
+   "n": 5,
+   "theme": 3,
+   "type": "offer",
+   "sv": "Du ska flytta. Du har saker som du inte behöver. Fråga en vän om hen vill ha dem.",
+   "en": "You are moving. You have things you don't need. Ask a friend if he/she wants them.",
+   "answer_sv": "Hej! Jag ska flytta, och jag har saker som jag inte behöver. Vill du ha min soffa och mina tallrikar? De är gratis. Du kan hämta dem på lördag.",
+   "answer_en": "Hi! I'm moving, and I have things I don't need. Would you like my sofa and my plates? They are free. You can collect them on Saturday."
+  },
+  {
+   "id": "r3-6",
+   "n": 6,
+   "theme": 3,
+   "type": "tell",
+   "sv": "Du vill köpa en ny lägenhet. Mäklaren säger: ”Berätta, hur vill du bo?”",
+   "en": "You want to buy a new flat. The estate agent says: “Tell me, how do you want to live?”",
+   "answer_sv": "Det är viktigt att det är lugnt och tryggt. Jag vill bo nära bussen och affären. Jag vill också ha en balkong och en park i närheten, för jag har barn.",
+   "answer_en": "It's important that it's quiet and safe. I want to live near the bus and the shop. I also want a balcony and a park nearby, because I have children."
+  },
+  {
+   "id": "r3-7",
+   "n": 7,
+   "theme": 3,
+   "type": "tell",
+   "sv": "Din kompis i Spanien har aldrig varit i Finland. Hen skriver: ”Hur är naturen hos er?” Svara i ett röstmeddelande.",
+   "en": "Your friend in Spain has never been to Finland. He/she writes: “What is nature like where you are?” Answer in a voice message.",
+   "answer_sv": "Naturen i Finland är jättefin. Det finns många skogar och sjöar. På sommaren är det ljust hela natten. På vintern är det kallt och det finns mycket snö.",
+   "answer_en": "Nature in Finland is really beautiful. There are many forests and lakes. In summer it's light all night. In winter it's cold and there is a lot of snow."
+  },
+  {
+   "id": "r3-8",
+   "n": 8,
+   "theme": 3,
+   "type": "stop",
+   "sv": "En man är arg på sin hund och sparkar den. Du ser det.",
+   "en": "A man is angry with his dog and kicks it. You see it.",
+   "answer_sv": "Hallå, sluta! Man får inte sparka hunden. Det gör ont. Om du inte slutar, ringer jag polisen!",
+   "answer_en": "Hey, stop! You mustn't kick the dog. It hurts. If you don't stop, I'll call the police!"
+  },
+  {
+   "id": "r4-1",
+   "n": 1,
+   "theme": 4,
+   "type": "help",
+   "sv": "Du är sjuk och behöver medicin, men du kan inte gå ut. Be en vän gå till apoteket.",
+   "en": "You are ill and need medicine, but you can't go out. Ask a friend to go to the pharmacy.",
+   "answer_sv": "Hej, jag har ett problem. Jag är sjuk och kan inte gå ut. Kan du gå till apoteket åt mig? Jag behöver medicin mot feber. Tack så mycket!",
+   "answer_en": "Hi, I have a problem. I'm ill and can't go out. Can you go to the pharmacy for me? I need medicine for fever. Thank you very much!"
+  },
+  {
+   "id": "r4-2",
+   "n": 2,
+   "theme": 4,
+   "type": "describe",
+   "sv": "Klockan tre i dag krockade en röd och en blå bil framför dig. Nu frågar polisen dig.",
+   "en": "At three o'clock today a red and a blue car crashed in front of you. Now the police ask you.",
+   "answer_sv": "Jag stod vid busshållplatsen. En röd bil körde mot rött ljus. Sedan körde den in i en blå bil. Ingen var skadad, tror jag. Det hände klockan tre.",
+   "answer_en": "I was standing at the bus stop. A red car drove through a red light. Then it drove into a blue car. Nobody was hurt, I think. It happened at three o'clock."
+  },
+  {
+   "id": "r4-3",
+   "n": 3,
+   "theme": 4,
+   "type": "help",
+   "sv": "Det är morgon och du är ute och springer. Plötsligt ser du en kvinna som ligger stilla vid vägen.",
+   "en": "It's morning and you are out running. Suddenly you see a woman lying still by the road.",
+   "answer_sv": "Hallå! Hur mår du? Hör du mig? Har du ont någonstans? Vänta, jag ringer ambulansen. Jag stannar här hos dig.",
+   "answer_en": "Hello! How are you? Can you hear me? Are you hurt anywhere? Wait, I'll call an ambulance. I'll stay here with you."
+  },
+  {
+   "id": "r4-4",
+   "n": 4,
+   "theme": 4,
+   "type": "stop",
+   "sv": "Det är grönt ljus och du går över gatan. En bil kommer snabbt och stannar bara en meter från dig.",
+   "en": "The light is green and you cross the street. A car comes fast and stops only a metre from you.",
+   "answer_sv": "Hallå! Du måste stanna vid övergångsstället! Det var farligt. Du körde nästan på mig! Kör försiktigt!",
+   "answer_en": "Hey! You must stop at the crossing! That was dangerous. You almost hit me! Drive carefully!"
+  },
+  {
+   "id": "r4-5",
+   "n": 5,
+   "theme": 4,
+   "type": "help",
+   "sv": "Sköterskan ska ta blod från din arm. Du blir alltid rädd när du ser en nål.",
+   "en": "The nurse is going to take blood from your arm. You always get scared when you see a needle.",
+   "answer_sv": "Hej, jag är lite rädd för sprutor. Kan jag ligga ner? Och kan du säga till innan du börjar? Tack.",
+   "answer_en": "Hi, I'm a bit afraid of needles. Can I lie down? And can you tell me before you start? Thanks."
+  },
+  {
+   "id": "r4-6",
+   "n": 6,
+   "theme": 4,
+   "type": "stop",
+   "sv": "En liten flicka, kanske tio år gammal, står bakom huset med en cigarett.",
+   "en": "A little girl, maybe ten years old, is standing behind the house with a cigarette.",
+   "answer_sv": "Hej! Du är för ung för att röka. Det är farligt för hälsan. Var har du fått cigaretten? Snälla, sluta.",
+   "answer_en": "Hi! You are too young to smoke. It's dangerous for your health. Where did you get the cigarette? Please stop."
+  },
+  {
+   "id": "r4-7",
+   "n": 7,
+   "theme": 4,
+   "type": "office",
+   "sv": "Grannen Pekka kommer hem i bil. Du ser att han är full – han kan knappt gå. Ring polisen.",
+   "en": "Your neighbour Pekka comes home by car. You see he is drunk – he can hardly walk. Call the police.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att min granne kör bil, och han är full. Han parkerade just vid mitt hus på Björkvägen 5. Kan ni komma?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling because my neighbour is driving, and he is drunk. He just parked by my house at Björkvägen 5. Can you come?"
+  },
+  {
+   "id": "r4-8",
+   "n": 8,
    "theme": 4,
    "type": "sympathy",
-   "sv": "Din vän har brutit benet.",
-   "en": "Your friend has broken a leg.",
-   "answer_sv": "Åh nej, vad tråkigt! Hur mår du? Säg till om du behöver hjälp. Krya på dig!",
-   "answer_en": "Oh no, how sad! How are you? Tell me if you need help. Get well soon!"
+   "sv": "En vän berättar att hon har fått en allvarlig sjukdom, cancer.",
+   "en": "A friend tells you she has a serious illness, cancer.",
+   "answer_sv": "Åh nej, vad tråkigt. Jag är så ledsen. Hur mår du? Säg till om du behöver hjälp. Jag finns här för dig.",
+   "answer_en": "Oh no, how sad. I'm so sorry. How are you? Tell me if you need help. I'm here for you."
   },
   {
-   "id": "r19",
-   "theme": 4,
-   "type": "office",
-   "sv": "Du har ont i halsen. Ring hälsocentralen och boka en tid.",
-   "en": "You have a sore throat. Call the health centre and book an appointment.",
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att jag har ont i halsen och feber. Kan jag få en tid i dag?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling because I have a sore throat and a fever. Can I get an appointment today?"
-  },
-  {
-   "id": "r20",
-   "theme": 4,
-   "type": "stop",
-   "sv": "En person röker vid dörren till sjukhuset.",
-   "en": "A person is smoking at the hospital door.",
-   "answer_sv": "Ursäkta, men man får inte röka här. Det är farligt för de sjuka. Kan du gå lite längre bort, tack?",
-   "answer_en": "Excuse me, but you mustn't smoke here. It's dangerous for the patients. Can you go a bit further away, please?"
-  },
-  {
-   "id": "r21",
+   "id": "r4-9",
+   "n": 9,
    "theme": 4,
    "type": "help",
-   "sv": "Du mår dåligt på jobbet. Säg det till din chef.",
-   "en": "You feel ill at work. Tell your boss.",
-   "answer_sv": "Hej, jag har ett problem. Jag mår inte bra och har huvudvärk. Kan jag gå hem?",
-   "answer_en": "Hi, I have a problem. I don't feel well and I have a headache. Can I go home?"
+   "sv": "Du glömmer ofta saker och är orolig för ditt minne. Fråga hälsovårdaren.",
+   "en": "You often forget things and are worried about your memory. Ask the public health nurse.",
+   "answer_sv": "Hej, jag har ett problem. Jag glömmer ofta saker, till exempel nycklar och möten. Jag är orolig. Vad ska jag göra? Kan jag få mer information?",
+   "answer_en": "Hi, I have a problem. I often forget things, for example keys and meetings. I'm worried. What should I do? Can I get more information?"
   },
   {
-   "id": "r22",
+   "id": "r4-10",
+   "n": 10,
    "theme": 4,
    "type": "apologise",
-   "sv": "Du kommer för sent till läkaren.",
-   "en": "You are late for the doctor.",
-   "answer_sv": "Förlåt att jag är sen. Bussen var försenad. Kan jag ändå träffa läkaren?",
-   "answer_en": "Sorry I'm late. The bus was delayed. Can I still see the doctor?"
+   "sv": "I kväll ska du och Lisa gå på bio. Men nu har du feber. Ring Lisa.",
+   "en": "Tonight you and Lisa are going to the cinema. But now you have a fever. Call Lisa.",
+   "answer_sv": "Hej Lisa, det är Alex. Förlåt, men jag kan inte gå på bio i kväll, för jag har feber. Kan vi gå nästa vecka i stället?",
+   "answer_en": "Hi Lisa, it's Alex. Sorry, but I can't go to the cinema tonight, because I have a fever. Can we go next week instead?"
   },
   {
-   "id": "r23",
+   "id": "r4-11",
+   "n": 11,
+   "theme": 4,
+   "type": "help",
+   "sv": "Klockan är tre. Du ligger i sängen med 39 graders feber, och Emil ska hämtas från dagis klockan fyra. Ring en vän.",
+   "en": "It's three o'clock. You are in bed with a 39-degree fever, and Emil must be picked up from day care at four. Call a friend.",
+   "answer_sv": "Hej, jag har ett problem. Jag har feber och kan inte hämta Emil från dagis. Kan du hämta honom klockan fyra? Tack, det är snällt av dig.",
+   "answer_en": "Hi, I have a problem. I have a fever and can't pick up Emil from day care. Can you pick him up at four? Thanks, that's kind of you."
+  },
+  {
+   "id": "r4-12",
+   "n": 12,
+   "theme": 4,
+   "type": "tell",
+   "sv": "I morse vägde du 90 kilo. För ett år sedan vägde du 80. Vad säger du?",
+   "en": "This morning you weighed 90 kilos. A year ago you weighed 80. What do you say?",
+   "answer_sv": "Oj! Jag har gått upp tio kilo. Det är för mycket. Nu måste jag äta mindre socker och träna mer. Jag börjar i morgon!",
+   "answer_en": "Oh! I've put on ten kilos. That's too much. Now I must eat less sugar and exercise more. I'll start tomorrow!"
+  },
+  {
+   "id": "r4-13",
+   "n": 13,
+   "theme": 4,
+   "type": "help",
+   "sv": "På gymmet vill du ha hjälp med mat och träning.",
+   "en": "At the gym you want help with food and exercise.",
+   "answer_sv": "Hej, kan du hjälpa mig? Jag vill gå ner i vikt och bli starkare. Kan jag få ett träningsprogram och tips om mat? Hur mycket kostar det?",
+   "answer_en": "Hi, can you help me? I want to lose weight and get stronger. Can I get a training programme and tips about food? How much does it cost?"
+  },
+  {
+   "id": "r5-1",
+   "n": 1,
+   "theme": 5,
+   "type": "office",
+   "sv": "Du har en viktig fråga till Johan på jobbet, men han är inte där. Skicka ett röstmeddelande till honom.",
+   "en": "You have an important question for Johan at work, but he isn't there. Send him a voice message.",
+   "answer_sv": "Hej Johan, det är Alex. Jag har en viktig fråga om mötet i morgon. Kan du ringa mig när du har tid? Tack, hej då!",
+   "answer_en": "Hi Johan, it's Alex. I have an important question about the meeting tomorrow. Can you call me when you have time? Thanks, bye!"
+  },
+  {
+   "id": "r5-2",
+   "n": 2,
+   "theme": 5,
+   "type": "offer",
+   "sv": "Det är Ellas första dag på ditt jobb. Hon står ensam och verkar inte veta vad hon ska göra.",
+   "en": "It's Ella's first day at your work. She is standing alone and doesn't seem to know what to do.",
+   "answer_sv": "Hej Ella, välkommen! Jag heter Alex. Kan jag hjälpa dig? Först visar jag dig köket. Sedan visar jag hur datorn fungerar. Fråga mig om du har frågor.",
+   "answer_en": "Hi Ella, welcome! My name is Alex. Can I help you? First I'll show you the kitchen. Then I'll show you how the computer works. Ask me if you have questions."
+  },
+  {
+   "id": "r5-3",
+   "n": 3,
+   "theme": 5,
+   "type": "office",
+   "sv": "Du har varit på en arbetsintervju. Nu har du några frågor till. Ring personen som intervjuade dig.",
+   "en": "You have been to a job interview. Now you have some more questions. Call the person who interviewed you.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag var på intervju hos er i går. Jag har några frågor. När börjar jobbet? Och hur många timmar i veckan är det?",
+   "answer_en": "Hello, my name is Alex Andersson. I was at an interview with you yesterday. I have some questions. When does the job start? And how many hours a week is it?"
+  },
+  {
+   "id": "r5-4",
+   "n": 4,
+   "theme": 5,
+   "type": "office",
+   "sv": "Du fick för lite pengar på ditt lönekonto den här månaden. Ring och fråga varför.",
+   "en": "You got too little money in your pay this month. Call and ask why.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min lön. Jag fick för lite pengar den här månaden. Jag jobbade tio timmar extra. Kan du kontrollera det?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my pay. I got too little money this month. I worked ten extra hours. Can you check it?"
+  },
+  {
+   "id": "r5-5",
+   "n": 5,
+   "theme": 5,
+   "type": "suggest",
+   "sv": "En kollega fyller femtio år. Du vill fira. Ge ett förslag.",
+   "en": "A colleague turns fifty. You want to celebrate. Make a suggestion.",
+   "answer_sv": "Jag har en idé. Lisa fyller femtio på fredag. Vi kan köpa en tårta och blommor. Vi kan fira i kafferummet klockan två. Vad tycker du?",
+   "answer_en": "I have an idea. Lisa turns fifty on Friday. We can buy a cake and flowers. We can celebrate in the coffee room at two. What do you think?"
+  },
+  {
+   "id": "r5-6",
+   "n": 6,
+   "theme": 5,
+   "type": "tell",
+   "sv": "Ett annat företag har sagt ja till dig! Gå in till chefen och berätta att du slutar.",
+   "en": "Another company has said yes to you! Go in to the boss and tell him/her that you are leaving.",
+   "answer_sv": "Hej, jag vill prata med dig. Jag har fått ett nytt jobb, så jag vill säga upp mig. Jag slutar om en månad. Tack för allt, jag har trivts här.",
+   "answer_en": "Hi, I want to talk to you. I have got a new job, so I want to resign. I'll leave in a month. Thanks for everything, I have enjoyed it here."
+  },
+  {
+   "id": "r5-7",
+   "n": 7,
+   "theme": 5,
+   "type": "tell",
+   "sv": "Ert projekt behöver en person till. Din gamla kollega Sara är perfekt. Prata med chefen om henne.",
+   "en": "Your project needs one more person. Your old colleague Sara is perfect. Talk to the boss about her.",
+   "answer_sv": "Jag känner en person som passar i vårt projekt. Hon heter Sara. Hon är duktig och flitig och har jobbat med IT i fem år. Jag tycker att du ska träffa henne.",
+   "answer_en": "I know a person who fits our project. Her name is Sara. She is skilled and hard-working and has worked in IT for five years. I think you should meet her."
+  },
+  {
+   "id": "r5-8",
+   "n": 8,
+   "theme": 5,
+   "type": "office",
+   "sv": "Nästa tisdag har ni ett möte med tio personer. Ring receptionen och fixa ett rum.",
+   "en": "Next Tuesday you have a meeting with ten people. Call reception and arrange a room.",
+   "answer_sv": "Hej, jag vill boka ett mötesrum. Jag behöver det på tisdag från klockan nio till elva. Vi är tio personer. Finns det ett rum ledigt?",
+   "answer_en": "Hi, I want to book a meeting room. I need it on Tuesday from nine to eleven. We are ten people. Is there a room free?"
+  },
+  {
+   "id": "r5-9",
+   "n": 9,
+   "theme": 5,
+   "type": "complain",
+   "sv": "Johan lovade att skriva rapporten till fredag. Nu är det fredag, och han har inte gjort något.",
+   "en": "Johan promised to write the report by Friday. Now it's Friday, and he hasn't done anything.",
+   "answer_sv": "Johan, jag är lite arg. Du lovade att skriva rapporten till i dag, men den är inte klar. Nu blir projektet sent. Kan du göra den i dag, tack?",
+   "answer_en": "Johan, I'm a bit angry. You promised to write the report by today, but it isn't ready. Now the project will be late. Can you do it today, please?"
+  },
+  {
+   "id": "r5-10",
+   "n": 10,
+   "theme": 5,
+   "type": "help",
+   "sv": "Du jobbar varje kväll och sover dåligt. Det är för mycket. Prata med chefen och ge en idé.",
+   "en": "You work every evening and sleep badly. It's too much. Talk to the boss and give an idea.",
+   "answer_sv": "Hej, jag har ett problem. Jag har för mycket att göra och är så trött. Kan någon annan hjälpa mig med kunderna? Eller kan jag jobba hemma en dag i veckan?",
+   "answer_en": "Hi, I have a problem. I have too much to do and I'm so tired. Can someone else help me with the customers? Or can I work from home one day a week?"
+  },
+  {
+   "id": "r5-11",
+   "n": 11,
    "theme": 5,
    "type": "congrat",
-   "sv": "Din kollega har fått ett nytt jobb.",
-   "en": "Your colleague has got a new job.",
-   "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. När börjar du?",
-   "answer_en": "Congratulations! How nice! I'm so happy for you. When do you start?"
+   "sv": "Din kollega ska vara hemma med sitt nya barn en tid.",
+   "en": "Your colleague is going to stay at home with her new baby for a while.",
+   "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. Lycka till med barnet! Vi kommer att sakna dig här.",
+   "answer_en": "Congratulations! How nice! I'm so happy for you. Good luck with the baby! We will miss you here."
   },
   {
-   "id": "r24",
+   "id": "r5-12",
+   "n": 12,
+   "theme": 5,
+   "type": "sympathy",
+   "sv": "Din vän har förlorat jobbet.",
+   "en": "Your friend has lost his/her job.",
+   "answer_sv": "Åh nej, vad tråkigt. Jag är ledsen att höra det. Men du är duktig, du hittar ett nytt jobb snart. Säg till om du behöver hjälp.",
+   "answer_en": "Oh no, how sad. I'm sorry to hear that. But you are good, you will find a new job soon. Tell me if you need help."
+  },
+  {
+   "id": "r5-13",
+   "n": 13,
+   "theme": 5,
+   "type": "congrat",
+   "sv": "Din vän ringer. Hen ska börja på ett nytt jobb som hen har velat ha länge.",
+   "en": "Your friend calls. He/she is starting a new job that he/she has wanted for a long time.",
+   "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. När börjar du? Vi måste fira!",
+   "answer_en": "Congratulations! How nice! I'm so happy for you. When do you start? We must celebrate!"
+  },
+  {
+   "id": "r5-14",
+   "n": 14,
+   "theme": 5,
+   "type": "tell",
+   "sv": "Chefen säger att många på jobbet ska förlora sina jobb. Säg till en kollega vad du tycker.",
+   "en": "The boss says many people at work will lose their jobs. Tell a colleague what you think.",
+   "answer_sv": "Det här är hemskt. Jag är orolig. Många har jobbat här länge. Jag tycker att chefen borde prata med oss först. Vad tror du?",
+   "answer_en": "This is terrible. I'm worried. Many have worked here a long time. I think the boss should talk to us first. What do you think?"
+  },
+  {
+   "id": "r5-15",
+   "n": 15,
+   "theme": 5,
+   "type": "tell",
+   "sv": "Du har jobbat i företaget i tre år och har samma lön som när du började. Prata med chefen.",
+   "en": "You have worked in the company for three years and have the same pay as when you started. Talk to the boss.",
+   "answer_sv": "Jag vill prata om min lön. Jag tycker att den är för låg. Jag har jobbat här i tre år, och jag gör mycket. Allt har blivit dyrare. Kan jag få högre lön?",
+   "answer_en": "I want to talk about my pay. I think it's too low. I have worked here for three years, and I do a lot. Everything has become more expensive. Can I get higher pay?"
+  },
+  {
+   "id": "r5-16",
+   "n": 16,
+   "theme": 5,
+   "type": "tell",
+   "sv": "Du vill gå en kurs, till exempel i svenska. Berätta för chefen varför den är bra för jobbet.",
+   "en": "You want to take a course, for example in Swedish. Tell the boss why it is good for the job.",
+   "answer_sv": "Jag vill gå en kurs i svenska. Den är bra för jobbet, för då kan jag prata med kunderna på svenska. Kursen är på kvällen, en gång i veckan.",
+   "answer_en": "I want to take a course in Swedish. It's good for the job, because then I can talk to the customers in Swedish. The course is in the evening, once a week."
+  },
+  {
+   "id": "r5-17",
+   "n": 17,
    "theme": 5,
    "type": "office",
-   "sv": "Det är fel i din lön. Ring löneavdelningen.",
-   "en": "There is a mistake in your salary. Call the payroll office.",
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min lön. Det är fel i lönen. Kan ni kontrollera det?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my salary. There is a mistake. Can you check it?"
+   "sv": "Emil kommer hem från skolan med tårar i ögonen. Han säger att några barn slog honom. Ring hans lärare.",
+   "en": "Emil comes home from school with tears in his eyes. He says some children hit him. Call his teacher.",
+   "answer_sv": "Hej, det är Alex, Emils pappa. Emil kom hem och grät i dag. Han säger att några barn slog honom på rasten. Vad har hänt? Kan vi prata om det?",
+   "answer_en": "Hi, it's Alex, Emil's dad. Emil came home crying today. He says some children hit him at break. What happened? Can we talk about it?"
   },
   {
-   "id": "r25",
+   "id": "r5-18",
+   "n": 18,
    "theme": 5,
-   "type": "help",
-   "sv": "Du förstår inte hur kopieringsmaskinen fungerar. Fråga en kollega.",
-   "en": "You don't understand how the copier works. Ask a colleague.",
-   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag förstår inte hur maskinen fungerar.",
-   "answer_en": "Excuse me, can you help me? I don't understand how the machine works."
+   "type": "office",
+   "sv": "På rasten ser du genom fönstret att en stor pojke slår en liten pojke på skolgården. Ring skolan.",
+   "en": "At break you see through the window that a big boy is hitting a small boy in the school yard. Call the school.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mobbning. I dag såg jag ett barn som slog ett annat barn på skolgården. Kan ni prata med barnen?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about bullying. Today I saw a child hitting another child in the school yard. Can you talk to the children?"
   },
   {
-   "id": "r26",
-   "theme": 5,
-   "type": "decline",
-   "sv": "Chefen vill att du jobbar på söndag, men du kan inte.",
-   "en": "Your boss wants you to work on Sunday, but you can't.",
-   "answer_sv": "Tyvärr kan jag inte på söndag, för jag har en familjefest. Kan jag jobba på lördag i stället?",
-   "answer_en": "Unfortunately I can't on Sunday, because I have a family party. Can I work on Saturday instead?"
-  },
-  {
-   "id": "r27",
-   "theme": 5,
+   "id": "r6-1",
+   "n": 1,
+   "theme": 6,
    "type": "apologise",
-   "sv": "Du har glömt ett möte med en kollega.",
-   "en": "You have forgotten a meeting with a colleague.",
-   "answer_sv": "Förlåt, jag glömde mötet. Det var mitt fel. Passar det i morgon i stället?",
-   "answer_en": "Sorry, I forgot the meeting. It was my fault. Does tomorrow suit you instead?"
+   "sv": "Du har lånat en bok, och nu har den fått en skada. Du går till biblioteket med boken. Förklara vad som hände.",
+   "en": "You borrowed a book, and now it is damaged. You go to the library with the book. Explain what happened.",
+   "answer_sv": "Hej, förlåt, men boken är trasig. Min son spillde vatten på den. Det var mitt fel. Ska jag betala för den?",
+   "answer_en": "Hi, sorry, but the book is damaged. My son spilled water on it. It was my fault. Should I pay for it?"
   },
   {
-   "id": "r28",
-   "theme": 5,
-   "type": "office",
-   "sv": "Ditt barn är sjukt och kan inte komma till skolan. Ring läraren.",
-   "en": "Your child is ill and can't come to school. Call the teacher.",
-   "answer_sv": "Hej, det är Alex, Emils pappa. Emil är sjuk i dag och kan inte komma till skolan. Han har feber.",
-   "answer_en": "Hi, it's Alex, Emil's dad. Emil is ill today and can't come to school. He has a fever."
+   "id": "r6-2",
+   "n": 2,
+   "theme": 6,
+   "type": "stop",
+   "sv": "Du vill läsa i lugn och ro på biblioteket, men en man bredvid dig har ett långt telefonsamtal.",
+   "en": "You want to read in peace in the library, but a man next to you is having a long phone call.",
+   "answer_sv": "Ursäkta, kan du prata tystare? Det här är ett bibliotek, och vi vill läsa. Du kan prata i telefon utanför. Tack.",
+   "answer_en": "Excuse me, can you talk more quietly? This is a library, and we want to read. You can talk on the phone outside. Thanks."
   },
   {
-   "id": "r29",
+   "id": "r6-3",
+   "n": 3,
    "theme": 6,
    "type": "complain",
-   "sv": "Rummet på hotellet är smutsigt.",
-   "en": "The hotel room is dirty.",
-   "answer_sv": "Ursäkta, mitt rum är smutsigt. Kan ni städa det, eller kan jag få ett annat rum?",
-   "answer_en": "Excuse me, my room is dirty. Can you clean it, or can I have another room?"
+   "sv": "Du står i baren och vill beställa. En man kommer efter dig – och bartendern tar hans beställning först.",
+   "en": "You are at the bar and want to order. A man comes after you – and the bartender takes his order first.",
+   "answer_sv": "Ursäkta, men det var min tur. Jag har väntat i tio minuter. Kan jag få beställa nu, tack?",
+   "answer_en": "Excuse me, but it was my turn. I have waited ten minutes. Can I order now, please?"
   },
   {
-   "id": "r30",
+   "id": "r6-4",
+   "n": 4,
+   "theme": 6,
+   "type": "tell",
+   "sv": "Vakten vid dörren tror att du är för ung och vill inte släppa in dig.",
+   "en": "The doorman thinks you are too young and won't let you in.",
+   "answer_sv": "Men jag är tjugofem år! Här är mitt ID-kort. Kan jag komma in nu, tack?",
+   "answer_en": "But I'm twenty-five! Here is my ID card. Can I come in now, please?"
+  },
+  {
+   "id": "r6-5",
+   "n": 5,
+   "theme": 6,
+   "type": "suggest",
+   "sv": "Martin säger: ”Jag vill röra på mig mer, men jag vet inte vad jag ska göra.” Ge honom en idé.",
+   "en": "Martin says: “I want to move more, but I don't know what to do.” Give him an idea.",
+   "answer_sv": "Jag har en idé. Du kan börja simma. Det är bra för hälsan och för ryggen. Simhallen ligger nära ditt hem. Vi kan gå tillsammans!",
+   "answer_en": "I have an idea. You can start swimming. It's good for your health and your back. The swimming hall is near your home. We can go together!"
+  },
+  {
+   "id": "r6-6",
+   "n": 6,
+   "theme": 6,
+   "type": "complain",
+   "sv": "Klockan sex i morse stod du vid gymmets dörr, men dörren öppnades inte med ditt kort. Ring gymmet.",
+   "en": "At six this morning you were at the gym door, but the door didn't open with your card. Call the gym.",
+   "answer_sv": "Hej, jag har ett problem. I morse fungerade mitt kort inte, så jag kunde inte komma in. Kan ni kontrollera kortet?",
+   "answer_en": "Hi, I have a problem. This morning my card didn't work, so I couldn't get in. Can you check the card?"
+  },
+  {
+   "id": "r6-7",
+   "n": 7,
+   "theme": 6,
+   "type": "help",
+   "sv": "I går lämnade du kvar en sak på gymmet. Ring gymmet och säg vad det är och när det hände.",
+   "en": "Yesterday you left something at the gym. Call the gym and say what it is and when it happened.",
+   "answer_sv": "Hej, jag har ett problem. Jag glömde min blå jacka här i går kväll, klockan sju. Har ni hittat den?",
+   "answer_en": "Hi, I have a problem. I forgot my blue jacket here last night, at seven. Have you found it?"
+  },
+  {
+   "id": "r6-8",
+   "n": 8,
+   "theme": 6,
+   "type": "help",
+   "sv": "Du är på ett hotell. I morgon flyger du hem. Gå till receptionen och fråga om en taxi.",
+   "en": "You are at a hotel. Tomorrow you fly home. Go to reception and ask about a taxi.",
+   "answer_sv": "Hej, kan du hjälpa mig? Jag behöver en taxi till flygplatsen i morgon. Mitt flyg går klockan tio. Kan taxin komma klockan sju?",
+   "answer_en": "Hi, can you help me? I need a taxi to the airport tomorrow. My flight leaves at ten. Can the taxi come at seven?"
+  },
+  {
+   "id": "r6-9",
+   "n": 9,
+   "theme": 6,
+   "type": "complain",
+   "sv": "Du kommer till din plats på tåget, men där sitter redan en annan person.",
+   "en": "You come to your seat on the train, but another person is already sitting there.",
+   "answer_sv": "Ursäkta, jag tror att du sitter på min plats. Jag har plats nummer tolv. Här är min biljett.",
+   "answer_en": "Excuse me, I think you are sitting in my seat. I have seat number twelve. Here is my ticket."
+  },
+  {
+   "id": "r6-10",
+   "n": 10,
+   "theme": 6,
+   "type": "tell",
+   "sv": "Du och Sara äter lunch. Hon tittar på sin mobil hela tiden och säger nästan ingenting.",
+   "en": "You and Sara are having lunch. She looks at her mobile all the time and says almost nothing.",
+   "answer_sv": "Hallå, du tittar på telefonen hela tiden. Det är tråkigt för mig. Jag vill prata med dig. Kan du lägga bort telefonen en stund?",
+   "answer_en": "Hey, you are looking at your phone all the time. It's boring for me. I want to talk to you. Can you put the phone away for a while?"
+  },
+  {
+   "id": "r6-11",
+   "n": 11,
    "theme": 6,
    "type": "stop",
-   "sv": "Personen bredvid dig på bion pratar i telefon.",
-   "en": "The person next to you at the cinema is talking on the phone.",
-   "answer_sv": "Ursäkta, kan du prata tystare, tack? Jag vill höra filmen.",
-   "answer_en": "Excuse me, can you talk more quietly, please? I want to hear the film."
+   "sv": "Du har huvudvärk. På bussen sitter en tonåring som lyssnar på musik utan hörlurar. Det är högt.",
+   "en": "You have a headache. On the bus a teenager is listening to music without headphones. It's loud.",
+   "answer_sv": "Ursäkta, musiken är för hög. Jag har huvudvärk. Kan du sänka den, tack?",
+   "answer_en": "Excuse me, the music is too loud. I have a headache. Can you turn it down, please?"
   },
   {
-   "id": "r31",
+   "id": "r6-12",
+   "n": 12,
    "theme": 6,
    "type": "congrat",
-   "sv": "Din vän har vunnit en tävling i sin hobby.",
-   "en": "Your friend has won a competition in his/her hobby.",
-   "answer_sv": "Grattis! Vad roligt! Du är verkligen duktig.",
-   "answer_en": "Congratulations! How nice! You are really good."
+   "sv": "Det är Mikaels femtioårsdag. Du har köpt en tavla till honom. Ge honom presenten.",
+   "en": "It's Mikael's fiftieth birthday. You have bought him a painting. Give him the present.",
+   "answer_sv": "Grattis på födelsedagen! Här är en present till dig. Det är en tavla. Jag hoppas att du tycker om den. Den kan hänga i ditt vardagsrum.",
+   "answer_en": "Happy birthday! Here is a present for you. It's a painting. I hope you like it. It can hang in your living room."
   },
   {
-   "id": "r32",
+   "id": "r6-13",
+   "n": 13,
+   "theme": 6,
+   "type": "stop",
+   "sv": "Du tittar på en film på bio. Mannen bredvid dig äter popcorn, och det låter mycket.",
+   "en": "You are watching a film at the cinema. The man next to you is eating popcorn, and it's noisy.",
+   "answer_sv": "Ursäkta, kan du äta lite tystare? Jag hör inte filmen. Tack.",
+   "answer_en": "Excuse me, can you eat a bit more quietly? I can't hear the film. Thanks."
+  },
+  {
+   "id": "r6-14",
+   "n": 14,
    "theme": 6,
    "type": "help",
-   "sv": "Du vill låna en bok men hittar den inte. Fråga i biblioteket.",
-   "en": "You want to borrow a book but can't find it. Ask in the library.",
-   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag hittar inte en bok. Den heter …",
-   "answer_en": "Excuse me, can you help me? I can't find a book. It's called …"
+   "sv": "Din bil startar inte. Grannen Pekka ska till centrum på morgonen, precis som du. Fråga honom.",
+   "en": "Your car won't start. Your neighbour Pekka is going to the centre in the morning, just like you. Ask him.",
+   "answer_sv": "Hej, jag har ett problem. Min bil är trasig. Du ska också till centrum i morgon, va? Kan jag åka med dig? Jag kan betala för bensinen.",
+   "answer_en": "Hi, I have a problem. My car is broken. You are also going to the centre tomorrow, right? Can I come with you? I can pay for the petrol."
   },
   {
-   "id": "r33",
+   "id": "r6-15",
+   "n": 15,
    "theme": 6,
-   "type": "decline",
-   "sv": "En vän vill att du följer med på en fotbollsmatch, men du är trött.",
-   "en": "A friend wants you to come to a football match, but you are tired.",
-   "answer_sv": "Tack för inbjudan, men tyvärr kan jag inte i kväll, för jag är så trött. Kanske nästa gång?",
-   "answer_en": "Thanks for the invitation, but unfortunately I can't tonight, because I'm so tired. Maybe next time?"
+   "type": "stop",
+   "sv": "En pojke på sju år sitter ensam med en surfplatta på kaféet. Han tittar på en film med mycket våld.",
+   "en": "A seven-year-old boy sits alone with a tablet at the café. He is watching a film with a lot of violence.",
+   "answer_sv": "Hej! Den här filmen är inte för barn. Det är mycket våld i den, och den kan vara läskig. Du kan titta på något annat. Var är din mamma?",
+   "answer_en": "Hi! This film isn't for children. There is a lot of violence in it, and it can be scary. You can watch something else. Where is your mum?"
   },
   {
-   "id": "r34",
+   "id": "r6-16",
+   "n": 16,
+   "theme": 6,
+   "type": "complain",
+   "sv": "Förra veckan köpte du skidor. Redan första dagen gick en skida sönder. Gå tillbaka till affären.",
+   "en": "Last week you bought skis. On the very first day one ski broke. Go back to the shop.",
+   "answer_sv": "Hej! Jag köpte de här skidorna förra veckan, men en skida är trasig. Jag vill byta dem eller få pengarna tillbaka. Här är kvittot.",
+   "answer_en": "Hi! I bought these skis last week, but one ski is broken. I want to exchange them or get my money back. Here is the receipt."
+  },
+  {
+   "id": "r6-17",
+   "n": 17,
+   "theme": 6,
+   "type": "tell",
+   "sv": "En man med mikrofon stoppar dig på gatan: ”Hej, jag är från radion. Vad tycker du om att bo här?”",
+   "en": "A man with a microphone stops you in the street: “Hi, I'm from the radio. What do you think about living here?”",
+   "answer_sv": "Jag tycker om min stad. Den är lugn och ren, och det finns mycket natur. Bussarna är bra. Men det finns för få jobb här.",
+   "answer_en": "I like my town. It's quiet and clean, and there is a lot of nature. The buses are good. But there are too few jobs here."
+  },
+  {
+   "id": "r6-18",
+   "n": 18,
+   "theme": 6,
+   "type": "suggest",
+   "sv": "Varje dag efter skolan är några ungdomar i parken. De skräpar ner och låter mycket. Ge dem ett förslag.",
+   "en": "Every day after school some young people are in the park. They drop litter and are noisy. Give them a suggestion.",
+   "answer_sv": "Hej! Ni skräpar ner i parken. Det är inte bra. Ni kan spela fotboll på planen eller gå till ungdomsgården. Och snälla, släng skräpet i papperskorgen.",
+   "answer_en": "Hi! You are littering in the park. That's not good. You can play football on the pitch or go to the youth centre. And please throw the rubbish in the bin."
+  },
+  {
+   "id": "r7-1",
+   "n": 1,
    "theme": 7,
    "type": "office",
-   "sv": "Du har inte fått ditt nya ID-kort. Ring polisen.",
-   "en": "You haven't received your new ID card. Call the police.",
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt ID-kort. Jag har väntat i två månader. När kommer det?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my ID card. I've waited two months. When will it come?"
+   "sv": "Ditt uppehållstillstånd tar snart slut, och du vet inte vad du ska göra. Ring Migrationsverket.",
+   "en": "Your residence permit runs out soon, and you don't know what to do. Call the Immigration Service.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt uppehållstillstånd. Det tar slut nästa månad. Jag har en fråga: Hur ansöker jag om ett nytt?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my residence permit. It runs out next month. I have a question: How do I apply for a new one?"
   },
   {
-   "id": "r35",
+   "id": "r7-2",
+   "n": 2,
    "theme": 7,
    "type": "office",
-   "sv": "Du har flyttat och måste ändra din adress. Ring myndigheten.",
-   "en": "You have moved and must change your address. Call the authority.",
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att jag har flyttat. Hur ändrar jag min adress?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling because I have moved. How do I change my address?"
+   "sv": "Nu har du klarat YKI-testet! Du vill bli finsk medborgare. Ring Migrationsverket.",
+   "en": "Now you have passed the YKI test! You want to become a Finnish citizen. Call the Immigration Service.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om medborgarskap. Jag har fått mina YKI-resultat. Hur ansöker jag? Och vilka papper behöver jag?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about citizenship. I have got my YKI results. How do I apply? And which papers do I need?"
   },
   {
-   "id": "r36",
+   "id": "r7-3",
+   "n": 3,
    "theme": 7,
-   "type": "help",
-   "sv": "Någon har stulit din cykel. Ring polisen.",
-   "en": "Someone has stolen your bike. Call the police.",
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag har ett problem. Någon har stulit min cykel från gården. Vad ska jag göra?",
-   "answer_en": "Hello, my name is Alex Andersson. I have a problem. Someone has stolen my bike from the yard. What should I do?"
+   "type": "office",
+   "sv": "Du ansökte om pass för sexton månader sedan, men du har fortfarande inget pass. Ring Migrationsverket.",
+   "en": "You applied for a passport sixteen months ago, but you still have no passport. Call the Immigration Service.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt pass. Jag har väntat i sexton månader. Det är för länge. När får jag passet?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my passport. I have waited sixteen months. That's too long. When will I get the passport?"
   },
   {
-   "id": "r37",
+   "id": "r7-4",
+   "n": 4,
    "theme": 7,
-   "type": "congrat",
-   "sv": "Din vän har fått finskt medborgarskap.",
-   "en": "Your friend has got Finnish citizenship.",
-   "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. Vi måste fira!",
-   "answer_en": "Congratulations! How nice! I'm so happy for you. We must celebrate!"
+   "type": "thank",
+   "sv": "Du blir bjuden till en stor fest på Finlands självständighetsdag, för du har studerat flitigt. Vad säger du?",
+   "en": "You are invited to a big party on Finland's Independence Day, because you have studied hard. What do you say?",
+   "answer_sv": "Oj, tack så mycket! Vad roligt! Det är en stor ära för mig. Jag kommer gärna. Hälsa och tacka min lärare!",
+   "answer_en": "Oh, thank you so much! How nice! It's a great honour for me. I'll be happy to come. Please thank my teacher!"
+  },
+  {
+   "id": "r7-5",
+   "n": 5,
+   "theme": 7,
+   "type": "office",
+   "sv": "Din telefon är trasig. Fråga försäkringsbolaget om försäkringen betalar.",
+   "en": "Your phone is broken. Ask the insurance company if the insurance pays.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min telefon. Den föll i golvet och skärmen gick sönder. Betalar hemförsäkringen en ny telefon?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my phone. It fell on the floor and the screen broke. Does the home insurance pay for a new phone?"
+  },
+  {
+   "id": "r7-6",
+   "n": 6,
+   "theme": 7,
+   "type": "office",
+   "sv": "Från nästa månad har du ett nytt jobb med högre lön. Din skatt måste ändras. Ring Skatteförvaltningen.",
+   "en": "From next month you have a new job with higher pay. Your tax must be changed. Call the Tax Administration.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min skatt. Jag har fått ett nytt jobb med högre lön. Hur ändrar jag min skatteprocent?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my tax. I have got a new job with higher pay. How do I change my tax rate?"
+  },
+  {
+   "id": "r7-7",
+   "n": 7,
+   "theme": 7,
+   "type": "office",
+   "sv": "Du har inte fått ditt bostadsbidrag den här månaden. Ring FPA.",
+   "en": "You haven't received your housing allowance this month. Call Kela (FPA).",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt bostadsbidrag. Jag har inte fått pengarna den här månaden. Kan ni kontrollera det?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my housing allowance. I haven't got the money this month. Can you check it?"
+  },
+  {
+   "id": "r7-8",
+   "n": 8,
+   "theme": 7,
+   "type": "office",
+   "sv": "Din plånbok försvann på bussen. Du tror att någon stal den. Ring polisen.",
+   "en": "Your wallet disappeared on the bus. You think someone stole it. Call the police.",
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag vill anmäla ett brott. Någon stal min plånbok på bussen i går. Vad ska jag göra?",
+   "answer_en": "Hello, my name is Alex Andersson. I want to report a crime. Someone stole my wallet on the bus yesterday. What should I do?"
   }
  ],
  "beratta": [

@@ -325,6 +325,42 @@ window.YKI_TOOLKIT = {
    "le": "Call an office",
    "t": "Hej, jag heter [ … ]. Jag ringer om [ … ]. Jag har en fråga: [ … ]?",
    "te": "Hello, my name is [ … ]. I'm calling about [ … ]. I have a question: [ … ]?"
+  },
+  "tell": {
+   "l": "Berätta / förklara",
+   "le": "Tell / explain",
+   "t": "Jag vill berätta att [ … ]. Det är viktigt för mig, för [ … ].",
+   "te": "I want to tell you that [ … ]. It is important to me, because [ … ]."
+  },
+  "describe": {
+   "l": "Beskriv",
+   "le": "Describe",
+   "t": "Det var en [man]. Han var [lång] och hade [mörkt hår]. Han hade [en blå jacka].",
+   "te": "It was a [man]. He was [tall] and had [dark hair]. He had [a blue jacket]."
+  },
+  "thank": {
+   "l": "Tacka",
+   "le": "Thank",
+   "t": "Tack så mycket! Det är snällt av dig. Jag blir jätteglad.",
+   "te": "Thank you very much! That's kind of you. I'm really happy."
+  },
+  "suggest": {
+   "l": "Föreslå",
+   "le": "Suggest",
+   "t": "Jag har en idé. Vi kan [ … ]. Vad tycker du?",
+   "te": "I have an idea. We can [ … ]. What do you think?"
+  },
+  "compliment": {
+   "l": "Ge en komplimang",
+   "le": "Give a compliment",
+   "t": "Vad fin du är i dag! [Färgen] passar dig.",
+   "te": "You look lovely today! [The colour] suits you."
+  },
+  "offer": {
+   "l": "Erbjud",
+   "le": "Offer",
+   "t": "Kan jag hjälpa dig? Jag kan [ … ]. Vill du ha [ … ]?",
+   "te": "Can I help you? I can [ … ]. Would you like [ … ]?"
   }
  },
  "pages": {

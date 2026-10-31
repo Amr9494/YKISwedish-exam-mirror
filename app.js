@@ -303,7 +303,7 @@
       html += '<details class="theme"' + (i === 0 ? ' open' : '') + '><summary>' + th.id + '. ' + esc(th.sv) + ' <span class="muted small">– ' + esc(th.en) + ' · ' + countDone(list) + '/' + list.length + '</span></summary>';
       if (key === 'reagera') html += '<div class="row" style="margin:6px 0 10px"><button class="btn small primary setBtn" data-th="' + th.id + '">Practise this theme (' + list.length + ')</button></div>';
       list.forEach(function (x) {
-        html += '<button class="dlg-link" data-id="' + x.id + '"><span>' + esc(x.sv) + (S.english ? '<br><span class="en">' + esc(x.en) + '</span>' : '') + '</span><span class="done">' + (DONE[x.id] ? '✓' : '') + '</span></button>';
+        html += '<button class="dlg-link" data-id="' + x.id + '"><span>' + (x.n ? '<b>' + x.n + '.</b> ' : '') + esc(x.sv) + (S.english ? '<br><span class="en">' + esc(x.en) + '</span>' : '') + '</span><span class="done">' + (DONE[x.id] ? '✓' : '') + '</span></button>';
       });
       html += '</details>';
     });
