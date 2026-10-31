@@ -84,7 +84,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "opinion"
       }
-     ]
+     ],
+     "page": "12–13"
     },
     {
      "id": "1-2",
@@ -143,7 +144,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "answer"
       }
-     ]
+     ],
+     "page": "14–15"
     },
     {
      "id": "1-3",
@@ -197,7 +199,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "16–17"
     },
     {
      "id": "1-4",
@@ -261,7 +264,8 @@ window.YKI_DATA = {
        ],
        "pattern": "yes"
       }
-     ]
+     ],
+     "page": "18–19"
     },
     {
      "id": "1-5",
@@ -325,7 +329,8 @@ window.YKI_DATA = {
        ],
        "pattern": "offer"
       }
-     ]
+     ],
+     "page": "20–21"
     },
     {
      "id": "1-6",
@@ -384,7 +389,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "comfort"
       }
-     ]
+     ],
+     "page": "22–23"
     },
     {
      "id": "1-7",
@@ -454,7 +460,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "hurry"
       }
-     ]
+     ],
+     "page": "24–25"
     },
     {
      "id": "1-8",
@@ -519,7 +526,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "decline"
       }
-     ]
+     ],
+     "page": "26–27"
     },
     {
      "id": "1-9",
@@ -606,7 +614,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "28–29"
     },
     {
      "id": "1-10",
@@ -671,7 +680,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "30–31"
     },
     {
      "id": "1-11",
@@ -763,7 +773,8 @@ window.YKI_DATA = {
        ],
        "pattern": "sorry"
       }
-     ]
+     ],
+     "page": "32–33"
     }
    ]
   },
@@ -835,7 +846,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "41–42"
     },
     {
      "id": "2-2",
@@ -916,7 +928,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "happy"
       }
-     ]
+     ],
+     "page": "43–44"
     },
     {
      "id": "2-3",
@@ -992,7 +1005,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "45–46"
     },
     {
      "id": "2-4",
@@ -1057,7 +1071,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "thank"
       }
-     ]
+     ],
+     "page": "47–48"
     },
     {
      "id": "2-5",
@@ -1122,7 +1137,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "thank"
       }
-     ]
+     ],
+     "page": "49–50"
     }
    ]
   },
@@ -1194,7 +1210,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "hangup"
       }
-     ]
+     ],
+     "page": "58–59"
     },
     {
      "id": "3-2",
@@ -1259,7 +1276,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "60–61"
     }
    ]
   },
@@ -1331,7 +1349,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "answer"
       }
-     ]
+     ],
+     "page": "68–69"
     },
     {
      "id": "4-2",
@@ -1385,7 +1404,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "when"
       }
-     ]
+     ],
+     "page": "70–71"
     }
    ]
   },
@@ -1446,7 +1466,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "thank"
       }
-     ]
+     ],
+     "page": "79–80"
     },
     {
      "id": "5-2",
@@ -1511,7 +1532,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "yes"
       }
-     ]
+     ],
+     "page": "81–82"
     },
     {
      "id": "5-3",
@@ -1576,7 +1598,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "happy"
       }
-     ]
+     ],
+     "page": "83–84"
     },
     {
      "id": "5-4",
@@ -1652,7 +1675,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "85–86"
     }
    ]
   },
@@ -1724,7 +1748,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "96–97"
     },
     {
      "id": "6-2",
@@ -1800,7 +1825,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "98–99"
     },
     {
      "id": "6-3",
@@ -1865,7 +1891,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "100–101"
     },
     {
      "id": "6-4",
@@ -1930,7 +1957,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "hangup"
       }
-     ]
+     ],
+     "page": "102–103"
     },
     {
      "id": "6-5",
@@ -2006,7 +2034,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "104–105"
     },
     {
      "id": "6-6",
@@ -2082,7 +2111,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "hurry"
       }
-     ]
+     ],
+     "page": "106–107"
     },
     {
      "id": "6-7",
@@ -2158,7 +2188,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "happy"
       }
-     ]
+     ],
+     "page": "108–109"
     },
     {
      "id": "6-8",
@@ -2223,7 +2254,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "110–111"
     }
    ]
   },
@@ -2317,7 +2349,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "119–120"
     },
     {
      "id": "7-2",
@@ -2404,7 +2437,8 @@ window.YKI_DATA = {
        "alts": [],
        "pattern": "end"
       }
-     ]
+     ],
+     "page": "121–122"
     }
    ]
   }

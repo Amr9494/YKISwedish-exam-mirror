@@ -3,6 +3,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-1",
    "n": 1,
+   "page": "34",
    "theme": 1,
    "type": "tell",
    "sv": "Din kusin från ett annat land kommer till din stad för första gången. Berätta för din granne vad ni ska se och göra.",
@@ -13,6 +14,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-2",
    "n": 2,
+   "page": "34",
    "theme": 1,
    "type": "describe",
    "sv": "Någon ringde på din grannes dörr när grannen var borta. Grannen frågar vem det var. Beskriv personen.",
@@ -23,6 +25,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-3",
    "n": 3,
+   "page": "34",
    "theme": 1,
    "type": "stop",
    "sv": "I skolan är två pojkar elaka mot en annan elev. Säg till pojkarna att sluta och förklara varför.",
@@ -33,6 +36,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-4",
    "n": 4,
+   "page": "34",
    "theme": 1,
    "type": "sympathy",
    "sv": "Du träffar en vän. Hens pappa dog förra veckan.",
@@ -43,6 +47,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-5",
    "n": 5,
+   "page": "34",
    "theme": 1,
    "type": "decline",
    "sv": "Middag hos Lisa. Hon lägger fläsk på din tallrik, men du äter aldrig fläsk. Vad säger du?",
@@ -53,6 +58,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-6",
    "n": 6,
+   "page": "34",
    "theme": 1,
    "type": "thank",
    "sv": "Sara kommer till dig på kaffe. Hon har köpt en ny tv till dig som present!",
@@ -63,6 +69,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-7",
    "n": 7,
+   "page": "34",
    "theme": 1,
    "type": "apologise",
    "sv": "I går blev du och Sara osams om en dum sak. Nu ringer du henne, men hon svarar inte. Lämna ett meddelande.",
@@ -73,6 +80,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-8",
    "n": 8,
+   "page": "34",
    "theme": 1,
    "type": "help",
    "sv": "Din bil är trasig. Be en vän att köra dig. Säg vart och när.",
@@ -83,6 +91,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-9",
    "n": 9,
+   "page": "34",
    "theme": 1,
    "type": "suggest",
    "sv": "På stan ser du en vän. Ni har inte träffats på flera år.",
@@ -93,6 +102,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-10",
    "n": 10,
+   "page": "34",
    "theme": 1,
    "type": "decline",
    "sv": "Kollegan Mikael vill att du kommer på middag hos honom på lördag. Du har inte lust. Svara honom vänligt.",
@@ -103,6 +113,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-11",
    "n": 11,
+   "page": "34",
    "theme": 1,
    "type": "help",
    "sv": "Vid en affär ser du ett litet barn som gråter. Barnet är ensamt. Du ser inte mamma eller pappa.",
@@ -113,6 +124,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-12",
    "n": 12,
+   "page": "34",
    "theme": 1,
    "type": "compliment",
    "sv": "Din vän har fina kläder i dag och ser jättebra ut. Säg något snällt.",
@@ -123,6 +135,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-13",
    "n": 13,
+   "page": "34",
    "theme": 1,
    "type": "tell",
    "sv": "Det finns en person som har hjälpt dig mycket. Säg till hen vad hen betyder för dig, och tacka.",
@@ -133,6 +146,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-14",
    "n": 14,
+   "page": "34",
    "theme": 1,
    "type": "tell",
    "sv": "En annan vän säger att Ella har sagt elaka saker om dig. Nu träffar du Ella.",
@@ -143,6 +157,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-15",
    "n": 15,
+   "page": "35",
    "theme": 1,
    "type": "congrat",
    "sv": "Din vän har goda nyheter: hon ska bli mamma.",
@@ -153,6 +168,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-16",
    "n": 16,
+   "page": "35",
    "theme": 1,
    "type": "sympathy",
    "sv": "Du hör att din vän ligger på sjukhuset.",
@@ -163,6 +179,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-17",
    "n": 17,
+   "page": "35",
    "theme": 1,
    "type": "apologise",
    "sv": "Lördag: Kalle och Anna gifter sig. På festen ser du att alla har paket med sig – men inte du.",
@@ -173,6 +190,7 @@ window.YKI_TASKS = {
   {
    "id": "r1-18",
    "n": 18,
+   "page": "35",
    "theme": 1,
    "type": "help",
    "sv": "Du ska fira midsommar i en väns stuga. Du vet inte vad du ska ta med. Fråga en kollega.",
@@ -183,6 +201,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-1",
    "n": 1,
+   "page": "51",
    "theme": 2,
    "type": "complain",
    "sv": "Du kommer in på ett kafé, men det finns inget rent bord. Säg det till personalen.",
@@ -193,6 +212,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-2",
    "n": 2,
+   "page": "51",
    "theme": 2,
    "type": "complain",
    "sv": "Du lånade ut din bil till en vän. Nu är tanken tom, för vännen tankade inte. Säg vad du tycker.",
@@ -203,6 +223,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-3",
    "n": 3,
+   "page": "51",
    "theme": 2,
    "type": "tell",
    "sv": "Du vill betala någon för att städa ditt hem. Berätta för din vän varför.",
@@ -213,6 +234,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-4",
    "n": 4,
+   "page": "51",
    "theme": 2,
    "type": "complain",
    "sv": "Förra veckan satte du upp en ny taklampa. I natt ramlade den ner på golvet. Gå tillbaka till affären.",
@@ -223,6 +245,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-5",
    "n": 5,
+   "page": "51",
    "theme": 2,
    "type": "complain",
    "sv": "Du köpte ett skåp. När du bygger det ser du att några delar saknas.",
@@ -233,6 +256,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-6",
    "n": 6,
+   "page": "51",
    "theme": 2,
    "type": "help",
    "sv": "I en möbelaffär vill du testa en säng. En person ligger och sover i den. Du hittar inte heller priset.",
@@ -243,6 +267,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-7",
    "n": 7,
+   "page": "51",
    "theme": 2,
    "type": "help",
    "sv": "Du har hittat fina blå stolar. Du behöver två, men det finns bara två kvar – och en kvinna håller i den ena.",
@@ -253,6 +278,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-8",
    "n": 8,
+   "page": "51",
    "theme": 2,
    "type": "help",
    "sv": "Du vill köpa något dyrt, till exempel en tv. Du vill ha ett lägre pris. Vad säger du och varför?",
@@ -263,6 +289,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-9",
    "n": 9,
+   "page": "51",
    "theme": 2,
    "type": "tell",
    "sv": "Din mamma fyller sextio. Du står i en blomaffär. Säljaren frågar: ”Vad kan jag hjälpa till med?”",
@@ -273,6 +300,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-10",
    "n": 10,
+   "page": "51",
    "theme": 2,
    "type": "stop",
    "sv": "På en restaurang skriker och springer barnen vid bordet bredvid. Säg något till föräldrarna.",
@@ -283,6 +311,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-11",
    "n": 11,
+   "page": "51",
    "theme": 2,
    "type": "complain",
    "sv": "Ni beställde mat på en restaurang för länge sedan, men maten kommer inte. Prata med servitören.",
@@ -293,6 +322,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-12",
    "n": 12,
+   "page": "51",
    "theme": 2,
    "type": "stop",
    "sv": "Det är 28 grader varmt. Utanför affären står en bil med stängda fönster, och inne i bilen sitter en hund. Nu kommer ägaren.",
@@ -303,6 +333,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-13",
    "n": 13,
+   "page": "51",
    "theme": 2,
    "type": "office",
    "sv": "Datorn som du köpte för ett år sedan har slutat fungera. Den har fortfarande garanti. Ring affären där du köpte den.",
@@ -313,6 +344,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-14",
    "n": 14,
+   "page": "51",
    "theme": 2,
    "type": "office",
    "sv": "På nätet säljer en person en tvättmaskin för 100 euro. Den är tre år gammal. Ring personen.",
@@ -323,6 +355,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-15",
    "n": 15,
+   "page": "52",
    "theme": 2,
    "type": "tell",
    "sv": "En vän ska besöka dig för första gången och kommer med buss. Säg vilken buss och var hen ska gå av.",
@@ -333,6 +366,7 @@ window.YKI_TASKS = {
   {
    "id": "r2-16",
    "n": 16,
+   "page": "52",
    "theme": 2,
    "type": "help",
    "sv": "Du ska till sjukhuset med buss nummer 7. Du har aldrig åkt den här bussen förut.",
@@ -343,6 +377,7 @@ window.YKI_TASKS = {
   {
    "id": "r3-1",
    "n": 1,
+   "page": "62",
    "theme": 3,
    "type": "office",
    "sv": "På en promenad hittar du massor av skräp bakom träden: möbler, en kyl och soppåsar. Ring kommunen.",
@@ -353,6 +388,7 @@ window.YKI_TASKS = {
   {
    "id": "r3-2",
    "n": 2,
+   "page": "62",
    "theme": 3,
    "type": "stop",
    "sv": "Vid sjön ger din mormor choklad till ankorna. Vad säger du?",
@@ -363,6 +399,7 @@ window.YKI_TASKS = {
   {
    "id": "r3-3",
    "n": 3,
+   "page": "62",
    "theme": 3,
    "type": "help",
    "sv": "Du och din familj vill börja vandra i naturen. Du har bara gamla gympaskor. Prata med personalen i sportaffären.",
@@ -373,6 +410,7 @@ window.YKI_TASKS = {
   {
    "id": "r3-4",
    "n": 4,
+   "page": "62",
    "theme": 3,
    "type": "stop",
    "sv": "På en promenad ser du en person som lämnar ett gammalt kylskåp i skogen.",
@@ -383,6 +421,7 @@ window.YKI_TASKS = {
   {
    "id": "r3-5",
    "n": 5,
+   "page": "62",
    "theme": 3,
    "type": "offer",
    "sv": "Du ska flytta. Du har saker som du inte behöver. Fråga en vän om hen vill ha dem.",
@@ -393,6 +432,7 @@ window.YKI_TASKS = {
   {
    "id": "r3-6",
    "n": 6,
+   "page": "62",
    "theme": 3,
    "type": "tell",
    "sv": "Du vill köpa en ny lägenhet. Mäklaren säger: ”Berätta, hur vill du bo?”",
@@ -403,6 +443,7 @@ window.YKI_TASKS = {
   {
    "id": "r3-7",
    "n": 7,
+   "page": "62",
    "theme": 3,
    "type": "tell",
    "sv": "Din kompis i Spanien har aldrig varit i Finland. Hen skriver: ”Hur är naturen hos er?” Svara i ett röstmeddelande.",
@@ -413,6 +454,7 @@ window.YKI_TASKS = {
   {
    "id": "r3-8",
    "n": 8,
+   "page": "62",
    "theme": 3,
    "type": "stop",
    "sv": "En man är arg på sin hund och sparkar den. Du ser det.",
@@ -423,6 +465,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-1",
    "n": 1,
+   "page": "73",
    "theme": 4,
    "type": "help",
    "sv": "Du är sjuk och behöver medicin, men du kan inte gå ut. Be en vän gå till apoteket.",
@@ -433,6 +476,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-2",
    "n": 2,
+   "page": "72",
    "theme": 4,
    "type": "describe",
    "sv": "Klockan tre i dag krockade en röd och en blå bil framför dig. Nu frågar polisen dig.",
@@ -443,6 +487,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-3",
    "n": 3,
+   "page": "72",
    "theme": 4,
    "type": "help",
    "sv": "Det är morgon och du är ute och springer. Plötsligt ser du en kvinna som ligger stilla vid vägen.",
@@ -453,6 +498,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-4",
    "n": 4,
+   "page": "72",
    "theme": 4,
    "type": "stop",
    "sv": "Det är grönt ljus och du går över gatan. En bil kommer snabbt och stannar bara en meter från dig.",
@@ -463,6 +509,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-5",
    "n": 5,
+   "page": "72",
    "theme": 4,
    "type": "help",
    "sv": "Sköterskan ska ta blod från din arm. Du blir alltid rädd när du ser en nål.",
@@ -473,6 +520,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-6",
    "n": 6,
+   "page": "72",
    "theme": 4,
    "type": "stop",
    "sv": "En liten flicka, kanske tio år gammal, står bakom huset med en cigarett.",
@@ -483,6 +531,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-7",
    "n": 7,
+   "page": "72",
    "theme": 4,
    "type": "office",
    "sv": "Grannen Pekka kommer hem i bil. Du ser att han är full – han kan knappt gå. Ring polisen.",
@@ -493,6 +542,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-8",
    "n": 8,
+   "page": "72",
    "theme": 4,
    "type": "sympathy",
    "sv": "En vän berättar att hon har fått en allvarlig sjukdom, cancer.",
@@ -503,6 +553,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-9",
    "n": 9,
+   "page": "72",
    "theme": 4,
    "type": "help",
    "sv": "Du glömmer ofta saker och är orolig för ditt minne. Fråga hälsovårdaren.",
@@ -513,6 +564,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-10",
    "n": 10,
+   "page": "72",
    "theme": 4,
    "type": "apologise",
    "sv": "I kväll ska du och Lisa gå på bio. Men nu har du feber. Ring Lisa.",
@@ -523,6 +575,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-11",
    "n": 11,
+   "page": "72",
    "theme": 4,
    "type": "help",
    "sv": "Klockan är tre. Du ligger i sängen med 39 graders feber, och Emil ska hämtas från dagis klockan fyra. Ring en vän.",
@@ -533,6 +586,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-12",
    "n": 12,
+   "page": "72",
    "theme": 4,
    "type": "tell",
    "sv": "I morse vägde du 90 kilo. För ett år sedan vägde du 80. Vad säger du?",
@@ -543,6 +597,7 @@ window.YKI_TASKS = {
   {
    "id": "r4-13",
    "n": 13,
+   "page": "72",
    "theme": 4,
    "type": "help",
    "sv": "På gymmet vill du ha hjälp med mat och träning.",
@@ -553,6 +608,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-1",
    "n": 1,
+   "page": "87",
    "theme": 5,
    "type": "office",
    "sv": "Du har en viktig fråga till Johan på jobbet, men han är inte där. Skicka ett röstmeddelande till honom.",
@@ -563,6 +619,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-2",
    "n": 2,
+   "page": "87",
    "theme": 5,
    "type": "offer",
    "sv": "Det är Ellas första dag på ditt jobb. Hon står ensam och verkar inte veta vad hon ska göra.",
@@ -573,6 +630,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-3",
    "n": 3,
+   "page": "87",
    "theme": 5,
    "type": "office",
    "sv": "Du har varit på en arbetsintervju. Nu har du några frågor till. Ring personen som intervjuade dig.",
@@ -583,6 +641,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-4",
    "n": 4,
+   "page": "87",
    "theme": 5,
    "type": "office",
    "sv": "Du fick för lite pengar på ditt lönekonto den här månaden. Ring och fråga varför.",
@@ -593,6 +652,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-5",
    "n": 5,
+   "page": "87",
    "theme": 5,
    "type": "suggest",
    "sv": "En kollega fyller femtio år. Du vill fira. Ge ett förslag.",
@@ -603,6 +663,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-6",
    "n": 6,
+   "page": "87",
    "theme": 5,
    "type": "tell",
    "sv": "Ett annat företag har sagt ja till dig! Gå in till chefen och berätta att du slutar.",
@@ -613,6 +674,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-7",
    "n": 7,
+   "page": "87",
    "theme": 5,
    "type": "tell",
    "sv": "Ert projekt behöver en person till. Din gamla kollega Sara är perfekt. Prata med chefen om henne.",
@@ -623,6 +685,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-8",
    "n": 8,
+   "page": "87",
    "theme": 5,
    "type": "office",
    "sv": "Nästa tisdag har ni ett möte med tio personer. Ring receptionen och fixa ett rum.",
@@ -633,6 +696,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-9",
    "n": 9,
+   "page": "87",
    "theme": 5,
    "type": "complain",
    "sv": "Johan lovade att skriva rapporten till fredag. Nu är det fredag, och han har inte gjort något.",
@@ -643,6 +707,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-10",
    "n": 10,
+   "page": "87",
    "theme": 5,
    "type": "help",
    "sv": "Du jobbar varje kväll och sover dåligt. Det är för mycket. Prata med chefen och ge en idé.",
@@ -653,6 +718,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-11",
    "n": 11,
+   "page": "87",
    "theme": 5,
    "type": "congrat",
    "sv": "Din kollega ska vara hemma med sitt nya barn en tid.",
@@ -663,6 +729,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-12",
    "n": 12,
+   "page": "87",
    "theme": 5,
    "type": "sympathy",
    "sv": "Din vän har förlorat jobbet.",
@@ -673,6 +740,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-13",
    "n": 13,
+   "page": "87",
    "theme": 5,
    "type": "congrat",
    "sv": "Din vän ringer. Hen ska börja på ett nytt jobb som hen har velat ha länge.",
@@ -683,6 +751,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-14",
    "n": 14,
+   "page": "87",
    "theme": 5,
    "type": "tell",
    "sv": "Chefen säger att många på jobbet ska förlora sina jobb. Säg till en kollega vad du tycker.",
@@ -693,6 +762,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-15",
    "n": 15,
+   "page": "88",
    "theme": 5,
    "type": "tell",
    "sv": "Du har jobbat i företaget i tre år och har samma lön som när du började. Prata med chefen.",
@@ -703,6 +773,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-16",
    "n": 16,
+   "page": "88",
    "theme": 5,
    "type": "tell",
    "sv": "Du vill gå en kurs, till exempel i svenska. Berätta för chefen varför den är bra för jobbet.",
@@ -713,6 +784,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-17",
    "n": 17,
+   "page": "88",
    "theme": 5,
    "type": "office",
    "sv": "Emil kommer hem från skolan med tårar i ögonen. Han säger att några barn slog honom. Ring hans lärare.",
@@ -723,6 +795,7 @@ window.YKI_TASKS = {
   {
    "id": "r5-18",
    "n": 18,
+   "page": "88",
    "theme": 5,
    "type": "office",
    "sv": "På rasten ser du genom fönstret att en stor pojke slår en liten pojke på skolgården. Ring skolan.",
@@ -733,6 +806,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-1",
    "n": 1,
+   "page": "112",
    "theme": 6,
    "type": "apologise",
    "sv": "Du har lånat en bok, och nu har den fått en skada. Du går till biblioteket med boken. Förklara vad som hände.",
@@ -743,6 +817,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-2",
    "n": 2,
+   "page": "112",
    "theme": 6,
    "type": "stop",
    "sv": "Du vill läsa i lugn och ro på biblioteket, men en man bredvid dig har ett långt telefonsamtal.",
@@ -753,6 +828,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-3",
    "n": 3,
+   "page": "112",
    "theme": 6,
    "type": "complain",
    "sv": "Du står i baren och vill beställa. En man kommer efter dig – och bartendern tar hans beställning först.",
@@ -763,6 +839,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-4",
    "n": 4,
+   "page": "112",
    "theme": 6,
    "type": "tell",
    "sv": "Vakten vid dörren tror att du är för ung och vill inte släppa in dig.",
@@ -773,6 +850,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-5",
    "n": 5,
+   "page": "112",
    "theme": 6,
    "type": "suggest",
    "sv": "Martin säger: ”Jag vill röra på mig mer, men jag vet inte vad jag ska göra.” Ge honom en idé.",
@@ -783,6 +861,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-6",
    "n": 6,
+   "page": "112",
    "theme": 6,
    "type": "complain",
    "sv": "Klockan sex i morse stod du vid gymmets dörr, men dörren öppnades inte med ditt kort. Ring gymmet.",
@@ -793,6 +872,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-7",
    "n": 7,
+   "page": "112",
    "theme": 6,
    "type": "help",
    "sv": "I går lämnade du kvar en sak på gymmet. Ring gymmet och säg vad det är och när det hände.",
@@ -803,6 +883,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-8",
    "n": 8,
+   "page": "112",
    "theme": 6,
    "type": "help",
    "sv": "Du är på ett hotell. I morgon flyger du hem. Gå till receptionen och fråga om en taxi.",
@@ -813,6 +894,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-9",
    "n": 9,
+   "page": "112",
    "theme": 6,
    "type": "complain",
    "sv": "Du kommer till din plats på tåget, men där sitter redan en annan person.",
@@ -823,6 +905,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-10",
    "n": 10,
+   "page": "112",
    "theme": 6,
    "type": "tell",
    "sv": "Du och Sara äter lunch. Hon tittar på sin mobil hela tiden och säger nästan ingenting.",
@@ -833,6 +916,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-11",
    "n": 11,
+   "page": "112",
    "theme": 6,
    "type": "stop",
    "sv": "Du har huvudvärk. På bussen sitter en tonåring som lyssnar på musik utan hörlurar. Det är högt.",
@@ -843,6 +927,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-12",
    "n": 12,
+   "page": "112",
    "theme": 6,
    "type": "congrat",
    "sv": "Det är Mikaels femtioårsdag. Du har köpt en tavla till honom. Ge honom presenten.",
@@ -853,6 +938,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-13",
    "n": 13,
+   "page": "112",
    "theme": 6,
    "type": "stop",
    "sv": "Du tittar på en film på bio. Mannen bredvid dig äter popcorn, och det låter mycket.",
@@ -863,6 +949,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-14",
    "n": 14,
+   "page": "112",
    "theme": 6,
    "type": "help",
    "sv": "Din bil startar inte. Grannen Pekka ska till centrum på morgonen, precis som du. Fråga honom.",
@@ -873,6 +960,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-15",
    "n": 15,
+   "page": "113",
    "theme": 6,
    "type": "stop",
    "sv": "En pojke på sju år sitter ensam med en surfplatta på kaféet. Han tittar på en film med mycket våld.",
@@ -883,6 +971,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-16",
    "n": 16,
+   "page": "113",
    "theme": 6,
    "type": "complain",
    "sv": "Förra veckan köpte du skidor. Redan första dagen gick en skida sönder. Gå tillbaka till affären.",
@@ -893,6 +982,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-17",
    "n": 17,
+   "page": "113",
    "theme": 6,
    "type": "tell",
    "sv": "En man med mikrofon stoppar dig på gatan: ”Hej, jag är från radion. Vad tycker du om att bo här?”",
@@ -903,6 +993,7 @@ window.YKI_TASKS = {
   {
    "id": "r6-18",
    "n": 18,
+   "page": "113",
    "theme": 6,
    "type": "suggest",
    "sv": "Varje dag efter skolan är några ungdomar i parken. De skräpar ner och låter mycket. Ge dem ett förslag.",
@@ -913,6 +1004,7 @@ window.YKI_TASKS = {
   {
    "id": "r7-1",
    "n": 1,
+   "page": "123",
    "theme": 7,
    "type": "office",
    "sv": "Ditt uppehållstillstånd tar snart slut, och du vet inte vad du ska göra. Ring Migrationsverket.",
@@ -923,6 +1015,7 @@ window.YKI_TASKS = {
   {
    "id": "r7-2",
    "n": 2,
+   "page": "123",
    "theme": 7,
    "type": "office",
    "sv": "Nu har du klarat YKI-testet! Du vill bli finsk medborgare. Ring Migrationsverket.",
@@ -933,6 +1026,7 @@ window.YKI_TASKS = {
   {
    "id": "r7-3",
    "n": 3,
+   "page": "123",
    "theme": 7,
    "type": "office",
    "sv": "Du ansökte om pass för sexton månader sedan, men du har fortfarande inget pass. Ring Migrationsverket.",
@@ -943,6 +1037,7 @@ window.YKI_TASKS = {
   {
    "id": "r7-4",
    "n": 4,
+   "page": "123",
    "theme": 7,
    "type": "thank",
    "sv": "Du blir bjuden till en stor fest på Finlands självständighetsdag, för du har studerat flitigt. Vad säger du?",
@@ -953,6 +1048,7 @@ window.YKI_TASKS = {
   {
    "id": "r7-5",
    "n": 5,
+   "page": "123",
    "theme": 7,
    "type": "office",
    "sv": "Din telefon är trasig. Fråga försäkringsbolaget om försäkringen betalar.",
@@ -963,6 +1059,7 @@ window.YKI_TASKS = {
   {
    "id": "r7-6",
    "n": 6,
+   "page": "123",
    "theme": 7,
    "type": "office",
    "sv": "Från nästa månad har du ett nytt jobb med högre lön. Din skatt måste ändras. Ring Skatteförvaltningen.",
@@ -973,6 +1070,7 @@ window.YKI_TASKS = {
   {
    "id": "r7-7",
    "n": 7,
+   "page": "123",
    "theme": 7,
    "type": "office",
    "sv": "Du har inte fått ditt bostadsbidrag den här månaden. Ring FPA.",
@@ -983,6 +1081,7 @@ window.YKI_TASKS = {
   {
    "id": "r7-8",
    "n": 8,
+   "page": "123",
    "theme": 7,
    "type": "office",
    "sv": "Din plånbok försvann på bussen. Du tror att någon stal den. Ring polisen.",

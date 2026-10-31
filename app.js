@@ -111,6 +111,7 @@
     $('#goPractice').onclick = function () { location.hash = '#' + key + '/list'; };
   }
 
+  function bookRef(p) { return p ? ' <span class="pg" title="Page in the book">📖 s. ' + esc(p) + '</span>' : ''; }
   function say(text) { return ' <button class="btn small say" data-t="' + esc(text) + '" aria-label="Listen">🔊</button>'; }
   function hl(text) { return esc(text).replace(/\[([^\]]*)\]/g, '<span class="slot">$1</span>'); }
   function chip(p) { return p ? '<div class="chip">🧰 <span>' + esc(p.l) + (S.english ? ' <i>(' + esc(p.le) + ')</i>' : '') + '</span> → <b>' + hl(p.t) + '</b></div>' : ''; }
@@ -155,7 +156,7 @@
       var done = t.dialogs.filter(function (d) { return DONE[d.id]; }).length;
       html += '<details class="theme"' + (i === 0 ? ' open' : '') + '><summary>' + t.id + '. ' + esc(t.sv) + ' <span class="muted small">– ' + esc(t.en) + ' · ' + done + '/' + t.dialogs.length + '</span></summary>';
       t.dialogs.forEach(function (d) {
-        html += '<button class="dlg-link" data-id="' + d.id + '"><span><b>Dialog ' + d.n + '.</b> ' + esc(d.situation_sv) + (S.english ? '<br><span class="en">' + esc(d.title_en) + '</span>' : '') + '</span><span class="done">' + (DONE[d.id] ? '✓' : '') + '</span></button>';
+        html += '<button class="dlg-link" data-id="' + d.id + '"><span><b>Dialog ' + d.n + '.</b> ' + esc(d.situation_sv) + (S.english ? '<br><span class="en">' + esc(d.title_en) + '</span>' : '') + '</span><span class="done">' + bookRef(d.page) + ' ' + (DONE[d.id] ? '✓' : '') + '</span></button>';
       });
       html += '</details>';
     });
@@ -166,7 +167,7 @@
     $('#randNew').onclick = function () { var a = allDialogs().filter(function (x) { return !DONE[x.d.id]; }); if (!a.length) a = allDialogs(); location.hash = '#d/' + a[Math.floor(Math.random() * a.length)].d.id; };
   }
 
-  function examHead(t, d) { return '<div class="head"><span>Dialog ' + d.n + '. ' + esc(t.sv) + '</span><span>' + d.speaker + ' / Du</span></div>'; }
+  function examHead(t, d) { return '<div class="head"><span>Dialog ' + d.n + '. ' + esc(t.sv) + '</span><span>' + d.speaker + ' / Du' + bookRef(d.page) + '</span></div>'; }
 
   function intro(id) {
     var x = findDialog(id); if (!x) { dialogList(); return; }
@@ -303,7 +304,7 @@
       html += '<details class="theme"' + (i === 0 ? ' open' : '') + '><summary>' + th.id + '. ' + esc(th.sv) + ' <span class="muted small">– ' + esc(th.en) + ' · ' + countDone(list) + '/' + list.length + '</span></summary>';
       if (key === 'reagera') html += '<div class="row" style="margin:6px 0 10px"><button class="btn small primary setBtn" data-th="' + th.id + '">Practise this theme (' + list.length + ')</button></div>';
       list.forEach(function (x) {
-        html += '<button class="dlg-link" data-id="' + x.id + '"><span>' + (x.n ? '<b>' + x.n + '.</b> ' : '') + esc(x.sv) + (S.english ? '<br><span class="en">' + esc(x.en) + '</span>' : '') + '</span><span class="done">' + (DONE[x.id] ? '✓' : '') + '</span></button>';
+        html += '<button class="dlg-link" data-id="' + x.id + '"><span>' + (x.n ? '<b>' + x.n + '.</b> ' : '') + esc(x.sv) + (S.english ? '<br><span class="en">' + esc(x.en) + '</span>' : '') + '</span><span class="done">' + bookRef(x.page) + ' ' + (DONE[x.id] ? '✓' : '') + '</span></button>';
       });
       html += '</details>';
     });
@@ -322,7 +323,7 @@
     }
   }
 
-  function taskHead(key, x) { return '<div class="head"><span>' + TASKDEF[key].name + ' · ' + esc(themeName(x.theme)) + '</span><span>Du</span></div>'; }
+  function taskHead(key, x) { return '<div class="head"><span>' + TASKDEF[key].name + ' · ' + esc(themeName(x.theme)) + (x.n ? ' · ' + x.n : '') + '</span><span>' + bookRef(x.page) + '</span></div>'; }
   function questions(x) {
     return '<ul class="qs">' + x.qs.map(function (q, i) { return '<li>' + esc(q) + (S.english ? ' <span class="en">' + esc(x.qs_en[i]) + '</span>' : '') + '</li>'; }).join('') + '</ul>';
   }
@@ -426,7 +427,7 @@
     var html = '<div class="exam"><div class="head"><span>' + t.name + ' – compare</span><span>' + items.length + (items.length > 1 ? ' tasks' : ' task') + '</span></div><div class="body review">' +
       '<div class="row" style="margin:0 0 12px"><button class="btn primary" id="showAll">Show ' + (items.length > 1 ? 'all model answers' : 'model answer') + '</button><button class="btn" id="enT">' + (S.english ? 'Hide' : 'Show') + ' English</button></div>';
     items.forEach(function (x, i) {
-      html += '<div class="turn"><div class="sit">' + esc(x.sv) + say(x.sv) + '</div>' + en(x.en) + (x.qs ? questions(x) : '') +
+      html += '<div class="turn"><div class="small muted">' + esc(themeName(x.theme)) + (x.n ? ' · ' + x.n : '') + bookRef(x.page) + '</div><div class="sit">' + esc(x.sv) + say(x.sv) + '</div>' + en(x.en) + (x.qs ? questions(x) : '') +
         (recs[i] ? '<div class="small muted">Your answer:</div><audio controls src="' + recs[i] + '"></audio>' : (recs.length ? '<div class="small muted">(no recording)</div>' : '')) +
         '<div><button class="btn small reveal" data-i="' + i + '">Show model answer</button></div><div class="model hidden" id="m' + i + '">';
       if (key === 'reagera') {
