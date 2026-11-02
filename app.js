@@ -1,7 +1,7 @@
 /* YKI Exam Mirror – dialog practice. Plain JS, no build step. */
 (function () {
   'use strict';
-  var DATA = window.YKI_DATA, TK = window.YKI_TOOLKIT, TASKS = window.YKI_TASKS;
+  var DATA = window.YKI_DATA, TK = window.YKI_TOOLKIT, TASKS = window.YKI_TASKS, LISTEN = window.YKI_LISTEN || [];
   var view = document.getElementById('view');
 
   /* ---------------- settings & progress (browser storage) ---------------- */
@@ -64,6 +64,7 @@
   /* ---------------- microphone ---------------- */
   var stream = null;
   function getMic() {
+    try { AU.pause(); } catch (e) {}
     if (stream) return Promise.resolve(stream);
     if (!navigator.mediaDevices || !window.MediaRecorder) return Promise.resolve(null);
     return navigator.mediaDevices.getUserMedia({ audio: true }).then(function (s) { stream = s; return s; }).catch(function () { return null; });
@@ -90,7 +91,8 @@
       '<h2>Choose a task</h2><div class="grid">' +
       Object.keys(TASKDEF).map(function (k) {
         var t = TASKDEF[k];
-        return '<button class="card task" data-k="' + k + '"><span class="badge">' + taskCount(k) + '</span><b>' + t.name + '</b><span class="muted small">' + t.desc + '</span></button>';
+        return '<button class="card task" data-k="' + k + '"><span class="badge">' + taskCount(k) + '</span><b>' + t.name + '</b><span class="muted small">' + t.desc + '</span></button>' +
+          (k === 'dialogs' ? '<button class="card task" data-k="listen"><span class="badge">' + LISTEN.length + ' ' + (LISTEN.length === 1 ? 'episode' : 'episodes') + '</span><b>🎧 Lyssna</b><span class="muted small">Swedish → English → Swedish. A playlist for the bike, the bus or the kitchen.</span></button>' : '');
       }).join('') + '</div>' +
       '<div class="notice">Every task has a <b>Words &amp; toolkit</b> page: the words you will see in the instructions and ready-made sentences. All model answers are built from that toolkit, so learn it first, then practise.</div>' +
       '<div class="notice">Works best in Chrome, Edge or Safari. Allow the microphone when asked. Your recordings stay in your browser – nothing is uploaded.</div>');
@@ -458,10 +460,123 @@
     };
   }
 
+  /* ---------------- Lyssna: playlist (Swedish → English → Swedish) ---------------- */
+  var AU = new Audio(); AU.preload = 'metadata';
+  var LS = Object.assign({ idx: 0, rate: 1, loop: 'all', showEn: true }, load('yki_listen', {}));
+  if (LS.idx >= LISTEN.length) LS.idx = 0;
+  function saveLS() { save('yki_listen', LS); }
+  function fmt(t) { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ':' + ('0' + t % 60).slice(-2); }
+  function curEp() { return LISTEN[LS.idx]; }
+  function loadEp(i, autoplay, at) {
+    LS.idx = (i + LISTEN.length) % LISTEN.length; saveLS();
+    var ep = curEp();
+    if (AU.getAttribute('src') !== ep.src) AU.src = ep.src;
+    AU.playbackRate = LS.rate;
+    if (at) AU.currentTime = at;
+    if (autoplay) AU.play().catch(function () {});
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({ title: ep.title_sv, artist: 'YKI svenska – Lyssna', album: themeName(ep.theme),
+        artwork: [{ src: 'icon-512.png', sizes: '512x512', type: 'image/png' }] });
+    }
+    paintListen();
+  }
+  function lineAt(t) { var ls = curEp().lines, k = 0; for (var i = 0; i < ls.length; i++) if (ls[i].t <= t + 0.05) k = i; return k; }
+  function jumpLine(d) {
+    var ls = curEp().lines, k = lineAt(AU.currentTime) + d;
+    if (k < 0) { loadEp(LS.idx - 1, !AU.paused); return; }
+    if (k >= ls.length) { loadEp(LS.idx + 1, !AU.paused); return; }
+    AU.currentTime = ls[k].t;
+  }
+  AU.addEventListener('ended', function () {
+    if (LS.loop === 'one') { AU.currentTime = 0; AU.play(); }
+    else if (LS.loop === 'all') loadEp(LS.idx + 1, true);
+  });
+  AU.addEventListener('timeupdate', function () { tickListen(); try { LS.pos = AU.currentTime; } catch (e) {} });
+  AU.addEventListener('play', paintListen); AU.addEventListener('pause', function () { saveLS(); paintListen(); });
+  if ('mediaSession' in navigator) {
+    var ms = navigator.mediaSession;
+    try {
+      ms.setActionHandler('play', function () { AU.play(); });
+      ms.setActionHandler('pause', function () { AU.pause(); });
+      ms.setActionHandler('previoustrack', function () { jumpLine(-1); });
+      ms.setActionHandler('nexttrack', function () { jumpLine(1); });
+      ms.setActionHandler('seekbackward', function () { AU.currentTime = Math.max(0, AU.currentTime - 10); });
+      ms.setActionHandler('seekforward', function () { AU.currentTime = AU.currentTime + 10; });
+    } catch (e) {}
+  }
+
+  var lastLine = -1;
+  function tickListen() {
+    var seek = $('#lseek'); if (!seek) return;
+    var d = AU.duration || curEp().dur;
+    if (!seek.dataset.drag) seek.value = d ? AU.currentTime / d * 1000 : 0;
+    $('#lcur').textContent = fmt(AU.currentTime); $('#ldur').textContent = fmt(d);
+    var k = lineAt(AU.currentTime);
+    if (k !== lastLine) {
+      lastLine = k;
+      view.querySelectorAll('.lines .ln').forEach(function (el, i) { el.classList.toggle('on', i === k); });
+      var on = view.querySelector('.lines .ln.on');
+      if (on && !AU.paused && $('#follow') && $('#follow').checked) on.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+  }
+  function paintListen() {
+    var pb = $('#lplay'); if (!pb) return;
+    pb.textContent = AU.paused ? '▶' : '❚❚'; pb.setAttribute('aria-label', AU.paused ? 'Play' : 'Pause');
+    var ep = curEp();
+    $('#lnow').textContent = ep.title_sv; $('#lnowen').textContent = ep.title_en + ' · ' + themeName(ep.theme);
+    view.querySelectorAll('.eplist .dlg-link').forEach(function (b) { b.classList.toggle('cur', +b.dataset.i === LS.idx); });
+    var tr = $('#ltrans');
+    if (tr && tr.dataset.ep !== ep.id) {
+      tr.dataset.ep = ep.id; lastLine = -1;
+      tr.innerHTML = ep.lines.map(function (l, i) {
+        return '<div class="ln" data-i="' + i + '"><div class="sv">' + esc(l.sv) + '</div>' + (LS.showEn ? '<div class="en">' + esc(l.en) + '</div>' : '') + '</div>';
+      }).join('');
+      tr.querySelectorAll('.ln').forEach(function (el) { el.onclick = function () { AU.currentTime = ep.lines[+el.dataset.i].t; if (AU.paused) AU.play(); }; });
+    }
+    tickListen();
+  }
+
+  function listenView() {
+    stopSpeech(); releaseMic();
+    if (!LISTEN.length) { h('<p>No episodes yet.</p>'); return; }
+    if (!AU.getAttribute('src')) { loadEp(LS.idx, false, LS.pos || 0); }
+    var html = '<p><button class="btn" id="back">← Home</button></p><h1>🎧 Lyssna</h1>' +
+      '<p class="muted">Each sentence comes three times: <b>Swedish → English → Swedish</b>. Press play and put the phone in your pocket – it keeps going from episode to episode. The headphone buttons skip to the next or previous sentence.</p>' +
+      '<div class="player"><div class="now" id="lnow"></div><div class="en" id="lnowen"></div>' +
+      '<input type="range" class="seek" id="lseek" min="0" max="1000" value="0" aria-label="Position"><div class="times"><span id="lcur">0:00</span><span id="ldur">0:00</span></div>' +
+      '<div class="row"><button class="pbtn" id="lprevE" aria-label="Previous episode">⏮</button><button class="pbtn" id="lprev" aria-label="Previous sentence">↺</button>' +
+      '<button class="pbtn big" id="lplay" aria-label="Play">▶</button><button class="pbtn" id="lnext" aria-label="Next sentence">↻</button><button class="pbtn" id="lnextE" aria-label="Next episode">⏭</button></div>' +
+      '<div class="opts"><label>Speed <select id="lrate"><option value="0.8">0.8×</option><option value="0.9">0.9×</option><option value="1">1×</option><option value="1.1">1.1×</option></select></label>' +
+      '<label>Repeat <select id="lloop"><option value="all">all episodes</option><option value="one">this episode</option><option value="off">off</option></select></label>' +
+      '<label><input type="checkbox" id="lshowEn"' + (LS.showEn ? ' checked' : '') + '> English text</label>' +
+      '<label><input type="checkbox" id="follow" checked> Follow</label></div></div>' +
+      '<h2>Text</h2><div class="card lines" id="ltrans"></div>' +
+      '<h2>Episodes</h2><div class="card eplist">' + LISTEN.map(function (ep, i) {
+        return '<button class="dlg-link" data-i="' + i + '"><span><b>' + (i + 1) + '.</b> ' + esc(ep.title_sv) + '<br><span class="en">' + esc(ep.title_en) + ' · ' + esc(themeName(ep.theme)) + '</span></span><span class="done">' + fmt(ep.dur) + '</span></button>';
+      }).join('') + '</div>';
+    h(html);
+    $('#back').onclick = function () { location.hash = ''; };
+    $('#lplay').onclick = function () { if (AU.paused) AU.play().catch(function () {}); else AU.pause(); };
+    $('#lprev').onclick = function () { jumpLine(-1); };
+    $('#lnext').onclick = function () { jumpLine(1); };
+    $('#lprevE').onclick = function () { loadEp(LS.idx - 1, !AU.paused); };
+    $('#lnextE').onclick = function () { loadEp(LS.idx + 1, !AU.paused); };
+    $('#lrate').value = String(LS.rate); $('#lrate').onchange = function () { LS.rate = +this.value; AU.playbackRate = LS.rate; saveLS(); };
+    $('#lloop').value = LS.loop; $('#lloop').onchange = function () { LS.loop = this.value; saveLS(); };
+    $('#lshowEn').onchange = function () { LS.showEn = this.checked; saveLS(); $('#ltrans').dataset.ep = ''; paintListen(); };
+    var sk = $('#lseek');
+    sk.oninput = function () { sk.dataset.drag = 1; };
+    sk.onchange = function () { delete sk.dataset.drag; var d = AU.duration || curEp().dur; AU.currentTime = sk.value / 1000 * d; };
+    view.querySelectorAll('.eplist .dlg-link').forEach(function (b) { b.onclick = function () { loadEp(+b.dataset.i, true); window.scrollTo({ top: 0, behavior: 'smooth' }); }; });
+    paintListen();
+  }
+
+
   /* ---------------- router ---------------- */
   function route() {
     var hsh = location.hash.replace(/^#/, ''), m;
-    if (TASKDEF[hsh]) hub(hsh);
+    if (hsh === 'listen') listenView();
+    else if (TASKDEF[hsh]) hub(hsh);
     else if ((m = hsh.match(/^(dialogs|reagera|beratta|asikt)\/words$/))) words(m[1]);
     else if (hsh === 'dialogs/list') dialogList();
     else if ((m = hsh.match(/^(reagera|beratta|asikt)\/list$/))) taskList(m[1]);
