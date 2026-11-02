@@ -105,3 +105,19 @@ footer{max-width:760px; margin:0 auto; padding:0 16px 30px; color:var(--mut); fo
 .lines .ln .sv{font-weight:600} .lines .ln.on{background:var(--soft); border-left-color:var(--acc2)}
 .eplist .dlg-link.cur{background:var(--soft)}
 .opts{display:flex; gap:14px; flex-wrap:wrap; font-size:14px; justify-content:center; margin-top:8px}
+.cat b{font-size:20px}
+.wtext{width:100%; min-height:240px; margin-top:6px; padding:12px; border:1px solid var(--line); border-radius:10px; background:var(--panel); color:var(--ink); font-family:inherit; font-size:16px; line-height:1.5; resize:vertical}
+pre.tpl{white-space:pre-wrap; font:inherit; margin:6px 0; font-weight:600; color:var(--acc)}
+.mline{margin:6px 0}
+.rtext{margin:12px 0}
+.rl{margin:6px 0; cursor:pointer; padding:4px 6px; border-radius:6px}
+.rl:hover{background:var(--soft)}
+.rl.spB{padding-left:22px}
+.rq{margin:12px 0; padding:10px 12px; border:1px solid var(--line); border-radius:10px}
+.ropt{display:block; padding:6px 4px; cursor:pointer; border-radius:6px}
+.ropt.good{background:rgba(10,125,69,.15); font-weight:600}
+.ropt.bad{background:rgba(198,40,40,.15); text-decoration:line-through}
+.spk{color:var(--acc); font-size:12px}
+.spk.spB{color:var(--acc2)}
+a.btn{display:inline-flex; align-items:center; text-decoration:none; color:inherit}
+a.btn.primary{color:#fff}

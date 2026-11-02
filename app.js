@@ -84,18 +84,36 @@
     return countDone(TASKS[key]) + ' / ' + TASKS[key].length + ' done';
   }
 
+  function catCard(k, icon, name, sub, desc, badge) {
+    return '<button class="card task cat" data-k="' + k + '"><span class="badge">' + badge + '</span><b>' + icon + ' ' + name + ' <span class="muted small">' + sub + '</span></b><span class="muted small">' + desc + '</span></button>';
+  }
   function home() {
     stopSpeech(); releaseMic();
+    var sp = 0, spAll = 0;
+    Object.keys(TASKDEF).forEach(function (k) { var l = k === 'dialogs' ? allDialogs().map(function (x) { return x.d; }) : TASKS[k]; sp += countDone(l); spAll += l.length; });
+    var W = window.YKI_WRITE || [], M = window.YKI_MAT || [];
     h('<h1>YKI Swedish – Exam Mirror</h1>' +
-      '<p class="muted">Practise the speaking test of the YKI intermediate level (mellannivå) like in the real exam: you listen, you answer, you are recorded – then you compare with a model answer.</p>' +
-      '<h2>Choose a task</h2><div class="grid">' +
+      '<p class="muted">Practise for the YKI Swedish test, intermediate level (mellannivå): speaking, listening, writing and reading – plus all the study material.</p>' +
+      '<div class="grid">' +
+      catCard('tala', '🗣', 'Tala', 'Speaking', 'Dialoger, Reagera, Berätta, Din åsikt – answer, get recorded, compare.', sp + ' / ' + spAll + ' done') +
+      catCard('listen', '🎧', 'Lyssna', 'Listening', 'Swedish → English → Swedish playlist. Keeps playing in your pocket.', LISTEN.length + ' episodes') +
+      catCard('skriva', '✍️', 'Skriva', 'Writing', 'Write the message, e-mail or opinion text, then compare with a model text.', countDone(W) + ' / ' + W.length + ' done') +
+      catCard('lasa', '📖', 'Läsa', 'Reading', 'Short texts with questions. Tap a sentence to hear it.', LISTEN.filter(function (x) { return DONE['rd-' + x.id]; }).length + ' / ' + LISTEN.length + ' done') +
+      catCard('material', '📚', 'Material', 'Study material', 'The guide, toolkits, key words and memory sheet – as PDF and as talking pages.', M.length + ' items') +
+      '</div>' +
+      '<div class="notice">Works best in Chrome, Edge or Safari. Allow the microphone when asked. Your recordings and texts stay in your browser – nothing is uploaded.</div>');
+    view.querySelectorAll('.task').forEach(function (b) { b.onclick = function () { location.hash = '#' + b.dataset.k; }; });
+  }
+
+  function tala() {
+    stopSpeech(); releaseMic();
+    h('<p><button class="btn" id="back">← Home</button></p><h1>🗣 Tala – Speaking</h1>' +
+      '<p class="muted">The four parts of the speaking test. Each part has a <b>Words &amp; toolkit</b> page and exercises. All model answers are built from the toolkit, so learn it first, then practise.</p><div class="grid">' +
       Object.keys(TASKDEF).map(function (k) {
         var t = TASKDEF[k];
-        return '<button class="card task" data-k="' + k + '"><span class="badge">' + taskCount(k) + '</span><b>' + t.name + '</b><span class="muted small">' + t.desc + '</span></button>' +
-          (k === 'dialogs' ? '<button class="card task" data-k="listen"><span class="badge">' + LISTEN.length + ' ' + (LISTEN.length === 1 ? 'episode' : 'episodes') + '</span><b>🎧 Lyssna</b><span class="muted small">Swedish → English → Swedish. A playlist for the bike, the bus or the kitchen.</span></button>' : '');
-      }).join('') + '</div>' +
-      '<div class="notice">Every task has a <b>Words &amp; toolkit</b> page: the words you will see in the instructions and ready-made sentences. All model answers are built from that toolkit, so learn it first, then practise.</div>' +
-      '<div class="notice">Works best in Chrome, Edge or Safari. Allow the microphone when asked. Your recordings stay in your browser – nothing is uploaded.</div>');
+        return '<button class="card task" data-k="' + k + '"><span class="badge">' + taskCount(k) + '</span><b>' + t.name + '</b><span class="muted small">' + t.desc + '</span></button>';
+      }).join('') + '</div>');
+    $('#back').onclick = function () { location.hash = ''; };
     view.querySelectorAll('.task').forEach(function (b) { b.onclick = function () { location.hash = '#' + b.dataset.k; }; });
   }
 
@@ -103,12 +121,12 @@
     stopSpeech(); releaseMic();
     var t = TASKDEF[key];
     var n = key === 'dialogs' ? allDialogs().length + ' dialogs' : TASKS[key].length + ' tasks';
-    h('<p><button class="btn" id="back">← Home</button></p><h1>' + t.name + '</h1><p class="muted">' + t.desc + '</p>' +
+    h('<p><button class="btn" id="back">← Tala</button></p><h1>' + t.name + '</h1><p class="muted">' + t.desc + '</p>' +
       '<div class="grid">' +
       '<button class="card task" id="goWords"><span class="badge">learn first</span><b>📘 Words &amp; toolkit</b><span class="muted small">The words in the instructions and the ready answers to memorise.</span></button>' +
       '<button class="card task" id="goPractice"><span class="badge">' + taskCount(key) + '</span><b>🎙 Exercises</b><span class="muted small">' + n + ' – answer, get recorded, compare with the model answer.</span></button>' +
       '</div>');
-    $('#back').onclick = function () { location.hash = ''; };
+    $('#back').onclick = function () { location.hash = '#tala'; };
     $('#goWords').onclick = function () { location.hash = '#' + key + '/words'; };
     $('#goPractice').onclick = function () { location.hash = '#' + key + '/list'; };
   }
@@ -462,15 +480,18 @@
 
   /* ---------------- Lyssna: playlist (Swedish → English → Swedish) ---------------- */
   var AU = new Audio(); AU.preload = 'metadata';
-  var LS = Object.assign({ idx: 0, rate: 1, loop: 'all', showEn: true }, load('yki_listen', {}));
+  var LS = Object.assign({ idx: 0, rate: 1, loop: 'all', showEn: true, mode: 'mix' }, load('yki_listen', {}));
   if (LS.idx >= LISTEN.length) LS.idx = 0;
   function saveLS() { save('yki_listen', LS); }
   function fmt(t) { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ':' + ('0' + t % 60).slice(-2); }
   function curEp() { return LISTEN[LS.idx]; }
+  function epSrc(ep) { return LS.mode === 'sv' && ep.src_sv ? ep.src_sv : ep.src; }
+  function lt(l) { return LS.mode === 'sv' && l.t2 != null ? l.t2 : l.t; }
+  function epDur(ep) { return LS.mode === 'sv' && ep.dur_sv ? ep.dur_sv : ep.dur; }
   function loadEp(i, autoplay, at) {
     LS.idx = (i + LISTEN.length) % LISTEN.length; saveLS();
     var ep = curEp();
-    if (AU.getAttribute('src') !== ep.src) AU.src = ep.src;
+    if (AU.getAttribute('src') !== epSrc(ep)) AU.src = epSrc(ep);
     AU.playbackRate = LS.rate;
     if (at) AU.currentTime = at;
     if (autoplay) AU.play().catch(function () {});
@@ -480,12 +501,12 @@
     }
     paintListen();
   }
-  function lineAt(t) { var ls = curEp().lines, k = 0; for (var i = 0; i < ls.length; i++) if (ls[i].t <= t + 0.05) k = i; return k; }
+  function lineAt(t) { var ls = curEp().lines, k = 0; for (var i = 0; i < ls.length; i++) if (lt(ls[i]) <= t + 0.05) k = i; return k; }
   function jumpLine(d) {
     var ls = curEp().lines, k = lineAt(AU.currentTime) + d;
     if (k < 0) { loadEp(LS.idx - 1, !AU.paused); return; }
     if (k >= ls.length) { loadEp(LS.idx + 1, !AU.paused); return; }
-    AU.currentTime = ls[k].t;
+    AU.currentTime = lt(ls[k]);
   }
   AU.addEventListener('ended', function () {
     if (LS.loop === 'one') { AU.currentTime = 0; AU.play(); }
@@ -508,7 +529,7 @@
   var lastLine = -1;
   function tickListen() {
     var seek = $('#lseek'); if (!seek) return;
-    var d = AU.duration || curEp().dur;
+    var d = AU.duration || epDur(curEp());
     if (!seek.dataset.drag) seek.value = d ? AU.currentTime / d * 1000 : 0;
     $('#lcur').textContent = fmt(AU.currentTime); $('#ldur').textContent = fmt(d);
     var k = lineAt(AU.currentTime);
@@ -529,9 +550,9 @@
     if (tr && tr.dataset.ep !== ep.id) {
       tr.dataset.ep = ep.id; lastLine = -1;
       tr.innerHTML = ep.lines.map(function (l, i) {
-        return '<div class="ln" data-i="' + i + '"><div class="sv">' + esc(l.sv) + '</div>' + (LS.showEn ? '<div class="en">' + esc(l.en) + '</div>' : '') + '</div>';
+        return '<div class="ln" data-i="' + i + '"><div class="sv">' + (ep.lines.some(function (z) { return z.p === 'B'; }) ? '<span class="spk sp' + l.p + '">' + (l.p === 'A' ? '●' : '○') + '</span> ' : '') + esc(l.sv) + '</div>' + (LS.showEn ? '<div class="en">' + esc(l.en) + '</div>' : '') + '</div>';
       }).join('');
-      tr.querySelectorAll('.ln').forEach(function (el) { el.onclick = function () { AU.currentTime = ep.lines[+el.dataset.i].t; if (AU.paused) AU.play(); }; });
+      tr.querySelectorAll('.ln').forEach(function (el) { el.onclick = function () { AU.currentTime = lt(ep.lines[+el.dataset.i]); if (AU.paused) AU.play(); }; });
     }
     tickListen();
   }
@@ -547,12 +568,13 @@
       '<div class="row"><button class="pbtn" id="lprevE" aria-label="Previous episode">⏮</button><button class="pbtn" id="lprev" aria-label="Previous sentence">↺</button>' +
       '<button class="pbtn big" id="lplay" aria-label="Play">▶</button><button class="pbtn" id="lnext" aria-label="Next sentence">↻</button><button class="pbtn" id="lnextE" aria-label="Next episode">⏭</button></div>' +
       '<div class="opts"><label>Speed <select id="lrate"><option value="0.8">0.8×</option><option value="0.9">0.9×</option><option value="1">1×</option><option value="1.1">1.1×</option></select></label>' +
+      '<label>Mode <select id="lmode"><option value="mix">Svenska → English → Svenska</option><option value="sv">Bara svenska</option></select></label>' +
       '<label>Repeat <select id="lloop"><option value="all">all episodes</option><option value="one">this episode</option><option value="off">off</option></select></label>' +
       '<label><input type="checkbox" id="lshowEn"' + (LS.showEn ? ' checked' : '') + '> English text</label>' +
       '<label><input type="checkbox" id="follow" checked> Follow</label></div></div>' +
       '<h2>Text</h2><div class="card lines" id="ltrans"></div>' +
       '<h2>Episodes</h2><div class="card eplist">' + LISTEN.map(function (ep, i) {
-        return '<button class="dlg-link" data-i="' + i + '"><span><b>' + (i + 1) + '.</b> ' + esc(ep.title_sv) + '<br><span class="en">' + esc(ep.title_en) + ' · ' + esc(themeName(ep.theme)) + '</span></span><span class="done">' + fmt(ep.dur) + '</span></button>';
+        return '<button class="dlg-link" data-i="' + i + '"><span><b>' + (i + 1) + '.</b> ' + esc(ep.title_sv) + '<br><span class="en">' + esc(ep.kind || '') + ' · ' + esc(ep.title_en) + ' · ' + esc(themeName(ep.theme)) + '</span></span><span class="done">' + fmt(epDur(ep)) + '</span></button>';
       }).join('') + '</div>';
     h(html);
     $('#back').onclick = function () { location.hash = ''; };
@@ -562,20 +584,164 @@
     $('#lprevE').onclick = function () { loadEp(LS.idx - 1, !AU.paused); };
     $('#lnextE').onclick = function () { loadEp(LS.idx + 1, !AU.paused); };
     $('#lrate').value = String(LS.rate); $('#lrate').onchange = function () { LS.rate = +this.value; AU.playbackRate = LS.rate; saveLS(); };
+    $('#lmode').value = LS.mode; $('#lmode').onchange = function () {
+      var line = lineAt(AU.currentTime), was = !AU.paused; LS.mode = this.value; saveLS();
+      AU.src = epSrc(curEp()); AU.playbackRate = LS.rate;
+      AU.addEventListener('loadedmetadata', function f() { AU.removeEventListener('loadedmetadata', f); AU.currentTime = lt(curEp().lines[line]); if (was) AU.play(); });
+      $('#ltrans').dataset.ep = ''; paintListen();
+    };
     $('#lloop').value = LS.loop; $('#lloop').onchange = function () { LS.loop = this.value; saveLS(); };
     $('#lshowEn').onchange = function () { LS.showEn = this.checked; saveLS(); $('#ltrans').dataset.ep = ''; paintListen(); };
     var sk = $('#lseek');
     sk.oninput = function () { sk.dataset.drag = 1; };
-    sk.onchange = function () { delete sk.dataset.drag; var d = AU.duration || curEp().dur; AU.currentTime = sk.value / 1000 * d; };
+    sk.onchange = function () { delete sk.dataset.drag; var d = AU.duration || epDur(curEp()); AU.currentTime = sk.value / 1000 * d; };
     view.querySelectorAll('.eplist .dlg-link').forEach(function (b) { b.onclick = function () { loadEp(+b.dataset.i, true); window.scrollTo({ top: 0, behavior: 'smooth' }); }; });
     paintListen();
   }
 
 
+  /* ---------------- Skriva ---------------- */
+  var WR = window.YKI_WRITE || [], WTPL = window.YKI_WTPL || {};
+  function wordCount(t) { return (t.trim().match(/\S+/g) || []).length; }
+  function writeList() {
+    stopSpeech(); releaseMic();
+    var html = '<p><button class="btn" id="back">← Home</button></p><h1>✍️ Skriva – Writing</h1>' +
+      '<p class="muted">' + WR.length + ' writing tasks, 3 per theme. Read the task, write your text, then compare with the model text. Your text is saved in this browser.</p>' +
+      '<div class="notice">In the exam: answer <b>every point</b> of the task, start and end the right way (Hej … / Hälsningar …), and use short, correct sentences. Use the template if you get stuck.</div>';
+    DATA.themes.forEach(function (th, i) {
+      var list = WR.filter(function (x) { return x.theme === th.id; });
+      if (!list.length) return;
+      html += '<details class="theme"' + (i === 0 ? ' open' : '') + '><summary>' + th.id + '. ' + esc(th.sv) + ' <span class="muted small">– ' + esc(th.en) + ' · ' + countDone(list) + '/' + list.length + '</span></summary>';
+      list.forEach(function (x) {
+        html += '<button class="dlg-link" data-id="' + x.id + '"><span><b>' + x.n + '.</b> <span class="badge">' + esc(x.type) + '</span> ' + esc(x.sv) + (S.english ? '<br><span class="en">' + esc(x.en) + '</span>' : '') + '</span><span class="done">' + bookRef(x.page) + ' ' + (DONE[x.id] ? '✓' : '') + '</span></button>';
+      });
+      html += '</details>';
+    });
+    h(html);
+    $('#back').onclick = function () { location.hash = ''; };
+    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { location.hash = '#w/' + b.dataset.id; }; });
+  }
+  function writeTask(id) {
+    stopSpeech(); releaseMic();
+    var k = WR.map(function (x) { return x.id; }).indexOf(id), x = WR[k]; if (!x) { writeList(); return; }
+    var key = 'yki_w_' + id, draft = ''; try { draft = localStorage.getItem(key) || ''; } catch (e) {}
+    var tpl = WTPL[x.type];
+    h('<p><button class="btn" id="back">← All writing tasks</button></p>' +
+      '<div class="exam"><div class="head"><span>Skriva · ' + esc(themeName(x.theme)) + ' · ' + x.n + '</span><span>' + esc(x.type) + bookRef(x.page) + '</span></div><div class="body">' +
+      '<div class="sit">' + esc(x.sv) + '</div>' + en(x.en) +
+      '<p>' + esc(x.task_sv) + '</p>' + en(x.task_en) +
+      '<p class="small muted" style="margin-bottom:2px">Skriv om:</p><ul class="qs">' + x.check.map(function (c, i) { return '<li>' + esc(c) + (S.english ? ' <span class="en">' + esc(x.check_en[i]) + '</span>' : '') + '</li>'; }).join('') + '</ul>' +
+      '<p class="small muted">About <b>' + x.words + ' words</b>.</p>' +
+      '<textarea id="wtext" class="wtext" placeholder="Skriv här …" spellcheck="false">' + esc(draft) + '</textarea>' +
+      '<div class="row" style="justify-content:space-between"><span class="small muted"><span id="wc">0</span> words</span><span class="small muted" id="wtimer"></span></div>' +
+      '<div class="row" style="margin-top:8px"><button class="btn" id="tplBtn">🧰 Template</button><button class="btn" id="timerBtn">⏱ 20 min timer</button><button class="btn" id="clr">Clear</button></div>' +
+      (tpl ? '<div class="model hidden" id="tplBox"><div class="small muted">Template – ' + esc(x.type) + ':</div><pre class="tpl">' + hl(tpl.sv) + '</pre><div class="en">' + esc(tpl.en) + '</div></div>' : '') +
+      '<div class="row" style="margin-top:12px"><button class="btn primary" id="showM">Show model text</button><button class="btn" id="enT">' + (S.english ? 'Hide' : 'Show') + ' English</button></div>' +
+      '<div class="model hidden" id="mBox"><div class="small muted">Model text:</div>' + x.model.map(function (m) { return '<div class="mline"><span class="sv">' + esc(m.sv) + '</span>' + say(m.sv) + en(m.en) + '</div>'; }).join('') + '</div>' +
+      '<div class="row" style="margin-top:14px"><button class="btn" id="prevW">‹ Previous</button><button class="btn" id="nextW">Next task ›</button></div>' +
+      '</div></div>');
+    bindSay();
+    var ta = $('#wtext'), wc = $('#wc');
+    function upd() { wc.textContent = wordCount(ta.value); try { localStorage.setItem(key, ta.value); } catch (e) {} }
+    ta.oninput = upd; upd();
+    $('#back').onclick = function () { location.hash = '#skriva'; };
+    if (tpl) $('#tplBtn').onclick = function () { $('#tplBox').classList.toggle('hidden'); };
+    $('#clr').onclick = function () { if (ta.value && !window.confirm('Delete your text?')) return; ta.value = ''; upd(); };
+    $('#showM').onclick = function () { $('#mBox').classList.remove('hidden'); this.classList.add('hidden'); DONE[x.id] = 1; save('yki_done', DONE); };
+    $('#enT').onclick = function () { S.english = !S.english; save('yki_settings', S); writeTask(id); };
+    $('#prevW').onclick = function () { location.hash = '#w/' + WR[(k - 1 + WR.length) % WR.length].id; };
+    $('#nextW').onclick = function () { location.hash = '#w/' + WR[(k + 1) % WR.length].id; };
+    var tmr = null;
+    $('#timerBtn').onclick = function () {
+      if (tmr) { clearInterval(tmr); tmr = null; $('#wtimer').textContent = ''; this.textContent = '⏱ 20 min timer'; return; }
+      var end = Date.now() + 20 * 60000, btn = this; btn.textContent = '⏹ Stop timer';
+      tmr = setInterval(function () {
+        var el = $('#wtimer'); if (!el) { clearInterval(tmr); return; }
+        var left = Math.max(0, Math.round((end - Date.now()) / 1000));
+        el.textContent = '⏱ ' + Math.floor(left / 60) + ':' + ('0' + left % 60).slice(-2);
+        if (!left) { clearInterval(tmr); tmr = null; beep(); el.textContent = '⏱ Time is up!'; btn.textContent = '⏱ 20 min timer'; }
+      }, 500);
+    };
+  }
+
+  /* ---------------- Läsa ---------------- */
+  function readList() {
+    stopSpeech(); releaseMic();
+    var html = '<p><button class="btn" id="back">← Home</button></p><h1>📖 Läsa – Reading</h1>' +
+      '<p class="muted">' + LISTEN.length + ' short texts with questions. Read the text, answer the questions, then check. Tap a sentence to hear it. The same texts are in 🎧 Lyssna – read first, then listen on the bike.</p>';
+    DATA.themes.forEach(function (th, i) {
+      var list = LISTEN.filter(function (x) { return x.theme === th.id; });
+      if (!list.length) return;
+      html += '<details class="theme"' + (i === 0 ? ' open' : '') + '><summary>' + th.id + '. ' + esc(th.sv) + ' <span class="muted small">– ' + esc(th.en) + ' · ' + list.filter(function (x) { return DONE['rd-' + x.id]; }).length + '/' + list.length + '</span></summary>';
+      list.forEach(function (x) {
+        html += '<button class="dlg-link" data-id="' + x.id + '"><span><span class="badge">' + esc(x.kind) + '</span> ' + esc(x.title_sv) + (S.english ? '<br><span class="en">' + esc(x.title_en) + '</span>' : '') + '</span><span class="done">' + (DONE['rd-' + x.id] ? '✓' : '') + '</span></button>';
+      });
+      html += '</details>';
+    });
+    h(html);
+    $('#back').onclick = function () { location.hash = ''; };
+    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { location.hash = '#r/' + b.dataset.id; }; });
+  }
+  function readTask(id) {
+    stopSpeech(); releaseMic();
+    var k = LISTEN.map(function (x) { return x.id; }).indexOf(id), x = LISTEN[k]; if (!x) { readList(); return; }
+    var dlg = x.lines.some(function (l) { return l.p === 'B'; });
+    var names = {};
+    h('<p><button class="btn" id="back">← All texts</button></p>' +
+      '<div class="exam"><div class="head"><span>Läsa · ' + esc(themeName(x.theme)) + '</span><span>' + esc(x.kind) + '</span></div><div class="body">' +
+      '<div class="sit">' + esc(x.title_sv) + '</div>' + en(x.title_en) +
+      '<div class="rtext">' + x.lines.map(function (l) {
+        return '<p class="rl' + (dlg ? ' sp' + l.p : '') + '" data-t="' + esc(l.sv) + '">' + (dlg ? '<b class="spk">' + (l.p === 'A' ? '–' : '–') + '</b> ' : '') + esc(l.sv) + (S.english ? '<span class="en"> ' + esc(l.en) + '</span>' : '') + '</p>';
+      }).join('') + '</div>' +
+      '<h2>Frågor</h2>' + (x.q || []).map(function (q, i) {
+        return '<div class="rq" data-i="' + i + '"><div class="rqq"><b>' + (i + 1) + '.</b> ' + esc(q.sv) + (S.english ? ' <span class="en">' + esc(q.en) + '</span>' : '') + '</div>' +
+          q.o.map(function (o, j) { return '<label class="ropt"><input type="radio" name="q' + i + '" value="' + j + '"> ' + esc(o) + '</label>'; }).join('') + '</div>';
+      }).join('') +
+      '<div class="row" style="margin-top:12px"><button class="btn primary" id="check">Check answers</button><button class="btn" id="enT">' + (S.english ? 'Hide' : 'Show') + ' English</button><button class="btn" id="toL">🎧 Listen to this text</button></div>' +
+      '<p id="score" class="sit"></p>' +
+      '<div class="row" style="margin-top:8px"><button class="btn" id="prevR">‹ Previous</button><button class="btn" id="nextR">Next text ›</button></div>' +
+      '</div></div>');
+    view.querySelectorAll('.rl').forEach(function (p) { p.onclick = function () { speak(p.dataset.t); }; });
+    $('#back').onclick = function () { location.hash = '#lasa'; };
+    $('#enT').onclick = function () { S.english = !S.english; save('yki_settings', S); readTask(id); };
+    $('#toL').onclick = function () { loadEp(k, true); location.hash = '#listen'; };
+    $('#prevR').onclick = function () { location.hash = '#r/' + LISTEN[(k - 1 + LISTEN.length) % LISTEN.length].id; };
+    $('#nextR').onclick = function () { location.hash = '#r/' + LISTEN[(k + 1) % LISTEN.length].id; };
+    $('#check').onclick = function () {
+      var ok = 0;
+      (x.q || []).forEach(function (q, i) {
+        var box = view.querySelector('.rq[data-i="' + i + '"]'), sel = box.querySelector('input:checked');
+        box.querySelectorAll('.ropt').forEach(function (lab, j) { lab.classList.remove('good', 'bad'); if (j === q.a) lab.classList.add('good'); else if (sel && +sel.value === j) lab.classList.add('bad'); });
+        if (sel && +sel.value === q.a) ok++;
+      });
+      $('#score').textContent = ok + ' / ' + (x.q || []).length + (ok === (x.q || []).length ? ' – Bra jobbat! 🎉' : ' – the right answers are green.');
+      if (x.q && ok === x.q.length) { DONE['rd-' + x.id] = 1; save('yki_done', DONE); }
+    };
+  }
+
+  /* ---------------- Material ---------------- */
+  function materialView() {
+    stopSpeech(); releaseMic();
+    var M = window.YKI_MAT || [];
+    h('<p><button class="btn" id="back">← Home</button></p><h1>📚 Material</h1>' +
+      '<p class="muted">All the study material. <b>Talking version</b>: open it in the browser and tap any blue Swedish text to hear it. <b>PDF</b>: download or print.</p>' +
+      M.map(function (m) {
+        return '<div class="card"><b style="font-size:18px">' + m.icon + ' ' + esc(m.title) + '</b><div class="muted small">' + esc(m.desc) + ' · ' + m.pages + ' pages</div>' +
+          '<div class="row" style="margin-top:10px"><a class="btn primary" href="' + m.html + '" target="_blank" rel="noopener">🔊 Talking version</a><a class="btn" href="' + m.pdf + '" target="_blank" rel="noopener" download>⬇ PDF</a></div></div>';
+      }).join(''));
+    $('#back').onclick = function () { location.hash = ''; };
+  }
+
   /* ---------------- router ---------------- */
   function route() {
     var hsh = location.hash.replace(/^#/, ''), m;
     if (hsh === 'listen') listenView();
+    else if (hsh === 'tala') tala();
+    else if (hsh === 'skriva') writeList();
+    else if (hsh.indexOf('w/') === 0) writeTask(hsh.slice(2));
+    else if (hsh === 'lasa') readList();
+    else if (hsh.indexOf('r/') === 0) readTask(hsh.slice(2));
+    else if (hsh === 'material') materialView();
     else if (TASKDEF[hsh]) hub(hsh);
     else if ((m = hsh.match(/^(dialogs|reagera|beratta|asikt)\/words$/))) words(m[1]);
     else if (hsh === 'dialogs/list') dialogList();
