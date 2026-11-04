@@ -313,7 +313,8 @@
     var html = '<p><button class="btn" id="back">← ' + t.name + '</button></p><h1>' + t.name + ' – exercises</h1>';
     if (key === 'reagera') {
       html += '<p class="muted">' + items.length + ' situations. A set is 5 situations, like in the exam: you read and hear the situation, then you have 30 seconds to react.</p>' +
-        '<div class="row"><button class="btn primary" id="rand">🎲 Random set of 5</button><button class="btn" id="randNew">5 not done yet</button></div>';
+        '<div class="row"><button class="btn primary" id="rand">🎲 Random set of 5</button><button class="btn" id="randNew">5 not done yet</button></div>' +
+        '<label class="check" style="display:flex;gap:8px;margin-top:10px"><input type="checkbox" id="reagRead"' + (S.reagRead !== false ? ' checked' : '') + '> Read the situation aloud (turn off to go faster – you read it yourself)</label>';
     } else {
       html += '<p class="muted">' + items.length + ' topics. You get ' + t.prep + ' s to prepare (you can skip), then ' + t.secs + ' s to speak.</p>' +
         '<div class="row"><button class="btn primary" id="rand">🎲 Random topic</button><button class="btn" id="randNew">Random – not done yet</button></div>';
@@ -331,6 +332,7 @@
     h(html);
     $('#back').onclick = function () { location.hash = '#' + key; };
     if (key === 'reagera') {
+      $('#reagRead').onchange = function () { S.reagRead = this.checked; save('yki_settings', S); };
       $('#rand').onclick = function () { runTasks(key, shuffle(items).slice(0, 5)); };
       $('#randNew').onclick = function () { var a = items.filter(function (x) { return !DONE[x.id]; }); if (a.length < 5) a = items; runTasks(key, shuffle(a).slice(0, 5)); };
       view.querySelectorAll('.setBtn').forEach(function (b) { b.onclick = function () { runTasks(key, items.filter(function (x) { return x.theme === +b.dataset.th; })); }; });
@@ -424,8 +426,15 @@
       if (idx >= items.length) { items.forEach(function (x) { DONE[x.id] = 1; }); save('yki_done', DONE); taskReview(key, items, recs); return; }
       var x = items[idx], stage = render(idx), p;
       if (key === 'reagera') {
-        stage.innerHTML = '<div class="status"><span class="wave"><i></i><i></i><i></i><i></i></span> Situation ' + (idx + 1) + ' / ' + items.length + '</div>' + top(x);
-        p = sleep(400).then(function () { return speak(x.sv); }).then(function () { return cancelled ? null : sleep(t.prep * 1000); });
+        var readIt = S.reagRead !== false;
+        stage.innerHTML = '<div class="status">' + (readIt ? '<span class="wave"><i></i><i></i><i></i><i></i></span> ' : '📄 ') + 'Situation ' + (idx + 1) + ' / ' + items.length + '</div>' + top(x) +
+          '<div class="row"><button class="btn primary" id="skipRead">' + (readIt ? 'Skip reading – answer now ›' : 'Start answering ›') + '</button></div>';
+        p = new Promise(function (res) {
+          var done = false; function go() { if (done) return; done = true; stopSpeech(); res(); }
+          $('#skipRead').onclick = go;
+          var w = readIt ? sleep(400).then(function () { return done ? null : speak(x.sv); }) : Promise.resolve();
+          w.then(function () { if (!done && !cancelled) return sleep((readIt ? t.prep : 8) * 1000); }).then(go);
+        });
       } else {
         p = prepFor(stage, t.prep, top(x));
       }
