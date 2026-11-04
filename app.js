@@ -17,6 +17,7 @@
   function $(sel, root) { return (root || document).querySelector(sel); }
   function allDialogs() { var a = []; DATA.themes.forEach(function (t) { t.dialogs.forEach(function (d) { a.push({ t: t, d: d }); }); }); return a; }
   function findDialog(id) { return allDialogs().filter(function (x) { return x.d.id === id; })[0]; }
+  function go(hsh) { if ((location.hash || '') === hsh || (hsh === '' && location.hash === '#')) route(); else location.hash = hsh; }
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
   function en(text) { return S.english && text ? '<div class="en">' + esc(text) + '</div>' : ''; }
 
@@ -26,18 +27,18 @@
     if (!('speechSynthesis' in window)) return;
     voices = speechSynthesis.getVoices().filter(function (v) { return /^sv/i.test(v.lang); });
     var sel = $('#setVoice'); if (!sel) return;
-    sel.innerHTML = voices.length ? voices.map(function (v) { return '<option value="' + esc(v.name) + '">' + esc(v.name + ' (' + v.lang + ')') + '</option>'; }).join('')
+    sel.innerHTML = voices.length ? voices.map(function (v) { return '<option value="' + esc(v.name) + '">' + esc(v.name + ' (' + v.lang + ')' + (v.localService ? '' : ' – online, can be slow')) + '</option>'; }).join('')
       : '<option value="">No Swedish voice on this device</option>';
-    if (S.voice) sel.value = S.voice;
+    var pv = pickVoice(); if (pv) sel.value = pv.name;
     $('#voiceNote').textContent = voices.length ? '' : 'Your device has no Swedish voice. Add one in your system settings (Speech / Text-to-speech, language Swedish) and reload the page.';
   }
   if ('speechSynthesis' in window) { loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
-  function pickVoice() { return voices.filter(function (v) { return v.name === S.voice; })[0] || voices.filter(function (v) { return /sv-SE/i.test(v.lang); })[0] || voices[0] || null; }
+  function pickVoice() { return voices.filter(function (v) { return v.name === S.voice; })[0] || voices.filter(function (v) { return /sv-SE/i.test(v.lang) && v.localService; })[0] || voices.filter(function (v) { return v.localService; })[0] || voices.filter(function (v) { return /sv-SE/i.test(v.lang); })[0] || voices[0] || null; }
 
   function speak(text) {
     return new Promise(function (resolve) {
       if (!('speechSynthesis' in window) || !text) { resolve(); return; }
-      speechSynthesis.cancel();
+      if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel();
       text = String(text).replace(/\[|\]/g, '').replace(/…/g, ',');
       var u = new SpeechSynthesisUtterance(text);
       u.lang = 'sv-SE'; u.rate = S.rate; var v = pickVoice(); if (v) u.voice = v;
@@ -102,7 +103,7 @@
       catCard('material', '📚', 'Material', 'Study material', 'The guide, toolkits, key words and memory sheet – as PDF and as talking pages.', M.length + ' items') +
       '</div>' +
       '<div class="notice">Works best in Chrome, Edge or Safari. Allow the microphone when asked. Your recordings and texts stay in your browser – nothing is uploaded.</div>');
-    view.querySelectorAll('.task').forEach(function (b) { b.onclick = function () { location.hash = '#' + b.dataset.k; }; });
+    view.querySelectorAll('.task').forEach(function (b) { b.onclick = function () { go('#' + b.dataset.k); }; });
   }
 
   function tala() {
@@ -113,8 +114,8 @@
         var t = TASKDEF[k];
         return '<button class="card task" data-k="' + k + '"><span class="badge">' + taskCount(k) + '</span><b>' + t.name + '</b><span class="muted small">' + t.desc + '</span></button>';
       }).join('') + '</div>');
-    $('#back').onclick = function () { location.hash = ''; };
-    view.querySelectorAll('.task').forEach(function (b) { b.onclick = function () { location.hash = '#' + b.dataset.k; }; });
+    $('#back').onclick = function () { go(''); };
+    view.querySelectorAll('.task').forEach(function (b) { b.onclick = function () { go('#' + b.dataset.k); }; });
   }
 
   function hub(key) {
@@ -126,9 +127,9 @@
       '<button class="card task" id="goWords"><span class="badge">learn first</span><b>📘 Words &amp; toolkit</b><span class="muted small">The words in the instructions and the ready answers to memorise.</span></button>' +
       '<button class="card task" id="goPractice"><span class="badge">' + taskCount(key) + '</span><b>🎙 Exercises</b><span class="muted small">' + n + ' – answer, get recorded, compare with the model answer.</span></button>' +
       '</div>');
-    $('#back').onclick = function () { location.hash = '#tala'; };
-    $('#goWords').onclick = function () { location.hash = '#' + key + '/words'; };
-    $('#goPractice').onclick = function () { location.hash = '#' + key + '/list'; };
+    $('#back').onclick = function () { go('#tala'); };
+    $('#goWords').onclick = function () { go('#' + key + '/words'); };
+    $('#goPractice').onclick = function () { go('#' + key + '/list'); };
   }
 
   function bookRef(p) { return p ? ' <span class="pg" title="Page in the book">📖 s. ' + esc(p) + '</span>' : ''; }
@@ -164,8 +165,8 @@
     html += '<div class="row" style="margin-top:16px"><button class="btn primary" id="toEx">Go to the exercises ›</button></div>';
     h(html);
     bindSay();
-    $('#back').onclick = function () { location.hash = '#' + key; };
-    $('#toEx').onclick = function () { location.hash = '#' + key + '/list'; };
+    $('#back').onclick = function () { go('#' + key); };
+    $('#toEx').onclick = function () { go('#' + key + '/list'); };
   }
 
   function dialogList() {
@@ -181,10 +182,10 @@
       html += '</details>';
     });
     h(html);
-    $('#back').onclick = function () { location.hash = '#dialogs'; };
-    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { location.hash = '#d/' + b.dataset.id; }; });
-    $('#rand').onclick = function () { var a = allDialogs(); location.hash = '#d/' + a[Math.floor(Math.random() * a.length)].d.id; };
-    $('#randNew').onclick = function () { var a = allDialogs().filter(function (x) { return !DONE[x.d.id]; }); if (!a.length) a = allDialogs(); location.hash = '#d/' + a[Math.floor(Math.random() * a.length)].d.id; };
+    $('#back').onclick = function () { go('#dialogs'); };
+    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go('#d/' + b.dataset.id); }; });
+    $('#rand').onclick = function () { var a = allDialogs(); go('#d/' + a[Math.floor(Math.random() * a.length)].d.id); };
+    $('#randNew').onclick = function () { var a = allDialogs().filter(function (x) { return !DONE[x.d.id]; }); if (!a.length) a = allDialogs(); go('#d/' + a[Math.floor(Math.random() * a.length)].d.id); };
   }
 
   function examHead(t, d) { return '<div class="head"><span>Dialog ' + d.n + '. ' + esc(t.sv) + '</span><span>' + d.speaker + ' / Du' + bookRef(d.page) + '</span></div>'; }
@@ -198,7 +199,7 @@
       '<p class="muted small">' + d.turns.length + ' lines. For each line: you hear <b>' + esc(d.speaker) + '</b>, then you see what to do in brackets, then you have time to answer (recording).</p>' +
       '<div class="row"><button class="btn primary" id="start">Start the dialog</button><button class="btn" id="peek">Just read the model answers</button></div>' +
       '<p class="muted small" id="micNote"></p></div></div>');
-    $('#back').onclick = function () { location.hash = '#dialogs/list'; };
+    $('#back').onclick = function () { go('#dialogs/list'); };
     $('#start').onclick = function () { run(t, d); };
     $('#peek').onclick = function () { review(t, d, []); };
   }
@@ -215,7 +216,7 @@
         '<div class="small muted">' + esc(d.situation_sv) + '</div><div class="steps">' + steps + '</div>' +
         '<div class="stage" id="stage"></div>' +
         '<div class="row end"><button class="btn" id="quit">Stop</button></div></div></div>');
-      $('#quit').onclick = function () { cancelled = true; stopSpeech(); stopRecording(); clearInterval(stopTimer); location.hash = '#d/' + d.id; intro(d.id); };
+      $('#quit').onclick = function () { cancelled = true; stopSpeech(); stopRecording(); clearInterval(stopTimer); go('#d/' + d.id); intro(d.id); };
       return $('#stage');
     }
 
@@ -296,8 +297,8 @@
     $('#showAll').onclick = function () { view.querySelectorAll('.model').forEach(function (m) { m.classList.remove('hidden'); }); view.querySelectorAll('.reveal').forEach(function (b) { b.classList.add('hidden'); }); };
     $('#enT').onclick = function () { S.english = !S.english; save('yki_settings', S); review(t, d, recs); };
     $('#again').onclick = function () { intro(d.id); };
-    $('#list').onclick = function () { location.hash = '#dialogs/list'; };
-    $('#nextD').onclick = function () { var a = allDialogs(), k = a.findIndex(function (x) { return x.d.id === d.id; }); location.hash = '#d/' + a[(k + 1) % a.length].d.id; };
+    $('#list').onclick = function () { go('#dialogs/list'); };
+    $('#nextD').onclick = function () { var a = allDialogs(), k = a.findIndex(function (x) { return x.d.id === d.id; }); go('#d/' + a[(k + 1) % a.length].d.id); };
   }
 
   /* ---------------- Reagera / Berätta / Din åsikt ---------------- */
@@ -330,7 +331,7 @@
       html += '</details>';
     });
     h(html);
-    $('#back').onclick = function () { location.hash = '#' + key; };
+    $('#back').onclick = function () { go('#' + key); };
     if (key === 'reagera') {
       $('#reagRead').onchange = function () { S.reagRead = this.checked; save('yki_settings', S); };
       $('#rand').onclick = function () { runTasks(key, shuffle(items).slice(0, 5)); };
@@ -338,7 +339,7 @@
       view.querySelectorAll('.setBtn').forEach(function (b) { b.onclick = function () { runTasks(key, items.filter(function (x) { return x.theme === +b.dataset.th; })); }; });
       view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { runTasks(key, [findTask(key, b.dataset.id)]); }; });
     } else {
-      var go = function (x) { location.hash = '#' + PREFIX[key] + '/' + x.id; };
+      var go = function (x) { go('#' + PREFIX[key] + '/' + x.id); };
       $('#rand').onclick = function () { go(items[Math.floor(Math.random() * items.length)]); };
       $('#randNew').onclick = function () { var a = items.filter(function (x) { return !DONE[x.id]; }); if (!a.length) a = items; go(a[Math.floor(Math.random() * a.length)]); };
       view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go(findTask(key, b.dataset.id)); }; });
@@ -358,10 +359,10 @@
       '<div class="sit">' + esc(x.sv) + '</div>' + en(x.en) + questions(x) +
       '<p class="muted small">You get <b>' + t.prep + ' s</b> to prepare (write 5 key words), then <b>' + t.secs + ' s</b> to speak. Use the frame from the toolkit.</p>' +
       '<div class="row"><button class="btn primary" id="start">Start</button><button class="btn" id="peek">Just read the model answer</button><button class="btn" id="tk">📘 Toolkit</button></div></div></div>');
-    $('#back').onclick = function () { location.hash = '#' + key + '/list'; };
+    $('#back').onclick = function () { go('#' + key + '/list'); };
     $('#start').onclick = function () { runTasks(key, [x]); };
     $('#peek').onclick = function () { taskReview(key, [x], []); };
-    $('#tk').onclick = function () { location.hash = '#' + key + '/words'; };
+    $('#tk').onclick = function () { go('#' + key + '/words'); };
   }
 
   /* one generic recorder: returns a Promise of a blob URL (or null) */
@@ -417,7 +418,7 @@
       var steps = items.length > 1 ? '<div class="steps">' + items.map(function (_, k) { return '<i class="' + (k < i ? 'on' : k === i ? 'cur' : '') + '"></i>'; }).join('') + '</div>' : '';
       h('<div class="exam">' + taskHead(key, x) + '<div class="body">' + steps +
         '<div class="stage" id="stage"></div><div class="row end"><button class="btn" id="quit">Stop</button></div></div></div>');
-      $('#quit').onclick = function () { cancelled = true; stopSpeech(); if (activeStop) activeStop(); location.hash = '#' + key + '/list'; taskList(key); };
+      $('#quit').onclick = function () { cancelled = true; stopSpeech(); if (activeStop) activeStop(); go('#' + key + '/list'); taskList(key); };
       return $('#stage');
     }
     function top(x) { return '<div class="sit">' + esc(x.sv) + '</div>' + en(x.en) + (x.qs ? questions(x) : ''); }
@@ -479,11 +480,11 @@
     $('#showAll').onclick = function () { view.querySelectorAll('.model').forEach(function (m) { m.classList.remove('hidden'); }); view.querySelectorAll('.reveal').forEach(function (b) { b.classList.add('hidden'); }); };
     $('#enT').onclick = function () { S.english = !S.english; save('yki_settings', S); taskReview(key, items, recs); };
     $('#again').onclick = function () { if (single) taskIntro(key, items[0].id); else runTasks(key, items); };
-    $('#list').onclick = function () { location.hash = '#' + key + '/list'; };
+    $('#list').onclick = function () { go('#' + key + '/list'); };
     $('#nextT').onclick = function () {
       var all = TASKS[key];
       if (key === 'reagera') { runTasks(key, shuffle(all).slice(0, 5)); return; }
-      var k = all.indexOf(items[0]); location.hash = '#' + PREFIX[key] + '/' + all[(k + 1) % all.length].id;
+      var k = all.indexOf(items[0]); go('#' + PREFIX[key] + '/' + all[(k + 1) % all.length].id);
     };
   }
 
@@ -586,7 +587,7 @@
         return '<button class="dlg-link" data-i="' + i + '"><span><b>' + (i + 1) + '.</b> ' + esc(ep.title_sv) + '<br><span class="en">' + esc(ep.kind || '') + ' · ' + esc(ep.title_en) + ' · ' + esc(themeName(ep.theme)) + '</span></span><span class="done">' + fmt(epDur(ep)) + '</span></button>';
       }).join('') + '</div>';
     h(html);
-    $('#back').onclick = function () { location.hash = ''; };
+    $('#back').onclick = function () { go(''); };
     $('#lplay').onclick = function () { if (AU.paused) AU.play().catch(function () {}); else AU.pause(); };
     $('#lprev').onclick = function () { jumpLine(-1); };
     $('#lnext').onclick = function () { jumpLine(1); };
@@ -627,8 +628,8 @@
       html += '</details>';
     });
     h(html);
-    $('#back').onclick = function () { location.hash = ''; };
-    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { location.hash = '#w/' + b.dataset.id; }; });
+    $('#back').onclick = function () { go(''); };
+    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go('#w/' + b.dataset.id); }; });
   }
   function writeTask(id) {
     stopSpeech(); releaseMic();
@@ -653,13 +654,13 @@
     var ta = $('#wtext'), wc = $('#wc');
     function upd() { wc.textContent = wordCount(ta.value); try { localStorage.setItem(key, ta.value); } catch (e) {} }
     ta.oninput = upd; upd();
-    $('#back').onclick = function () { location.hash = '#skriva'; };
+    $('#back').onclick = function () { go('#skriva'); };
     if (tpl) $('#tplBtn').onclick = function () { $('#tplBox').classList.toggle('hidden'); };
     $('#clr').onclick = function () { if (ta.value && !window.confirm('Delete your text?')) return; ta.value = ''; upd(); };
     $('#showM').onclick = function () { $('#mBox').classList.remove('hidden'); this.classList.add('hidden'); DONE[x.id] = 1; save('yki_done', DONE); };
     $('#enT').onclick = function () { S.english = !S.english; save('yki_settings', S); writeTask(id); };
-    $('#prevW').onclick = function () { location.hash = '#w/' + WR[(k - 1 + WR.length) % WR.length].id; };
-    $('#nextW').onclick = function () { location.hash = '#w/' + WR[(k + 1) % WR.length].id; };
+    $('#prevW').onclick = function () { go('#w/' + WR[(k - 1 + WR.length) % WR.length].id); };
+    $('#nextW').onclick = function () { go('#w/' + WR[(k + 1) % WR.length].id); };
     var tmr = null;
     $('#timerBtn').onclick = function () {
       if (tmr) { clearInterval(tmr); tmr = null; $('#wtimer').textContent = ''; this.textContent = '⏱ 20 min timer'; return; }
@@ -688,8 +689,8 @@
       html += '</details>';
     });
     h(html);
-    $('#back').onclick = function () { location.hash = ''; };
-    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { location.hash = '#r/' + b.dataset.id; }; });
+    $('#back').onclick = function () { go(''); };
+    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go('#r/' + b.dataset.id); }; });
   }
   function readTask(id) {
     stopSpeech(); releaseMic();
@@ -711,11 +712,11 @@
       '<div class="row" style="margin-top:8px"><button class="btn" id="prevR">‹ Previous</button><button class="btn" id="nextR">Next text ›</button></div>' +
       '</div></div>');
     view.querySelectorAll('.rl').forEach(function (p) { p.onclick = function () { speak(p.dataset.t); }; });
-    $('#back').onclick = function () { location.hash = '#lasa'; };
+    $('#back').onclick = function () { go('#lasa'); };
     $('#enT').onclick = function () { S.english = !S.english; save('yki_settings', S); readTask(id); };
-    $('#toL').onclick = function () { loadEp(k, true); location.hash = '#listen'; };
-    $('#prevR').onclick = function () { location.hash = '#r/' + LISTEN[(k - 1 + LISTEN.length) % LISTEN.length].id; };
-    $('#nextR').onclick = function () { location.hash = '#r/' + LISTEN[(k + 1) % LISTEN.length].id; };
+    $('#toL').onclick = function () { loadEp(k, true); go('#listen'); };
+    $('#prevR').onclick = function () { go('#r/' + LISTEN[(k - 1 + LISTEN.length) % LISTEN.length].id); };
+    $('#nextR').onclick = function () { go('#r/' + LISTEN[(k + 1) % LISTEN.length].id); };
     $('#check').onclick = function () {
       var ok = 0;
       (x.q || []).forEach(function (q, i) {
@@ -738,7 +739,7 @@
         return '<div class="card"><b style="font-size:18px">' + m.icon + ' ' + esc(m.title) + '</b><div class="muted small">' + esc(m.desc) + ' · ' + m.pages + ' pages</div>' +
           '<div class="row" style="margin-top:10px"><a class="btn primary" href="' + m.html + '" target="_blank" rel="noopener">🔊 Talking version</a><a class="btn" href="' + m.pdf + '" target="_blank" rel="noopener" download>⬇ PDF</a></div></div>';
       }).join(''));
-    $('#back').onclick = function () { location.hash = ''; };
+    $('#back').onclick = function () { go(''); };
   }
 
   /* ---------------- router ---------------- */
@@ -761,7 +762,7 @@
     else home();
   }
   window.addEventListener('hashchange', route);
-  $('#homeBtn').onclick = function () { location.hash = ''; home(); };
+  $('#homeBtn').onclick = function () { go(''); home(); };
 
   /* ---------------- settings dialog ---------------- */
   var dlg = $('#settings');
