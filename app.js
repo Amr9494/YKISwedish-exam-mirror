@@ -17,6 +17,7 @@
   function $(sel, root) { return (root || document).querySelector(sel); }
   function allDialogs() { var a = []; DATA.themes.forEach(function (t) { t.dialogs.forEach(function (d) { a.push({ t: t, d: d }); }); }); return a; }
   function findDialog(id) { return allDialogs().filter(function (x) { return x.d.id === id; })[0]; }
+  var RUN = 0, dlgStop = null;
   function go(hsh) { if ((location.hash || '') === hsh || (hsh === '' && location.hash === '#')) route(); else location.hash = hsh; }
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
   function en(text) { return S.english && text ? '<div class="en">' + esc(text) + '</div>' : ''; }
@@ -205,7 +206,8 @@
   }
 
   function run(t, d) {
-    var recs = [], cancelled = false, idx = 0;
+    var recs = [], cancelled = false, idx = 0, myRun = RUN;
+    dlgStop = function () { cancelled = true; stopSpeech(); try { stopRecording(); } catch (e) {} clearInterval(stopTimer); };
     var mr = null, chunks = [], stopTimer = null;
     function stopRecording() { if (mr && mr.state === 'recording') mr.stop(); }
 
@@ -232,6 +234,7 @@
       var secs = turn.seconds || S.seconds;
       return beep().then(function () {
         return new Promise(function (resolve) {
+          if (cancelled || myRun !== RUN || !document.body.contains(stage)) { resolve(); return; }
           var left = secs, startT = Date.now();
           stage.innerHTML = '<div class="status"><span class="dot"></span> Svara nu – <span id="left">' + secs + '</span> s</div>' +
             '<div class="instr">Du: ' + esc(turn.task_sv) + '</div>' + en(turn.task_en) +
@@ -262,10 +265,10 @@
     }
 
     function next() {
-      if (cancelled) return;
+      if (cancelled || myRun !== RUN) return;
       if (idx >= d.turns.length) { DONE[d.id] = 1; save('yki_done', DONE); review(t, d, recs); return; }
       var turn = d.turns[idx], stage = render(idx);
-      listen(stage, turn).then(function () { if (cancelled) return; return answer(stage, turn); }).then(function () { if (cancelled) return; idx++; next(); });
+      listen(stage, turn).then(function () { if (cancelled || myRun !== RUN) return; return answer(stage, turn); }).then(function () { if (cancelled || myRun !== RUN) return; idx++; next(); });
     }
 
     getMic().then(function () {
@@ -339,10 +342,10 @@
       view.querySelectorAll('.setBtn').forEach(function (b) { b.onclick = function () { runTasks(key, items.filter(function (x) { return x.theme === +b.dataset.th; })); }; });
       view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { runTasks(key, [findTask(key, b.dataset.id)]); }; });
     } else {
-      var go = function (x) { go('#' + PREFIX[key] + '/' + x.id); };
-      $('#rand').onclick = function () { go(items[Math.floor(Math.random() * items.length)]); };
-      $('#randNew').onclick = function () { var a = items.filter(function (x) { return !DONE[x.id]; }); if (!a.length) a = items; go(a[Math.floor(Math.random() * a.length)]); };
-      view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go(findTask(key, b.dataset.id)); }; });
+      var openT = function (x) { go('#' + PREFIX[key] + '/' + x.id); };
+      $('#rand').onclick = function () { openT(items[Math.floor(Math.random() * items.length)]); };
+      $('#randNew').onclick = function () { var a = items.filter(function (x) { return !DONE[x.id]; }); if (!a.length) a = items; openT(a[Math.floor(Math.random() * a.length)]); };
+      view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { openT(findTask(key, b.dataset.id)); }; });
     }
   }
 
@@ -369,6 +372,7 @@
   function recordFor(stage, secs, topHtml, btnLabel) {
     return beep().then(function () {
       return new Promise(function (resolve) {
+        if (!document.body.contains(stage)) { resolve(null); return; }
         var startT = Date.now(), chunks = [], mr = null, finished = false, timer;
         stage.innerHTML = '<div class="status"><span class="dot"></span> Svara nu – <span id="left">' + secs + '</span> s</div>' + topHtml +
           '<div class="bar rec"><i id="fill"></i></div>' +
@@ -397,6 +401,7 @@
 
   function prepFor(stage, secs, topHtml) {
     return new Promise(function (resolve) {
+      if (!document.body.contains(stage)) { resolve(); return; }
       var startT = Date.now(), timer, done = false;
       stage.innerHTML = '<div class="status">⏳ Förbered dig – <span id="left">' + secs + '</span> s</div>' + topHtml +
         '<div class="bar"><i id="fill"></i></div><div class="row"><button class="btn primary" id="skip">I\'m ready – start speaking ›</button></div>';
@@ -412,7 +417,7 @@
   }
 
   function runTasks(key, items) {
-    var t = TASKDEF[key], recs = [], idx = 0, cancelled = false;
+    var t = TASKDEF[key], recs = [], idx = 0, cancelled = false, myRun = RUN;
     function render(i) {
       var x = items[i];
       var steps = items.length > 1 ? '<div class="steps">' + items.map(function (_, k) { return '<i class="' + (k < i ? 'on' : k === i ? 'cur' : '') + '"></i>'; }).join('') + '</div>' : '';
@@ -423,7 +428,7 @@
     }
     function top(x) { return '<div class="sit">' + esc(x.sv) + '</div>' + en(x.en) + (x.qs ? questions(x) : ''); }
     function next() {
-      if (cancelled) return;
+      if (cancelled || myRun !== RUN) return;
       if (idx >= items.length) { items.forEach(function (x) { DONE[x.id] = 1; }); save('yki_done', DONE); taskReview(key, items, recs); return; }
       var x = items[idx], stage = render(idx), p;
       if (key === 'reagera') {
@@ -434,13 +439,13 @@
           var done = false; function go() { if (done) return; done = true; stopSpeech(); res(); }
           $('#skipRead').onclick = go;
           var w = readIt ? sleep(400).then(function () { return done ? null : speak(x.sv); }) : Promise.resolve();
-          w.then(function () { if (!done && !cancelled) return sleep((readIt ? t.prep : 8) * 1000); }).then(go);
+          w.then(function () { if (!done && !cancelled && myRun === RUN) return sleep((readIt ? t.prep : 8) * 1000); }).then(go);
         });
       } else {
         p = prepFor(stage, t.prep, top(x));
       }
-      p.then(function () { if (cancelled) return; return recordFor(stage, t.secs, top(x), idx < items.length - 1 ? 'Klar – next ›' : 'Klar ›'); })
-       .then(function (url) { if (cancelled) return; recs.push(url); idx++; next(); });
+      p.then(function () { if (cancelled || myRun !== RUN) return; return recordFor(stage, t.secs, top(x), idx < items.length - 1 ? 'Klar – next ›' : 'Klar ›'); })
+       .then(function (url) { if (cancelled || myRun !== RUN) return; recs.push(url); idx++; next(); });
     }
     getMic().then(function () {
       var stage = render(0);
@@ -744,6 +749,7 @@
 
   /* ---------------- router ---------------- */
   function route() {
+    RUN++; stopSpeech(); if (activeStop) { try { activeStop(); } catch (e) {} activeStop = null; } if (dlgStop) { dlgStop(); dlgStop = null; }
     var hsh = location.hash.replace(/^#/, ''), m;
     if (hsh === 'listen') listenView();
     else if (hsh === 'tala') tala();
