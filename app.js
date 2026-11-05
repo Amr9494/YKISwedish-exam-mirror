@@ -478,7 +478,7 @@
     });
     var single = items.length === 1 && key !== 'reagera';
     html += '<div class="row" style="margin-top:14px"><button class="btn primary" id="again">Try again</button>' +
-      '<button class="btn" id="nextT">' + (key === 'reagera' ? 'New set of 5 ›' : 'Next topic ›') + '</button><button class="btn" id="list">All ' + (key === 'reagera' ? 'situations' : 'topics') + '</button></div></div></div>';
+      '<button class="btn" id="nextT">' + (key === 'reagera' ? 'Next situation ›' : 'Next topic ›') + '</button><button class="btn" id="list">All ' + (key === 'reagera' ? 'situations' : 'topics') + '</button></div></div></div>';
     h(html);
     bindSay();
     view.querySelectorAll('.reveal').forEach(function (b) { b.onclick = function () { $('#m' + b.dataset.i).classList.remove('hidden'); b.classList.add('hidden'); }; });
@@ -488,7 +488,7 @@
     $('#list').onclick = function () { go('#' + key + '/list'); };
     $('#nextT').onclick = function () {
       var all = TASKS[key];
-      if (key === 'reagera') { runTasks(key, shuffle(all).slice(0, 5)); return; }
+      if (key === 'reagera') { var j = all.indexOf(items[items.length - 1]); runTasks(key, [all[(j + 1) % all.length]]); return; }
       var k = all.indexOf(items[0]); go('#' + PREFIX[key] + '/' + all[(k + 1) % all.length].id);
     };
   }
