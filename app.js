@@ -349,6 +349,7 @@
     }
   }
 
+  function kwChips(x) { return x.kw && x.kw.length ? '<div class="kw"><span class="small muted">📌 Book words:</span> ' + x.kw.map(function (k) { return '<span class="kwc"><b>' + esc(k[0]) + '</b> <i>' + esc(k[1]) + '</i></span>'; }).join(' ') + '</div>' : ''; }
   function taskHead(key, x) { return '<div class="head"><span>' + TASKDEF[key].name + ' · ' + esc(themeName(x.theme)) + (x.n ? ' · ' + x.n : '') + '</span><span>' + bookRef(x.page) + '</span></div>'; }
   function questions(x) {
     return '<ul class="qs">' + x.qs.map(function (q, i) { return '<li>' + esc(q) + (S.english ? ' <span class="en">' + esc(x.qs_en[i]) + '</span>' : '') + '</li>'; }).join('') + '</ul>';
@@ -426,7 +427,7 @@
       $('#quit').onclick = function () { cancelled = true; stopSpeech(); if (activeStop) activeStop(); go('#' + key + '/list'); taskList(key); };
       return $('#stage');
     }
-    function top(x) { return '<div class="sit">' + esc(x.sv) + '</div>' + en(x.en) + (x.qs ? questions(x) : ''); }
+    function top(x) { return '<div class="sit">' + esc(x.sv) + '</div>' + en(x.en) + kwChips(x) + (x.qs ? questions(x) : ''); }
     function next() {
       if (cancelled || myRun !== RUN) return;
       if (idx >= items.length) { items.forEach(function (x) { DONE[x.id] = 1; }); save('yki_done', DONE); taskReview(key, items, recs); return; }
@@ -462,7 +463,7 @@
     var html = '<div class="exam"><div class="head"><span>' + t.name + ' – compare</span><span>' + items.length + (items.length > 1 ? ' tasks' : ' task') + '</span></div><div class="body review">' +
       '<div class="row" style="margin:0 0 12px"><button class="btn primary" id="showAll">Show ' + (items.length > 1 ? 'all model answers' : 'model answer') + '</button><button class="btn" id="enT">' + (S.english ? 'Hide' : 'Show') + ' English</button></div>';
     items.forEach(function (x, i) {
-      html += '<div class="turn"><div class="small muted">' + esc(themeName(x.theme)) + (x.n ? ' · ' + x.n : '') + bookRef(x.page) + '</div><div class="sit">' + esc(x.sv) + say(x.sv) + '</div>' + en(x.en) + (x.qs ? questions(x) : '') +
+      html += '<div class="turn"><div class="small muted">' + esc(themeName(x.theme)) + (x.n ? ' · ' + x.n : '') + bookRef(x.page) + '</div><div class="sit">' + esc(x.sv) + say(x.sv) + '</div>' + en(x.en) + kwChips(x) + (x.qs ? questions(x) : '') +
         (recs[i] ? '<div class="small muted">Your answer:</div><audio controls src="' + recs[i] + '"></audio>' : (recs.length ? '<div class="small muted">(no recording)</div>' : '')) +
         '<div><button class="btn small reveal" data-i="' + i + '">Show model answer</button></div><div class="model hidden" id="m' + i + '">';
       if (key === 'reagera') {

@@ -121,3 +121,6 @@ pre.tpl{white-space:pre-wrap; font:inherit; margin:6px 0; font-weight:600; color
 .spk.spB{color:var(--acc2)}
 a.btn{display:inline-flex; align-items:center; text-decoration:none; color:inherit}
 a.btn.primary{color:#fff}
+.kw{margin:6px 0 4px; line-height:2}
+.kwc{display:inline-block; background:var(--soft); border-radius:8px; padding:0 8px; margin:0 4px 4px 0; font-size:14px}
+.kwc b{color:var(--acc)} .kwc i{color:var(--mut)}

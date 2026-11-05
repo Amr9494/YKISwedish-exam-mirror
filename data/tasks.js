@@ -8,6 +8,24 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Din kusin från ett annat land kommer till din stad för första gången. Berätta för din granne vad ni ska se och göra.",
    "en": "Your cousin from another country is coming to your town for the first time. Tell your neighbour what you will see and do.",
+   "kw": [
+    [
+     "släkting",
+     "relative"
+    ],
+    [
+     "bo långt bort",
+     "live far away"
+    ],
+    [
+     "hemstad",
+     "home town"
+    ],
+    [
+     "visa",
+     "show"
+    ]
+   ],
    "answer_sv": "Min kusin kommer på lördag. Det är första gången hon är här. Först ska vi gå till centrum. Sedan ska vi gå till biblioteket. Jag hoppas att det blir fint väder!",
    "answer_en": "My cousin is coming on Saturday. It's the first time she is here. First we'll go to the centre. Then we'll go to the library. I hope the weather will be nice!"
   },
@@ -19,6 +37,20 @@ window.YKI_TASKS = {
    "type": "describe",
    "sv": "Någon ringde på din grannes dörr när grannen var borta. Grannen frågar vem det var. Beskriv personen.",
    "en": "Someone rang your neighbour's doorbell when the neighbour was away. The neighbour asks who it was. Describe the person.",
+   "kw": [
+    [
+     "besökare",
+     "visitor"
+    ],
+    [
+     "knacka på",
+     "knock on"
+    ],
+    [
+     "inte hemma",
+     "not at home"
+    ]
+   ],
    "answer_sv": "Det var en man. Han var lång och hade kort, mörkt hår och glasögon. Han hade en blå jacka.",
    "answer_en": "It was a man. He was tall and had short dark hair and glasses. He had a blue jacket."
   },
@@ -30,6 +62,24 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "I skolan är två pojkar elaka mot en annan elev. Säg till pojkarna att sluta och förklara varför.",
    "en": "At school two boys are being mean to another pupil. Tell the boys to stop and explain why.",
+   "kw": [
+    [
+     "retas med",
+     "tease"
+    ],
+    [
+     "klasskamrat",
+     "classmate"
+    ],
+    [
+     "mobbning",
+     "bullying"
+    ],
+    [
+     "inte okej",
+     "not OK"
+    ]
+   ],
    "answer_sv": "Hallå! Ni borde inte retas med er skolkamrat. Det är inte bra, för han blir ledsen. Ni måste be om ursäkt.",
    "answer_en": "Hey! You shouldn't tease your schoolmate. It's not good, because he gets sad. You must say sorry."
   },
@@ -41,6 +91,16 @@ window.YKI_TASKS = {
    "type": "sympathy",
    "sv": "Du träffar en vän. Hens pappa dog förra veckan.",
    "en": "You meet a friend. His/her father died last week.",
+   "kw": [
+    [
+     "pappan har dött",
+     "the father has died"
+    ],
+    [
+     "jätteledsen",
+     "really sad"
+    ]
+   ],
    "answer_sv": "Åh nej, vad tråkigt. Jag beklagar sorgen. Jag är här om du behöver hjälp.",
    "answer_en": "Oh no, how sad. My condolences. I'm here if you need help."
   },
@@ -52,6 +112,16 @@ window.YKI_TASKS = {
    "type": "decline",
    "sv": "Du hälsar på en vän på landet. Vännen bjuder dig på mat som du inte kan äta. Säg nej artigt och förklara varför.",
    "en": "You visit a friend in the countryside. The friend offers you food you can't eat. Say no politely and explain why.",
+   "kw": [
+    [
+     "dryck",
+     "drink"
+    ],
+    [
+     "tacka nej artigt",
+     "decline politely"
+    ]
+   ],
    "answer_sv": "Tack, det är snällt, men nej tack. Tyvärr kan jag inte äta det, för jag är allergisk mot det. Kan jag få lite sallad?",
    "answer_en": "Thanks, that's kind, but no thank you. Unfortunately I can't eat it, because I'm allergic to it. Can I have some salad?"
   },
@@ -63,6 +133,20 @@ window.YKI_TASKS = {
    "type": "thank",
    "sv": "Sara kommer till dig på kaffe. Hon har köpt en ny tv till dig som present!",
    "en": "Sara comes to you for coffee. She has bought you a new TV as a present!",
+   "kw": [
+    [
+     "hälsa på",
+     "visit"
+    ],
+    [
+     "jättestor",
+     "huge"
+    ],
+    [
+     "dyr present",
+     "expensive present"
+    ]
+   ],
    "answer_sv": "Oj, tack så mycket! Det är snällt av dig. Jag blir jätteglad. Tack igen!",
    "answer_en": "Oh, thank you so much! That's kind of you. I'm really happy. Thanks again!"
   },
@@ -74,6 +158,20 @@ window.YKI_TASKS = {
    "type": "apologise",
    "sv": "I går blev du och Sara osams om en dum sak. Nu ringer du henne, men hon svarar inte. Lämna ett meddelande.",
    "en": "Yesterday you and Sara fell out over a silly thing. Now you call her, but she doesn't answer. Leave a message.",
+   "kw": [
+    [
+     "gräla",
+     "quarrel"
+    ],
+    [
+     "bli sams",
+     "make up"
+    ],
+    [
+     "röstmeddelande",
+     "voice message"
+    ]
+   ],
    "answer_sv": "Hej, det är Alex. Förlåt för i går. Det var mitt fel. Kan du ringa mig när du har tid? Hej då!",
    "answer_en": "Hi, it's Alex. Sorry about yesterday. It was my fault. Can you call me when you have time? Bye!"
   },
@@ -85,6 +183,20 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Din bil är trasig. Be en vän att köra dig. Säg vart och när.",
    "en": "Your car is broken. Ask a friend to drive you. Say where and when.",
+   "kw": [
+    [
+     "har gått sönder",
+     "has broken down"
+    ],
+    [
+     "skjuts",
+     "a lift"
+    ],
+    [
+     "bestäm vart och när",
+     "decide where and when"
+    ]
+   ],
    "answer_sv": "Hej! Min bil har gått sönder, och jag behöver skjuts. Kan du köra mig till jobbet i morgon klockan fem? Tack så mycket!",
    "answer_en": "Hi! My car has broken down, and I need a lift. Can you drive me to work tomorrow at five? Thank you very much!"
   },
@@ -96,6 +208,16 @@ window.YKI_TASKS = {
    "type": "suggest",
    "sv": "På stan ser du en vän. Ni har inte träffats på flera år.",
    "en": "In town you see a friend. You haven't met for several years.",
+   "kw": [
+    [
+     "träffa",
+     "meet"
+    ],
+    [
+     "på länge",
+     "for a long time"
+    ]
+   ],
    "answer_sv": "Hej! Det var länge sedan! Vad roligt att se dig! Hur mår du?",
    "answer_en": "Hi! Long time no see! How nice to see you! How are you?"
   },
@@ -107,6 +229,20 @@ window.YKI_TASKS = {
    "type": "decline",
    "sv": "Kollegan Mikael vill att du kommer på middag hos honom på lördag. Du har inte lust. Svara honom vänligt.",
    "en": "Your colleague Mikael wants you to come to dinner at his place on Saturday. You don't feel like it. Answer him kindly.",
+   "kw": [
+    [
+     "bjuda hem",
+     "invite home"
+    ],
+    [
+     "tacka nej artigt",
+     "decline politely"
+    ],
+    [
+     "förklara varför",
+     "explain why"
+    ]
+   ],
    "answer_sv": "Tack för inbjudan, men tyvärr kan jag inte, för jag har andra planer på lördag. Kanske en annan gång?",
    "answer_en": "Thanks for the invitation, but unfortunately I can't, because I have other plans on Saturday. Maybe another time?"
   },
@@ -118,6 +254,24 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Vid en affär ser du ett litet barn som gråter. Barnet är ensamt. Du ser inte mamma eller pappa.",
    "en": "Outside a shop you see a small child crying. The child is alone. You don't see mum or dad.",
+   "kw": [
+    [
+     "butik",
+     "shop"
+    ],
+    [
+     "parkeringsplats",
+     "car park"
+    ],
+    [
+     "föräldrar",
+     "parents"
+    ],
+    [
+     "gråter",
+     "is crying"
+    ]
+   ],
    "answer_sv": "Hej, varför gråter du? Var är din mamma eller pappa? Var inte rädd, jag hjälper dig. Jag ska fråga i affären.",
    "answer_en": "Hi, why are you crying? Where is your mum or dad? Don't be afraid, I'll help you. I'll ask in the shop."
   },
@@ -129,6 +283,20 @@ window.YKI_TASKS = {
    "type": "compliment",
    "sv": "Din vän har fina kläder i dag och ser jättebra ut. Säg något snällt.",
    "en": "Your friend has nice clothes today and looks great. Say something kind.",
+   "kw": [
+    [
+     "välklädd",
+     "well dressed"
+    ],
+    [
+     "jättefin",
+     "really nice"
+    ],
+    [
+     "komplimang",
+     "compliment"
+    ]
+   ],
    "answer_sv": "Vad fin du är i dag! Du ser jättesnygg ut.",
    "answer_en": "You look lovely today! You look really good."
   },
@@ -140,6 +308,16 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Det finns en person som har hjälpt dig mycket. Säg till hen vad hen betyder för dig, och tacka.",
    "en": "There is a person who has helped you a lot. Tell him/her what he/she means to you, and say thanks.",
+   "kw": [
+    [
+     "viktig",
+     "important"
+    ],
+    [
+     "varför",
+     "why"
+    ]
+   ],
    "answer_sv": "Du är viktig för mig. När jag behöver hjälp finns du alltid vid min sida. Tack för allt!",
    "answer_en": "You are important to me. When I need help, you are always by my side. Thanks for everything!"
   },
@@ -151,6 +329,16 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "En annan vän säger att Ella har sagt elaka saker om dig. Nu träffar du Ella.",
    "en": "Another friend says Ella has said nasty things about you. Now you meet Ella.",
+   "kw": [
+    [
+     "prata illa om",
+     "speak badly about"
+    ],
+    [
+     "bakom din rygg",
+     "behind your back"
+    ]
+   ],
    "answer_sv": "Jag hörde att du har sagt dåliga saker om mig. Det gjorde mig ledsen. Om du är arg på mig, säg det till mig. Kan vi prata om det?",
    "answer_en": "I heard that you have said bad things about me. It made me sad. If you are angry with me, tell me. Can we talk about it?"
   },
@@ -162,6 +350,16 @@ window.YKI_TASKS = {
    "type": "congrat",
    "sv": "Din vän har goda nyheter: hon ska bli mamma.",
    "en": "Your friend has good news: she is going to be a mother.",
+   "kw": [
+    [
+     "väninna",
+     "female friend"
+    ],
+    [
+     "snart få barn",
+     "soon have a baby"
+    ]
+   ],
    "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. När ska barnet komma?",
    "answer_en": "Congratulations! How nice! I'm so happy for you. When is the baby coming?"
   },
@@ -173,6 +371,12 @@ window.YKI_TASKS = {
    "type": "sympathy",
    "sv": "Du hör att din vän ligger på sjukhuset.",
    "en": "You hear that your friend is in hospital.",
+   "kw": [
+    [
+     "allvarligt sjuk",
+     "seriously ill"
+    ]
+   ],
    "answer_sv": "Åh nej, vad tråkigt. Hur mår du? Jag är här om du behöver hjälp. Krya på dig!",
    "answer_en": "Oh no, how sad. How are you? I'm here if you need help. Get well soon!"
   },
@@ -184,6 +388,24 @@ window.YKI_TASKS = {
    "type": "apologise",
    "sv": "Lördag: Kalle och Anna gifter sig. På festen ser du att alla har paket med sig – men inte du.",
    "en": "Saturday: Kalle and Anna get married. At the party you see that everyone has a gift – but not you.",
+   "kw": [
+    [
+     "bröllop",
+     "wedding"
+    ],
+    [
+     "glömt",
+     "forgotten"
+    ],
+    [
+     "present",
+     "present"
+    ],
+    [
+     "brudparet",
+     "the bride and groom"
+    ]
+   ],
    "answer_sv": "Grattis! Vilket fint bröllop! Förlåt, jag glömde presenten. Jag tar med den nästa vecka.",
    "answer_en": "Congratulations! What a lovely wedding! Sorry, I forgot the present. I'll bring it next week."
   },
@@ -195,6 +417,24 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du ska fira midsommar i en väns stuga. Du vet inte vad du ska ta med. Fråga en kollega.",
    "en": "You will celebrate midsummer at a friend's cottage. You don't know what to take. Ask a colleague.",
+   "kw": [
+    [
+     "bjudit",
+     "invited"
+    ],
+    [
+     "stuga",
+     "cottage"
+    ],
+    [
+     "packa",
+     "pack"
+    ],
+    [
+     "råd",
+     "advice"
+    ]
+   ],
    "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till en stuga på midsommar. Vad ska jag packa?",
    "answer_en": "Excuse me, can you help me? I'm going to a cottage at midsummer. What should I pack?"
   },
@@ -206,6 +446,20 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Du kommer in på ett kafé, men det finns inget rent bord. Säg det till personalen.",
    "en": "You come into a café, but there is no clean table. Tell the staff.",
+   "kw": [
+    [
+     "smutsig",
+     "dirty"
+    ],
+    [
+     "klaga",
+     "complain"
+    ],
+    [
+     "servitör",
+     "waiter"
+    ]
+   ],
    "answer_sv": "Ursäkta, alla bord är smutsiga. Kan du torka ett bord, tack? Vi vill sitta och dricka kaffe.",
    "answer_en": "Excuse me, all the tables are dirty. Can you wipe a table, please? We want to sit and drink coffee."
   },
@@ -217,6 +471,16 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Du lånade ut din bil till en vän. Nu är tanken tom, för vännen tankade inte. Säg vad du tycker.",
    "en": "You lent your car to a friend. Now the tank is empty, because your friend didn't fill it. Say what you think.",
+   "kw": [
+    [
+     "bensinen tog slut",
+     "the petrol ran out"
+    ],
+    [
+     "tanka",
+     "fill up"
+    ]
+   ],
    "answer_sv": "Hej, jag är lite arg. Du lånade min bil, men du tankade inte. Nu är tanken tom. Nästa gång måste du tanka. Det är viktigt för mig.",
    "answer_en": "Hi, I'm a bit angry. You borrowed my car, but you didn't fill it up. Now the tank is empty. Next time you must fill it. It's important to me."
   },
@@ -228,6 +492,20 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Du vill betala någon för att städa ditt hem. Berätta för din vän varför.",
    "en": "You want to pay someone to clean your home. Tell your friend why.",
+   "kw": [
+    [
+     "anlita",
+     "hire"
+    ],
+    [
+     "städare",
+     "cleaner"
+    ],
+    [
+     "städa själv",
+     "clean yourself"
+    ]
+   ],
    "answer_sv": "Jag vill inte städa själv längre. Jag jobbar mycket och är trött på kvällen. Därför vill jag ha en städare. Då har jag mer tid för familjen.",
    "answer_en": "I don't want to clean myself any more. I work a lot and I'm tired in the evening. That's why I want a cleaner. Then I have more time for the family."
   },
@@ -239,6 +517,20 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Förra veckan satte du upp en ny taklampa. I natt ramlade den ner på golvet. Gå tillbaka till affären.",
    "en": "Last week you put up a new ceiling lamp. Last night it fell down onto the floor. Go back to the shop.",
+   "kw": [
+    [
+     "falla ner från taket",
+     "fall from the ceiling"
+    ],
+    [
+     "farligt",
+     "dangerous"
+    ],
+    [
+     "kräva ersättning",
+     "demand compensation"
+    ]
+   ],
    "answer_sv": "Hej, jag har ett problem. Jag köpte den här lampan hos er. I går föll den ner från taket. Det är farligt! Jag vill ha pengarna tillbaka. Här är kvittot.",
    "answer_en": "Hi, I have a problem. I bought this lamp from you. Yesterday it fell down from the ceiling. That's dangerous! I want my money back. Here is the receipt."
   },
@@ -250,6 +542,24 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Du köpte ett skåp. När du bygger det ser du att några delar saknas.",
    "en": "You bought a cupboard. When you build it you see that some parts are missing.",
+   "kw": [
+    [
+     "möbel",
+     "furniture"
+    ],
+    [
+     "montera",
+     "assemble"
+    ],
+    [
+     "delar",
+     "parts"
+    ],
+    [
+     "paketet",
+     "the package"
+    ]
+   ],
    "answer_sv": "Hej, jag köpte ett skåp hos er i förra veckan. Men några delar saknas i paketet. Kan jag få delarna, eller kan jag byta skåpet? Här är kvittot.",
    "answer_en": "Hi, I bought a cupboard from you last week. But some parts are missing from the package. Can I get the parts, or can I exchange the cupboard? Here is the receipt."
   },
@@ -261,6 +571,16 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "I en möbelaffär vill du testa en säng. En person ligger och sover i den. Du hittar inte heller priset.",
    "en": "In a furniture shop you want to try a bed. A person is lying asleep in it. You can't find the price either.",
+   "kw": [
+    [
+     "prova",
+     "try"
+    ],
+    [
+     "priset",
+     "the price"
+    ]
+   ],
    "answer_sv": "Ursäkta, kan du hjälpa mig? Jag vill prova sängen, men någon sover i den. Och jag ser inte priset. Hur mycket kostar den?",
    "answer_en": "Excuse me, can you help me? I want to try the bed, but someone is sleeping in it. And I can't see the price. How much does it cost?"
   },
@@ -272,6 +592,20 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du har hittat fina blå stolar. Du behöver två, men det finns bara två kvar – och en kvinna håller i den ena.",
    "en": "You have found nice blue chairs. You need two, but there are only two left – and a woman is holding one of them.",
+   "kw": [
+    [
+     "likadana",
+     "identical"
+    ],
+    [
+     "kund",
+     "customer"
+    ],
+    [
+     "finns kvar",
+     "are left"
+    ]
+   ],
    "answer_sv": "Ursäkta, jag har en fråga. Jag behöver två likadana stolar, och det finns bara två kvar. Kan jag få köpa den stolen? Du kan kanske välja en annan färg?",
    "answer_en": "Excuse me, I have a question. I need two identical chairs, and there are only two left. Could I buy that chair? Maybe you could choose another colour?"
   },
@@ -283,6 +617,20 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du vill köpa något dyrt, till exempel en tv. Du vill ha ett lägre pris. Vad säger du och varför?",
    "en": "You want to buy something expensive, for example a TV. You want a lower price. What do you say and why?",
+   "kw": [
+    [
+     "pruta",
+     "bargain"
+    ],
+    [
+     "motivera",
+     "give reasons"
+    ],
+    [
+     "dyr",
+     "expensive"
+    ]
+   ],
    "answer_sv": "Hej, jag vill köpa den här tv:n. Men den är dyr. Kan jag få ett bättre pris? Den har en liten skada, och jag betalar direkt. Kan jag få tio procent rabatt?",
    "answer_en": "Hi, I want to buy this TV. But it's expensive. Can I get a better price? It has a small mark, and I'll pay right away. Can I get a ten percent discount?"
   },
@@ -294,6 +642,20 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Din mamma fyller sextio. Du står i en blomaffär. Säljaren frågar: ”Vad kan jag hjälpa till med?”",
    "en": "Your mother turns sixty. You are in a flower shop. The seller asks: “How can I help?”",
+   "kw": [
+    [
+     "blomsteraffär",
+     "flower shop"
+    ],
+    [
+     "försäljare",
+     "seller"
+    ],
+    [
+     "tillfälle",
+     "occasion"
+    ]
+   ],
    "answer_sv": "Hej! Jag vill köpa blommor. De är till min mamma, för hon fyller sextio år. Hon tycker om rosor. Kan jag få tio röda rosor?",
    "answer_en": "Hi! I want to buy flowers. They are for my mother, because she turns sixty. She likes roses. Can I have ten red roses?"
   },
@@ -305,6 +667,20 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "På en restaurang skriker och springer barnen vid bordet bredvid. Säg något till föräldrarna.",
    "en": "At a restaurant the children at the next table are shouting and running. Say something to the parents.",
+   "kw": [
+    [
+     "nästa bord",
+     "the next table"
+    ],
+    [
+     "uppföra sig illa",
+     "behave badly"
+    ],
+    [
+     "föräldrar",
+     "parents"
+    ]
+   ],
    "answer_sv": "Ursäkta, men era barn skriker och springer. Vi vill äta i lugn och ro. Kan ni säga till dem, tack?",
    "answer_en": "Excuse me, but your children are shouting and running. We want to eat in peace. Can you talk to them, please?"
   },
@@ -316,6 +692,20 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Ni beställde mat på en restaurang för länge sedan, men maten kommer inte. Prata med servitören.",
    "en": "You ordered food at a restaurant a long time ago, but the food doesn't come. Talk to the waiter.",
+   "kw": [
+    [
+     "servicen",
+     "the service"
+    ],
+    [
+     "långsam",
+     "slow"
+    ],
+    [
+     "klaga",
+     "complain"
+    ]
+   ],
    "answer_sv": "Ursäkta, vi har väntat i fyrtio minuter. Servicen är långsam. När kommer maten? Vi har inte så mycket tid.",
    "answer_en": "Excuse me, we have waited forty minutes. The service is slow. When is the food coming? We don't have much time."
   },
@@ -327,6 +717,20 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "Det är 28 grader varmt. Utanför affären står en bil med stängda fönster, och inne i bilen sitter en hund. Nu kommer ägaren.",
    "en": "It's 28 degrees. Outside the shop there is a car with closed windows, and a dog inside. Now the owner comes.",
+   "kw": [
+    [
+     "varm bil",
+     "hot car"
+    ],
+    [
+     "parkeringsplats",
+     "car park"
+    ],
+    [
+     "hundägare",
+     "dog owner"
+    ]
+   ],
    "answer_sv": "Ursäkta, är det din hund? Det är för varmt i bilen. Det är farligt för hunden. Du får inte lämna den där. Kan du öppna bilen, tack?",
    "answer_en": "Excuse me, is that your dog? It's too hot in the car. It's dangerous for the dog. You mustn't leave it there. Can you open the car, please?"
   },
@@ -338,6 +742,24 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Datorn som du köpte för ett år sedan har slutat fungera. Den har fortfarande garanti. Ring affären där du köpte den.",
    "en": "The computer you bought a year ago has stopped working. It still has a guarantee. Call the shop where you bought it.",
+   "kw": [
+    [
+     "bärbar dator",
+     "laptop"
+    ],
+    [
+     "fel",
+     "fault"
+    ],
+    [
+     "garantin gäller",
+     "the guarantee is valid"
+    ],
+    [
+     "butiken",
+     "the shop"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min dator. Jag köpte den hos er för ett år sedan, och nu fungerar den inte. Den har garanti. Kan ni reparera den?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about my computer. I bought it from you a year ago, and now it doesn't work. It has a guarantee. Can you repair it?"
   },
@@ -349,6 +771,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "På nätet säljer en person en tvättmaskin för 100 euro. Den är tre år gammal. Ring personen.",
    "en": "Online a person is selling a washing machine for 100 euros. It is three years old. Call the person.",
+   "kw": [
+    [
+     "annons",
+     "ad"
+    ],
+    [
+     "begagnad",
+     "used, second-hand"
+    ],
+    [
+     "säljare",
+     "seller"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex. Jag ringer om tvättmaskinen. Fungerar den bra? Varför säljer du den? Kan jag komma och titta på den i kväll?",
    "answer_en": "Hi, my name is Alex. I'm calling about the washing machine. Does it work well? Why are you selling it? Can I come and look at it tonight?"
   },
@@ -360,6 +796,12 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "En vän ska besöka dig för första gången och kommer med buss. Säg vilken buss och var hen ska gå av.",
    "en": "A friend is visiting you for the first time and comes by bus. Say which bus and where to get off.",
+   "kw": [
+    [
+     "hur man tar sig hem till dig",
+     "how to get to your home"
+    ]
+   ],
    "answer_sv": "Du tar buss 52 från centrum. Du åker i ungefär tjugo minuter och går av vid skolan. Sedan går du rakt fram. Mitt hus är det gula huset till vänster.",
    "answer_en": "You take bus 52 from the centre. You ride for about twenty minutes and get off at the school. Then you walk straight on. My house is the yellow house on the left."
   },
@@ -371,6 +813,20 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du ska till sjukhuset med buss nummer 7. Du har aldrig åkt den här bussen förut.",
    "en": "You are going to the hospital on bus number 7. You have never taken this bus before.",
+   "kw": [
+    [
+     "rutten",
+     "the route"
+    ],
+    [
+     "chauffören",
+     "the driver"
+    ],
+    [
+     "gå av",
+     "get off"
+    ]
+   ],
    "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till sjukhuset, men jag vet inte var jag ska gå av. Kan du säga till när vi är där? Tack!",
    "answer_en": "Excuse me, can you help me? I'm going to the hospital, but I don't know where to get off. Can you tell me when we are there? Thanks!"
   },
@@ -382,6 +838,28 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "På en promenad hittar du massor av skräp bakom träden: möbler, en kyl och soppåsar. Ring kommunen.",
    "en": "On a walk you find lots of rubbish behind the trees: furniture, a fridge and rubbish bags. Call the municipality.",
+   "kw": [
+    [
+     "soffa",
+     "sofa"
+    ],
+    [
+     "kylskåp",
+     "fridge"
+    ],
+    [
+     "soppåsar",
+     "rubbish bags"
+    ],
+    [
+     "soptippen",
+     "the dump"
+    ],
+    [
+     "anmäla",
+     "report"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om skräp i skogen. Det finns en soffa, ett kylskåp och många soppåsar där. Det är vid Björkvägen. Kan ni hämta det?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about rubbish in the forest. There is a sofa, a fridge and many rubbish bags there. It's by Björkvägen. Can you collect it?"
   },
@@ -393,6 +871,20 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "Vid sjön ger din mormor choklad till ankorna. Vad säger du?",
    "en": "By the lake your grandmother is giving chocolate to the ducks. What do you say?",
+   "kw": [
+    [
+     "ankor",
+     "ducks"
+    ],
+    [
+     "mata",
+     "feed"
+    ],
+    [
+     "choklad",
+     "chocolate"
+    ]
+   ],
    "answer_sv": "Mormor, vänta! Man får inte ge choklad till ankor. Det är dåligt för dem. Vi kan köpa riktig ankmat i stället.",
    "answer_en": "Grandma, wait! You mustn't give chocolate to ducks. It's bad for them. We can buy real duck food instead."
   },
@@ -404,6 +896,16 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du och din familj vill börja vandra i naturen. Du har bara gamla gympaskor. Prata med personalen i sportaffären.",
    "en": "You and your family want to start hiking. You only have old trainers. Talk to the staff in the sports shop.",
+   "kw": [
+    [
+     "skogspromenad",
+     "forest walk"
+    ],
+    [
+     "försäljaren",
+     "the seller"
+    ]
+   ],
    "answer_sv": "Ursäkta, kan du hjälpa mig? Jag behöver bra skor för att gå i skogen. De ska vara varma och inte bli blöta. Har ni storlek fyrtiotvå?",
    "answer_en": "Excuse me, can you help me? I need good shoes for walking in the forest. They should be warm and not get wet. Do you have size forty-two?"
   },
@@ -415,6 +917,20 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "På en promenad ser du en person som lämnar ett gammalt kylskåp i skogen.",
    "en": "On a walk you see a person leaving an old fridge in the forest.",
+   "kw": [
+    [
+     "ute och går",
+     "out walking"
+    ],
+    [
+     "kasta",
+     "throw"
+    ],
+    [
+     "kylskåp",
+     "fridge"
+    ]
+   ],
    "answer_sv": "Ursäkta, men man får inte lämna kylskåpet här. Det är dåligt för naturen. Du kan ta det till återvinningen. Kan du ta det tillbaka, tack?",
    "answer_en": "Excuse me, but you mustn't leave the fridge here. It's bad for nature. You can take it to the recycling centre. Can you take it back, please?"
   },
@@ -426,6 +942,20 @@ window.YKI_TASKS = {
    "type": "offer",
    "sv": "Du ska flytta. Du har saker som du inte behöver. Fråga en vän om hen vill ha dem.",
    "en": "You are moving. You have things you don't need. Ask a friend if he/she wants them.",
+   "kw": [
+    [
+     "flytta",
+     "move"
+    ],
+    [
+     "en del av",
+     "some of"
+    ],
+    [
+     "gamla saker",
+     "old things"
+    ]
+   ],
    "answer_sv": "Hej! Jag ska flytta, och jag har saker som jag inte behöver. Vill du ha min soffa och mina tallrikar? De är gratis. Du kan hämta dem på lördag.",
    "answer_en": "Hi! I'm moving, and I have things I don't need. Would you like my sofa and my plates? They are free. You can collect them on Saturday."
   },
@@ -437,6 +967,20 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Du vill köpa en ny lägenhet. Mäklaren säger: ”Berätta, hur vill du bo?”",
    "en": "You want to buy a new flat. The estate agent says: “Tell me, how do you want to live?”",
+   "kw": [
+    [
+     "söka",
+     "look for"
+    ],
+    [
+     "mäklaren",
+     "the estate agent"
+    ],
+    [
+     "boendemiljö",
+     "living environment"
+    ]
+   ],
    "answer_sv": "Det är viktigt att det är lugnt och tryggt. Jag vill bo nära bussen och affären. Jag vill också ha en balkong och en park i närheten, för jag har barn.",
    "answer_en": "It's important that it's quiet and safe. I want to live near the bus and the shop. I also want a balcony and a park nearby, because I have children."
   },
@@ -448,6 +992,16 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Din kompis i Spanien har aldrig varit i Finland. Hen skriver: ”Hur är naturen hos er?” Svara i ett röstmeddelande.",
    "en": "Your friend in Spain has never been to Finland. He/she writes: “What is nature like where you are?” Answer in a voice message.",
+   "kw": [
+    [
+     "bor utomlands",
+     "lives abroad"
+    ],
+    [
+     "naturen",
+     "nature"
+    ]
+   ],
    "answer_sv": "Naturen i Finland är jättefin. Det finns många skogar och sjöar. På sommaren är det ljust hela natten. På vintern är det kallt och det finns mycket snö.",
    "answer_en": "Nature in Finland is really beautiful. There are many forests and lakes. In summer it's light all night. In winter it's cold and there is a lot of snow."
   },
@@ -459,6 +1013,16 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "En man är arg på sin hund och sparkar den. Du ser det.",
    "en": "A man is angry with his dog and kicks it. You see it.",
+   "kw": [
+    [
+     "sparka",
+     "kick"
+    ],
+    [
+     "djur",
+     "animal"
+    ]
+   ],
    "answer_sv": "Hallå, sluta! Man får inte sparka hunden. Det gör ont. Om du inte slutar, ringer jag polisen!",
    "answer_en": "Hey, stop! You mustn't kick the dog. It hurts. If you don't stop, I'll call the police!"
   },
@@ -470,6 +1034,16 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du är sjuk och behöver medicin, men du kan inte gå ut. Be en vän gå till apoteket.",
    "en": "You are ill and need medicine, but you can't go out. Ask a friend to go to the pharmacy.",
+   "kw": [
+    [
+     "apoteket",
+     "the pharmacy"
+    ],
+    [
+     "be om hjälp",
+     "ask for help"
+    ]
+   ],
    "answer_sv": "Hej, jag har ett problem. Jag är sjuk och kan inte gå ut. Kan du gå till apoteket åt mig? Jag behöver medicin mot feber. Tack så mycket!",
    "answer_en": "Hi, I have a problem. I'm ill and can't go out. Can you go to the pharmacy for me? I need medicine for fever. Thank you very much!"
   },
@@ -481,6 +1055,16 @@ window.YKI_TASKS = {
    "type": "describe",
    "sv": "Klockan tre i dag krockade en röd och en blå bil framför dig. Nu frågar polisen dig.",
    "en": "At three o'clock today a red and a blue car crashed in front of you. Now the police ask you.",
+   "kw": [
+    [
+     "bilolycka",
+     "car accident"
+    ],
+    [
+     "vad som hände",
+     "what happened"
+    ]
+   ],
    "answer_sv": "Jag stod vid busshållplatsen. En röd bil körde mot rött ljus. Sedan körde den in i en blå bil. Ingen var skadad, tror jag. Det hände klockan tre.",
    "answer_en": "I was standing at the bus stop. A red car drove through a red light. Then it drove into a blue car. Nobody was hurt, I think. It happened at three o'clock."
   },
@@ -492,6 +1076,16 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Det är morgon och du är ute och springer. Plötsligt ser du en kvinna som ligger stilla vid vägen.",
    "en": "It's morning and you are out running. Suddenly you see a woman lying still by the road.",
+   "kw": [
+    [
+     "jogga",
+     "jog"
+    ],
+    [
+     "ligger på gatan",
+     "is lying in the street"
+    ]
+   ],
    "answer_sv": "Hallå! Hur mår du? Hör du mig? Har du ont någonstans? Vänta, jag ringer ambulansen. Jag stannar här hos dig.",
    "answer_en": "Hello! How are you? Can you hear me? Are you hurt anywhere? Wait, I'll call an ambulance. I'll stay here with you."
   },
@@ -503,6 +1097,20 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "Det är grönt ljus och du går över gatan. En bil kommer snabbt och stannar bara en meter från dig.",
    "en": "The light is green and you cross the street. A car comes fast and stops only a metre from you.",
+   "kw": [
+    [
+     "övergångsställe",
+     "pedestrian crossing"
+    ],
+    [
+     "kör nästan på dig",
+     "almost hits you"
+    ],
+    [
+     "föraren",
+     "the driver"
+    ]
+   ],
    "answer_sv": "Hallå! Du måste stanna vid övergångsstället! Det var farligt. Du körde nästan på mig! Kör försiktigt!",
    "answer_en": "Hey! You must stop at the crossing! That was dangerous. You almost hit me! Drive carefully!"
   },
@@ -514,6 +1122,16 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Sköterskan ska ta blod från din arm. Du blir alltid rädd när du ser en nål.",
    "en": "The nurse is going to take blood from your arm. You always get scared when you see a needle.",
+   "kw": [
+    [
+     "laboratoriet",
+     "the laboratory"
+    ],
+    [
+     "rädd för sprutor",
+     "afraid of needles"
+    ]
+   ],
    "answer_sv": "Hej, jag är lite rädd för sprutor. Kan jag ligga ner? Och kan du säga till innan du börjar? Tack.",
    "answer_en": "Hi, I'm a bit afraid of needles. Can I lie down? And can you tell me before you start? Thanks."
   },
@@ -525,6 +1143,20 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "En liten flicka, kanske tio år gammal, står bakom huset med en cigarett.",
    "en": "A little girl, maybe ten years old, is standing behind the house with a cigarette.",
+   "kw": [
+    [
+     "tioårig",
+     "ten-year-old"
+    ],
+    [
+     "röker",
+     "smokes"
+    ],
+    [
+     "gården",
+     "the yard"
+    ]
+   ],
    "answer_sv": "Hej! Du är för ung för att röka. Det är farligt för hälsan. Var har du fått cigaretten? Snälla, sluta.",
    "answer_en": "Hi! You are too young to smoke. It's dangerous for your health. Where did you get the cigarette? Please stop."
   },
@@ -536,6 +1168,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Grannen Pekka kommer hem i bil. Du ser att han är full – han kan knappt gå. Ring polisen.",
    "en": "Your neighbour Pekka comes home by car. You see he is drunk – he can hardly walk. Call the police.",
+   "kw": [
+    [
+     "berusad förare",
+     "drunk driver"
+    ],
+    [
+     "parkeringen",
+     "the car park"
+    ],
+    [
+     "känna igen",
+     "recognise"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att min granne kör bil, och han är full. Han parkerade just vid mitt hus på Björkvägen 5. Kan ni komma?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling because my neighbour is driving, and he is drunk. He just parked by my house at Björkvägen 5. Can you come?"
   },
@@ -547,6 +1193,16 @@ window.YKI_TASKS = {
    "type": "sympathy",
    "sv": "En vän berättar att hon har fått en allvarlig sjukdom, cancer.",
    "en": "A friend tells you she has a serious illness, cancer.",
+   "kw": [
+    [
+     "bröstcancer",
+     "breast cancer"
+    ],
+    [
+     "få veta",
+     "find out"
+    ]
+   ],
    "answer_sv": "Åh nej, vad tråkigt. Jag är så ledsen. Hur mår du? Säg till om du behöver hjälp. Jag finns här för dig.",
    "answer_en": "Oh no, how sad. I'm so sorry. How are you? Tell me if you need help. I'm here for you."
   },
@@ -558,6 +1214,20 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du glömmer ofta saker och är orolig för ditt minne. Fråga hälsovårdaren.",
    "en": "You often forget things and are worried about your memory. Ask the public health nurse.",
+   "kw": [
+    [
+     "minnesproblem",
+     "memory problems"
+    ],
+    [
+     "glömma",
+     "forget"
+    ],
+    [
+     "hälsovårdare",
+     "public health nurse"
+    ]
+   ],
    "answer_sv": "Hej, jag har ett problem. Jag glömmer ofta saker, till exempel nycklar och möten. Jag är orolig. Vad ska jag göra? Kan jag få mer information?",
    "answer_en": "Hi, I have a problem. I often forget things, for example keys and meetings. I'm worried. What should I do? Can I get more information?"
   },
@@ -569,6 +1239,16 @@ window.YKI_TASKS = {
    "type": "apologise",
    "sv": "I kväll ska du och Lisa gå på bio. Men nu har du feber. Ring Lisa.",
    "en": "Tonight you and Lisa are going to the cinema. But now you have a fever. Call Lisa.",
+   "kw": [
+    [
+     "bokat en träff",
+     "arranged to meet"
+    ],
+    [
+     "sjuk",
+     "ill"
+    ]
+   ],
    "answer_sv": "Hej Lisa, det är Alex. Förlåt, men jag kan inte gå på bio i kväll, för jag har feber. Kan vi gå nästa vecka i stället?",
    "answer_en": "Hi Lisa, it's Alex. Sorry, but I can't go to the cinema tonight, because I have a fever. Can we go next week instead?"
   },
@@ -580,6 +1260,20 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Klockan är tre. Du ligger i sängen med 39 graders feber, och Emil ska hämtas från dagis klockan fyra. Ring en vän.",
    "en": "It's three o'clock. You are in bed with a 39-degree fever, and Emil must be picked up from day care at four. Call a friend.",
+   "kw": [
+    [
+     "feber",
+     "fever"
+    ],
+    [
+     "hämta",
+     "pick up"
+    ],
+    [
+     "dagis",
+     "day care"
+    ]
+   ],
    "answer_sv": "Hej, jag har ett problem. Jag har feber och kan inte hämta Emil från dagis. Kan du hämta honom klockan fyra? Tack, det är snällt av dig.",
    "answer_en": "Hi, I have a problem. I have a fever and can't pick up Emil from day care. Can you pick him up at four? Thanks, that's kind of you."
   },
@@ -591,6 +1285,20 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "I morse vägde du 90 kilo. För ett år sedan vägde du 80. Vad säger du?",
    "en": "This morning you weighed 90 kilos. A year ago you weighed 80. What do you say?",
+   "kw": [
+    [
+     "vågen",
+     "the scales"
+    ],
+    [
+     "märka",
+     "notice"
+    ],
+    [
+     "gått upp",
+     "put on (weight)"
+    ]
+   ],
    "answer_sv": "Oj! Jag har gått upp tio kilo. Det är för mycket. Nu måste jag äta mindre socker och träna mer. Jag börjar i morgon!",
    "answer_en": "Oh! I've put on ten kilos. That's too much. Now I must eat less sugar and exercise more. I'll start tomorrow!"
   },
@@ -602,6 +1310,16 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "På gymmet vill du ha hjälp med mat och träning.",
    "en": "At the gym you want help with food and exercise.",
+   "kw": [
+    [
+     "kost- och träningsprogram",
+     "diet and training programme"
+    ],
+    [
+     "gymmet",
+     "the gym"
+    ]
+   ],
    "answer_sv": "Hej, kan du hjälpa mig? Jag vill gå ner i vikt och bli starkare. Kan jag få ett träningsprogram och tips om mat? Hur mycket kostar det?",
    "answer_en": "Hi, can you help me? I want to lose weight and get stronger. Can I get a training programme and tips about food? How much does it cost?"
   },
@@ -613,6 +1331,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Du har en viktig fråga till Johan på jobbet, men han är inte där. Skicka ett röstmeddelande till honom.",
    "en": "You have an important question for Johan at work, but he isn't there. Send him a voice message.",
+   "kw": [
+    [
+     "skrivbord",
+     "desk"
+    ],
+    [
+     "röstmeddelande",
+     "voice message"
+    ],
+    [
+     "kollega",
+     "colleague"
+    ]
+   ],
    "answer_sv": "Hej Johan, det är Alex. Jag har en viktig fråga om mötet i morgon. Kan du ringa mig när du har tid? Tack, hej då!",
    "answer_en": "Hi Johan, it's Alex. I have an important question about the meeting tomorrow. Can you call me when you have time? Thanks, bye!"
   },
@@ -624,6 +1356,16 @@ window.YKI_TASKS = {
    "type": "offer",
    "sv": "Det är Ellas första dag på ditt jobb. Hon står ensam och verkar inte veta vad hon ska göra.",
    "en": "It's Ella's first day at your work. She is standing alone and doesn't seem to know what to do.",
+   "kw": [
+    [
+     "ny anställd",
+     "new employee"
+    ],
+    [
+     "arbetsplats",
+     "workplace"
+    ]
+   ],
    "answer_sv": "Hej Ella, välkommen! Jag heter Alex. Kan jag hjälpa dig? Först visar jag dig köket. Sedan visar jag hur datorn fungerar. Fråga mig om du har frågor.",
    "answer_en": "Hi Ella, welcome! My name is Alex. Can I help you? First I'll show you the kitchen. Then I'll show you how the computer works. Ask me if you have questions."
   },
@@ -635,6 +1377,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Du har varit på en arbetsintervju. Nu har du några frågor till. Ring personen som intervjuade dig.",
    "en": "You have been to a job interview. Now you have some more questions. Call the person who interviewed you.",
+   "kw": [
+    [
+     "anställningsintervju",
+     "job interview"
+    ],
+    [
+     "intervjuaren",
+     "the interviewer"
+    ],
+    [
+     "frågor kvar",
+     "questions left"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag var på intervju hos er i går. Jag har några frågor. När börjar jobbet? Och hur många timmar i veckan är det?",
    "answer_en": "Hello, my name is Alex Andersson. I was at an interview with you yesterday. I have some questions. When does the job start? And how many hours a week is it?"
   },
@@ -646,6 +1402,16 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Du fick för lite pengar på ditt lönekonto den här månaden. Ring och fråga varför.",
    "en": "You got too little money in your pay this month. Call and ask why.",
+   "kw": [
+    [
+     "fel i lönen",
+     "a mistake in the pay"
+    ],
+    [
+     "löneadministratör",
+     "payroll administrator"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min lön. Jag fick för lite pengar den här månaden. Jag jobbade tio timmar extra. Kan du kontrollera det?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about my pay. I got too little money this month. I worked ten extra hours. Can you check it?"
   },
@@ -657,6 +1423,24 @@ window.YKI_TASKS = {
    "type": "suggest",
    "sv": "En kollega fyller femtio år. Du vill fira. Ge ett förslag.",
    "en": "A colleague turns fifty. You want to celebrate. Make a suggestion.",
+   "kw": [
+    [
+     "fyller 50",
+     "turns 50"
+    ],
+    [
+     "ordna",
+     "arrange"
+    ],
+    [
+     "föreslå",
+     "suggest"
+    ],
+    [
+     "fira",
+     "celebrate"
+    ]
+   ],
    "answer_sv": "Jag har en idé. Lisa fyller femtio på fredag. Vi kan köpa en tårta och blommor. Vi kan fira i kafferummet klockan två. Vad tycker du?",
    "answer_en": "I have an idea. Lisa turns fifty on Friday. We can buy a cake and flowers. We can celebrate in the coffee room at two. What do you think?"
   },
@@ -668,6 +1452,16 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Ett annat företag har sagt ja till dig! Gå in till chefen och berätta att du slutar.",
    "en": "Another company has said yes to you! Go in to the boss and tell him/her that you are leaving.",
+   "kw": [
+    [
+     "säga upp sig",
+     "resign"
+    ],
+    [
+     "chef",
+     "boss"
+    ]
+   ],
    "answer_sv": "Hej, jag vill prata med dig. Jag har fått ett nytt jobb, så jag vill säga upp mig. Jag slutar om en månad. Tack för allt, jag har trivts här.",
    "answer_en": "Hi, I want to talk to you. I have got a new job, so I want to resign. I'll leave in a month. Thanks for everything, I have enjoyed it here."
   },
@@ -679,6 +1473,20 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Ert projekt behöver en person till. Din gamla kollega Sara är perfekt. Prata med chefen om henne.",
    "en": "Your project needs one more person. Your old colleague Sara is perfect. Talk to the boss about her.",
+   "kw": [
+    [
+     "jättebra",
+     "great"
+    ],
+    [
+     "rekommendera",
+     "recommend"
+    ],
+    [
+     "projekt",
+     "project"
+    ]
+   ],
    "answer_sv": "Jag känner en person som passar i vårt projekt. Hon heter Sara. Hon är duktig och flitig och har jobbat med IT i fem år. Jag tycker att du ska träffa henne.",
    "answer_en": "I know a person who fits our project. Her name is Sara. She is skilled and hard-working and has worked in IT for five years. I think you should meet her."
   },
@@ -690,6 +1498,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Nästa tisdag har ni ett möte med tio personer. Ring receptionen och fixa ett rum.",
    "en": "Next Tuesday you have a meeting with ten people. Call reception and arrange a room.",
+   "kw": [
+    [
+     "boka",
+     "book"
+    ],
+    [
+     "mötesrum",
+     "meeting room"
+    ],
+    [
+     "hur stort",
+     "how big"
+    ]
+   ],
    "answer_sv": "Hej, jag vill boka ett mötesrum. Jag behöver det på tisdag från klockan nio till elva. Vi är tio personer. Finns det ett rum ledigt?",
    "answer_en": "Hi, I want to book a meeting room. I need it on Tuesday from nine to eleven. We are ten people. Is there a room free?"
   },
@@ -701,6 +1523,16 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Johan lovade att skriva rapporten till fredag. Nu är det fredag, och han har inte gjort något.",
    "en": "Johan promised to write the report by Friday. Now it's Friday, and he hasn't done anything.",
+   "kw": [
+    [
+     "kom överens om",
+     "agreed on"
+    ],
+    [
+     "arg",
+     "angry"
+    ]
+   ],
    "answer_sv": "Johan, jag är lite arg. Du lovade att skriva rapporten till i dag, men den är inte klar. Nu blir projektet sent. Kan du göra den i dag, tack?",
    "answer_en": "Johan, I'm a bit angry. You promised to write the report by today, but it isn't ready. Now the project will be late. Can you do it today, please?"
   },
@@ -712,6 +1544,20 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du jobbar varje kväll och sover dåligt. Det är för mycket. Prata med chefen och ge en idé.",
    "en": "You work every evening and sleep badly. It's too much. Talk to the boss and give an idea.",
+   "kw": [
+    [
+     "väldigt trött",
+     "very tired"
+    ],
+    [
+     "arbetsbörda",
+     "workload"
+    ],
+    [
+     "minska",
+     "reduce"
+    ]
+   ],
    "answer_sv": "Hej, jag har ett problem. Jag har för mycket att göra och är så trött. Kan någon annan hjälpa mig med kunderna? Eller kan jag jobba hemma en dag i veckan?",
    "answer_en": "Hi, I have a problem. I have too much to do and I'm so tired. Can someone else help me with the customers? Or can I work from home one day a week?"
   },
@@ -723,6 +1569,12 @@ window.YKI_TASKS = {
    "type": "congrat",
    "sv": "Din kollega ska vara hemma med sitt nya barn en tid.",
    "en": "Your colleague is going to stay at home with her new baby for a while.",
+   "kw": [
+    [
+     "mammaledighet",
+     "maternity leave"
+    ]
+   ],
    "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. Lycka till med barnet! Vi kommer att sakna dig här.",
    "answer_en": "Congratulations! How nice! I'm so happy for you. Good luck with the baby! We will miss you here."
   },
@@ -734,6 +1586,12 @@ window.YKI_TASKS = {
    "type": "sympathy",
    "sv": "Din vän har förlorat jobbet.",
    "en": "Your friend has lost his/her job.",
+   "kw": [
+    [
+     "fått sparken",
+     "been fired"
+    ]
+   ],
    "answer_sv": "Åh nej, vad tråkigt. Jag är ledsen att höra det. Men du är duktig, du hittar ett nytt jobb snart. Säg till om du behöver hjälp.",
    "answer_en": "Oh no, how sad. I'm sorry to hear that. But you are good, you will find a new job soon. Tell me if you need help."
   },
@@ -745,6 +1603,16 @@ window.YKI_TASKS = {
    "type": "congrat",
    "sv": "Din vän ringer. Hen ska börja på ett nytt jobb som hen har velat ha länge.",
    "en": "Your friend calls. He/she is starting a new job that he/she has wanted for a long time.",
+   "kw": [
+    [
+     "nytt jobb",
+     "new job"
+    ],
+    [
+     "jättebra",
+     "great"
+    ]
+   ],
    "answer_sv": "Grattis! Vad roligt! Jag är så glad för din skull. När börjar du? Vi måste fira!",
    "answer_en": "Congratulations! How nice! I'm so happy for you. When do you start? We must celebrate!"
   },
@@ -756,6 +1624,24 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Chefen säger att många på jobbet ska förlora sina jobb. Säg till en kollega vad du tycker.",
    "en": "The boss says many people at work will lose their jobs. Tell a colleague what you think.",
+   "kw": [
+    [
+     "förändring",
+     "change"
+    ],
+    [
+     "personalen",
+     "the staff"
+    ],
+    [
+     "sägas upp",
+     "be laid off"
+    ],
+    [
+     "procent",
+     "percent"
+    ]
+   ],
    "answer_sv": "Det här är hemskt. Jag är orolig. Många har jobbat här länge. Jag tycker att chefen borde prata med oss först. Vad tror du?",
    "answer_en": "This is terrible. I'm worried. Many have worked here a long time. I think the boss should talk to us first. What do you think?"
   },
@@ -767,6 +1653,20 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Du har jobbat i företaget i tre år och har samma lön som när du började. Prata med chefen.",
    "en": "You have worked in the company for three years and have the same pay as when you started. Talk to the boss.",
+   "kw": [
+    [
+     "lön",
+     "pay"
+    ],
+    [
+     "för låg",
+     "too low"
+    ],
+    [
+     "löneförhöjning",
+     "pay rise"
+    ]
+   ],
    "answer_sv": "Jag vill prata om min lön. Jag tycker att den är för låg. Jag har jobbat här i tre år, och jag gör mycket. Allt har blivit dyrare. Kan jag få högre lön?",
    "answer_en": "I want to talk about my pay. I think it's too low. I have worked here for three years, and I do a lot. Everything has become more expensive. Can I get higher pay?"
   },
@@ -778,6 +1678,16 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Du vill gå en kurs, till exempel i svenska. Berätta för chefen varför den är bra för jobbet.",
    "en": "You want to take a course, for example in Swedish. Tell the boss why it is good for the job.",
+   "kw": [
+    [
+     "utbildning",
+     "training, course"
+    ],
+    [
+     "gynna",
+     "benefit"
+    ]
+   ],
    "answer_sv": "Jag vill gå en kurs i svenska. Den är bra för jobbet, för då kan jag prata med kunderna på svenska. Kursen är på kvällen, en gång i veckan.",
    "answer_en": "I want to take a course in Swedish. It's good for the job, because then I can talk to the customers in Swedish. The course is in the evening, once a week."
   },
@@ -789,6 +1699,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Emil kommer hem från skolan med tårar i ögonen. Han säger att några barn slog honom. Ring hans lärare.",
    "en": "Emil comes home from school with tears in his eyes. He says some children hit him. Call his teacher.",
+   "kw": [
+    [
+     "gråter",
+     "is crying"
+    ],
+    [
+     "något hemskt",
+     "something terrible"
+    ],
+    [
+     "läraren",
+     "the teacher"
+    ]
+   ],
    "answer_sv": "Hej, det är Alex, Emils pappa. Emil kom hem och grät i dag. Han säger att några barn slog honom på rasten. Vad har hänt? Kan vi prata om det?",
    "answer_en": "Hi, it's Alex, Emil's dad. Emil came home crying today. He says some children hit him at break. What happened? Can we talk about it?"
   },
@@ -800,6 +1724,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "På rasten ser du genom fönstret att en stor pojke slår en liten pojke på skolgården. Ring skolan.",
    "en": "At break you see through the window that a big boy is hitting a small boy in the school yard. Call the school.",
+   "kw": [
+    [
+     "mobbade",
+     "bullied"
+    ],
+    [
+     "skolgården",
+     "the school yard"
+    ],
+    [
+     "rektor",
+     "head teacher"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mobbning. I dag såg jag ett barn som slog ett annat barn på skolgården. Kan ni prata med barnen?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about bullying. Today I saw a child hitting another child in the school yard. Can you talk to the children?"
   },
@@ -811,6 +1749,20 @@ window.YKI_TASKS = {
    "type": "apologise",
    "sv": "Du har lånat en bok, och nu har den fått en skada. Du går till biblioteket med boken. Förklara vad som hände.",
    "en": "You borrowed a book, and now it is damaged. You go to the library with the book. Explain what happened.",
+   "kw": [
+    [
+     "lämna tillbaka",
+     "return"
+    ],
+    [
+     "skadad",
+     "damaged"
+    ],
+    [
+     "biblioteket",
+     "the library"
+    ]
+   ],
    "answer_sv": "Hej, förlåt, men boken är trasig. Min son spillde vatten på den. Det var mitt fel. Ska jag betala för den?",
    "answer_en": "Hi, sorry, but the book is damaged. My son spilled water on it. It was my fault. Should I pay for it?"
   },
@@ -822,6 +1774,16 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "Du vill läsa i lugn och ro på biblioteket, men en man bredvid dig har ett långt telefonsamtal.",
    "en": "You want to read in peace in the library, but a man next to you is having a long phone call.",
+   "kw": [
+    [
+     "pratar högt i telefon",
+     "talks loudly on the phone"
+    ],
+    [
+     "säg till",
+     "say something"
+    ]
+   ],
    "answer_sv": "Ursäkta, kan du prata tystare? Det här är ett bibliotek, och vi vill läsa. Du kan prata i telefon utanför. Tack.",
    "answer_en": "Excuse me, can you talk more quietly? This is a library, and we want to read. You can talk on the phone outside. Thanks."
   },
@@ -833,6 +1795,28 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Du står i baren och vill beställa. En man kommer efter dig – och bartendern tar hans beställning först.",
    "en": "You are at the bar and want to order. A man comes after you – and the bartender takes his order first.",
+   "kw": [
+    [
+     "betjänad",
+     "served"
+    ],
+    [
+     "baren",
+     "the bar"
+    ],
+    [
+     "bredvid",
+     "next to"
+    ],
+    [
+     "direkt",
+     "right away"
+    ],
+    [
+     "bartender",
+     "bartender"
+    ]
+   ],
    "answer_sv": "Ursäkta, men det var min tur. Jag har väntat i tio minuter. Kan jag få beställa nu, tack?",
    "answer_en": "Excuse me, but it was my turn. I have waited ten minutes. Can I order now, please?"
   },
@@ -844,6 +1828,20 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Vakten vid dörren tror att du är för ung och vill inte släppa in dig.",
    "en": "The doorman thinks you are too young and won't let you in.",
+   "kw": [
+    [
+     "dörrvakten",
+     "the doorman"
+    ],
+    [
+     "släpper inte in",
+     "won't let in"
+    ],
+    [
+     "minderårig",
+     "under age"
+    ]
+   ],
    "answer_sv": "Men jag är tjugofem år! Här är mitt ID-kort. Kan jag komma in nu, tack?",
    "answer_en": "But I'm twenty-five! Here is my ID card. Can I come in now, please?"
   },
@@ -855,6 +1853,20 @@ window.YKI_TASKS = {
    "type": "suggest",
    "sv": "Martin säger: ”Jag vill röra på mig mer, men jag vet inte vad jag ska göra.” Ge honom en idé.",
    "en": "Martin says: “I want to move more, but I don't know what to do.” Give him an idea.",
+   "kw": [
+    [
+     "idrott",
+     "sport"
+    ],
+    [
+     "föreslå",
+     "suggest"
+    ],
+    [
+     "lämplig",
+     "suitable"
+    ]
+   ],
    "answer_sv": "Jag har en idé. Du kan börja simma. Det är bra för hälsan och för ryggen. Simhallen ligger nära ditt hem. Vi kan gå tillsammans!",
    "answer_en": "I have an idea. You can start swimming. It's good for your health and your back. The swimming hall is near your home. We can go together!"
   },
@@ -866,6 +1878,20 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Klockan sex i morse stod du vid gymmets dörr, men dörren öppnades inte med ditt kort. Ring gymmet.",
    "en": "At six this morning you were at the gym door, but the door didn't open with your card. Call the gym.",
+   "kw": [
+    [
+     "tidigt på morgonen",
+     "early in the morning"
+    ],
+    [
+     "kortet fungerade inte",
+     "the card didn't work"
+    ],
+    [
+     "anmäla",
+     "report"
+    ]
+   ],
    "answer_sv": "Hej, jag har ett problem. I morse fungerade mitt kort inte, så jag kunde inte komma in. Kan ni kontrollera kortet?",
    "answer_en": "Hi, I have a problem. This morning my card didn't work, so I couldn't get in. Can you check the card?"
   },
@@ -877,6 +1903,16 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "I går lämnade du kvar en sak på gymmet. Ring gymmet och säg vad det är och när det hände.",
    "en": "Yesterday you left something at the gym. Call the gym and say what it is and when it happened.",
+   "kw": [
+    [
+     "glömt",
+     "forgotten"
+    ],
+    [
+     "gymmet",
+     "the gym"
+    ]
+   ],
    "answer_sv": "Hej, jag har ett problem. Jag glömde min blå jacka här i går kväll, klockan sju. Har ni hittat den?",
    "answer_en": "Hi, I have a problem. I forgot my blue jacket here last night, at seven. Have you found it?"
   },
@@ -888,6 +1924,24 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du är på ett hotell. I morgon flyger du hem. Gå till receptionen och fråga om en taxi.",
    "en": "You are at a hotel. Tomorrow you fly home. Go to reception and ask about a taxi.",
+   "kw": [
+    [
+     "boka taxi",
+     "book a taxi"
+    ],
+    [
+     "flygplatsen",
+     "the airport"
+    ],
+    [
+     "receptionen",
+     "reception"
+    ],
+    [
+     "flyget går",
+     "the flight leaves"
+    ]
+   ],
    "answer_sv": "Hej, kan du hjälpa mig? Jag behöver en taxi till flygplatsen i morgon. Mitt flyg går klockan tio. Kan taxin komma klockan sju?",
    "answer_en": "Hi, can you help me? I need a taxi to the airport tomorrow. My flight leaves at ten. Can the taxi come at seven?"
   },
@@ -899,6 +1953,16 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Du kommer till din plats på tåget, men där sitter redan en annan person.",
    "en": "You come to your seat on the train, but another person is already sitting there.",
+   "kw": [
+    [
+     "biljett",
+     "ticket"
+    ],
+    [
+     "din plats",
+     "your seat"
+    ]
+   ],
    "answer_sv": "Ursäkta, jag tror att du sitter på min plats. Jag har plats nummer tolv. Här är min biljett.",
    "answer_en": "Excuse me, I think you are sitting in my seat. I have seat number twelve. Here is my ticket."
   },
@@ -910,6 +1974,16 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Du och Sara äter lunch. Hon tittar på sin mobil hela tiden och säger nästan ingenting.",
    "en": "You and Sara are having lunch. She looks at her mobile all the time and says almost nothing.",
+   "kw": [
+    [
+     "tittar på telefonen",
+     "looks at the phone"
+    ],
+    [
+     "hela tiden",
+     "all the time"
+    ]
+   ],
    "answer_sv": "Hallå, du tittar på telefonen hela tiden. Det är tråkigt för mig. Jag vill prata med dig. Kan du lägga bort telefonen en stund?",
    "answer_en": "Hey, you are looking at your phone all the time. It's boring for me. I want to talk to you. Can you put the phone away for a while?"
   },
@@ -921,6 +1995,20 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "Du har huvudvärk. På bussen sitter en tonåring som lyssnar på musik utan hörlurar. Det är högt.",
    "en": "You have a headache. On the bus a teenager is listening to music without headphones. It's loud.",
+   "kw": [
+    [
+     "spelar hög musik",
+     "plays loud music"
+    ],
+    [
+     "huvudvärk",
+     "headache"
+    ],
+    [
+     "bredvid",
+     "next to"
+    ]
+   ],
    "answer_sv": "Ursäkta, musiken är för hög. Jag har huvudvärk. Kan du sänka den, tack?",
    "answer_en": "Excuse me, the music is too loud. I have a headache. Can you turn it down, please?"
   },
@@ -932,6 +2020,16 @@ window.YKI_TASKS = {
    "type": "congrat",
    "sv": "Det är Mikaels femtioårsdag. Du har köpt en tavla till honom. Ge honom presenten.",
    "en": "It's Mikael's fiftieth birthday. You have bought him a painting. Give him the present.",
+   "kw": [
+    [
+     "fyller 50",
+     "turns 50"
+    ],
+    [
+     "konstpresent",
+     "art present"
+    ]
+   ],
    "answer_sv": "Grattis på födelsedagen! Här är en present till dig. Det är en tavla. Jag hoppas att du tycker om den. Den kan hänga i ditt vardagsrum.",
    "answer_en": "Happy birthday! Here is a present for you. It's a painting. I hope you like it. It can hang in your living room."
   },
@@ -943,6 +2041,16 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "Du tittar på en film på bio. Mannen bredvid dig äter popcorn, och det låter mycket.",
    "en": "You are watching a film at the cinema. The man next to you is eating popcorn, and it's noisy.",
+   "kw": [
+    [
+     "bio",
+     "cinema"
+    ],
+    [
+     "äter popcorn högljutt",
+     "eats popcorn noisily"
+    ]
+   ],
    "answer_sv": "Ursäkta, kan du äta lite tystare? Jag hör inte filmen. Tack.",
    "answer_en": "Excuse me, can you eat a bit more quietly? I can't hear the film. Thanks."
   },
@@ -954,6 +2062,20 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Din bil startar inte. Grannen Pekka ska till centrum på morgonen, precis som du. Fråga honom.",
    "en": "Your car won't start. Your neighbour Pekka is going to the centre in the morning, just like you. Ask him.",
+   "kw": [
+    [
+     "gått sönder",
+     "broken down"
+    ],
+    [
+     "samma ställe",
+     "the same place"
+    ],
+    [
+     "skjuts",
+     "a lift"
+    ]
+   ],
    "answer_sv": "Hej, jag har ett problem. Min bil är trasig. Du ska också till centrum i morgon, va? Kan jag åka med dig? Jag kan betala för bensinen.",
    "answer_en": "Hi, I have a problem. My car is broken. You are also going to the centre tomorrow, right? Can I come with you? I can pay for the petrol."
   },
@@ -965,6 +2087,24 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "En pojke på sju år sitter ensam med en surfplatta på kaféet. Han tittar på en film med mycket våld.",
    "en": "A seven-year-old boy sits alone with a tablet at the café. He is watching a film with a lot of violence.",
+   "kw": [
+    [
+     "skolbarn",
+     "school child"
+    ],
+    [
+     "kafeterian",
+     "the cafeteria"
+    ],
+    [
+     "olämpligt program",
+     "unsuitable programme"
+    ],
+    [
+     "surfplatta",
+     "tablet"
+    ]
+   ],
    "answer_sv": "Hej! Den här filmen är inte för barn. Det är mycket våld i den, och den kan vara läskig. Du kan titta på något annat. Var är din mamma?",
    "answer_en": "Hi! This film isn't for children. There is a lot of violence in it, and it can be scary. You can watch something else. Where is your mum?"
   },
@@ -976,6 +2116,24 @@ window.YKI_TASKS = {
    "type": "complain",
    "sv": "Förra veckan köpte du skidor. Redan första dagen gick en skida sönder. Gå tillbaka till affären.",
    "en": "Last week you bought skis. On the very first day one ski broke. Go back to the shop.",
+   "kw": [
+    [
+     "produkt",
+     "product"
+    ],
+    [
+     "sportaffär",
+     "sports shop"
+    ],
+    [
+     "fel",
+     "fault"
+    ],
+    [
+     "lämna tillbaka",
+     "return"
+    ]
+   ],
    "answer_sv": "Hej! Jag köpte de här skidorna förra veckan, men en skida är trasig. Jag vill byta dem eller få pengarna tillbaka. Här är kvittot.",
    "answer_en": "Hi! I bought these skis last week, but one ski is broken. I want to exchange them or get my money back. Here is the receipt."
   },
@@ -987,6 +2145,16 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "En man med mikrofon stoppar dig på gatan: ”Hej, jag är från radion. Vad tycker du om att bo här?”",
    "en": "A man with a microphone stops you in the street: “Hi, I'm from the radio. What do you think about living here?”",
+   "kw": [
+    [
+     "journalist",
+     "journalist"
+    ],
+    [
+     "hemstad",
+     "home town"
+    ]
+   ],
    "answer_sv": "Jag tycker om min stad. Den är lugn och ren, och det finns mycket natur. Bussarna är bra. Men det finns för få jobb här.",
    "answer_en": "I like my town. It's quiet and clean, and there is a lot of nature. The buses are good. But there are too few jobs here."
   },
@@ -998,6 +2166,20 @@ window.YKI_TASKS = {
    "type": "suggest",
    "sv": "Varje dag efter skolan är några ungdomar i parken. De skräpar ner och låter mycket. Ge dem ett förslag.",
    "en": "Every day after school some young people are in the park. They drop litter and are noisy. Give them a suggestion.",
+   "kw": [
+    [
+     "ungdomar",
+     "young people"
+    ],
+    [
+     "skräpa ner",
+     "drop litter"
+    ],
+    [
+     "föra oväsen",
+     "make noise"
+    ]
+   ],
    "answer_sv": "Hej! Ni skräpar ner i parken. Det är inte bra. Ni kan spela fotboll på planen eller gå till ungdomsgården. Och snälla, släng skräpet i papperskorgen.",
    "answer_en": "Hi! You are littering in the park. That's not good. You can play football on the pitch or go to the youth centre. And please throw the rubbish in the bin."
   },
@@ -1009,6 +2191,16 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Ditt uppehållstillstånd tar snart slut, och du vet inte vad du ska göra. Ring Migrationsverket.",
    "en": "Your residence permit runs out soon, and you don't know what to do. Call the Immigration Service.",
+   "kw": [
+    [
+     "uppehållstillstånd",
+     "residence permit"
+    ],
+    [
+     "Migrationsverket",
+     "Immigration Service"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt uppehållstillstånd. Det tar slut nästa månad. Jag har en fråga: Hur ansöker jag om ett nytt?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about my residence permit. It runs out next month. I have a question: How do I apply for a new one?"
   },
@@ -1020,6 +2212,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Nu har du klarat YKI-testet! Du vill bli finsk medborgare. Ring Migrationsverket.",
    "en": "Now you have passed the YKI test! You want to become a Finnish citizen. Call the Immigration Service.",
+   "kw": [
+    [
+     "YKI-resultat",
+     "YKI results"
+    ],
+    [
+     "ansöka om",
+     "apply for"
+    ],
+    [
+     "medborgarskap",
+     "citizenship"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om medborgarskap. Jag har fått mina YKI-resultat. Hur ansöker jag? Och vilka papper behöver jag?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about citizenship. I have got my YKI results. How do I apply? And which papers do I need?"
   },
@@ -1031,6 +2237,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Du ansökte om pass för sexton månader sedan, men du har fortfarande inget pass. Ring Migrationsverket.",
    "en": "You applied for a passport sixteen months ago, but you still have no passport. Call the Immigration Service.",
+   "kw": [
+    [
+     "väntat 16 månader",
+     "waited 16 months"
+    ],
+    [
+     "pass",
+     "passport"
+    ],
+    [
+     "ställa frågor",
+     "ask questions"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt pass. Jag har väntat i sexton månader. Det är för länge. När får jag passet?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about my passport. I have waited sixteen months. That's too long. When will I get the passport?"
   },
@@ -1042,6 +2262,24 @@ window.YKI_TASKS = {
    "type": "thank",
    "sv": "Du blir bjuden till en stor fest på Finlands självständighetsdag, för du har studerat flitigt. Vad säger du?",
    "en": "You are invited to a big party on Finland's Independence Day, because you have studied hard. What do you say?",
+   "kw": [
+    [
+     "presidentens kansli",
+     "the President's office"
+    ],
+    [
+     "självständighetsfesten",
+     "the Independence Day party"
+    ],
+    [
+     "flitig",
+     "hard-working"
+    ],
+    [
+     "rekommenderade",
+     "recommended"
+    ]
+   ],
    "answer_sv": "Oj, tack så mycket! Vad roligt! Det är en stor ära för mig. Jag kommer gärna. Hälsa och tacka min lärare!",
    "answer_en": "Oh, thank you so much! How nice! It's a great honour for me. I'll be happy to come. Please thank my teacher!"
   },
@@ -1053,6 +2291,24 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Din telefon är trasig. Fråga försäkringsbolaget om försäkringen betalar.",
    "en": "Your phone is broken. Ask the insurance company if the insurance pays.",
+   "kw": [
+    [
+     "mobiltelefon",
+     "mobile phone"
+    ],
+    [
+     "gått sönder",
+     "broken"
+    ],
+    [
+     "hemförsäkringen",
+     "the home insurance"
+    ],
+    [
+     "ersätter",
+     "covers"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min telefon. Den föll i golvet och skärmen gick sönder. Betalar hemförsäkringen en ny telefon?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about my phone. It fell on the floor and the screen broke. Does the home insurance pay for a new phone?"
   },
@@ -1064,6 +2320,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Från nästa månad har du ett nytt jobb med högre lön. Din skatt måste ändras. Ring Skatteförvaltningen.",
    "en": "From next month you have a new job with higher pay. Your tax must be changed. Call the Tax Administration.",
+   "kw": [
+    [
+     "arbetssituation",
+     "work situation"
+    ],
+    [
+     "skatteprocent",
+     "tax rate"
+    ],
+    [
+     "Skatteförvaltningen",
+     "Tax Administration"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min skatt. Jag har fått ett nytt jobb med högre lön. Hur ändrar jag min skatteprocent?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about my tax. I have got a new job with higher pay. How do I change my tax rate?"
   },
@@ -1075,6 +2345,16 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Du har inte fått ditt bostadsbidrag den här månaden. Ring FPA.",
    "en": "You haven't received your housing allowance this month. Call Kela (FPA).",
+   "kw": [
+    [
+     "socialskyddet",
+     "social security"
+    ],
+    [
+     "FPA",
+     "Kela"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt bostadsbidrag. Jag har inte fått pengarna den här månaden. Kan ni kontrollera det?",
    "answer_en": "Hello, my name is Alex Andersson. I'm calling about my housing allowance. I haven't got the money this month. Can you check it?"
   },
@@ -1086,6 +2366,20 @@ window.YKI_TASKS = {
    "type": "office",
    "sv": "Din plånbok försvann på bussen. Du tror att någon stal den. Ring polisen.",
    "en": "Your wallet disappeared on the bus. You think someone stole it. Call the police.",
+   "kw": [
+    [
+     "brott",
+     "crime"
+    ],
+    [
+     "anmäla",
+     "report"
+    ],
+    [
+     "utsatt för",
+     "subjected to"
+    ]
+   ],
    "answer_sv": "Hej, jag heter Alex Andersson. Jag vill anmäla ett brott. Någon stal min plånbok på bussen i går. Vad ska jag göra?",
    "answer_en": "Hello, my name is Alex Andersson. I want to report a crime. Someone stole my wallet on the bus yesterday. What should I do?"
   }
