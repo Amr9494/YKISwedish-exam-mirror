@@ -481,8 +481,8 @@ window.YKI_TASKS = {
      "fill up"
     ]
    ],
-   "answer_sv": "Hej, jag är lite arg. Du lånade min bil, men du tankade inte. Nu är tanken tom. Nästa gång måste du tanka. Det är viktigt för mig.",
-   "answer_en": "Hi, I'm a bit angry. You borrowed my car, but you didn't fill it up. Now the tank is empty. Next time you must fill it. It's important to me."
+   "answer_sv": "Hej, jag är lite arg. Du lånade min bil, men du har inte fyllt på bensin. Det är inte bra. Kan du fylla på den?",
+   "answer_en": "Hi, I'm a bit angry. You borrowed my car, but you haven't filled up the petrol. That's not good. Can you fill it up?"
   },
   {
    "id": "r2-3",
@@ -506,8 +506,8 @@ window.YKI_TASKS = {
      "clean yourself"
     ]
    ],
-   "answer_sv": "Jag vill inte städa själv längre. Jag jobbar mycket och är trött på kvällen. Därför vill jag ha en städare. Då har jag mer tid för familjen.",
-   "answer_en": "I don't want to clean myself any more. I work a lot and I'm tired in the evening. That's why I want a cleaner. Then I have more time for the family."
+   "answer_sv": "Jag vill anlita en städare. Jag jobbar så mycket nu och har ingen fritid. Jag vill ha tid för min familj.",
+   "answer_en": "I want to hire a cleaner. I work so much now and have no free time. I want to have time for my family."
   },
   {
    "id": "r2-4",
@@ -531,8 +531,8 @@ window.YKI_TASKS = {
      "demand compensation"
     ]
    ],
-   "answer_sv": "Hej, jag har ett problem. Jag köpte den här lampan hos er. I går föll den ner från taket. Det är farligt! Jag vill ha pengarna tillbaka. Här är kvittot.",
-   "answer_en": "Hi, I have a problem. I bought this lamp from you. Yesterday it fell down from the ceiling. That's dangerous! I want my money back. Here is the receipt."
+   "answer_sv": "Hej! Jag köpte en lampa hos er, men den föll ner från taket. Om lampan hade fallit på någons huvud, hade det varit farligt. Jag vill ha pengarna tillbaka. Här är kvittot.",
+   "answer_en": "Hi! I bought a lamp from you, but it fell down from the ceiling. If the lamp had fallen on someone's head, it would have been dangerous. I want my money back. Here is the receipt."
   },
   {
    "id": "r2-5",
@@ -560,8 +560,8 @@ window.YKI_TASKS = {
      "the package"
     ]
    ],
-   "answer_sv": "Hej, jag köpte ett skåp hos er i förra veckan. Men några delar saknas i paketet. Kan jag få delarna, eller kan jag byta skåpet? Här är kvittot.",
-   "answer_en": "Hi, I bought a cupboard from you last week. But some parts are missing from the package. Can I get the parts, or can I exchange the cupboard? Here is the receipt."
+   "answer_sv": "Hej! Jag köpte ett bord hos er, men när jag försökte sätta ihop det, fanns inte alla delar i paketet. Kan jag få nya delar?",
+   "answer_en": "Hi! I bought a table from you, but when I tried to put it together, not all the parts were in the package. Can I get new parts?"
   },
   {
    "id": "r2-6",
@@ -606,8 +606,8 @@ window.YKI_TASKS = {
      "are left"
     ]
    ],
-   "answer_sv": "Ursäkta, jag har en fråga. Jag behöver två likadana stolar, och det finns bara två kvar. Kan jag få köpa den stolen? Du kan kanske välja en annan färg?",
-   "answer_en": "Excuse me, I have a question. I need two identical chairs, and there are only two left. Could I buy that chair? Maybe you could choose another colour?"
+   "answer_sv": "Ursäkta, jag vill köpa två likadana stolar, men det finns bara en kvar, och du har den andra. Kan jag få den?",
+   "answer_en": "Excuse me, I want to buy two identical chairs, but there is only one left, and you have the other one. Can I have it?"
   },
   {
    "id": "r2-8",
@@ -631,8 +631,8 @@ window.YKI_TASKS = {
      "expensive"
     ]
    ],
-   "answer_sv": "Hej, jag vill köpa den här tv:n. Men den är dyr. Kan jag få ett bättre pris? Den har en liten skada, och jag betalar direkt. Kan jag få tio procent rabatt?",
-   "answer_en": "Hi, I want to buy this TV. But it's expensive. Can I get a better price? It has a small mark, and I'll pay right away. Can I get a ten percent discount?"
+   "answer_sv": "Hej, jag vill köpa den här mobilen, men den är dyr för mig. Kan jag få tio procent rabatt? Jag kan betala i dag.",
+   "answer_en": "Hi, I want to buy this mobile, but it's expensive for me. Can I get ten percent discount? I can pay today."
   },
   {
    "id": "r2-9",
@@ -656,8 +656,8 @@ window.YKI_TASKS = {
      "occasion"
     ]
    ],
-   "answer_sv": "Hej! Jag vill köpa blommor. De är till min mamma, för hon fyller sextio år. Hon tycker om rosor. Kan jag få tio röda rosor?",
-   "answer_en": "Hi! I want to buy flowers. They are for my mother, because she turns sixty. She likes roses. Can I have ten red roses?"
+   "answer_sv": "Hej! Jag vill köpa en fin blombukett till min fru. Hon fyller år i dag, och hon älskar röda rosor.",
+   "answer_en": "Hi! I want to buy a nice bouquet for my wife. It's her birthday today, and she loves red roses."
   },
   {
    "id": "r2-10",
@@ -681,8 +681,8 @@ window.YKI_TASKS = {
      "parents"
     ]
    ],
-   "answer_sv": "Ursäkta, men era barn skriker och springer. Vi vill äta i lugn och ro. Kan ni säga till dem, tack?",
-   "answer_en": "Excuse me, but your children are shouting and running. We want to eat in peace. Can you talk to them, please?"
+   "answer_sv": "Ursäkta, men era barn springer. Vi vill äta i lugn och ro. Kan ni säga till dem, tack?",
+   "answer_en": "Excuse me, but your children are running. We want to eat in peace. Can you tell them, please?"
   },
   {
    "id": "r2-11",
@@ -731,8 +731,8 @@ window.YKI_TASKS = {
      "dog owner"
     ]
    ],
-   "answer_sv": "Ursäkta, är det din hund? Det är för varmt i bilen. Det är farligt för hunden. Du får inte lämna den där. Kan du öppna bilen, tack?",
-   "answer_en": "Excuse me, is that your dog? It's too hot in the car. It's dangerous for the dog. You mustn't leave it there. Can you open the car, please?"
+   "answer_sv": "Ursäkta, det är för varmt i bilen. Det är inte bra för hunden. Du får inte lämna den där. Kan du öppna bilen, tack?",
+   "answer_en": "Excuse me, it's too hot in the car. It's not good for the dog. You mustn't leave it there. Can you open the car, please?"
   },
   {
    "id": "r2-13",
@@ -760,8 +760,8 @@ window.YKI_TASKS = {
      "the shop"
     ]
    ],
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min dator. Jag köpte den hos er för ett år sedan, och nu fungerar den inte. Den har garanti. Kan ni reparera den?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my computer. I bought it from you a year ago, and now it doesn't work. It has a guarantee. Can you repair it?"
+   "answer_sv": "Hej, jag heter Alex. Jag ringer om min dator. Jag köpte den hos er för ett år sedan, och nu fungerar den inte. Den har garanti. Kan ni reparera den?",
+   "answer_en": "Hi, my name is Alex. I'm calling about my computer. I bought it from you a year ago, and now it doesn't work. It has a guarantee. Can you repair it?"
   },
   {
    "id": "r2-14",
@@ -785,8 +785,8 @@ window.YKI_TASKS = {
      "seller"
     ]
    ],
-   "answer_sv": "Hej, jag heter Alex. Jag ringer om tvättmaskinen. Fungerar den bra? Varför säljer du den? Kan jag komma och titta på den i kväll?",
-   "answer_en": "Hi, my name is Alex. I'm calling about the washing machine. Does it work well? Why are you selling it? Can I come and look at it tonight?"
+   "answer_sv": "Hej! Jag ringer om din annons för tvättmaskinen. Fungerar den bra, och hur gammal är den?",
+   "answer_en": "Hi! I'm calling about your ad for the washing machine. Does it work well, and how old is it?"
   },
   {
    "id": "r2-15",
@@ -802,8 +802,8 @@ window.YKI_TASKS = {
      "how to get to your home"
     ]
    ],
-   "answer_sv": "Du tar buss 52 från centrum. Du åker i ungefär tjugo minuter och går av vid skolan. Sedan går du rakt fram. Mitt hus är det gula huset till vänster.",
-   "answer_en": "You take bus 52 from the centre. You ride for about twenty minutes and get off at the school. Then you walk straight on. My house is the yellow house on the left."
+   "answer_sv": "Du kan ta buss nummer tre från centrum. Gå av vid hållplatsen nära mitt hus. Det tar ungefär femton minuter.",
+   "answer_en": "You can take bus number three from the centre. Get off at the stop near my house. It takes about fifteen minutes."
   },
   {
    "id": "r2-16",
@@ -827,8 +827,8 @@ window.YKI_TASKS = {
      "get off"
     ]
    ],
-   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till sjukhuset, men jag vet inte var jag ska gå av. Kan du säga till när vi är där? Tack!",
-   "answer_en": "Excuse me, can you help me? I'm going to the hospital, but I don't know where to get off. Can you tell me when we are there? Thanks!"
+   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till biblioteket, men jag känner inte till rutten. Kan du säga till när vi är där? Tack!",
+   "answer_en": "Excuse me, can you help me? I'm going to the library, but I don't know the route. Can you tell me when we are there? Thanks!"
   },
   {
    "id": "r3-1",
