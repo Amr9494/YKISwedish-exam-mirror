@@ -8,8 +8,8 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Din kusin från ett annat land kommer till din stad för första gången. Berätta för din granne vad ni ska se och göra.",
    "en": "Your cousin from another country is coming to your town for the first time. Tell your neighbour what you will see and do.",
-   "answer_sv": "Min kusin kommer på lördag. Det är första gången hon är här. Först ska vi gå till centrum och torget. Sedan ska vi titta på kyrkan och gå i parken. Jag hoppas att det blir fint väder!",
-   "answer_en": "My cousin is coming on Saturday. It's the first time she is here. First we'll go to the centre and the square. Then we'll look at the church and walk in the park. I hope the weather will be nice!"
+   "answer_sv": "Min kusin kommer på lördag. Det är första gången hon är här. Först ska vi gå till centrum. Sedan ska vi gå till biblioteket. Jag hoppas att det blir fint väder!",
+   "answer_en": "My cousin is coming on Saturday. It's the first time she is here. First we'll go to the centre. Then we'll go to the library. I hope the weather will be nice!"
   },
   {
    "id": "r1-2",
@@ -19,8 +19,8 @@ window.YKI_TASKS = {
    "type": "describe",
    "sv": "Någon ringde på din grannes dörr när grannen var borta. Grannen frågar vem det var. Beskriv personen.",
    "en": "Someone rang your neighbour's doorbell when the neighbour was away. The neighbour asks who it was. Describe the person.",
-   "answer_sv": "Det var en man. Han var lång och ganska ung, kanske trettio år. Han hade kort, mörkt hår och glasögon. Han hade en blå jacka och en stor väska.",
-   "answer_en": "It was a man. He was tall and quite young, maybe thirty. He had short dark hair and glasses. He had a blue jacket and a big bag."
+   "answer_sv": "Det var en man. Han var lång och hade kort, mörkt hår och glasögon. Han hade en blå jacka.",
+   "answer_en": "It was a man. He was tall and had short dark hair and glasses. He had a blue jacket."
   },
   {
    "id": "r1-3",
@@ -30,8 +30,8 @@ window.YKI_TASKS = {
    "type": "stop",
    "sv": "I skolan är två pojkar elaka mot en annan elev. Säg till pojkarna att sluta och förklara varför.",
    "en": "At school two boys are being mean to another pupil. Tell the boys to stop and explain why.",
-   "answer_sv": "Hallå, sluta! Det är inte okej att vara elak. Han blir ledsen. Ingen vill bli mobbad. Var snälla mot varandra.",
-   "answer_en": "Hey, stop! It's not OK to be mean. He gets sad. Nobody wants to be bullied. Be kind to each other."
+   "answer_sv": "Hallå! Ni borde inte retas med er skolkamrat. Det är inte bra, för han blir ledsen. Ni måste be om ursäkt.",
+   "answer_en": "Hey! You shouldn't tease your schoolmate. It's not good, because he gets sad. You must say sorry."
   },
   {
    "id": "r1-4",
@@ -41,8 +41,8 @@ window.YKI_TASKS = {
    "type": "sympathy",
    "sv": "Du träffar en vän. Hens pappa dog förra veckan.",
    "en": "You meet a friend. His/her father died last week.",
-   "answer_sv": "Åh nej, vad tråkigt. Jag beklagar sorgen. Säg till om du behöver hjälp. Jag finns här om du vill prata.",
-   "answer_en": "Oh no, how sad. My condolences. Tell me if you need help. I'm here if you want to talk."
+   "answer_sv": "Åh nej, vad tråkigt. Jag beklagar sorgen. Jag är här om du behöver hjälp.",
+   "answer_en": "Oh no, how sad. My condolences. I'm here if you need help."
   },
   {
    "id": "r1-5",
@@ -50,10 +50,10 @@ window.YKI_TASKS = {
    "page": "34",
    "theme": 1,
    "type": "decline",
-   "sv": "Middag hos Lisa. Hon lägger fläsk på din tallrik, men du äter aldrig fläsk. Vad säger du?",
-   "en": "Dinner at Lisa's. She puts pork on your plate, but you never eat pork. What do you say?",
-   "answer_sv": "Tack, det är snällt, men nej tack. Tyvärr kan jag inte äta fläsk. Men salladen ser god ut. Kan jag få lite sallad?",
-   "answer_en": "Thanks, that's kind, but no thank you. Unfortunately I can't eat pork. But the salad looks good. Can I have some salad?"
+   "sv": "Du hälsar på en vän på landet. Vännen bjuder dig på mat som du inte kan äta. Säg nej artigt och förklara varför.",
+   "en": "You visit a friend in the countryside. The friend offers you food you can't eat. Say no politely and explain why.",
+   "answer_sv": "Tack, det är snällt, men nej tack. Tyvärr kan jag inte äta det, för jag är allergisk mot det. Kan jag få lite sallad?",
+   "answer_en": "Thanks, that's kind, but no thank you. Unfortunately I can't eat it, because I'm allergic to it. Can I have some salad?"
   },
   {
    "id": "r1-6",
@@ -63,8 +63,8 @@ window.YKI_TASKS = {
    "type": "thank",
    "sv": "Sara kommer till dig på kaffe. Hon har köpt en ny tv till dig som present!",
    "en": "Sara comes to you for coffee. She has bought you a new TV as a present!",
-   "answer_sv": "Oj, tack så mycket! Det är snällt av dig. Men det var inte nödvändigt, den är så dyr! Jag blir jätteglad.",
-   "answer_en": "Oh, thank you so much! That's kind of you. But it wasn't necessary, it's so expensive! I'm really happy."
+   "answer_sv": "Oj, tack så mycket! Det är snällt av dig. Jag blir jätteglad. Tack igen!",
+   "answer_en": "Oh, thank you so much! That's kind of you. I'm really happy. Thanks again!"
   },
   {
    "id": "r1-7",
@@ -74,8 +74,8 @@ window.YKI_TASKS = {
    "type": "apologise",
    "sv": "I går blev du och Sara osams om en dum sak. Nu ringer du henne, men hon svarar inte. Lämna ett meddelande.",
    "en": "Yesterday you and Sara fell out over a silly thing. Now you call her, but she doesn't answer. Leave a message.",
-   "answer_sv": "Hej, det är Alex. Förlåt för i går. Det var mitt fel. Det var dumt att bråka om en så liten sak. Kan du ringa mig när du har tid? Hej då!",
-   "answer_en": "Hi, it's Alex. Sorry about yesterday. It was my fault. It was silly to argue about such a small thing. Can you call me when you have time? Bye!"
+   "answer_sv": "Hej, det är Alex. Förlåt för i går. Det var mitt fel. Kan du ringa mig när du har tid? Hej då!",
+   "answer_en": "Hi, it's Alex. Sorry about yesterday. It was my fault. Can you call me when you have time? Bye!"
   },
   {
    "id": "r1-8",
@@ -85,8 +85,8 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Din bil är trasig. Be en vän att köra dig. Säg vart och när.",
    "en": "Your car is broken. Ask a friend to drive you. Say where and when.",
-   "answer_sv": "Hej, jag har ett problem. Min bil är trasig. Kan du köra mig till jobbet i morgon klockan åtta? Tack så mycket, det är snällt av dig.",
-   "answer_en": "Hi, I have a problem. My car is broken. Can you drive me to work tomorrow at eight? Thank you very much, that's kind of you."
+   "answer_sv": "Hej! Min bil har gått sönder, och jag behöver skjuts. Kan du köra mig till jobbet i morgon klockan fem? Tack så mycket!",
+   "answer_en": "Hi! My car has broken down, and I need a lift. Can you drive me to work tomorrow at five? Thank you very much!"
   },
   {
    "id": "r1-9",
@@ -96,8 +96,8 @@ window.YKI_TASKS = {
    "type": "suggest",
    "sv": "På stan ser du en vän. Ni har inte träffats på flera år.",
    "en": "In town you see a friend. You haven't met for several years.",
-   "answer_sv": "Hej! Det var länge sedan! Hur mår du? Vad gör du nu för tiden? Ska vi ta en kaffe och prata lite?",
-   "answer_en": "Hi! Long time no see! How are you? What are you doing these days? Shall we have a coffee and talk a bit?"
+   "answer_sv": "Hej! Det var länge sedan! Vad roligt att se dig! Hur mår du?",
+   "answer_en": "Hi! Long time no see! How nice to see you! How are you?"
   },
   {
    "id": "r1-10",
@@ -118,8 +118,8 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Vid en affär ser du ett litet barn som gråter. Barnet är ensamt. Du ser inte mamma eller pappa.",
    "en": "Outside a shop you see a small child crying. The child is alone. You don't see mum or dad.",
-   "answer_sv": "Hej, varför gråter du? Var är din mamma eller pappa? Var inte rädd, jag hjälper dig. Kom, vi går in i affären och frågar personalen.",
-   "answer_en": "Hi, why are you crying? Where is your mum or dad? Don't be afraid, I'll help you. Come, let's go into the shop and ask the staff."
+   "answer_sv": "Hej, varför gråter du? Var är din mamma eller pappa? Var inte rädd, jag hjälper dig. Jag ska fråga i affären.",
+   "answer_en": "Hi, why are you crying? Where is your mum or dad? Don't be afraid, I'll help you. I'll ask in the shop."
   },
   {
    "id": "r1-12",
@@ -129,8 +129,8 @@ window.YKI_TASKS = {
    "type": "compliment",
    "sv": "Din vän har fina kläder i dag och ser jättebra ut. Säg något snällt.",
    "en": "Your friend has nice clothes today and looks great. Say something kind.",
-   "answer_sv": "Vad fin du är i dag! Färgen passar dig. Är tröjan ny? Den är jättesnygg.",
-   "answer_en": "You look lovely today! The colour suits you. Is the jumper new? It's really nice."
+   "answer_sv": "Vad fin du är i dag! Du ser jättesnygg ut.",
+   "answer_en": "You look lovely today! You look really good."
   },
   {
    "id": "r1-13",
@@ -140,8 +140,8 @@ window.YKI_TASKS = {
    "type": "tell",
    "sv": "Det finns en person som har hjälpt dig mycket. Säg till hen vad hen betyder för dig, och tacka.",
    "en": "There is a person who has helped you a lot. Tell him/her what he/she means to you, and say thanks.",
-   "answer_sv": "Du är viktig för mig. När jag kom till Finland kände jag ingen. Du hjälpte mig med språket och papperen. Du lyssnar alltid. Tack för att du finns!",
-   "answer_en": "You are important to me. When I came to Finland I knew nobody. You helped me with the language and the papers. You always listen. Thank you for being there!"
+   "answer_sv": "Du är viktig för mig. När jag behöver hjälp finns du alltid vid min sida. Tack för allt!",
+   "answer_en": "You are important to me. When I need help, you are always by my side. Thanks for everything!"
   },
   {
    "id": "r1-14",
@@ -173,8 +173,8 @@ window.YKI_TASKS = {
    "type": "sympathy",
    "sv": "Du hör att din vän ligger på sjukhuset.",
    "en": "You hear that your friend is in hospital.",
-   "answer_sv": "Åh nej, vad tråkigt. Hur mår du? Säg till om du behöver hjälp. Jag kan handla mat åt dig. Krya på dig!",
-   "answer_en": "Oh no, how sad. How are you? Tell me if you need help. I can buy food for you. Get well soon!"
+   "answer_sv": "Åh nej, vad tråkigt. Hur mår du? Jag är här om du behöver hjälp. Krya på dig!",
+   "answer_en": "Oh no, how sad. How are you? I'm here if you need help. Get well soon!"
   },
   {
    "id": "r1-17",
@@ -184,8 +184,8 @@ window.YKI_TASKS = {
    "type": "apologise",
    "sv": "Lördag: Kalle och Anna gifter sig. På festen ser du att alla har paket med sig – men inte du.",
    "en": "Saturday: Kalle and Anna get married. At the party you see that everyone has a gift – but not you.",
-   "answer_sv": "Grattis! Vilket fint bröllop! Förlåt, jag glömde presenten. Det var mitt fel. Jag ger er den nästa vecka.",
-   "answer_en": "Congratulations! What a lovely wedding! Sorry, I forgot the present. It was my fault. I'll give it to you next week."
+   "answer_sv": "Grattis! Vilket fint bröllop! Förlåt, jag glömde presenten. Jag tar med den nästa vecka.",
+   "answer_en": "Congratulations! What a lovely wedding! Sorry, I forgot the present. I'll bring it next week."
   },
   {
    "id": "r1-18",
@@ -195,8 +195,8 @@ window.YKI_TASKS = {
    "type": "help",
    "sv": "Du ska fira midsommar i en väns stuga. Du vet inte vad du ska ta med. Fråga en kollega.",
    "en": "You will celebrate midsummer at a friend's cottage. You don't know what to take. Ask a colleague.",
-   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till en stuga på midsommar. Vad ska jag packa? Behöver jag varma kläder eller badkläder?",
-   "answer_en": "Excuse me, can you help me? I'm going to a cottage at midsummer. What should I pack? Do I need warm clothes or swimwear?"
+   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag ska till en stuga på midsommar. Vad ska jag packa?",
+   "answer_en": "Excuse me, can you help me? I'm going to a cottage at midsummer. What should I pack?"
   },
   {
    "id": "r2-1",
