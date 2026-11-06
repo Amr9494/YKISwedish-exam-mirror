@@ -593,6 +593,8 @@
     if (!LISTEN.length) { h('<p>No episodes yet.</p>'); return; }
     if (!AU.getAttribute('src')) { loadEp(LS.idx, false, LS.pos || 0); }
     var html = '<p><button class="btn" id="back">← Home</button></p><h1>🎧 Lyssna</h1>' +
+      '<button class="card task" id="toHF" style="margin-bottom:6px"><span class="badge">' + HF.length + ' tasks</span><b>🎯 Exam practice – Hörförståelse</b><span class="muted small">Announcements, news, voicemails and ads at exam speed. Questions first, the text plays two times.</span></button>' +
+      '<h2>Playlist – Svenska → English → Svenska</h2>' +
       '<p class="muted">Each sentence comes three times: <b>Swedish → English → Swedish</b>. Press play and put the phone in your pocket – it keeps going from episode to episode. The headphone buttons skip to the next or previous sentence.</p>' +
       '<div class="player"><div class="now" id="lnow"></div><div class="en" id="lnowen"></div>' +
       '<input type="range" class="seek" id="lseek" min="0" max="1000" value="0" aria-label="Position"><div class="times"><span id="lcur">0:00</span><span id="ldur">0:00</span></div>' +
@@ -609,6 +611,7 @@
       }).join('') + '</div>';
     h(html);
     $('#back').onclick = function () { go(''); };
+    $('#toHF').onclick = function () { go('#hf'); };
     $('#lplay').onclick = function () { if (AU.paused) AU.play().catch(function () {}); else AU.pause(); };
     $('#lprev').onclick = function () { jumpLine(-1); };
     $('#lnext').onclick = function () { jumpLine(1); };
@@ -702,6 +705,8 @@
   function readList() {
     stopSpeech(); releaseMic();
     var html = '<p><button class="btn" id="back">← Home</button></p><h1>📖 Läsa – Reading</h1>' +
+      '<button class="card task" id="toLF" style="margin-bottom:6px"><span class="badge">' + LF.length + ' sets</span><b>🎯 Exam practice – Läsförståelse</b><span class="muted small">Like the YKI test: article (A/B/C), notice or ad (rätt/fel) and news (open questions).</span></button>' +
+      '<h2>Easy texts</h2>' +
       '<p class="muted">' + LISTEN.length + ' short texts with questions. Read the text, answer the questions, then check. Tap a sentence to hear it. The same texts are in 🎧 Lyssna – read first, then listen on the bike.</p>';
     DATA.themes.forEach(function (th, i) {
       var list = LISTEN.filter(function (x) { return x.theme === th.id; });
@@ -714,6 +719,7 @@
     });
     h(html);
     $('#back').onclick = function () { go(''); };
+    $('#toLF').onclick = function () { go('#lf'); };
     view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go('#r/' + b.dataset.id); }; });
   }
   function readTask(id) {
@@ -766,11 +772,145 @@
     $('#back').onclick = function () { go(''); };
   }
 
+  /* ---------------- Exam practice: Hörförståelse & Läsförståelse ---------------- */
+  var HF = window.YKI_HF || [], LF = window.YKI_LF || [];
+  function norm(t) { return String(t).toLowerCase().replace(/[^a-zåäöé0-9 ]/g, ' '); }
+  function qBlock(q, i, pfx) {
+    var h = '<div class="rq" data-i="' + i + '"><div class="rqq"><b>' + (i + 1) + '.</b> ' + esc(q.q) + '</div>';
+    if (q.t === 'mc') h += q.o.map(function (o, j) { return '<label class="ropt"><input type="radio" name="' + pfx + i + '" value="' + j + '"> <b>' + 'ABC'[j] + '</b> ' + esc(o) + '</label>'; }).join('');
+    else if (q.t === 'rf') h += '<label class="ropt"><input type="radio" name="' + pfx + i + '" value="1"> <b>A</b> Rätt</label><label class="ropt"><input type="radio" name="' + pfx + i + '" value="0"> <b>B</b> Fel</label>';
+    else h += '<textarea class="wtext op" rows="2" placeholder="Svara på svenska …" style="min-height:70px"></textarea>';
+    return h + '<div class="fb small"></div></div>';
+  }
+  function checkQs(root, qs) {
+    var ok = 0;
+    qs.forEach(function (q, i) {
+      var box = root.querySelector('.rq[data-i="' + i + '"]'), fb = box.querySelector('.fb');
+      if (q.t === 'op') {
+        var txt = norm(box.querySelector('textarea').value);
+        var good = q.k.every(function (grp) { return grp.some(function (w) { return txt.indexOf(norm(w).trim()) >= 0; }); });
+        if (good) ok++;
+        fb.innerHTML = (good ? '✅ ' : '❌ ') + '<span class="muted">Model answer:</span> <b>' + esc(q.m) + '</b>';
+        return;
+      }
+      var sel = box.querySelector('input:checked'), right = q.t === 'mc' ? q.a : (q.a ? 1 : 0);
+      box.querySelectorAll('.ropt').forEach(function (lab) {
+        var v = +lab.querySelector('input').value; lab.classList.remove('good', 'bad');
+        if (v === right) lab.classList.add('good'); else if (sel && +sel.value === v) lab.classList.add('bad');
+      });
+      if (sel && +sel.value === right) ok++;
+    });
+    return ok;
+  }
+  var INSTR = {
+    mc: 'Läs texten och frågorna. Välj rätt alternativ (A, B eller C).',
+    rf: 'Läs texten och påståendena. Är påståendet rätt (A) eller fel (B)?',
+    op: 'Läs texten och svara kort på svenska.'
+  };
+
+  function hfList() {
+    stopSpeech(); releaseMic();
+    var html = '<p><button class="btn" id="back">← Lyssna</button></p><h1>🎯 Hörförståelse – exam practice</h1>' +
+      '<p class="muted">Like the YKI listening test: read the questions first, then you hear the text <b>two times</b>. The text is hidden until you check your answers. ' + HF.length + ' tasks: announcements, news, voicemails, ads.</p>' +
+      '<div class="card">' + HF.map(function (x, i) {
+        return '<button class="dlg-link" data-id="' + x.id + '"><span><b>' + (i + 1) + '.</b> <span class="badge">' + esc(x.kind) + '</span> ' + esc(x.title) + (S.english ? '<br><span class="en">' + esc(x.title_en) + '</span>' : '') + '</span><span class="done">' + (DONE['hf-' + x.id] ? '✓' : '') + '</span></button>';
+      }).join('') + '</div>';
+    h(html);
+    $('#back').onclick = function () { go('#listen'); };
+    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go('#hf/' + b.dataset.id); }; });
+  }
+  function hfTask(id) {
+    stopSpeech(); releaseMic(); try { AU.pause(); } catch (e) {}
+    var k = HF.map(function (x) { return x.id; }).indexOf(id), x = HF[k]; if (!x) { hfList(); return; }
+    var au = new Audio(x.src), round = 0, slow = false, gapT = null;
+    h('<p><button class="btn" id="back">← All listening tasks</button></p>' +
+      '<div class="exam"><div class="head"><span>Hörförståelse · ' + (k + 1) + '</span><span>' + esc(x.kind) + '</span></div><div class="body">' +
+      '<div class="sit">' + esc(x.title) + '</div>' + en(x.title_en) +
+      '<p class="small muted">Läs frågorna först. Du hör texten två gånger.</p>' +
+      '<div class="player" style="position:static"><div class="status" id="hstat">Ready – press play</div>' +
+      '<div class="bar"><i id="hfill"></i></div>' +
+      '<div class="row"><button class="pbtn big" id="hplay" aria-label="Play">▶</button></div>' +
+      '<div class="opts"><label><input type="checkbox" id="hslow"> Slower (practice)</label></div></div>' +
+      x.qs.map(function (q, i) { return (i === 0 || q.t !== x.qs[i - 1].t ? '<p class="small muted" style="margin:14px 0 0">' + INSTR[q.t] + '</p>' : '') + qBlock(q, i, 'h'); }).join('') +
+      '<div class="row" style="margin-top:12px"><button class="btn primary" id="check">Check answers</button></div><p id="score" class="sit"></p>' +
+      '<div class="model hidden" id="htext"><div class="small muted">Texten (tap a sentence to hear it):</div>' + x.text.map(function (s) { return '<p class="rl" data-t="' + esc(s) + '">' + esc(s) + '</p>'; }).join('') + '</div>' +
+      '<div class="row" style="margin-top:12px"><button class="btn" id="prevH">‹ Previous</button><button class="btn" id="nextH">Next task ›</button></div>' +
+      '</div></div>');
+    function stopAll() { clearTimeout(gapT); au.pause(); }
+    activeStop = stopAll;
+    function paint() { $('#hplay').textContent = au.paused ? '▶' : '❚❚'; }
+    au.addEventListener('timeupdate', function () { var f = $('#hfill'); if (f && au.duration) f.style.width = (au.currentTime / au.duration * 100) + '%'; });
+    au.addEventListener('play', function () { var s = $('#hstat'); if (s) s.innerHTML = '<span class="wave"><i></i><i></i><i></i><i></i></span> Lyssning ' + round + ' / 2'; paint(); });
+    au.addEventListener('pause', paint);
+    au.addEventListener('ended', function () {
+      var s = $('#hstat'); if (!s) return;
+      if (round === 1) { s.textContent = '⏸ Pause – the text comes again in 5 seconds'; gapT = setTimeout(function () { round = 2; au.currentTime = 0; au.play(); }, 5000); }
+      else { s.textContent = '✔ Done – answer the questions, then check. (Press ▶ to hear it again.)'; round = 0; }
+      paint();
+    });
+    $('#hplay').onclick = function () {
+      if (!au.paused) { au.pause(); return; }
+      if (round === 0) { round = 1; au.currentTime = 0; }
+      au.playbackRate = slow ? 0.85 : 1; au.play().catch(function () {});
+    };
+    $('#hslow').onchange = function () { slow = this.checked; au.playbackRate = slow ? 0.85 : 1; };
+    $('#back').onclick = function () { stopAll(); go('#hf'); };
+    $('#prevH').onclick = function () { stopAll(); go('#hf/' + HF[(k - 1 + HF.length) % HF.length].id); };
+    $('#nextH').onclick = function () { stopAll(); go('#hf/' + HF[(k + 1) % HF.length].id); };
+    view.querySelectorAll('#htext .rl').forEach(function (p) { p.onclick = function () { au.pause(); speak(p.dataset.t); }; });
+    $('#check').onclick = function () {
+      var ok = checkQs(view, x.qs);
+      $('#score').textContent = ok + ' / ' + x.qs.length + (ok === x.qs.length ? ' – Bra jobbat! 🎉' : '');
+      $('#htext').classList.remove('hidden');
+      DONE['hf-' + x.id] = 1; save('yki_done', DONE);
+    };
+  }
+
+  function lfList() {
+    stopSpeech(); releaseMic();
+    h('<p><button class="btn" id="back">← Läsa</button></p><h1>🎯 Läsförståelse – exam practice</h1>' +
+      '<p class="muted">Like the YKI reading test. Each set has 3 texts: an article with multiple-choice questions, a notice or ad with rätt/fel, and a short news text with open questions. Try to finish a set in about 20 minutes.</p>' +
+      '<div class="card">' + LF.map(function (x, i) {
+        return '<button class="dlg-link" data-id="' + x.id + '"><span><b>' + esc(x.title) + '</b><br><span class="en">' + x.texts.map(function (t) { return esc(t.title); }).join(' · ') + '</span></span><span class="done">' + (DONE['lf-' + x.id] ? '✓' : '') + '</span></button>';
+      }).join('') + '</div>');
+    $('#back').onclick = function () { go('#lasa'); };
+    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go('#lf/' + b.dataset.id); }; });
+  }
+  function lfSet(id) {
+    stopSpeech(); releaseMic();
+    var k = LF.map(function (x) { return x.id; }).indexOf(id), x = LF[k]; if (!x) { lfList(); return; }
+    var html = '<p><button class="btn" id="back">← All reading sets</button></p>' +
+      '<div class="row" style="justify-content:space-between"><h1 style="margin:0">Läsförståelse · ' + esc(x.title) + '</h1><span class="small muted" id="ltime"></span></div>';
+    x.texts.forEach(function (t, ti) {
+      html += '<div class="exam" style="margin-top:14px"><div class="head"><span>Text ' + (ti + 1) + '</span><span>' + esc(t.kind) + '</span></div><div class="body" data-t="' + ti + '">' +
+        '<p class="small muted">' + INSTR[t.qs[0].t] + '</p>' +
+        '<div class="sit">' + esc(t.title) + '</div><div class="rtext">' + t.body.map(function (p) { return '<p class="rl" data-t="' + esc(p) + '">' + esc(p) + '</p>'; }).join('') + '</div>' +
+        t.qs.map(function (q, i) { return qBlock(q, i, 'l' + ti + '_'); }).join('') + '</div></div>';
+    });
+    html += '<div class="row" style="margin-top:14px"><button class="btn primary" id="check">Check answers</button><button class="btn" id="nextL">Next set ›</button></div><p id="score" class="sit"></p>';
+    h(html);
+    var start = Date.now(), tmr = setInterval(function () { var el = $('#ltime'); if (!el) { clearInterval(tmr); return; } var s = Math.floor((Date.now() - start) / 1000); el.textContent = '⏱ ' + Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }, 1000);
+    view.querySelectorAll('.rtext .rl').forEach(function (p) { p.onclick = function () { speak(p.dataset.t); }; });
+    $('#back').onclick = function () { go('#lf'); };
+    $('#nextL').onclick = function () { go('#lf/' + LF[(k + 1) % LF.length].id); };
+    $('#check').onclick = function () {
+      var ok = 0, all = 0;
+      x.texts.forEach(function (t, ti) { ok += checkQs(view.querySelector('.body[data-t="' + ti + '"]'), t.qs); all += t.qs.length; });
+      clearInterval(tmr);
+      $('#score').textContent = ok + ' / ' + all + ' rätt' + (ok === all ? ' – Bra jobbat! 🎉' : '');
+      DONE['lf-' + x.id] = 1; save('yki_done', DONE);
+    };
+  }
+
   /* ---------------- router ---------------- */
   function route() {
     RUN++; stopSpeech(); if (activeStop) { try { activeStop(); } catch (e) {} activeStop = null; } if (dlgStop) { dlgStop(); dlgStop = null; }
     var hsh = location.hash.replace(/^#/, ''), m;
     if (hsh === 'listen') listenView();
+    else if (hsh === 'hf') hfList();
+    else if (hsh.indexOf('hf/') === 0) hfTask(hsh.slice(3));
+    else if (hsh === 'lf') lfList();
+    else if (hsh.indexOf('lf/') === 0) lfSet(hsh.slice(3));
     else if (hsh === 'tala') tala();
     else if (hsh === 'skriva') writeList();
     else if (hsh.indexOf('w/') === 0) writeTask(hsh.slice(2));
