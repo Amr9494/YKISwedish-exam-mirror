@@ -1086,8 +1086,8 @@ window.YKI_TASKS = {
      "is lying in the street"
     ]
    ],
-   "answer_sv": "Hallå! Hur mår du? Hör du mig? Har du ont någonstans? Vänta, jag ringer ambulansen. Jag stannar här hos dig.",
-   "answer_en": "Hello! How are you? Can you hear me? Are you hurt anywhere? Wait, I'll call an ambulance. I'll stay here with you."
+   "answer_sv": "Hej! Hur mår du? Är allt okej? Jag ringer efter en ambulans.",
+   "answer_en": "Hi! How are you? Is everything OK? I'm calling an ambulance."
   },
   {
    "id": "r4-4",
@@ -1111,8 +1111,8 @@ window.YKI_TASKS = {
      "the driver"
     ]
    ],
-   "answer_sv": "Hallå! Du måste stanna vid övergångsstället! Det var farligt. Du körde nästan på mig! Kör försiktigt!",
-   "answer_en": "Hey! You must stop at the crossing! That was dangerous. You almost hit me! Drive carefully!"
+   "answer_sv": "Hallå! Se upp! Det är rött för dig. Kör försiktigt!",
+   "answer_en": "Hey! Watch out! The light is red for you. Drive carefully!"
   },
   {
    "id": "r4-5",
@@ -1132,8 +1132,8 @@ window.YKI_TASKS = {
      "afraid of needles"
     ]
    ],
-   "answer_sv": "Hej, jag är lite rädd för sprutor. Kan jag ligga ner? Och kan du säga till innan du börjar? Tack.",
-   "answer_en": "Hi, I'm a bit afraid of needles. Can I lie down? And can you tell me before you start? Thanks."
+   "answer_sv": "Hej, jag är lite rädd för sprutor. Kan du säga till innan du börjar? Tack.",
+   "answer_en": "Hi, I'm a bit afraid of needles. Can you tell me before you start? Thanks."
   },
   {
    "id": "r4-6",
@@ -1157,8 +1157,8 @@ window.YKI_TASKS = {
      "the yard"
     ]
    ],
-   "answer_sv": "Hej! Du är för ung för att röka. Det är farligt för hälsan. Var har du fått cigaretten? Snälla, sluta.",
-   "answer_en": "Hi! You are too young to smoke. It's dangerous for your health. Where did you get the cigarette? Please stop."
+   "answer_sv": "Hej! Du är för ung för att röka. Det är farligt för hälsan. Snälla, sluta.",
+   "answer_en": "Hi! You are too young to smoke. It's dangerous for your health. Please stop."
   },
   {
    "id": "r4-7",
@@ -1182,8 +1182,8 @@ window.YKI_TASKS = {
      "recognise"
     ]
    ],
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer för att min granne kör bil, och han är full. Han parkerade just vid mitt hus på Björkvägen 5. Kan ni komma?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling because my neighbour is driving, and he is drunk. He just parked by my house at Björkvägen 5. Can you come?"
+   "answer_sv": "Hej, jag vill anmäla en full förare som precis körde in på parkeringen vid mitt hus. Kan ni komma?",
+   "answer_en": "Hello, I want to report a drunk driver who just drove into the car park by my house. Can you come?"
   },
   {
    "id": "r4-8",
@@ -1228,8 +1228,8 @@ window.YKI_TASKS = {
      "public health nurse"
     ]
    ],
-   "answer_sv": "Hej, jag har ett problem. Jag glömmer ofta saker, till exempel nycklar och möten. Jag är orolig. Vad ska jag göra? Kan jag få mer information?",
-   "answer_en": "Hi, I have a problem. I often forget things, for example keys and meetings. I'm worried. What should I do? Can I get more information?"
+   "answer_sv": "Hej, jag har ett problem. Jag glömmer ofta saker. Jag är orolig. Vad ska jag göra? Kan du hjälpa mig?",
+   "answer_en": "Hi, I have a problem. I often forget things. I'm worried. What should I do? Can you help me?"
   },
   {
    "id": "r4-10",
@@ -1299,8 +1299,8 @@ window.YKI_TASKS = {
      "put on (weight)"
     ]
    ],
-   "answer_sv": "Oj! Jag har gått upp tio kilo. Det är för mycket. Nu måste jag äta mindre socker och träna mer. Jag börjar i morgon!",
-   "answer_en": "Oh! I've put on ten kilos. That's too much. Now I must eat less sugar and exercise more. I'll start tomorrow!"
+   "answer_sv": "Oj! Jag har gått upp tio kilo. Det är för mycket. Nu måste jag gå till gymmet och träna mer.",
+   "answer_en": "Oh! I've put on ten kilos. That's too much. Now I have to go to the gym and exercise more."
   },
   {
    "id": "r4-13",
@@ -1320,8 +1320,8 @@ window.YKI_TASKS = {
      "the gym"
     ]
    ],
-   "answer_sv": "Hej, kan du hjälpa mig? Jag vill gå ner i vikt och bli starkare. Kan jag få ett träningsprogram och tips om mat? Hur mycket kostar det?",
-   "answer_en": "Hi, can you help me? I want to lose weight and get stronger. Can I get a training programme and tips about food? How much does it cost?"
+   "answer_sv": "Hej! Jag vill komma i bättre form. Kan du hjälpa mig med ett bra träningsprogram och ett kostschema?",
+   "answer_en": "Hi! I want to get in better shape. Can you help me with a good training programme and a diet plan?"
   },
   {
    "id": "r5-1",
