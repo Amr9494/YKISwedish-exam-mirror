@@ -501,34 +501,48 @@
   function saveLS() { save('yki_listen', LS); }
   function fmt(t) { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ':' + ('0' + t % 60).slice(-2); }
   function curEp() { return LISTEN[LS.idx]; }
-  function epSrc(ep) { return LS.mode === 'sv' && ep.src_sv ? ep.src_sv : ep.src; }
+  var COMB = window.YKI_LISTEN_ALL || null, SW = false;
+  function comb() { return LS.loop === 'all' && COMB; }
+  function base(i) { return comb() ? (LS.mode === 'sv' ? COMB.off_sv : COMB.off)[i] : 0; }
+  function epAt(t) { var o = LS.mode === 'sv' ? COMB.off_sv : COMB.off, k = 0; for (var i = 0; i < o.length; i++) if (o[i] <= t + 0.05) k = i; return k; }
+  function epSrc(ep) { if (comb()) return LS.mode === 'sv' ? COMB.src_sv : COMB.src; return LS.mode === 'sv' && ep.src_sv ? ep.src_sv : ep.src; }
+  function localT() { return AU.currentTime - base(LS.idx); }
+  function setMeta(ep) {
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({ title: ep.title_sv, artist: 'YKI svenska – Lyssna', album: themeName(ep.theme),
+        artwork: [{ src: 'icon-512.png', sizes: '512x512', type: 'image/png' }] });
+    }
+  }
   function lt(l) { return LS.mode === 'sv' && l.t2 != null ? l.t2 : l.t; }
   function epDur(ep) { return LS.mode === 'sv' && ep.dur_sv ? ep.dur_sv : ep.dur; }
   function loadEp(i, autoplay, at) {
     LS.idx = (i + LISTEN.length) % LISTEN.length; saveLS();
     var ep = curEp();
-    if (AU.getAttribute('src') !== epSrc(ep)) AU.src = epSrc(ep);
+    var target = base(LS.idx) + (at || 0);
+    if (AU.getAttribute('src') !== epSrc(ep)) {
+      SW = !!target; AU.src = epSrc(ep);
+      if (target) AU.addEventListener('loadedmetadata', function f() { AU.removeEventListener('loadedmetadata', f); AU.currentTime = target; SW = false; });
+    } else if (comb() || at) AU.currentTime = target;
     AU.playbackRate = LS.rate;
-    if (at) AU.currentTime = at;
     if (autoplay) AU.play().catch(function () {});
-    if ('mediaSession' in navigator) {
-      navigator.mediaSession.metadata = new MediaMetadata({ title: ep.title_sv, artist: 'YKI svenska – Lyssna', album: themeName(ep.theme),
-        artwork: [{ src: 'icon-512.png', sizes: '512x512', type: 'image/png' }] });
-    }
+    setMeta(ep);
     paintListen();
   }
-  function lineAt(t) { var ls = curEp().lines, k = 0; for (var i = 0; i < ls.length; i++) if (lt(ls[i]) <= t + 0.05) k = i; return k; }
+  function lineAt(t) { t = t - base(LS.idx); var ls = curEp().lines, k = 0; for (var i = 0; i < ls.length; i++) if (lt(ls[i]) <= t + 0.05) k = i; return k; }
   function jumpLine(d) {
     var ls = curEp().lines, k = lineAt(AU.currentTime) + d;
     if (k < 0) { loadEp(LS.idx - 1, !AU.paused); return; }
     if (k >= ls.length) { loadEp(LS.idx + 1, !AU.paused); return; }
-    AU.currentTime = lt(ls[k]);
+    AU.currentTime = base(LS.idx) + lt(ls[k]);
   }
   AU.addEventListener('ended', function () {
     if (LS.loop === 'one') { AU.currentTime = 0; AU.play(); }
+    else if (comb()) { LS.idx = 0; AU.currentTime = 0; AU.play(); setMeta(curEp()); paintListen(); }
     else if (LS.loop === 'all') loadEp(LS.idx + 1, true);
   });
-  AU.addEventListener('timeupdate', function () { tickListen(); try { LS.pos = AU.currentTime; } catch (e) {} });
+  AU.addEventListener('timeupdate', function () {
+    if (comb() && !SW) { var k = epAt(AU.currentTime); if (k !== LS.idx) { LS.idx = k; saveLS(); setMeta(curEp()); paintListen(); } }
+    tickListen(); try { LS.pos = localT(); } catch (e) {} });
   AU.addEventListener('play', paintListen); AU.addEventListener('pause', function () { saveLS(); paintListen(); });
   if ('mediaSession' in navigator) {
     var ms = navigator.mediaSession;
@@ -545,9 +559,10 @@
   var lastLine = -1;
   function tickListen() {
     var seek = $('#lseek'); if (!seek) return;
-    var d = AU.duration || epDur(curEp());
-    if (!seek.dataset.drag) seek.value = d ? AU.currentTime / d * 1000 : 0;
-    $('#lcur').textContent = fmt(AU.currentTime); $('#ldur').textContent = fmt(d);
+    var d = epDur(curEp()), ct = localT();
+    if (!comb() && AU.duration) d = AU.duration;
+    if (!seek.dataset.drag) seek.value = d ? Math.min(1000, ct / d * 1000) : 0;
+    $('#lcur').textContent = fmt(ct); $('#ldur').textContent = fmt(d);
     var k = lineAt(AU.currentTime);
     if (k !== lastLine) {
       lastLine = k;
@@ -568,7 +583,7 @@
       tr.innerHTML = ep.lines.map(function (l, i) {
         return '<div class="ln" data-i="' + i + '"><div class="sv">' + (ep.lines.some(function (z) { return z.p === 'B'; }) ? '<span class="spk sp' + l.p + '">' + (l.p === 'A' ? '●' : '○') + '</span> ' : '') + esc(l.sv) + '</div>' + (LS.showEn ? '<div class="en">' + esc(l.en) + '</div>' : '') + '</div>';
       }).join('');
-      tr.querySelectorAll('.ln').forEach(function (el) { el.onclick = function () { AU.currentTime = lt(ep.lines[+el.dataset.i]); if (AU.paused) AU.play(); }; });
+      tr.querySelectorAll('.ln').forEach(function (el) { el.onclick = function () { AU.currentTime = base(LS.idx) + lt(ep.lines[+el.dataset.i]); if (AU.paused) AU.play(); }; });
     }
     tickListen();
   }
@@ -602,15 +617,18 @@
     $('#lrate').value = String(LS.rate); $('#lrate').onchange = function () { LS.rate = +this.value; AU.playbackRate = LS.rate; saveLS(); };
     $('#lmode').value = LS.mode; $('#lmode').onchange = function () {
       var line = lineAt(AU.currentTime), was = !AU.paused; LS.mode = this.value; saveLS();
-      AU.src = epSrc(curEp()); AU.playbackRate = LS.rate;
-      AU.addEventListener('loadedmetadata', function f() { AU.removeEventListener('loadedmetadata', f); AU.currentTime = lt(curEp().lines[line]); if (was) AU.play(); });
+      SW = true; AU.src = epSrc(curEp()); AU.playbackRate = LS.rate;
+      AU.addEventListener('loadedmetadata', function f() { AU.removeEventListener('loadedmetadata', f); AU.currentTime = base(LS.idx) + lt(curEp().lines[line]); SW = false; if (was) AU.play(); });
       $('#ltrans').dataset.ep = ''; paintListen();
     };
-    $('#lloop').value = LS.loop; $('#lloop').onchange = function () { LS.loop = this.value; saveLS(); };
+    $('#lloop').value = LS.loop; $('#lloop').onchange = function () {
+      var pos = localT(), was = !AU.paused, before = epSrc(curEp()); LS.loop = this.value; saveLS();
+      if (epSrc(curEp()) !== before) { SW = true; AU.src = epSrc(curEp()); AU.playbackRate = LS.rate; AU.addEventListener('loadedmetadata', function f() { AU.removeEventListener('loadedmetadata', f); AU.currentTime = base(LS.idx) + pos; SW = false; if (was) AU.play(); }); }
+    };
     $('#lshowEn').onchange = function () { LS.showEn = this.checked; saveLS(); $('#ltrans').dataset.ep = ''; paintListen(); };
     var sk = $('#lseek');
     sk.oninput = function () { sk.dataset.drag = 1; };
-    sk.onchange = function () { delete sk.dataset.drag; var d = AU.duration || epDur(curEp()); AU.currentTime = sk.value / 1000 * d; };
+    sk.onchange = function () { delete sk.dataset.drag; var d = comb() ? epDur(curEp()) : (AU.duration || epDur(curEp())); AU.currentTime = base(LS.idx) + sk.value / 1000 * d; };
     view.querySelectorAll('.eplist .dlg-link').forEach(function (b) { b.onclick = function () { loadEp(+b.dataset.i, true); window.scrollTo({ top: 0, behavior: 'smooth' }); }; });
     paintListen();
   }
