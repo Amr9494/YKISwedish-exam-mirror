@@ -860,8 +860,8 @@ window.YKI_TASKS = {
      "report"
     ]
    ],
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om skräp i skogen. Det finns en soffa, ett kylskåp och många soppåsar där. Det är vid Björkvägen. Kan ni hämta det?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling about rubbish in the forest. There is a sofa, a fridge and many rubbish bags there. It's by Björkvägen. Can you collect it?"
+   "answer_sv": "Hej! Jag hittade en gammal soffa, ett kylskåp och många sopsäckar ute i skogen. Kan ni komma och hämta det?",
+   "answer_en": "Hi! I found an old sofa, a fridge and many rubbish bags out in the forest. Can you come and collect it?"
   },
   {
    "id": "r3-2",
@@ -885,8 +885,8 @@ window.YKI_TASKS = {
      "chocolate"
     ]
    ],
-   "answer_sv": "Mormor, vänta! Man får inte ge choklad till ankor. Det är dåligt för dem. Vi kan köpa riktig ankmat i stället.",
-   "answer_en": "Grandma, wait! You mustn't give chocolate to ducks. It's bad for them. We can buy real duck food instead."
+   "answer_sv": "Ursäkta mig, men du borde inte ge ankorna choklad. Det är dåligt för dem.",
+   "answer_en": "Excuse me, but you shouldn't give the ducks chocolate. It's bad for them."
   },
   {
    "id": "r3-3",
@@ -906,8 +906,8 @@ window.YKI_TASKS = {
      "the seller"
     ]
    ],
-   "answer_sv": "Ursäkta, kan du hjälpa mig? Jag behöver bra skor för att gå i skogen. De ska vara varma och inte bli blöta. Har ni storlek fyrtiotvå?",
-   "answer_en": "Excuse me, can you help me? I need good shoes for walking in the forest. They should be warm and not get wet. Do you have size forty-two?"
+   "answer_sv": "Hej! Jag vill köpa bra skor för att gå i skogen. Kan ni hjälpa mig med rätt modell?",
+   "answer_en": "Hi! I want to buy good shoes for walking in the forest. Can you help me with the right model?"
   },
   {
    "id": "r3-4",
@@ -931,8 +931,8 @@ window.YKI_TASKS = {
      "fridge"
     ]
    ],
-   "answer_sv": "Ursäkta, men man får inte lämna kylskåpet här. Det är dåligt för naturen. Du kan ta det till återvinningen. Kan du ta det tillbaka, tack?",
-   "answer_en": "Excuse me, but you mustn't leave the fridge here. It's bad for nature. You can take it to the recycling centre. Can you take it back, please?"
+   "answer_sv": "Ursäkta, du får inte kasta ett gammalt kylskåp i naturen. Det är dåligt för naturen. Du kan ta det till återvinningen.",
+   "answer_en": "Excuse me, you mustn't throw an old fridge in nature. It's bad for nature. You can take it to the recycling centre."
   },
   {
    "id": "r3-5",
@@ -956,8 +956,8 @@ window.YKI_TASKS = {
      "old things"
     ]
    ],
-   "answer_sv": "Hej! Jag ska flytta, och jag har saker som jag inte behöver. Vill du ha min soffa och mina tallrikar? De är gratis. Du kan hämta dem på lördag.",
-   "answer_en": "Hi! I'm moving, and I have things I don't need. Would you like my sofa and my plates? They are free. You can collect them on Saturday."
+   "answer_sv": "Hej! Jag ska flytta, och jag har saker som jag inte behöver. Jag har en stol och ett bord. De är bra. Vill du ha dem?",
+   "answer_en": "Hi! I'm moving, and I have things I don't need. I have a chair and a table. They are good. Do you want them?"
   },
   {
    "id": "r3-6",
