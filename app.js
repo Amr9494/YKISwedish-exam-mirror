@@ -96,6 +96,14 @@
     var W = window.YKI_WRITE || [], M = window.YKI_MAT || [];
     h('<h1>YKI Swedish – Exam Mirror</h1>' +
       '<p class="muted">Practise for the YKI Swedish test, intermediate level (mellannivå): speaking, listening, writing and reading – plus all the study material.</p>' +
+      '<div class="card glance"><b style="font-size:18px">📋 The exam at a glance</b>' +
+      '<div class="tblwrap"><table class="gtbl"><tr><th>Part</th><th>Time</th><th>What</th></tr>' +
+      '<tr><td>Textförståelse <span class="muted">reading</span></td><td>60 min</td><td>A/B/C, rätt/fel, open questions</td></tr>' +
+      '<tr><td>Skriftlig framställning <span class="muted">writing</span></td><td>~55 min</td><td>3 texts: message, opinion text, formal message</td></tr>' +
+      '<tr><td>Talförståelse <span class="muted">listening</span></td><td>~30 + 10 min</td><td>every recording is played twice</td></tr>' +
+      '<tr><td>Muntlig framställning <span class="muted">speaking</span></td><td>~20–25 min</td><td>berätta, dialogues, situations, opinion</td></tr></table></div>' +
+      '<p class="small" style="margin:8px 0 0">Bring your <b>passport or ID card</b> (not a driving licence). Phones are collected. Late = no test. Grade 3 or 4 = pass. Never leave a question blank – wrong answers don\'t lose points.</p>' +
+      '<div class="row" style="margin-top:10px"><button class="btn primary" id="toGuide">Read the full exam guide ›</button></div></div>' +
       '<div class="grid">' +
       catCard('tala', '🗣', 'Tala', 'Speaking', 'Dialoger, Reagera, Berätta, Din åsikt – answer, get recorded, compare.', sp + ' / ' + spAll + ' done') +
       catCard('listen', '🎧', 'Lyssna', 'Listening', 'Swedish → English → Swedish playlist. Keeps playing in your pocket.', LISTEN.length + ' episodes') +
@@ -105,6 +113,13 @@
       '</div>' +
       '<div class="notice">Works best in Chrome, Edge or Safari. Allow the microphone when asked. Your recordings and texts stay in your browser – nothing is uploaded.</div>');
     view.querySelectorAll('.task').forEach(function (b) { b.onclick = function () { go('#' + b.dataset.k); }; });
+    $('#toGuide').onclick = function () { go('#guide'); };
+  }
+
+  function guideView() {
+    stopSpeech(); releaseMic();
+    h('<p><button class="btn" id="back">← Home</button></p><h1>📋 YKI Swedish – mellannivå: exam guide</h1><div class="card guide">' + (window.YKI_GUIDE || '') + '</div>');
+    $('#back').onclick = function () { go(''); };
   }
 
   function tala() {
@@ -906,7 +921,8 @@
   function route() {
     RUN++; stopSpeech(); if (activeStop) { try { activeStop(); } catch (e) {} activeStop = null; } if (dlgStop) { dlgStop(); dlgStop = null; }
     var hsh = location.hash.replace(/^#/, ''), m;
-    if (hsh === 'listen') listenView();
+    if (hsh === 'guide') guideView();
+    else if (hsh === 'listen') listenView();
     else if (hsh === 'hf') hfList();
     else if (hsh.indexOf('hf/') === 0) hfTask(hsh.slice(3));
     else if (hsh === 'lf') lfList();
