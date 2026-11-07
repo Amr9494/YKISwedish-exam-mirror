@@ -1763,8 +1763,8 @@ window.YKI_TASKS = {
      "the library"
     ]
    ],
-   "answer_sv": "Hej, förlåt, men boken är trasig. Min son spillde vatten på den. Det var mitt fel. Ska jag betala för den?",
-   "answer_en": "Hi, sorry, but the book is damaged. My son spilled water on it. It was my fault. Should I pay for it?"
+   "answer_sv": "Hej! Jag vill lämna tillbaka den här boken. Tyvärr spillde mitt barn vatten på den. Det var mitt fel. Ska jag betala för den?",
+   "answer_en": "Hi! I want to return this book. Unfortunately my child spilled water on it. It was my fault. Should I pay for it?"
   },
   {
    "id": "r6-2",
@@ -1784,8 +1784,8 @@ window.YKI_TASKS = {
      "say something"
     ]
    ],
-   "answer_sv": "Ursäkta, kan du prata tystare? Det här är ett bibliotek, och vi vill läsa. Du kan prata i telefon utanför. Tack.",
-   "answer_en": "Excuse me, can you talk more quietly? This is a library, and we want to read. You can talk on the phone outside. Thanks."
+   "answer_sv": "Ursäkta, kan du prata tystare? Det här är ett bibliotek, och vi vill läsa. Du kan gå ut och prata i telefon. Tack.",
+   "answer_en": "Excuse me, can you talk more quietly? This is a library, and we want to read. You can go out and talk on the phone. Thanks."
   },
   {
    "id": "r6-3",
@@ -2018,8 +2018,8 @@ window.YKI_TASKS = {
    "page": "112",
    "theme": 6,
    "type": "congrat",
-   "sv": "Det är Mikaels femtioårsdag. Du har köpt en tavla till honom. Ge honom presenten.",
-   "en": "It's Mikael's fiftieth birthday. You have bought him a painting. Give him the present.",
+   "sv": "Din vän fyller femtio. Du ger hen en present (bestäm vad). Vad säger du?",
+   "en": "Your friend turns fifty. You give him/her a present (decide what). What do you say?",
    "kw": [
     [
      "fyller 50",
@@ -2030,8 +2030,8 @@ window.YKI_TASKS = {
      "art present"
     ]
    ],
-   "answer_sv": "Grattis på födelsedagen! Här är en present till dig. Det är en tavla. Jag hoppas att du tycker om den. Den kan hänga i ditt vardagsrum.",
-   "answer_en": "Happy birthday! Here is a present for you. It's a painting. I hope you like it. It can hang in your living room."
+   "answer_sv": "Grattis på födelsedagen! Här är en present till dig. Det är en ny mobil. Jag hoppas att du tycker om den.",
+   "answer_en": "Happy birthday! Here is a present for you. It's a new mobile phone. I hope you like it."
   },
   {
    "id": "r6-13",
@@ -2114,8 +2114,8 @@ window.YKI_TASKS = {
    "page": "113",
    "theme": 6,
    "type": "complain",
-   "sv": "Förra veckan köpte du skidor. Redan första dagen gick en skida sönder. Gå tillbaka till affären.",
-   "en": "Last week you bought skis. On the very first day one ski broke. Go back to the shop.",
+   "sv": "Du har köpt något i en sportaffär, till exempel en cykel. Något är fel. Lämna tillbaka det.",
+   "en": "You have bought something in a sports shop, for example a bike. Something is wrong. Return it.",
    "kw": [
     [
      "produkt",
@@ -2134,8 +2134,8 @@ window.YKI_TASKS = {
      "return"
     ]
    ],
-   "answer_sv": "Hej! Jag köpte de här skidorna förra veckan, men en skida är trasig. Jag vill byta dem eller få pengarna tillbaka. Här är kvittot.",
-   "answer_en": "Hi! I bought these skis last week, but one ski is broken. I want to exchange them or get my money back. Here is the receipt."
+   "answer_sv": "Hej! Jag köpte den här cykeln förra veckan, men den är trasig. Jag vill byta den eller få pengarna tillbaka. Här är kvittot.",
+   "answer_en": "Hi! I bought this bike last week, but it is broken. I want to exchange it or get my money back. Here is the receipt."
   },
   {
    "id": "r6-17",
