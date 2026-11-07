@@ -1366,8 +1366,8 @@ window.YKI_TASKS = {
      "workplace"
     ]
    ],
-   "answer_sv": "Hej Ella, välkommen! Jag heter Alex. Kan jag hjälpa dig? Först visar jag dig köket. Sedan visar jag hur datorn fungerar. Fråga mig om du har frågor.",
-   "answer_en": "Hi Ella, welcome! My name is Alex. Can I help you? First I'll show you the kitchen. Then I'll show you how the computer works. Ask me if you have questions."
+   "answer_sv": "Hej och välkommen hit! Var inte orolig. Jag visar dig runt och förklarar vad vi ska göra i dag.",
+   "answer_en": "Hi and welcome! Don't worry. I'll show you around and explain what we are going to do today."
   },
   {
    "id": "r5-3",
@@ -1391,8 +1391,8 @@ window.YKI_TASKS = {
      "questions left"
     ]
    ],
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag var på intervju hos er i går. Jag har några frågor. När börjar jobbet? Och hur många timmar i veckan är det?",
-   "answer_en": "Hello, my name is Alex Andersson. I was at an interview with you yesterday. I have some questions. When does the job start? And how many hours a week is it?"
+   "answer_sv": "Hej! Tack för intervjun i går. Jag har två korta frågor: När börjar jobbet, och hur många timmar i veckan är det?",
+   "answer_en": "Hi! Thanks for the interview yesterday. I have two short questions: When does the job start, and how many hours a week is it?"
   },
   {
    "id": "r5-4",
@@ -1412,8 +1412,8 @@ window.YKI_TASKS = {
      "payroll administrator"
     ]
    ],
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min lön. Jag fick för lite pengar den här månaden. Jag jobbade tio timmar extra. Kan du kontrollera det?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my pay. I got too little money this month. I worked ten extra hours. Can you check it?"
+   "answer_sv": "Hej, det är Alex. Jag ringer om min lön. Jag tror att det är ett fel. Jag fick mindre pengar den här månaden. Kan du hjälpa mig?",
+   "answer_en": "Hi, it's Alex. I'm calling about my pay. I think there is a mistake. I got less money this month. Can you help me?"
   },
   {
    "id": "r5-5",
@@ -1487,8 +1487,8 @@ window.YKI_TASKS = {
      "project"
     ]
    ],
-   "answer_sv": "Jag känner en person som passar i vårt projekt. Hon heter Sara. Hon är duktig och flitig och har jobbat med IT i fem år. Jag tycker att du ska träffa henne.",
-   "answer_en": "I know a person who fits our project. Her name is Sara. She is skilled and hard-working and has worked in IT for five years. I think you should meet her."
+   "answer_sv": "Hej! Jag känner en jätteduktig person som passar perfekt för vårt nya projekt. Hen har mycket erfarenhet.",
+   "answer_en": "Hi! I know a very skilled person who is perfect for our new project. He/she has a lot of experience."
   },
   {
    "id": "r5-8",
@@ -1533,8 +1533,8 @@ window.YKI_TASKS = {
      "angry"
     ]
    ],
-   "answer_sv": "Johan, jag är lite arg. Du lovade att skriva rapporten till i dag, men den är inte klar. Nu blir projektet sent. Kan du göra den i dag, tack?",
-   "answer_en": "Johan, I'm a bit angry. You promised to write the report by today, but it isn't ready. Now the project will be late. Can you do it today, please?"
+   "answer_sv": "Johan, jag är lite arg. Vi kom överens om att du skulle skriva rapporten i går, men du gjorde det inte. Kan du göra den i dag, tack?",
+   "answer_en": "Johan, I'm a bit angry. We agreed that you would write the report yesterday, but you didn't. Can you do it today, please?"
   },
   {
    "id": "r5-10",
