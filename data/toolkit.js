@@ -562,6 +562,368 @@ window.YKI_TOOLKIT = {
    ],
    "sections": [
     {
+     "h": "📒 Words in the task instructions",
+     "he": "They tell you what to do – learn these first",
+     "rows": [
+      [
+       "bestäm (själv)",
+       "decide (yourself) – you choose the detail"
+      ],
+      [
+       "hitta / hittar ★",
+       "find / finds – in 23 tasks"
+      ],
+      [
+       "försök / försökte ★",
+       "try / tried"
+      ],
+      [
+       "lämplig ★",
+       "suitable"
+      ],
+      [
+       "be om / ber ★",
+       "ask for / asks for – in 16 tasks"
+      ],
+      [
+       "be om skjuts = be om en hiss",
+       "ask for a lift (the book also says \"hiss\")"
+      ],
+      [
+       "påpeka det för dem",
+       "point it out to them"
+      ],
+      [
+       "delta",
+       "take part"
+      ],
+      [
+       "vad som hände",
+       "what happened"
+      ],
+      [
+       "av någon",
+       "by someone"
+      ],
+      [
+       "heller",
+       "either (after \"not\": inte … heller)"
+      ],
+      [
+       "dock",
+       "however"
+      ],
+      [
+       "verkligen",
+       "really"
+      ]
+     ]
+    },
+    {
+     "h": "📒 Friends, family and arguing",
+     "he": "bråka = gräla = bli osams (same meaning)",
+     "rows": [
+      [
+       "din avlägsna släkting",
+       "your distant relative"
+      ],
+      [
+       "skolkamrat = annan elev",
+       "schoolmate = another pupil"
+      ],
+      [
+       "bråkade = blev osams",
+       "argued, fell out"
+      ],
+      [
+       "vill bli sams",
+       "wants to make up"
+      ],
+      [
+       "retas",
+       "tease"
+      ],
+      [
+       "mobba",
+       "bully"
+      ],
+      [
+       "bakom din rygg",
+       "behind your back"
+      ],
+      [
+       "hens beteende = beter sig illa",
+       "his/her behaviour = behaves badly"
+      ],
+      [
+       "sakna dig",
+       "miss you"
+      ],
+      [
+       "komplimang",
+       "compliment"
+      ],
+      [
+       "verkligen vacker / snygg",
+       "really beautiful / good-looking"
+      ],
+      [
+       "välklädd",
+       "well dressed"
+      ],
+      [
+       "gåvan = presenten ★",
+       "the gift = the present – present is in 13 tasks"
+      ],
+      [
+       "fyller år i dag",
+       "has a birthday today"
+      ],
+      [
+       "paret",
+       "the couple"
+      ]
+     ]
+    },
+    {
+     "h": "📒 Something is broken – return it",
+     "he": "går sönder = är trasig; lämna tillbaka = återlämna",
+     "rows": [
+      [
+       "sönder / går sönder ★",
+       "broken / breaks"
+      ],
+      [
+       "lämna tillbaka = återlämna (produkten)",
+       "return (the product)"
+      ],
+      [
+       "möbel",
+       "a piece of furniture"
+      ],
+      [
+       "försökt sätta ihop",
+       "tried to assemble"
+      ],
+      [
+       "delar",
+       "parts"
+      ],
+      [
+       "Garantin är fortfarande giltig.",
+       "The guarantee is still valid."
+      ],
+      [
+       "begagnad tvättmaskin",
+       "used washing machine"
+      ],
+      [
+       "pruta",
+       "bargain (ask for a lower price)"
+      ],
+      [
+       "anlita en städare",
+       "hire a cleaner"
+      ],
+      [
+       "saker",
+       "things"
+      ],
+      [
+       "Kan ni kontrollera det?",
+       "Can you check it?"
+      ]
+     ]
+    },
+    {
+     "h": "📒 Danger, health and the body",
+     "he": "farligt ↔ tryggt (dangerous ↔ safe)",
+     "rows": [
+      [
+       "farligt",
+       "dangerous"
+      ],
+      [
+       "tryggt",
+       "safe"
+      ],
+      [
+       "Kör försiktigt!",
+       "Drive carefully!"
+      ],
+      [
+       "föraren",
+       "the driver"
+      ],
+      [
+       "berusad = full",
+       "drunk"
+      ],
+      [
+       "sparkar",
+       "kicks"
+      ],
+      [
+       "allvarligt sjuk = allvarlig sjukdom",
+       "seriously ill = serious illness"
+      ],
+      [
+       "far har dött = pappan dog",
+       "the father has died"
+      ],
+      [
+       "gråter ensam",
+       "cries alone"
+      ],
+      [
+       "Var inte orolig!",
+       "Don't worry!"
+      ],
+      [
+       "Du står på vågen … vikten har ökat med 10 kg",
+       "you stand on the scales … your weight has gone up 10 kg"
+      ],
+      [
+       "ett kost- och träningsprogram",
+       "a diet and training programme"
+      ]
+     ]
+    },
+    {
+     "h": "📒 Places and travel",
+     "he": "utomlands = i ett annat land",
+     "rows": [
+      [
+       "i ett annat land = utomlands",
+       "in another country = abroad"
+      ],
+      [
+       "stan ★",
+       "town, the city centre"
+      ],
+      [
+       "torget",
+       "the square"
+      ],
+      [
+       "en by",
+       "a village"
+      ],
+      [
+       "samma ställe",
+       "the same place"
+      ],
+      [
+       "känner inte till rutten",
+       "doesn't know the route"
+      ],
+      [
+       "kliva av = gå av",
+       "get off (the bus)"
+      ],
+      [
+       "sittplats",
+       "seat"
+      ],
+      [
+       "bredvid ★",
+       "next to"
+      ],
+      [
+       "mäklaren",
+       "the estate agent"
+      ],
+      [
+       "hundägaren",
+       "the dog owner"
+      ],
+      [
+       "dörrvakten",
+       "the doorman"
+      ],
+      [
+       "släpper inte in dig",
+       "doesn't let you in"
+      ],
+      [
+       "ser minderårig ut",
+       "looks under age"
+      ],
+      [
+       "ungdomar",
+       "young people"
+      ],
+      [
+       "skräpar ner",
+       "drop litter"
+      ]
+     ]
+    },
+    {
+     "h": "📒 Work, money and offices",
+     "he": "få sparken = bli uppsagd (get fired)",
+     "rows": [
+      [
+       "jätteduktig = riktigt bra",
+       "very skilled = really good"
+      ],
+      [
+       "jag visar dig",
+       "I'll show you"
+      ],
+      [
+       "det överenskomna",
+       "what was agreed"
+      ],
+      [
+       "få sparken",
+       "get fired"
+      ],
+      [
+       "lönen är låg",
+       "the pay is low"
+      ],
+      [
+       "bostadsbidrag",
+       "housing allowance"
+      ],
+      [
+       "plånbok",
+       "wallet"
+      ],
+      [
+       "Du har blivit utsatt för ett brott.",
+       "You have been the victim of a crime."
+      ]
+     ]
+    },
+    {
+     "h": "📒 Time words",
+     "he": "snart = om en liten stund",
+     "rows": [
+      [
+       "första gången",
+       "the first time"
+      ],
+      [
+       "innan",
+       "before"
+      ],
+      [
+       "snart",
+       "soon"
+      ],
+      [
+       "inte längre",
+       "not any more"
+      ],
+      [
+       "har förändrats",
+       "has changed"
+      ]
+     ]
+    },
+    {
      "h": "The copy trick",
      "he": "Task → answer",
      "rows": [
