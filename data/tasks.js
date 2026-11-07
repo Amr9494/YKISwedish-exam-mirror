@@ -2201,8 +2201,8 @@ window.YKI_TASKS = {
      "Immigration Service"
     ]
    ],
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt uppehållstillstånd. Det tar slut nästa månad. Jag har en fråga: Hur ansöker jag om ett nytt?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my residence permit. It runs out next month. I have a question: How do I apply for a new one?"
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om mitt uppehållstillstånd. Det går ut nästa månad. Jag har en fråga: Hur ansöker jag om ett nytt?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my residence permit. It expires next month. I have a question: How do I apply for a new one?"
   },
   {
    "id": "r7-2",
@@ -2309,8 +2309,8 @@ window.YKI_TASKS = {
      "covers"
     ]
    ],
-   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min telefon. Den föll i golvet och skärmen gick sönder. Betalar hemförsäkringen en ny telefon?",
-   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my phone. It fell on the floor and the screen broke. Does the home insurance pay for a new phone?"
+   "answer_sv": "Hej, jag heter Alex Andersson. Jag ringer om min telefon. Den föll i golvet och skärmen gick sönder. Täcker hemförsäkringen det?",
+   "answer_en": "Hello, my name is Alex Andersson. I'm calling about my phone. It fell on the floor and the screen broke. Does the home insurance cover it?"
   },
   {
    "id": "r7-6",
