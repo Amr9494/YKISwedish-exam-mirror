@@ -609,6 +609,7 @@
     if (!AU.getAttribute('src')) { loadEp(LS.idx, false, LS.pos || 0); }
     var html = '<p><button class="btn" id="back">← Home</button></p><h1>🎧 Lyssna</h1>' +
       '<button class="card task" id="toHF" style="margin-bottom:6px"><span class="badge">' + HF.length + ' tasks</span><b>🎯 Exam practice – Hörförståelse</b><span class="muted small">Announcements, news, voicemails and ads at exam speed. Questions first, the text plays two times.</span></button>' +
+      '<button class="card task" id="toHFT" style="margin-bottom:6px"><span class="badge">' + (window.YKI_HFT || []).length + ' tests</span><b>🧪 Provtest – like the YKI sample test</b><span class="muted small">3 tasks per test: flerval, rätt/fel, öppna frågor. Timer and two listenings, like the real test. Finland-Swedish melody option.</span></button>' +
       '<h2>Playlist – Svenska → English → Svenska</h2>' +
       '<p class="muted">Each sentence comes three times: <b>Swedish → English → Swedish</b>. Press play and put the phone in your pocket – it keeps going from episode to episode. The headphone buttons skip to the next or previous sentence.</p>' +
       '<div class="player"><div class="now" id="lnow"></div><div class="en" id="lnowen"></div>' +
@@ -627,6 +628,7 @@
     h(html);
     $('#back').onclick = function () { go(''); };
     $('#toHF').onclick = function () { go('#hf'); };
+    $('#toHFT').onclick = function () { go('#hft'); };
     $('#lplay').onclick = function () { if (AU.paused) AU.play().catch(function () {}); else AU.pause(); };
     $('#lprev').onclick = function () { jumpLine(-1); };
     $('#lnext').onclick = function () { jumpLine(1); };
@@ -918,11 +920,125 @@
   }
 
   /* ---------------- router ---------------- */
+  /* ---------------- Provtest: JYU-style listening mock tests ---------------- */
+  var HFT = window.YKI_HFT || [];
+  var HS = Object.assign({ fs: true, intro: true }, load('yki_hft', {}));
+  function hftList() {
+    stopSpeech(); releaseMic();
+    h('<p><button class="btn" id="back">← Lyssna</button></p><h1>🧪 Provtest – Talförståelse</h1>' +
+      '<p class="muted">Built like the sample test on the YKI website (Jyväskylä): <b>task 1</b> multiple choice – the message plays twice without a pause; <b>task 2</b> rätt/fel – two short messages, each plays twice; <b>task 3</b> open questions – a discussion plays in full, then in two parts, and you answer in Swedish after each part. The page runs the timer for you, like in the real test.</p>' +
+      '<div class="card">' + HFT.map(function (s, i) {
+        return '<button class="dlg-link" data-id="' + s.id + '"><span><b>' + esc(s.title) + '</b><br><span class="en">' + s.tasks.map(function (t) { return esc(t.title); }).join(' · ') + '</span></span><span class="done">' + (DONE['hft-' + s.id] ? '✓' : '') + '</span></button>';
+      }).join('') + '</div>' +
+      '<div class="card"><b>🇫🇮 About the accent</b><p class="small">The voices are computer voices. With <b>“Finlandssvensk melodi”</b> on, the melody is made flatter, which is the biggest difference you hear in Finland-Swedish (no Sweden-style sing-song). The sounds themselves are still Sweden-Swedish. For real Finland-Swedish speakers, listen to Yle:</p>' +
+      '<p class="small"><a href="https://arenan.yle.fi/1-50362086" target="_blank" rel="noopener">Yle – Nyheter på lätt svenska</a> – short news in easy Swedish with sound and text, every weekday, read by Finland-Swedish speakers.<br><a href="https://ll-bladet.fi/" target="_blank" rel="noopener">LL-Bladet</a> – easy-to-read news from Finland.<br>' +
+      '<a href="https://ykitesti.solki.jyu.fi/en/tutustu-testiin/svenska/mellanniva-talforstaelse/" target="_blank" rel="noopener">YKI sample test – Svenska, mellannivå, talförståelse</a> (the official one).</p></div>');
+    $('#back').onclick = function () { go('#listen'); };
+    view.querySelectorAll('.dlg-link').forEach(function (b) { b.onclick = function () { go('#hft/' + b.dataset.id); }; });
+  }
+  function hftSet(id) {
+    stopSpeech(); releaseMic(); try { AU.pause(); } catch (e) {}
+    var k = HFT.map(function (s) { return s.id; }).indexOf(id), st = HFT[k]; if (!st) { hftList(); return; }
+    var au = new Audio(), tok = 0, skipFn = null, cur = -1;
+    var html = '<p><button class="btn" id="back">← All mock tests</button></p>' +
+      '<h1 style="margin:0">Talförståelse · ' + esc(st.title) + '</h1>' +
+      '<div class="opts" style="margin:8px 0"><label><input type="checkbox" id="hfs"' + (HS.fs ? ' checked' : '') + '> Finlandssvensk melodi</label>' +
+      '<label><input type="checkbox" id="hin"' + (HS.intro ? ' checked' : '') + '> Read the instructions aloud</label></div>' +
+      '<div class="player" style="position:sticky"><div class="status" id="tstat">Press ▶ Start at task 1. The test then runs by itself.</div><div class="bar"><i id="tfill"></i></div>' +
+      '<div class="row"><button class="btn" id="tskip">Skip ⏭</button><button class="btn" id="tstop">■ Stop</button></div></div>';
+    st.tasks.forEach(function (t, ti) {
+      html += '<div class="exam" style="margin-top:14px" id="task' + ti + '"><div class="head"><span>Uppgift ' + t.n + ' · ' + esc(t.name) + '</span><span>' + esc(t.kind) + '</span></div><div class="body">' +
+        '<div class="sit">' + esc(t.title) + '</div>' + en(t.title_en) + '<p class="small muted">' + esc(t.instr) + '</p>' +
+        '<div class="row"><button class="btn primary" data-start="' + ti + '">▶ Start uppgift ' + t.n + '</button></div>';
+      t.parts.forEach(function (p, pi) {
+        html += '<div class="tpart" data-t="' + ti + '" data-p="' + pi + '">' + (t.parts.length > 1 ? '<p class="small muted" style="margin:12px 0 0"><b>Del ' + (pi + 1) + '</b></p>' : '') +
+          p.qs.map(function (q, i) { var off = t.parts.slice(0, pi).reduce(function (n, pp) { return n + pp.qs.length; }, 0); return qBlock(q, i, 'x' + ti + '_' + pi + '_').replace('<b>' + (i + 1) + '.</b>', '<b>' + (off + i + 1) + '.</b>'); }).join('') +
+          '<div class="model hidden tx"><div class="small muted">Texten:</div>' + p.lines.map(function (l) { return '<p class="rl"><b>' + (l.s === 'f' ? '♀' : '♂') + '</b> ' + esc(l.sv) + '<br><span class="en">' + esc(l.en) + '</span></p>'; }).join('') + '</div></div>';
+      });
+      html += '</div></div>';
+    });
+    html += '<div class="row" style="margin-top:14px"><button class="btn primary" id="check">Rätta – check answers</button><button class="btn" id="nextS">Next mock test ›</button></div><p id="score" class="sit"></p>';
+    h(html);
+    function src(o) { return HS.fs ? o.fs : o.n; }
+    function stat(t, f) { var s = $('#tstat'); if (s) s.innerHTML = t; var b = $('#tfill'); if (b) b.style.width = (f == null ? 0 : f * 100) + '%'; }
+    function stopAll() { tok++; au.ontimeupdate = null; au.pause(); skipFn = null; }
+    activeStop = stopAll;
+    function play(o, label, my) {
+      return new Promise(function (res, rej) {
+        if (my !== tok) return rej();
+        au.src = src(o); au.currentTime = 0;
+        stat('<span class="wave"><i></i><i></i><i></i><i></i></span> ' + label, 0);
+        au.ontimeupdate = function () { if (au.duration) stat('<span class="wave"><i></i><i></i><i></i><i></i></span> ' + label, au.currentTime / au.duration); };
+        au.onended = function () { au.ontimeupdate = null; skipFn = null; my === tok ? res() : rej(); };
+        skipFn = function () { au.ontimeupdate = null; au.pause(); skipFn = null; res(); };
+        au.play().catch(function () { stat('Tap ▶ Start again (the browser blocked the sound).'); rej(); });
+      });
+    }
+    function wait(sec, label, my) {
+      return new Promise(function (res, rej) {
+        if (my !== tok) return rej();
+        var left = sec, iv = setInterval(tick, 1000);
+        function tick() { if (my !== tok) { clearInterval(iv); return rej(); } stat('⏱ ' + label + ' – ' + left + ' s', 1 - left / sec); if (left-- <= 0) { clearInterval(iv); skipFn = null; res(); } }
+        skipFn = function () { clearInterval(iv); skipFn = null; res(); };
+        tick();
+      });
+    }
+    function seq(ti) {
+      stopAll(); var my = tok, t = st.tasks[ti]; cur = ti;
+      var box = $('#task' + ti); if (box) box.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      var p = Promise.resolve();
+      if (HS.intro) p = p.then(function () { return play(t.intro, 'Instruktion', my); });
+      if (t.fmt === 'mc') {
+        p = p.then(function () { return wait(t.read, 'Läs frågorna', my); })
+          .then(function () { return play(t.parts[0].src, 'Lyssning 1 / 2', my); })
+          .then(function () { return play(t.parts[0].src, 'Lyssning 2 / 2', my); })
+          .then(function () { return wait(t.ans, 'Svara', my); });
+      } else if (t.fmt === 'rf') {
+        t.parts.forEach(function (pt, pi) {
+          p = p.then(function () { return wait(t.read, 'Del ' + (pi + 1) + ': läs påståendena', my); })
+            .then(function () { return play(pt.src, 'Del ' + (pi + 1) + ' – lyssning 1 / 2', my); })
+            .then(function () { return wait(2, 'Snart igen', my); })
+            .then(function () { return play(pt.src, 'Del ' + (pi + 1) + ' – lyssning 2 / 2', my); })
+            .then(function () { return wait(t.ans, 'Del ' + (pi + 1) + ': svara', my); });
+        });
+      } else {
+        p = p.then(function () { return wait(t.read, 'Läs frågorna', my); })
+          .then(function () { return play(t.full, 'Hela diskussionen', my); });
+        t.parts.forEach(function (pt, pi) {
+          p = p.then(function () { return play(pt.src, 'Del ' + (pi + 1), my); })
+            .then(function () { return wait(pt.ans, 'Del ' + (pi + 1) + ': svara på svenska', my); });
+        });
+      }
+      p.then(function () {
+        if (ti + 1 < st.tasks.length) { return wait(5, '✔ Uppgift ' + t.n + ' klar – nästa uppgift börjar', my).then(function () { seq(ti + 1); }); }
+        stat('✔ Provet är slut. Press “Rätta” to check your answers.'); var c = $('#check'); if (c) c.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }).catch(function () {});
+    }
+    view.querySelectorAll('[data-start]').forEach(function (b) { b.onclick = function () { seq(+b.dataset.start); }; });
+    $('#tskip').onclick = function () { if (skipFn) skipFn(); };
+    $('#tstop').onclick = function () { stopAll(); stat('Stopped. Press ▶ Start to begin a task again.'); };
+    $('#hfs').onchange = function () { HS.fs = this.checked; save('yki_hft', HS); };
+    $('#hin').onchange = function () { HS.intro = this.checked; save('yki_hft', HS); };
+    $('#back').onclick = function () { stopAll(); go('#hft'); };
+    $('#nextS').onclick = function () { stopAll(); go('#hft/' + HFT[(k + 1) % HFT.length].id); };
+    $('#check').onclick = function () {
+      var ok = 0, all = 0;
+      st.tasks.forEach(function (t, ti) { t.parts.forEach(function (p, pi) {
+        var root = view.querySelector('.tpart[data-t="' + ti + '"][data-p="' + pi + '"]');
+        ok += checkQs(root, p.qs); all += p.qs.length; root.querySelector('.tx').classList.remove('hidden');
+      }); });
+      $('#score').textContent = ok + ' / ' + all + ' rätt' + (ok === all ? ' – Bra jobbat! 🎉' : '');
+      DONE['hft-' + st.id] = 1; save('yki_done', DONE);
+    };
+  }
+
   function route() {
     RUN++; stopSpeech(); if (activeStop) { try { activeStop(); } catch (e) {} activeStop = null; } if (dlgStop) { dlgStop(); dlgStop = null; }
     var hsh = location.hash.replace(/^#/, ''), m;
     if (hsh === 'guide') guideView();
     else if (hsh === 'listen') listenView();
+    else if (hsh === 'hft') hftList();
+    else if (hsh.indexOf('hft/') === 0) hftSet(hsh.slice(4));
     else if (hsh === 'hf') hfList();
     else if (hsh.indexOf('hf/') === 0) hfTask(hsh.slice(3));
     else if (hsh === 'lf') lfList();
