@@ -922,7 +922,7 @@
   /* ---------------- router ---------------- */
   /* ---------------- Provtest: JYU-style listening mock tests ---------------- */
   var HFT = window.YKI_HFT || [];
-  var HS = Object.assign({ fs: true, intro: true }, load('yki_hft', {}));
+  var HS = Object.assign({ dev: false, intro: true }, load('yki_hft', {}));
   function hftList() {
     stopSpeech(); releaseMic();
     h('<p><button class="btn" id="back">← Lyssna</button></p><h1>🧪 Provtest – Talförståelse</h1>' +
@@ -930,7 +930,7 @@
       '<div class="card">' + HFT.map(function (s, i) {
         return '<button class="dlg-link" data-id="' + s.id + '"><span><b>' + esc(s.title) + '</b><br><span class="en">' + s.tasks.map(function (t) { return esc(t.title); }).join(' · ') + '</span></span><span class="done">' + (DONE['hft-' + s.id] ? '✓' : '') + '</span></button>';
       }).join('') + '</div>' +
-      '<div class="card"><b>🇫🇮 About the accent</b><p class="small">The voices are computer voices. With <b>“Finlandssvensk melodi”</b> on, the melody is made flatter, which is the biggest difference you hear in Finland-Swedish (no Sweden-style sing-song). The sounds themselves are still Sweden-Swedish. For real Finland-Swedish speakers, listen to Yle:</p>' +
+      '<div class="card"><b>🔊 About the voices</b><p class="small">The recorded voices are computer voices (a man and a woman). If your phone has a good Swedish voice (iPhone: <i>Alva</i>, Android: Google Swedish), tick <b>“Use my phone’s Swedish voice”</b> in the test – it often sounds more natural. For real Finland-Swedish speakers, listen to Yle:</p>' +
       '<p class="small"><a href="https://arenan.yle.fi/1-50362086" target="_blank" rel="noopener">Yle – Nyheter på lätt svenska</a> – short news in easy Swedish with sound and text, every weekday, read by Finland-Swedish speakers.<br><a href="https://ll-bladet.fi/" target="_blank" rel="noopener">LL-Bladet</a> – easy-to-read news from Finland.<br>' +
       '<a href="https://ykitesti.solki.jyu.fi/en/tutustu-testiin/svenska/mellanniva-talforstaelse/" target="_blank" rel="noopener">YKI sample test – Svenska, mellannivå, talförståelse</a> (the official one).</p></div>');
     $('#back').onclick = function () { go('#listen'); };
@@ -942,7 +942,7 @@
     var au = new Audio(), tok = 0, skipFn = null, cur = -1;
     var html = '<p><button class="btn" id="back">← All mock tests</button></p>' +
       '<h1 style="margin:0">Talförståelse · ' + esc(st.title) + '</h1>' +
-      '<div class="opts" style="margin:8px 0"><label><input type="checkbox" id="hfs"' + (HS.fs ? ' checked' : '') + '> Finlandssvensk melodi</label>' +
+      '<div class="opts" style="margin:8px 0"><label><input type="checkbox" id="hdev"' + (HS.dev ? ' checked' : '') + '> 📱 Use my phone’s Swedish voice</label>' +
       '<label><input type="checkbox" id="hin"' + (HS.intro ? ' checked' : '') + '> Read the instructions aloud</label></div>' +
       '<div class="player" style="position:sticky"><div class="status" id="tstat">Press ▶ Start at task 1. The test then runs by itself.</div><div class="bar"><i id="tfill"></i></div>' +
       '<div class="row"><button class="btn" id="tskip">Skip ⏭</button><button class="btn" id="tstop">■ Stop</button></div></div>';
@@ -953,20 +953,41 @@
       t.parts.forEach(function (p, pi) {
         html += '<div class="tpart" data-t="' + ti + '" data-p="' + pi + '">' + (t.parts.length > 1 ? '<p class="small muted" style="margin:12px 0 0"><b>Del ' + (pi + 1) + '</b></p>' : '') +
           p.qs.map(function (q, i) { var off = t.parts.slice(0, pi).reduce(function (n, pp) { return n + pp.qs.length; }, 0); return qBlock(q, i, 'x' + ti + '_' + pi + '_').replace('<b>' + (i + 1) + '.</b>', '<b>' + (off + i + 1) + '.</b>'); }).join('') +
-          '<div class="model hidden tx"><div class="small muted">Texten:</div>' + p.lines.map(function (l) { return '<p class="rl"><b>' + (l.s === 'f' ? '♀' : '♂') + '</b> ' + esc(l.sv) + '<br><span class="en">' + esc(l.en) + '</span></p>'; }).join('') + '</div></div>';
+          '<div class="model hidden tx"><div class="small muted">Texten – tap a sentence to hear it again:</div>' + p.lines.map(function (l, li) { return '<p class="rl" data-ti="' + ti + '" data-pi="' + pi + '" data-li="' + li + '" style="cursor:pointer"><b>' + (l.s === 'f' ? '♀' : '♂') + '</b> ' + esc(l.sv) + ' 🔊<br><span class="en">' + esc(l.en) + '</span></p>'; }).join('') + '</div></div>';
       });
       html += '</div></div>';
     });
     html += '<div class="row" style="margin-top:14px"><button class="btn primary" id="check">Rätta – check answers</button><button class="btn" id="nextS">Next mock test ›</button></div><p id="score" class="sit"></p>';
     h(html);
-    function src(o) { return HS.fs ? o.fs : o.n; }
+    function devVoices() {
+      var vs = (window.speechSynthesis ? speechSynthesis.getVoices() : []).filter(function (v) { return /^sv/i.test(v.lang); });
+      var a = pickVoice(), b = vs.filter(function (v) { return v !== a; })[0] || a;
+      return { m: a, n: a, f: b, same: b === a };
+    }
+    function sayLines(lines, my) {
+      var V = devVoices(), i = 0;
+      return new Promise(function (res, rej) {
+        function next() {
+          if (my !== tok) return rej();
+          if (i >= lines.length) { skipFn = null; return res(); }
+          var l = lines[i++], u = new SpeechSynthesisUtterance(l.sv);
+          u.lang = 'sv-SE'; u.rate = S.rate; u.voice = V[l.s || 'n'] || null; if (V.same && l.s === 'f') u.pitch = 1.25;
+          var done = false; function fin() { if (!done) { done = true; clearTimeout(g); setTimeout(next, 350); } }
+          var g = setTimeout(fin, 3000 + l.sv.length * 120 / S.rate);
+          u.onend = fin; u.onerror = fin; speechSynthesis.speak(u);
+        }
+        skipFn = function () { speechSynthesis.cancel(); skipFn = null; i = lines.length; res(); };
+        speechSynthesis.cancel(); next();
+      });
+    }
     function stat(t, f) { var s = $('#tstat'); if (s) s.innerHTML = t; var b = $('#tfill'); if (b) b.style.width = (f == null ? 0 : f * 100) + '%'; }
-    function stopAll() { tok++; au.ontimeupdate = null; au.pause(); skipFn = null; }
+    function stopAll() { tok++; au.ontimeupdate = null; au.pause(); skipFn = null; stopSpeech(); }
     activeStop = stopAll;
-    function play(o, label, my) {
+    function play(o, lines, label, my) {
+      if (HS.dev && window.speechSynthesis) { stat('🗣 ' + label, 0); return sayLines(lines, my); }
       return new Promise(function (res, rej) {
         if (my !== tok) return rej();
-        au.src = src(o); au.currentTime = 0;
+        au.src = o; au.currentTime = 0; au.onpause = null;
         stat('<span class="wave"><i></i><i></i><i></i><i></i></span> ' + label, 0);
         au.ontimeupdate = function () { if (au.duration) stat('<span class="wave"><i></i><i></i><i></i><i></i></span> ' + label, au.currentTime / au.duration); };
         au.onended = function () { au.ontimeupdate = null; skipFn = null; my === tok ? res() : rej(); };
@@ -987,25 +1008,25 @@
       stopAll(); var my = tok, t = st.tasks[ti]; cur = ti;
       var box = $('#task' + ti); if (box) box.scrollIntoView({ block: 'start', behavior: 'smooth' });
       var p = Promise.resolve();
-      if (HS.intro) p = p.then(function () { return play(t.intro, 'Instruktion', my); });
+      if (HS.intro) p = p.then(function () { return play(t.intro, [{ s: 'n', sv: t.intro_txt }], 'Instruktion', my); });
       if (t.fmt === 'mc') {
         p = p.then(function () { return wait(t.read, 'Läs frågorna', my); })
-          .then(function () { return play(t.parts[0].src, 'Lyssning 1 / 2', my); })
-          .then(function () { return play(t.parts[0].src, 'Lyssning 2 / 2', my); })
+          .then(function () { return play(t.parts[0].src, t.parts[0].lines, 'Lyssning 1 / 2', my); })
+          .then(function () { return play(t.parts[0].src, t.parts[0].lines, 'Lyssning 2 / 2', my); })
           .then(function () { return wait(t.ans, 'Svara', my); });
       } else if (t.fmt === 'rf') {
         t.parts.forEach(function (pt, pi) {
           p = p.then(function () { return wait(t.read, 'Del ' + (pi + 1) + ': läs påståendena', my); })
-            .then(function () { return play(pt.src, 'Del ' + (pi + 1) + ' – lyssning 1 / 2', my); })
+            .then(function () { return play(pt.src, pt.lines, 'Del ' + (pi + 1) + ' – lyssning 1 / 2', my); })
             .then(function () { return wait(2, 'Snart igen', my); })
-            .then(function () { return play(pt.src, 'Del ' + (pi + 1) + ' – lyssning 2 / 2', my); })
+            .then(function () { return play(pt.src, pt.lines, 'Del ' + (pi + 1) + ' – lyssning 2 / 2', my); })
             .then(function () { return wait(t.ans, 'Del ' + (pi + 1) + ': svara', my); });
         });
       } else {
         p = p.then(function () { return wait(t.read, 'Läs frågorna', my); })
-          .then(function () { return play(t.full, 'Hela diskussionen', my); });
+          .then(function () { return play(t.full, t.parts.reduce(function (a, pp) { return a.concat(pp.lines); }, []), 'Hela diskussionen', my); });
         t.parts.forEach(function (pt, pi) {
-          p = p.then(function () { return play(pt.src, 'Del ' + (pi + 1), my); })
+          p = p.then(function () { return play(pt.src, pt.lines, 'Del ' + (pi + 1), my); })
             .then(function () { return wait(pt.ans, 'Del ' + (pi + 1) + ': svara på svenska', my); });
         });
       }
@@ -1017,7 +1038,19 @@
     view.querySelectorAll('[data-start]').forEach(function (b) { b.onclick = function () { seq(+b.dataset.start); }; });
     $('#tskip').onclick = function () { if (skipFn) skipFn(); };
     $('#tstop').onclick = function () { stopAll(); stat('Stopped. Press ▶ Start to begin a task again.'); };
-    $('#hfs').onchange = function () { HS.fs = this.checked; save('yki_hft', HS); };
+    $('#hdev').onchange = function () { HS.dev = this.checked; save('yki_hft', HS); };
+    var rp = new Audio(), rpEnd = 0;
+    rp.ontimeupdate = function () { if (rpEnd && rp.currentTime >= rpEnd) { rp.pause(); rpEnd = 0; } };
+    view.querySelectorAll('.tx .rl').forEach(function (el) {
+      el.onclick = function () {
+        stopAll(); rp.pause();
+        var pt = st.tasks[+el.dataset.ti].parts[+el.dataset.pi], l = pt.lines[+el.dataset.li];
+        view.querySelectorAll('.tx .rl').forEach(function (x) { x.style.background = ''; }); el.style.background = 'rgba(255,200,0,.18)';
+        if (HS.dev || l.t == null) { var my = tok; sayLines([l], my).catch(function () {}); return; }
+        if (rp.getAttribute('src') !== pt.src) rp.src = pt.src;
+        rpEnd = l.e + 0.15; rp.currentTime = Math.max(0, l.t - 0.05); rp.play().catch(function () {});
+      };
+    });
     $('#hin').onchange = function () { HS.intro = this.checked; save('yki_hft', HS); };
     $('#back').onclick = function () { stopAll(); go('#hft'); };
     $('#nextS').onclick = function () { stopAll(); go('#hft/' + HFT[(k + 1) % HFT.length].id); };
