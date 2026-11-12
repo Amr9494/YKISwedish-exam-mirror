@@ -302,7 +302,7 @@
       html += '<div class="turn">' +
         (turn.other_sv ? '<div class="line"><span class="who">' + esc(d.speaker) + ':</span> ' + esc(turn.other_sv) + ' <button class="btn small say" data-t="' + esc(turn.other_sv) + '" aria-label="Listen">🔊</button></div>' + en(turn.other_en) : '') +
         '<div class="line"><b>Du:</b> ' + esc(turn.task_sv) + '</div>' + en(turn.task_en) +
-        (recs[i] ? '<div class="small muted">Your answer:</div><audio controls src="' + recs[i] + '"></audio>' : (recs.length ? '<div class="small muted">(no recording)</div>' : '')) +
+        (recs[i] ? '<div class="small muted">🎧 Your answer – listen to yourself:</div><audio controls src="' + recs[i] + '"></audio>' : (recs.length ? '<div class="small muted">(no recording)</div>' : '')) +
         '<div><button class="btn small reveal" data-i="' + i + '">Show model answer</button></div>' +
         '<div class="model hidden" id="m' + i + '"><div class="sv">' + esc(turn.answer_sv) + ' <button class="btn small say" data-t="' + esc(turn.answer_sv) + '" aria-label="Listen">🔊</button></div>' + en(turn.answer_en) + chip(TK.patterns[turn.pattern]) +
         turn.alts.map(function (a) { return '<div class="small" style="margin-top:6px">eller: <b>' + esc(a.sv) + '</b> <button class="btn small say" data-t="' + esc(a.sv) + '">🔊</button></div>' + en(a.en); }).join('') +
@@ -377,11 +377,41 @@
       '<div class="exam">' + taskHead(key, x) + '<div class="body">' +
       '<div class="sit">' + esc(x.sv) + '</div>' + en(x.en) + questions(x) +
       '<p class="muted small">You get <b>' + t.prep + ' s</b> to prepare (write 5 key words), then <b>' + t.secs + ' s</b> to speak. Use the frame from the toolkit.</p>' +
-      '<div class="row"><button class="btn primary" id="start">Start</button><button class="btn" id="peek">Just read the model answer</button><button class="btn" id="tk">📘 Toolkit</button></div></div></div>');
+      '<div class="row"><button class="btn primary" id="start">Start (timer + recording)</button><button class="btn" id="peek">Just read the model answer</button><button class="btn" id="tk">📘 Toolkit</button></div>' + recBox() + '</div></div>');
+    bindRec();
     $('#back').onclick = function () { go('#' + key + '/list'); };
     $('#start').onclick = function () { runTasks(key, [x]); };
     $('#peek').onclick = function () { taskReview(key, [x], []); };
     $('#tk').onclick = function () { go('#' + key + '/words'); };
+  }
+
+  /* manual recorder: record yourself any time and listen back */
+  function recBox() {
+    return '<div class="card recbox" style="margin-top:12px"><b>🎙 Record yourself</b><div class="small muted">Speak your answer, then listen to yourself and compare with the model answer.</div>' +
+      '<div class="row" style="margin-top:8px"><button class="btn primary recGo">● Record</button><span class="small recState"></span></div><div class="recOut"></div></div>';
+  }
+  function bindRec(root) {
+    (root || view).querySelectorAll('.recbox').forEach(function (box) {
+      var go = box.querySelector('.recGo'), st = box.querySelector('.recState'), out = box.querySelector('.recOut'), mr = null, chunks = [], t0 = 0, iv = null;
+      go.onclick = function () {
+        if (mr && mr.state === 'recording') { mr.stop(); return; }
+        stopSpeech();
+        getMic().then(function (s) {
+          if (!s) { st.textContent = 'No microphone – allow the microphone for this site in your browser settings.'; return; }
+          try { mr = new MediaRecorder(s); } catch (e) { st.textContent = 'Recording is not supported in this browser.'; return; }
+          chunks = []; mr.ondataavailable = function (e) { if (e.data && e.data.size) chunks.push(e.data); };
+          mr.onstop = function () {
+            clearInterval(iv); go.textContent = '● Record again'; go.classList.add('primary'); st.textContent = '';
+            var url = URL.createObjectURL(new Blob(chunks, { type: mr.mimeType || 'audio/webm' }));
+            out.innerHTML = '<div class="small muted" style="margin-top:6px">Your recording:</div><audio controls src="' + url + '"></audio>';
+            var a = out.querySelector('audio'); try { a.play(); } catch (e) {}
+            releaseMic();
+          };
+          mr.start(); t0 = Date.now(); go.textContent = '■ Stop'; go.classList.remove('primary');
+          iv = setInterval(function () { st.innerHTML = '<span class="dot"></span> Recording … ' + Math.floor((Date.now() - t0) / 1000) + ' s'; }, 250);
+        });
+      };
+    });
   }
 
   /* one generic recorder: returns a Promise of a blob URL (or null) */
@@ -390,7 +420,7 @@
       return new Promise(function (resolve) {
         if (!document.body.contains(stage)) { resolve(null); return; }
         var startT = Date.now(), chunks = [], mr = null, finished = false, timer;
-        stage.innerHTML = '<div class="status"><span class="dot"></span> Svara nu – <span id="left">' + secs + '</span> s</div>' + topHtml +
+        stage.innerHTML = '<div class="status"><span class="dot"></span> ' + (stream ? '🎙 Recording – ' : '') + 'Svara nu – <span id="left">' + secs + '</span> s</div>' + topHtml +
           '<div class="bar rec"><i id="fill"></i></div>' +
           '<div class="row"><button class="btn primary" id="doneBtn">' + (btnLabel || 'Klar – next ›') + '</button></div>' +
           (stream ? '' : '<p class="muted small">No microphone – just say your answer aloud.</p>');
@@ -479,7 +509,7 @@
       '<div class="row" style="margin:0 0 12px"><button class="btn primary" id="showAll">Show ' + (items.length > 1 ? 'all model answers' : 'model answer') + '</button><button class="btn" id="enT">' + (S.english ? 'Hide' : 'Show') + ' English</button></div>';
     items.forEach(function (x, i) {
       html += '<div class="turn"><div class="small muted">' + esc(themeName(x.theme)) + (x.n ? ' · ' + x.n : '') + bookRef(x.page) + '</div><div class="sit">' + esc(x.sv) + say(x.sv) + '</div>' + en(x.en) + kwChips(x) + (x.qs ? questions(x) : '') +
-        (recs[i] ? '<div class="small muted">Your answer:</div><audio controls src="' + recs[i] + '"></audio>' : (recs.length ? '<div class="small muted">(no recording)</div>' : '')) +
+        (recs[i] ? '<div class="small muted">🎧 Your answer – listen to yourself:</div><audio controls src="' + recs[i] + '"></audio>' : (recs.length ? '<div class="small muted">(no recording)</div>' : '')) +
         '<div><button class="btn small reveal" data-i="' + i + '">Show model answer</button></div><div class="model hidden" id="m' + i + '">';
       if (key === 'reagera') {
         html += '<div class="sv">' + esc(x.answer_sv) + say(x.answer_sv) + '</div>' + en(x.answer_en) + chip(TK.rtypes[x.type]);
@@ -490,13 +520,13 @@
         }).join('') + '</ol><div class="row"><button class="btn small say" data-t="' + esc(x.answer_sv) + '">🔊 Listen to it all</button></div>' +
           '<details class="frameBox"><summary>🧰 The frame</summary><ol class="frame">' + pg.steps.map(function (s) { return '<li><span class="small muted">' + esc(s[0]) + ':</span> <span class="sv">' + hl(s[1]) + '</span></li>'; }).join('') + '</ol></details>';
       }
-      html += '</div></div>';
+      html += '</div>' + recBox() + '</div>';
     });
     var single = items.length === 1 && key !== 'reagera';
     html += '<div class="row" style="margin-top:14px"><button class="btn primary" id="again">Try again</button>' +
       '<button class="btn" id="nextT">' + (key === 'reagera' ? 'Next situation ›' : 'Next topic ›') + '</button><button class="btn" id="list">All ' + (key === 'reagera' ? 'situations' : 'topics') + '</button></div></div></div>';
     h(html);
-    bindSay();
+    bindSay(); bindRec();
     view.querySelectorAll('.reveal').forEach(function (b) { b.onclick = function () { $('#m' + b.dataset.i).classList.remove('hidden'); b.classList.add('hidden'); }; });
     $('#showAll').onclick = function () { view.querySelectorAll('.model').forEach(function (m) { m.classList.remove('hidden'); }); view.querySelectorAll('.reveal').forEach(function (b) { b.classList.add('hidden'); }); };
     $('#enT').onclick = function () { S.english = !S.english; save('yki_settings', S); taskReview(key, items, recs); };
