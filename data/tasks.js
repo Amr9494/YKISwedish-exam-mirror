@@ -3099,7 +3099,7 @@ window.YKI_TASKS = {
     "Is it better to own or rent?"
    ],
    "answer_sv": "Det är en bra fråga. I dag pratar många om att äga eller hyra en bostad. Vissa tycker att det är bäst att äga, men andra håller inte med. Jag tycker att det är bäst att äga i framtiden, men nu hyr vi. För det första betalar man för sitt eget hem. Till exempel har min bror ett eget hus i Kairo, och han betalar ingen hyra. För det andra kan man ändra hemmet som man vill. Å andra sidan är det dyrt att köpa, och det är lättare att flytta om man hyr. Så till sist tror jag att man ska hyra först och köpa när man har pengar.",
-   "answer_en": "That's a good question. Today many people talk about owning or renting a home. Some think that it's best to own, but others don't agree. I think it's best to own in the future, but now we rent. Firstly, you pay for your own home. For example, we rent a two-room flat in Vantaa now, and it's easy, because we don't have to pay for repairs. Secondly, you can change the home as you like. On the other hand, it's expensive to buy, and it's easier to move if you rent. So finally, I think that you should rent first and buy when you have money."
+   "answer_en": "That's a good question. Today many people talk about owning or renting a home. Some think that it's best to own, but others don't agree. I think it's best to own in the future, but now we rent. Firstly, you pay for your own home. For example, my brother has his own house in Cairo, and he pays no rent. Secondly, you can change the home as you like. On the other hand, it's expensive to buy, and it's easier to move if you rent. So finally, I think that you should rent first and buy when you have money."
   },
   {
    "id": "a1-E",
