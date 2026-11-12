@@ -1205,51 +1205,17 @@ window.YKI_TOOLKIT = {
    ]
   },
   "asikt": {
-   "intro": "You get a statement or question and give your opinion for about 1 min 20 s – 1 min 40 s, after short preparation. Use ONE frame for every topic.",
+   "intro": "You get a statement or question and give your opinion for about 1 min 20 s – 1 min 40 s, after short preparation. Use the same 6 steps every time – the same template as the opinion text in Skriva.",
    "steps": [
-    [
-     "Open",
-     "Det här är ett intressant ämne. Människor har olika åsikter om det.",
-     "This is an interesting topic. People have different opinions about it."
-    ],
-    [
-     "Two sides",
-     "Vissa tycker att [A], men andra tycker att [B].",
-     "Some think that [A], but others think that [B]."
-    ],
-    [
-     "Your opinion",
-     "Jag tycker att [A]. / Jag håller (delvis / inte) med.",
-     "I think that [A]. / I (partly / don't) agree."
-    ],
-    [
-     "Reason 1",
-     "För det första …",
-     "Firstly …"
-    ],
-    [
-     "Reason 2",
-     "För det andra …",
-     "Secondly …"
-    ],
-    [
-     "Example",
-     "Till exempel … / I mitt liv …",
-     "For example … / In my life …"
-    ],
-    [
-     "Other side",
-     "Å andra sidan …",
-     "On the other hand …"
-    ],
-    [
-     "End",
-     "Därför tycker jag att [A]. Men alla har rätt till sin egen åsikt, och vi måste respektera varandra.",
-     "Therefore I think that [A]. But everyone has the right to their own opinion, and we must respect each other."
-    ]
+    ["1. Introduction", "(Only if it is a question: Det är en bra fråga.) I dag pratar många om [ämnet]. Vissa tycker att [A], men andra håller inte med.", "(Only if it is a question: That's a good question.) Today many people talk about [the topic]. Some think that [A], but others don't agree."],
+    ["2. My opinion", "Jag tycker (också) att [ … ]. / Jag tycker inte att [ … ]. / Jag håller delvis med.", "I (also) think that … / I don't think that … / I partly agree."],
+    ["3. Reason 1 + example", "För det första [verb + subject …]. Till exempel [verb + subject …].", "Firstly … For example …"],
+    ["4. Reason 2", "För det andra [verb + subject …].", "Secondly …"],
+    ["5. The other side", "Å andra sidan [verb + subject …].", "On the other hand …"],
+    ["6. Conclusion", "Så till sist tror jag att [ … ].", "So finally, I think that …"]
    ],
    "rules": [
-    "Just change [A] and [B]: cykel / bil, hyra / äga, släkt / vänner …",
+    "After För det första, För det andra, Till exempel, Å andra sidan: the verb comes next (För det andra är det …). After att: inte before the verb (att man inte kan …).",
     "Then pick two reasons from the table below."
    ],
    "sections": [
