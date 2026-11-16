@@ -1,4 +1,5 @@
 window.YKI_MAT = [
+ {icon: '⭐', title: 'My Skriva summary (light version)', desc: 'One file: the formal template, my four problems, model letters, review, opinion texts, Berätta, my red-circle mistakes and the verb tables', pages: 21, pdf: 'material/yki_summary.pdf', html: 'material/yki_summary.html'},
  {icon: '📘', title: 'The study guide', desc: 'The main guide: basics, grammar, toolkits, all 7 themes with model answers, exam plan', pages: 142, pdf: 'material/yki_guide.pdf', html: 'material/yki_guide.html'},
  {icon: '🗣', title: 'Speaking toolkit', desc: 'One ready answer for every dialog bracket, the Reagera, Berätta and Åsikt frames, your new Reagera words, the verbs bli and finns, för- words and short verbs that look alike', pages: 21, pdf: 'material/yki_speaking_toolkit.pdf', html: 'material/yki_speaking_toolkit.html'},
  {icon: '✍️', title: 'Writing toolkit', desc: 'Templates for messages, e-mails, complaints and opinion texts', pages: 10, pdf: 'material/yki_writing_toolkit.pdf', html: 'material/yki_writing_toolkit.html'},
